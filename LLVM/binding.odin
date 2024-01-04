@@ -1,648 +1,648 @@
 package LLVM
 
-foreign import LLVM_C "LLVM-C.lib"
+foreign import _C "LLVM-C.lib"
 
 import _c "core:c"
 
-LLVM_C_ANALYSIS_H :: 1;
-LLVM_C_BITREADER_H :: 1;
-LLVM_C_BITWRITER_H :: 1;
-LLVM_C_BLAKE3_H :: 1;
-LLVM_BLAKE3_VERSION_STRING :: "1.3.1";
-LLVM_BLAKE3_KEY_LEN :: 32;
-LLVM_BLAKE3_OUT_LEN :: 32;
-LLVM_BLAKE3_BLOCK_LEN :: 64;
-LLVM_BLAKE3_CHUNK_LEN :: 1024;
-LLVM_BLAKE3_MAX_DEPTH :: 54;
-LLVM_C_COMDAT_H :: 1;
-LLVM_C_CORE_H :: 1;
-LLVM_C_DATATYPES_H :: 1;
-LLVM_C_DEBUGINFO_H :: 1;
-LLVM_C_DEPRECATED_H :: 1;
-LLVM_C_DISASSEMBLER_H :: 1;
-LLVMDisassembler_Option_UseMarkup :: 1;
-LLVMDisassembler_Option_PrintImmHex :: 2;
-LLVMDisassembler_Option_AsmPrinterVariant :: 4;
-LLVMDisassembler_Option_SetInstrComments :: 8;
-LLVMDisassembler_Option_PrintLatency :: 16;
-LLVM_C_DISASSEMBLERTYPES_H :: 1;
-LLVMDisassembler_VariantKind_None :: 0;
-LLVMDisassembler_VariantKind_ARM_HI16 :: 1;
-LLVMDisassembler_VariantKind_ARM_LO16 :: 2;
-LLVMDisassembler_VariantKind_ARM64_PAGE :: 1;
-LLVMDisassembler_VariantKind_ARM64_PAGEOFF :: 2;
-LLVMDisassembler_VariantKind_ARM64_GOTPAGE :: 3;
-LLVMDisassembler_VariantKind_ARM64_GOTPAGEOFF :: 4;
-LLVMDisassembler_VariantKind_ARM64_TLVP :: 5;
-LLVMDisassembler_VariantKind_ARM64_TLVOFF :: 6;
-LLVMDisassembler_ReferenceType_InOut_None :: 0;
-LLVMDisassembler_ReferenceType_In_Branch :: 1;
-LLVMDisassembler_ReferenceType_In_PCrel_Load :: 2;
-LLVMDisassembler_ReferenceType_In_ARM64_ADRP :: 4294967297;
-LLVMDisassembler_ReferenceType_In_ARM64_ADDXri :: 4294967298;
-LLVMDisassembler_ReferenceType_In_ARM64_LDRXui :: 4294967299;
-LLVMDisassembler_ReferenceType_In_ARM64_LDRXl :: 4294967300;
-LLVMDisassembler_ReferenceType_In_ARM64_ADR :: 4294967301;
-LLVMDisassembler_ReferenceType_Out_SymbolStub :: 1;
-LLVMDisassembler_ReferenceType_Out_LitPool_SymAddr :: 2;
-LLVMDisassembler_ReferenceType_Out_LitPool_CstrAddr :: 3;
-LLVMDisassembler_ReferenceType_Out_Objc_CFString_Ref :: 4;
-LLVMDisassembler_ReferenceType_Out_Objc_Message :: 5;
-LLVMDisassembler_ReferenceType_Out_Objc_Message_Ref :: 6;
-LLVMDisassembler_ReferenceType_Out_Objc_Selector_Ref :: 7;
-LLVMDisassembler_ReferenceType_Out_Objc_Class_Ref :: 8;
-LLVMDisassembler_ReferenceType_DeMangled_Name :: 9;
-LLVM_C_ERROR_H :: 1;
-LLVMErrorSuccess :: 0;
-LLVM_C_ERRORHANDLING_H :: 1;
-LLVM_C_EXECUTIONENGINE_H :: 1;
-LLVM_C_EXTERNC_H :: 1;
-LLVM_C_IRREADER_H :: 1;
-LLVM_C_LINKER_H :: 1;
-LLVM_C_LLJIT_H :: 1;
-LLVM_C_LTO_H :: 1;
+C_ANALYSIS_H :: 1;
+C_BITREADER_H :: 1;
+C_BITWRITER_H :: 1;
+C_BLAKE3_H :: 1;
+_BLAKE3_VERSION_STRING :: "1.3.1";
+_BLAKE3_KEY_LEN :: 32;
+_BLAKE3_OUT_LEN :: 32;
+_BLAKE3_BLOCK_LEN :: 64;
+_BLAKE3CHUNK_LEN :: 1024;
+_BLAKE3_MAX_DEPTH :: 54;
+CCOMDAT_H :: 1;
+CCORE_H :: 1;
+C_DATATYPES_H :: 1;
+C_DEBUGINFO_H :: 1;
+C_DEPRECATED_H :: 1;
+C_DISASSEMBLER_H :: 1;
+Disassembler_Option_UseMarkup :: 1;
+Disassembler_Option_PrintImmHex :: 2;
+Disassembler_Option_AsmPrinterVariant :: 4;
+Disassembler_Option_SetInstrComments :: 8;
+Disassembler_Option_PrintLatency :: 16;
+C_DISASSEMBLERTYPES_H :: 1;
+Disassembler_VariantKind_None :: 0;
+Disassembler_VariantKind_ARM_HI16 :: 1;
+Disassembler_VariantKind_ARM_LO16 :: 2;
+Disassembler_VariantKind_ARM64_PAGE :: 1;
+Disassembler_VariantKind_ARM64_PAGEOFF :: 2;
+Disassembler_VariantKind_ARM64_GOTPAGE :: 3;
+Disassembler_VariantKind_ARM64_GOTPAGEOFF :: 4;
+Disassembler_VariantKind_ARM64_TLVP :: 5;
+Disassembler_VariantKind_ARM64_TLVOFF :: 6;
+Disassembler_ReferenceType_InOut_None :: 0;
+Disassembler_ReferenceType_In_Branch :: 1;
+Disassembler_ReferenceType_In_PCrel_Load :: 2;
+Disassembler_ReferenceType_In_ARM64_ADRP :: 4294967297;
+Disassembler_ReferenceType_In_ARM64_ADDXri :: 4294967298;
+Disassembler_ReferenceType_In_ARM64_LDRXui :: 4294967299;
+Disassembler_ReferenceType_In_ARM64_LDRXl :: 4294967300;
+Disassembler_ReferenceType_In_ARM64_ADR :: 4294967301;
+Disassembler_ReferenceType_Out_SymbolStub :: 1;
+Disassembler_ReferenceType_Out_LitPool_SymAddr :: 2;
+Disassembler_ReferenceType_Out_LitPoolCstrAddr :: 3;
+Disassembler_ReferenceType_Out_ObjcCFString_Ref :: 4;
+Disassembler_ReferenceType_Out_Objc_Message :: 5;
+Disassembler_ReferenceType_Out_Objc_Message_Ref :: 6;
+Disassembler_ReferenceType_Out_Objc_Selector_Ref :: 7;
+Disassembler_ReferenceType_Out_ObjcClass_Ref :: 8;
+Disassembler_ReferenceType_DeMangled_Name :: 9;
+C_ERROR_H :: 1;
+ErrorSuccess :: 0;
+C_ERRORHANDLING_H :: 1;
+C_EXECUTIONENGINE_H :: 1;
+C_EXTERNC_H :: 1;
+C_IRREADER_H :: 1;
+C_LINKER_H :: 1;
+C_LLJIT_H :: 1;
+C_LTO_H :: 1;
 LTO_API_VERSION :: 29;
-LLVM_C_OBJECT_H :: 1;
-LLVM_C_ORC_H :: 1;
-LLVM_C_ORCEE_H :: 1;
-LLVM_C_REMARKS_H :: 1;
+C_OBJECT_H :: 1;
+C_ORC_H :: 1;
+C_ORCEE_H :: 1;
+C_REMARKS_H :: 1;
 REMARKS_API_VERSION :: 1;
-LLVM_C_SUPPORT_H :: 1;
-LLVM_C_TARGET_H :: 1;
-LLVM_C_TARGETMACHINE_H :: 1;
-LLVM_C_TYPES_H :: 1;
+C_SUPPORT_H :: 1;
+C_TARGET_H :: 1;
+C_TARGETMACHINE_H :: 1;
+C_TYPES_H :: 1;
 
-LLVMAttributeIndex :: _c.uint;
-LLVMDiagnosticHandler :: #type proc(unamed0 : LLVMDiagnosticInfoRef, unamed1 : rawptr);
-LLVMYieldCallback :: #type proc(unamed0 : LLVMContextRef, unamed1 : rawptr);
+AttributeIndex :: _c.uint;
+DiagnosticHandler :: #type proc(unamed0 : DiagnosticInfoRef, unamed1 : rawptr);
+YieldCallback :: #type proc(unamed0 : ContextRef, unamed1 : rawptr);
 ssize_t :: i64;
-LLVMMetadataKind :: _c.uint;
-LLVMDWARFTypeEncoding :: _c.uint;
-LLVMDisasmContextRef :: rawptr;
-LLVMOpInfoCallback :: #type proc(DisInfo : rawptr, PC : u64, Offset : u64, OpSize : u64, InstSize : u64, TagType : _c.int, TagBuf : rawptr) -> _c.int;
-LLVMSymbolLookupCallback :: #type proc(DisInfo : rawptr, ReferenceValue : u64, ReferenceType : ^u64, ReferencePC : u64, ReferenceName : ^cstring) -> cstring;
-LLVMErrorRef :: ^LLVMOpaqueError;
-LLVMErrorTypeId :: rawptr;
-LLVMFatalErrorHandler :: #type proc(Reason : cstring);
-LLVMGenericValueRef :: ^LLVMOpaqueGenericValue;
-LLVMExecutionEngineRef :: ^LLVMOpaqueExecutionEngine;
-LLVMMCJITMemoryManagerRef :: ^LLVMOpaqueMCJITMemoryManager;
-LLVMMemoryManagerAllocateCodeSectionCallback :: #type proc(Opaque : rawptr, Size : _c.uintptr_t, Alignment : _c.uint, SectionID : _c.uint, SectionName : cstring) -> ^u8;
-LLVMMemoryManagerAllocateDataSectionCallback :: #type proc(Opaque : rawptr, Size : _c.uintptr_t, Alignment : _c.uint, SectionID : _c.uint, SectionName : cstring, IsReadOnly : LLVMBool) -> ^u8;
-LLVMMemoryManagerFinalizeMemoryCallback :: #type proc(Opaque : rawptr, ErrMsg : ^cstring) -> LLVMBool;
-LLVMMemoryManagerDestroyCallback :: #type proc(Opaque : rawptr);
-LLVMOrcLLJITBuilderObjectLinkingLayerCreatorFunction :: #type proc(Ctx : rawptr, ES : LLVMOrcExecutionSessionRef, Triple : cstring) -> LLVMOrcObjectLayerRef;
-LLVMOrcLLJITBuilderRef :: ^LLVMOrcOpaqueLLJITBuilder;
-LLVMOrcLLJITRef :: ^LLVMOrcOpaqueLLJIT;
+MetadataKind :: _c.uint;
+DWARFTypeEncoding :: _c.uint;
+DisasmContextRef :: rawptr;
+OpInfoCallback :: #type proc(DisInfo : rawptr, PC : u64, Offset : u64, OpSize : u64, InstSize : u64, TagType : _c.int, TagBuf : rawptr) -> _c.int;
+SymbolLookupCallback :: #type proc(DisInfo : rawptr, ReferenceValue : u64, ReferenceType : ^u64, ReferencePC : u64, ReferenceName : ^cstring) -> cstring;
+ErrorRef :: ^OpaqueError;
+ErrorTypeId :: rawptr;
+FatalErrorHandler :: #type proc(Reason : cstring);
+GenericValueRef :: ^OpaqueGenericValue;
+ExecutionEngineRef :: ^OpaqueExecutionEngine;
+MCJITMemoryManagerRef :: ^OpaqueMCJITMemoryManager;
+MemoryManagerAllocateCodeSectionCallback :: #type proc(Opaque : rawptr, Size : _c.uintptr_t, Alignment : _c.uint, SectionID : _c.uint, SectionName : cstring) -> ^u8;
+MemoryManagerAllocateDataSectionCallback :: #type proc(Opaque : rawptr, Size : _c.uintptr_t, Alignment : _c.uint, SectionID : _c.uint, SectionName : cstring, IsReadOnly : Bool) -> ^u8;
+MemoryManagerFinalizeMemoryCallback :: #type proc(Opaque : rawptr, ErrMsg : ^cstring) -> Bool;
+MemoryManagerDestroyCallback :: #type proc(Opaque : rawptr);
+OrcLLJITBuilderObjectLinkingLayerCreatorFunction :: #type proc(Ctx : rawptr, ES : OrcExecutionSessionRef, Triple : cstring) -> OrcObjectLayerRef;
+OrcLLJITBuilderRef :: ^OrcOpaqueLLJITBuilder;
+OrcLLJITRef :: ^OrcOpaqueLLJIT;
 lto_bool_t :: bool;
-lto_module_t :: ^LLVMOpaqueLTOModule;
-lto_code_gen_t :: ^LLVMOpaqueLTOCodeGenerator;
-thinlto_code_gen_t :: ^LLVMOpaqueThinLTOCodeGenerator;
+lto_module_t :: ^OpaqueLTOModule;
+lto_code_gen_t :: ^OpaqueLTOCodeGenerator;
+thinlto_code_gen_t :: ^OpaqueThinLTOCodeGenerator;
 lto_diagnostic_handler_t :: #type proc(severity : lto_codegen_diagnostic_severity_t, diag : cstring, ctxt : rawptr);
-lto_input_t :: ^LLVMOpaqueLTOInput;
-LLVMSectionIteratorRef :: ^LLVMOpaqueSectionIterator;
-LLVMSymbolIteratorRef :: ^LLVMOpaqueSymbolIterator;
-LLVMRelocationIteratorRef :: ^LLVMOpaqueRelocationIterator;
-LLVMObjectFileRef :: ^LLVMOpaqueObjectFile;
-LLVMOrcJITTargetAddress :: u64;
-LLVMOrcExecutorAddress :: u64;
-LLVMJITSymbolTargetFlags :: u8;
-LLVMOrcExecutionSessionRef :: ^LLVMOrcOpaqueExecutionSession;
-LLVMOrcErrorReporterFunction :: #type proc(Ctx : rawptr, Err : LLVMErrorRef);
-LLVMOrcSymbolStringPoolRef :: ^LLVMOrcOpaqueSymbolStringPool;
-LLVMOrcSymbolStringPoolEntryRef :: ^LLVMOrcOpaqueSymbolStringPoolEntry;
-LLVMOrcCSymbolFlagsMapPairs :: ^LLVMOrcCSymbolFlagsMapPair;
-LLVMOrcCSymbolMapPairs :: ^LLVMOrcCSymbolMapPair;
-LLVMOrcCSymbolAliasMapPairs :: ^LLVMOrcCSymbolAliasMapPair;
-LLVMOrcJITDylibRef :: ^LLVMOrcOpaqueJITDylib;
-LLVMOrcCDependenceMapPairs :: ^LLVMOrcCDependenceMapPair;
-LLVMOrcCJITDylibSearchOrder :: ^LLVMOrcCJITDylibSearchOrderElement;
-LLVMOrcCLookupSet :: ^LLVMOrcCLookupSetElement;
-LLVMOrcMaterializationUnitRef :: ^LLVMOrcOpaqueMaterializationUnit;
-LLVMOrcMaterializationResponsibilityRef :: ^LLVMOrcOpaqueMaterializationResponsibility;
-LLVMOrcMaterializationUnitMaterializeFunction :: #type proc(Ctx : rawptr, MR : LLVMOrcMaterializationResponsibilityRef);
-LLVMOrcMaterializationUnitDiscardFunction :: #type proc(Ctx : rawptr, JD : LLVMOrcJITDylibRef, Symbol : LLVMOrcSymbolStringPoolEntryRef);
-LLVMOrcMaterializationUnitDestroyFunction :: #type proc(Ctx : rawptr);
-LLVMOrcResourceTrackerRef :: ^LLVMOrcOpaqueResourceTracker;
-LLVMOrcDefinitionGeneratorRef :: ^LLVMOrcOpaqueDefinitionGenerator;
-LLVMOrcLookupStateRef :: ^LLVMOrcOpaqueLookupState;
-LLVMOrcCAPIDefinitionGeneratorTryToGenerateFunction :: #type proc(GeneratorObj : LLVMOrcDefinitionGeneratorRef, Ctx : rawptr, LookupState : ^LLVMOrcLookupStateRef, Kind : LLVMOrcLookupKind, JD : LLVMOrcJITDylibRef, JDLookupFlags : LLVMOrcJITDylibLookupFlags, LookupSet : LLVMOrcCLookupSet, LookupSetSize : _c.size_t) -> LLVMErrorRef;
-LLVMOrcDisposeCAPIDefinitionGeneratorFunction :: #type proc(Ctx : rawptr);
-LLVMOrcSymbolPredicate :: #type proc(Ctx : rawptr, Sym : LLVMOrcSymbolStringPoolEntryRef) -> _c.int;
-LLVMOrcThreadSafeContextRef :: ^LLVMOrcOpaqueThreadSafeContext;
-LLVMOrcThreadSafeModuleRef :: ^LLVMOrcOpaqueThreadSafeModule;
-LLVMOrcGenericIRModuleOperationFunction :: #type proc(Ctx : rawptr, M : LLVMModuleRef) -> LLVMErrorRef;
-LLVMOrcJITTargetMachineBuilderRef :: ^LLVMOrcOpaqueJITTargetMachineBuilder;
-LLVMOrcObjectLayerRef :: ^LLVMOrcOpaqueObjectLayer;
-LLVMOrcObjectLinkingLayerRef :: ^LLVMOrcOpaqueObjectLinkingLayer;
-LLVMOrcIRTransformLayerRef :: ^LLVMOrcOpaqueIRTransformLayer;
-LLVMOrcIRTransformLayerTransformFunction :: #type proc(Ctx : rawptr, ModInOut : ^LLVMOrcThreadSafeModuleRef, MR : LLVMOrcMaterializationResponsibilityRef) -> LLVMErrorRef;
-LLVMOrcObjectTransformLayerRef :: ^LLVMOrcOpaqueObjectTransformLayer;
-LLVMOrcObjectTransformLayerTransformFunction :: #type proc(Ctx : rawptr, ObjInOut : ^LLVMMemoryBufferRef) -> LLVMErrorRef;
-LLVMOrcIndirectStubsManagerRef :: ^LLVMOrcOpaqueIndirectStubsManager;
-LLVMOrcLazyCallThroughManagerRef :: ^LLVMOrcOpaqueLazyCallThroughManager;
-LLVMOrcDumpObjectsRef :: ^LLVMOrcOpaqueDumpObjects;
-LLVMOrcExecutionSessionLookupHandleResultFunction :: #type proc(Err : LLVMErrorRef, Result : LLVMOrcCSymbolMapPairs, NumPairs : _c.size_t, Ctx : rawptr);
-LLVMMemoryManagerCreateContextCallback :: #type proc(CtxCtx : rawptr) -> rawptr;
-LLVMMemoryManagerNotifyTerminatingCallback :: #type proc(CtxCtx : rawptr);
-LLVMRemarkStringRef :: ^LLVMRemarkOpaqueString;
-LLVMRemarkDebugLocRef :: ^LLVMRemarkOpaqueDebugLoc;
-LLVMRemarkArgRef :: ^LLVMRemarkOpaqueArg;
-LLVMRemarkEntryRef :: ^LLVMRemarkOpaqueEntry;
-LLVMRemarkParserRef :: ^LLVMRemarkOpaqueParser;
-LLVMTargetDataRef :: ^LLVMOpaqueTargetData;
-LLVMTargetLibraryInfoRef :: ^LLVMOpaqueTargetLibraryInfotData;
-LLVMTargetMachineRef :: ^LLVMOpaqueTargetMachine;
-LLVMTargetRef :: ^LLVMTarget;
-LLVMBool :: _c.int;
-LLVMMemoryBufferRef :: ^LLVMOpaqueMemoryBuffer;
-LLVMContextRef :: ^LLVMOpaqueContext;
-LLVMModuleRef :: ^LLVMOpaqueModule;
-LLVMTypeRef :: ^LLVMOpaqueType;
-LLVMValueRef :: ^LLVMOpaqueValue;
-LLVMBasicBlockRef :: ^LLVMOpaqueBasicBlock;
-LLVMMetadataRef :: ^LLVMOpaqueMetadata;
-LLVMNamedMDNodeRef :: ^LLVMOpaqueNamedMDNode;
-LLVMValueMetadataEntry :: LLVMOpaqueValueMetadataEntry;
-LLVMBuilderRef :: ^LLVMOpaqueBuilder;
-LLVMDIBuilderRef :: ^LLVMOpaqueDIBuilder;
-LLVMModuleProviderRef :: ^LLVMOpaqueModuleProvider;
-LLVMPassManagerRef :: ^LLVMOpaquePassManager;
-LLVMUseRef :: ^LLVMOpaqueUse;
-LLVMAttributeRef :: ^LLVMOpaqueAttributeRef;
-LLVMDiagnosticInfoRef :: ^LLVMOpaqueDiagnosticInfo;
-LLVMComdatRef :: ^LLVMComdat;
-LLVMModuleFlagEntry :: LLVMOpaqueModuleFlagEntry;
-LLVMJITEventListenerRef :: ^LLVMOpaqueJITEventListener;
-LLVMBinaryRef :: ^LLVMOpaqueBinary;
+lto_input_t :: ^OpaqueLTOInput;
+SectionIteratorRef :: ^OpaqueSectionIterator;
+SymbolIteratorRef :: ^OpaqueSymbolIterator;
+RelocationIteratorRef :: ^OpaqueRelocationIterator;
+ObjectFileRef :: ^OpaqueObjectFile;
+OrcJITTargetAddress :: u64;
+OrcExecutorAddress :: u64;
+JITSymbolTargetFlags :: u8;
+OrcExecutionSessionRef :: ^OrcOpaqueExecutionSession;
+OrcErrorReporterFunction :: #type proc(Ctx : rawptr, Err : ErrorRef);
+OrcSymbolStringPoolRef :: ^OrcOpaqueSymbolStringPool;
+OrcSymbolStringPoolEntryRef :: ^OrcOpaqueSymbolStringPoolEntry;
+OrcCSymbolFlagsMapPairs :: ^OrcCSymbolFlagsMapPair;
+OrcCSymbolMapPairs :: ^OrcCSymbolMapPair;
+OrcCSymbolAliasMapPairs :: ^OrcCSymbolAliasMapPair;
+OrcJITDylibRef :: ^OrcOpaqueJITDylib;
+OrcCDependenceMapPairs :: ^OrcCDependenceMapPair;
+OrcCJITDylibSearchOrder :: ^OrcCJITDylibSearchOrderElement;
+OrcCLookupSet :: ^OrcCLookupSetElement;
+OrcMaterializationUnitRef :: ^OrcOpaqueMaterializationUnit;
+OrcMaterializationResponsibilityRef :: ^OrcOpaqueMaterializationResponsibility;
+OrcMaterializationUnitMaterializeFunction :: #type proc(Ctx : rawptr, MR : OrcMaterializationResponsibilityRef);
+OrcMaterializationUnitDiscardFunction :: #type proc(Ctx : rawptr, JD : OrcJITDylibRef, Symbol : OrcSymbolStringPoolEntryRef);
+OrcMaterializationUnitDestroyFunction :: #type proc(Ctx : rawptr);
+OrcResourceTrackerRef :: ^OrcOpaqueResourceTracker;
+OrcDefinitionGeneratorRef :: ^OrcOpaqueDefinitionGenerator;
+OrcLookupStateRef :: ^OrcOpaqueLookupState;
+OrcCAPIDefinitionGeneratorTryToGenerateFunction :: #type proc(GeneratorObj : OrcDefinitionGeneratorRef, Ctx : rawptr, LookupState : ^OrcLookupStateRef, Kind : OrcLookupKind, JD : OrcJITDylibRef, JDLookupFlags : OrcJITDylibLookupFlags, LookupSet : OrcCLookupSet, LookupSetSize : _c.size_t) -> ErrorRef;
+OrcDisposeCAPIDefinitionGeneratorFunction :: #type proc(Ctx : rawptr);
+OrcSymbolPredicate :: #type proc(Ctx : rawptr, Sym : OrcSymbolStringPoolEntryRef) -> _c.int;
+OrcThreadSafeContextRef :: ^OrcOpaqueThreadSafeContext;
+OrcThreadSafeModuleRef :: ^OrcOpaqueThreadSafeModule;
+OrcGenericIRModuleOperationFunction :: #type proc(Ctx : rawptr, M : ModuleRef) -> ErrorRef;
+OrcJITTargetMachineBuilderRef :: ^OrcOpaqueJITTargetMachineBuilder;
+OrcObjectLayerRef :: ^OrcOpaqueObjectLayer;
+OrcObjectLinkingLayerRef :: ^OrcOpaqueObjectLinkingLayer;
+OrcIRTransformLayerRef :: ^OrcOpaqueIRTransformLayer;
+OrcIRTransformLayerTransformFunction :: #type proc(Ctx : rawptr, ModInOut : ^OrcThreadSafeModuleRef, MR : OrcMaterializationResponsibilityRef) -> ErrorRef;
+OrcObjectTransformLayerRef :: ^OrcOpaqueObjectTransformLayer;
+OrcObjectTransformLayerTransformFunction :: #type proc(Ctx : rawptr, ObjInOut : ^MemoryBufferRef) -> ErrorRef;
+OrcIndirectStubsManagerRef :: ^OrcOpaqueIndirectStubsManager;
+OrcLazyCallThroughManagerRef :: ^OrcOpaqueLazyCallThroughManager;
+OrcDumpObjectsRef :: ^OrcOpaqueDumpObjects;
+OrcExecutionSessionLookupHandleResultFunction :: #type proc(Err : ErrorRef, Result : OrcCSymbolMapPairs, NumPairs : _c.size_t, Ctx : rawptr);
+MemoryManagerCreateContextCallback :: #type proc(CtxCtx : rawptr) -> rawptr;
+MemoryManagerNotifyTerminatingCallback :: #type proc(CtxCtx : rawptr);
+RemarkStringRef :: ^RemarkOpaqueString;
+RemarkDebugLocRef :: ^RemarkOpaqueDebugLoc;
+RemarkArgRef :: ^RemarkOpaqueArg;
+RemarkEntryRef :: ^RemarkOpaqueEntry;
+RemarkParserRef :: ^RemarkOpaqueParser;
+TargetDataRef :: ^OpaqueTargetData;
+TargetLibraryInfoRef :: ^OpaqueTargetLibraryInfotData;
+TargetMachineRef :: ^OpaqueTargetMachine;
+TargetRef :: ^Target;
+Bool :: _c.int;
+MemoryBufferRef :: ^OpaqueMemoryBuffer;
+ContextRef :: ^OpaqueContext;
+ModuleRef :: ^OpaqueModule;
+TypeRef :: ^OpaqueType;
+ValueRef :: ^OpaqueValue;
+BasicBlockRef :: ^OpaqueBasicBlock;
+MetadataRef :: ^OpaqueMetadata;
+NamedMDNodeRef :: ^OpaqueNamedMDNode;
+ValueMetadataEntry :: OpaqueValueMetadataEntry;
+BuilderRef :: ^OpaqueBuilder;
+DIBuilderRef :: ^OpaqueDIBuilder;
+ModuleProviderRef :: ^OpaqueModuleProvider;
+PassManagerRef :: ^OpaquePassManager;
+UseRef :: ^OpaqueUse;
+AttributeRef :: ^OpaqueAttributeRef;
+DiagnosticInfoRef :: ^OpaqueDiagnosticInfo;
+ComdatRef :: ^Comdat;
+ModuleFlagEntry :: OpaqueModuleFlagEntry;
+JITEventListenerRef :: ^OpaqueJITEventListener;
+BinaryRef :: ^OpaqueBinary;
 
-LLVMVerifierFailureAction :: enum i32 {
-    LLVMAbortProcessAction,
-    LLVMPrintMessageAction,
-    LLVMReturnStatusAction,
+VerifierFailureAction :: enum i32 {
+    AbortProcessAction,
+    PrintMessageAction,
+    ReturnStatusAction,
 };
 
-LLVMComdatSelectionKind :: enum i32 {
-    LLVMAnyComdatSelectionKind,
-    LLVMExactMatchComdatSelectionKind,
-    LLVMLargestComdatSelectionKind,
-    LLVMNoDeduplicateComdatSelectionKind,
-    LLVMSameSizeComdatSelectionKind,
+ComdatSelectionKind :: enum i32 {
+    AnyComdatSelectionKind,
+    ExactMatchComdatSelectionKind,
+    LargestComdatSelectionKind,
+    NoDeduplicateComdatSelectionKind,
+    SameSizeComdatSelectionKind,
 };
 
-LLVMOpcode :: enum i32 {
-    LLVMRet = 1,
-    LLVMBr = 2,
-    LLVMSwitch = 3,
-    LLVMIndirectBr = 4,
-    LLVMInvoke = 5,
-    LLVMUnreachable = 7,
-    LLVMCallBr = 67,
-    LLVMFNeg = 66,
-    LLVMAdd = 8,
-    LLVMFAdd = 9,
-    LLVMSub = 10,
-    LLVMFSub = 11,
-    LLVMMul = 12,
-    LLVMFMul = 13,
-    LLVMUDiv = 14,
-    LLVMSDiv = 15,
-    LLVMFDiv = 16,
-    LLVMURem = 17,
-    LLVMSRem = 18,
-    LLVMFRem = 19,
-    LLVMShl = 20,
-    LLVMLShr = 21,
-    LLVMAShr = 22,
-    LLVMAnd = 23,
-    LLVMOr = 24,
-    LLVMXor = 25,
-    LLVMAlloca = 26,
-    LLVMLoad = 27,
-    LLVMStore = 28,
-    LLVMGetElementPtr = 29,
-    LLVMTrunc = 30,
-    LLVMZExt = 31,
-    LLVMSExt = 32,
-    LLVMFPToUI = 33,
-    LLVMFPToSI = 34,
-    LLVMUIToFP = 35,
-    LLVMSIToFP = 36,
-    LLVMFPTrunc = 37,
-    LLVMFPExt = 38,
-    LLVMPtrToInt = 39,
-    LLVMIntToPtr = 40,
-    LLVMBitCast = 41,
-    LLVMAddrSpaceCast = 60,
-    LLVMICmp = 42,
-    LLVMFCmp = 43,
-    LLVMPHI = 44,
-    LLVMCall = 45,
-    LLVMSelect = 46,
-    LLVMUserOp1 = 47,
-    LLVMUserOp2 = 48,
-    LLVMVAArg = 49,
-    LLVMExtractElement = 50,
-    LLVMInsertElement = 51,
-    LLVMShuffleVector = 52,
-    LLVMExtractValue = 53,
-    LLVMInsertValue = 54,
-    LLVMFreeze = 68,
-    LLVMFence = 55,
-    LLVMAtomicCmpXchg = 56,
-    LLVMAtomicRMW = 57,
-    LLVMResume = 58,
-    LLVMLandingPad = 59,
-    LLVMCleanupRet = 61,
-    LLVMCatchRet = 62,
-    LLVMCatchPad = 63,
-    LLVMCleanupPad = 64,
-    LLVMCatchSwitch = 65,
+Opcode :: enum i32 {
+    Ret = 1,
+    Br = 2,
+    Switch = 3,
+    IndirectBr = 4,
+    Invoke = 5,
+    Unreachable = 7,
+    CallBr = 67,
+    FNeg = 66,
+    Add = 8,
+    FAdd = 9,
+    Sub = 10,
+    FSub = 11,
+    Mul = 12,
+    FMul = 13,
+    UDiv = 14,
+    SDiv = 15,
+    FDiv = 16,
+    URem = 17,
+    SRem = 18,
+    FRem = 19,
+    Shl = 20,
+    LShr = 21,
+    AShr = 22,
+    And = 23,
+    Or = 24,
+    Xor = 25,
+    Alloca = 26,
+    Load = 27,
+    Store = 28,
+    GetElementPtr = 29,
+    Trunc = 30,
+    ZExt = 31,
+    SExt = 32,
+    FPToUI = 33,
+    FPToSI = 34,
+    UIToFP = 35,
+    SIToFP = 36,
+    FPTrunc = 37,
+    FPExt = 38,
+    PtrToInt = 39,
+    IntToPtr = 40,
+    BitCast = 41,
+    AddrSpaceCast = 60,
+    ICmp = 42,
+    FCmp = 43,
+    PHI = 44,
+    Call = 45,
+    Select = 46,
+    UserOp1 = 47,
+    UserOp2 = 48,
+    VAArg = 49,
+    ExtractElement = 50,
+    InsertElement = 51,
+    ShuffleVector = 52,
+    ExtractValue = 53,
+    InsertValue = 54,
+    Freeze = 68,
+    Fence = 55,
+    AtomicCmpXchg = 56,
+    AtomicRMW = 57,
+    Resume = 58,
+    LandingPad = 59,
+    CleanupRet = 61,
+    CatchRet = 62,
+    CatchPad = 63,
+    CleanupPad = 64,
+    CatchSwitch = 65,
 };
 
-LLVMTypeKind :: enum i32 {
-    LLVMVoidTypeKind,
-    LLVMHalfTypeKind,
-    LLVMFloatTypeKind,
-    LLVMDoubleTypeKind,
-    LLVMX86_FP80TypeKind,
-    LLVMFP128TypeKind,
-    LLVMPPC_FP128TypeKind,
-    LLVMLabelTypeKind,
-    LLVMIntegerTypeKind,
-    LLVMFunctionTypeKind,
-    LLVMStructTypeKind,
-    LLVMArrayTypeKind,
-    LLVMPointerTypeKind,
-    LLVMVectorTypeKind,
-    LLVMMetadataTypeKind,
-    LLVMX86_MMXTypeKind,
-    LLVMTokenTypeKind,
-    LLVMScalableVectorTypeKind,
-    LLVMBFloatTypeKind,
-    LLVMX86_AMXTypeKind,
-    LLVMTargetExtTypeKind,
+TypeKind :: enum i32 {
+    VoidTypeKind,
+    HalfTypeKind,
+    FloatTypeKind,
+    DoubleTypeKind,
+    X86_FP80TypeKind,
+    FP128TypeKind,
+    PPC_FP128TypeKind,
+    LabelTypeKind,
+    IntegerTypeKind,
+    FunctionTypeKind,
+    StructTypeKind,
+    ArrayTypeKind,
+    PointerTypeKind,
+    VectorTypeKind,
+    MetadataTypeKind,
+    X86_MMXTypeKind,
+    TokenTypeKind,
+    ScalableVectorTypeKind,
+    BFloatTypeKind,
+    X86_AMXTypeKind,
+    TargetExtTypeKind,
 };
 
-LLVMLinkage :: enum i32 {
-    LLVMExternalLinkage,
-    LLVMAvailableExternallyLinkage,
-    LLVMLinkOnceAnyLinkage,
-    LLVMLinkOnceODRLinkage,
-    LLVMLinkOnceODRAutoHideLinkage,
-    LLVMWeakAnyLinkage,
-    LLVMWeakODRLinkage,
-    LLVMAppendingLinkage,
-    LLVMInternalLinkage,
-    LLVMPrivateLinkage,
-    LLVMDLLImportLinkage,
-    LLVMDLLExportLinkage,
-    LLVMExternalWeakLinkage,
-    LLVMGhostLinkage,
-    LLVMCommonLinkage,
-    LLVMLinkerPrivateLinkage,
-    LLVMLinkerPrivateWeakLinkage,
+Linkage :: enum i32 {
+    ExternalLinkage,
+    AvailableExternallyLinkage,
+    LinkOnceAnyLinkage,
+    LinkOnceODRLinkage,
+    LinkOnceODRAutoHideLinkage,
+    WeakAnyLinkage,
+    WeakODRLinkage,
+    AppendingLinkage,
+    InternalLinkage,
+    PrivateLinkage,
+    DLLImportLinkage,
+    DLLExportLinkage,
+    ExternalWeakLinkage,
+    GhostLinkage,
+    CommonLinkage,
+    LinkerPrivateLinkage,
+    LinkerPrivateWeakLinkage,
 };
 
-LLVMVisibility :: enum i32 {
-    LLVMDefaultVisibility,
-    LLVMHiddenVisibility,
-    LLVMProtectedVisibility,
+Visibility :: enum i32 {
+    DefaultVisibility,
+    HiddenVisibility,
+    ProtectedVisibility,
 };
 
-LLVMUnnamedAddr :: enum i32 {
-    LLVMNoUnnamedAddr,
-    LLVMLocalUnnamedAddr,
-    LLVMGlobalUnnamedAddr,
+UnnamedAddr :: enum i32 {
+    NoUnnamedAddr,
+    LocalUnnamedAddr,
+    GlobalUnnamedAddr,
 };
 
-LLVMDLLStorageClass :: enum i32 {
-    LLVMDefaultStorageClass = 0,
-    LLVMDLLImportStorageClass = 1,
-    LLVMDLLExportStorageClass = 2,
+DLLStorageClass :: enum i32 {
+    DefaultStorageClass = 0,
+    DLLImportStorageClass = 1,
+    DLLExportStorageClass = 2,
 };
 
-LLVMCallConv :: enum i32 {
-    LLVMCCallConv = 0,
-    LLVMFastCallConv = 8,
-    LLVMColdCallConv = 9,
-    LLVMGHCCallConv = 10,
-    LLVMHiPECallConv = 11,
-    LLVMWebKitJSCallConv = 12,
-    LLVMAnyRegCallConv = 13,
-    LLVMPreserveMostCallConv = 14,
-    LLVMPreserveAllCallConv = 15,
-    LLVMSwiftCallConv = 16,
-    LLVMCXXFASTTLSCallConv = 17,
-    LLVMX86StdcallCallConv = 64,
-    LLVMX86FastcallCallConv = 65,
-    LLVMARMAPCSCallConv = 66,
-    LLVMARMAAPCSCallConv = 67,
-    LLVMARMAAPCSVFPCallConv = 68,
-    LLVMMSP430INTRCallConv = 69,
-    LLVMX86ThisCallCallConv = 70,
-    LLVMPTXKernelCallConv = 71,
-    LLVMPTXDeviceCallConv = 72,
-    LLVMSPIRFUNCCallConv = 75,
-    LLVMSPIRKERNELCallConv = 76,
-    LLVMIntelOCLBICallConv = 77,
-    LLVMX8664SysVCallConv = 78,
-    LLVMWin64CallConv = 79,
-    LLVMX86VectorCallCallConv = 80,
-    LLVMHHVMCallConv = 81,
-    LLVMHHVMCCallConv = 82,
-    LLVMX86INTRCallConv = 83,
-    LLVMAVRINTRCallConv = 84,
-    LLVMAVRSIGNALCallConv = 85,
-    LLVMAVRBUILTINCallConv = 86,
-    LLVMAMDGPUVSCallConv = 87,
-    LLVMAMDGPUGSCallConv = 88,
-    LLVMAMDGPUPSCallConv = 89,
-    LLVMAMDGPUCSCallConv = 90,
-    LLVMAMDGPUKERNELCallConv = 91,
-    LLVMX86RegCallCallConv = 92,
-    LLVMAMDGPUHSCallConv = 93,
-    LLVMMSP430BUILTINCallConv = 94,
-    LLVMAMDGPULSCallConv = 95,
-    LLVMAMDGPUESCallConv = 96,
+CallConv :: enum i32 {
+    CCallConv = 0,
+    FastCallConv = 8,
+    ColdCallConv = 9,
+    GHCCallConv = 10,
+    HiPECallConv = 11,
+    WebKitJSCallConv = 12,
+    AnyRegCallConv = 13,
+    PreserveMostCallConv = 14,
+    PreserveAllCallConv = 15,
+    SwiftCallConv = 16,
+    CXXFASTTLSCallConv = 17,
+    X86StdcallCallConv = 64,
+    X86FastcallCallConv = 65,
+    ARMAPCSCallConv = 66,
+    ARMAAPCSCallConv = 67,
+    ARMAAPCSVFPCallConv = 68,
+    MSP430INTRCallConv = 69,
+    X86ThisCallCallConv = 70,
+    PTXKernelCallConv = 71,
+    PTXDeviceCallConv = 72,
+    SPIRFUNCCallConv = 75,
+    SPIRKERNELCallConv = 76,
+    IntelOCLBICallConv = 77,
+    X8664SysVCallConv = 78,
+    Win64CallConv = 79,
+    X86VectorCallCallConv = 80,
+    HHVMCallConv = 81,
+    HHVMCCallConv = 82,
+    X86INTRCallConv = 83,
+    AVRINTRCallConv = 84,
+    AVRSIGNALCallConv = 85,
+    AVRBUILTINCallConv = 86,
+    AMDGPUVSCallConv = 87,
+    AMDGPUGSCallConv = 88,
+    AMDGPUPSCallConv = 89,
+    AMDGPUCSCallConv = 90,
+    AMDGPUKERNELCallConv = 91,
+    X86RegCallCallConv = 92,
+    AMDGPUHSCallConv = 93,
+    MSP430BUILTINCallConv = 94,
+    AMDGPULSCallConv = 95,
+    AMDGPUESCallConv = 96,
 };
 
-LLVMValueKind :: enum i32 {
-    LLVMArgumentValueKind,
-    LLVMBasicBlockValueKind,
-    LLVMMemoryUseValueKind,
-    LLVMMemoryDefValueKind,
-    LLVMMemoryPhiValueKind,
-    LLVMFunctionValueKind,
-    LLVMGlobalAliasValueKind,
-    LLVMGlobalIFuncValueKind,
-    LLVMGlobalVariableValueKind,
-    LLVMBlockAddressValueKind,
-    LLVMConstantExprValueKind,
-    LLVMConstantArrayValueKind,
-    LLVMConstantStructValueKind,
-    LLVMConstantVectorValueKind,
-    LLVMUndefValueValueKind,
-    LLVMConstantAggregateZeroValueKind,
-    LLVMConstantDataArrayValueKind,
-    LLVMConstantDataVectorValueKind,
-    LLVMConstantIntValueKind,
-    LLVMConstantFPValueKind,
-    LLVMConstantPointerNullValueKind,
-    LLVMConstantTokenNoneValueKind,
-    LLVMMetadataAsValueValueKind,
-    LLVMInlineAsmValueKind,
-    LLVMInstructionValueKind,
-    LLVMPoisonValueValueKind,
-    LLVMConstantTargetNoneValueKind,
+ValueKind :: enum i32 {
+    ArgumentValueKind,
+    BasicBlockValueKind,
+    MemoryUseValueKind,
+    MemoryDefValueKind,
+    MemoryPhiValueKind,
+    FunctionValueKind,
+    GlobalAliasValueKind,
+    GlobalIFuncValueKind,
+    GlobalVariableValueKind,
+    BlockAddressValueKind,
+    ConstantExprValueKind,
+    ConstantArrayValueKind,
+    ConstantStructValueKind,
+    ConstantVectorValueKind,
+    UndefValueValueKind,
+    ConstantAggregateZeroValueKind,
+    ConstantDataArrayValueKind,
+    ConstantDataVectorValueKind,
+    ConstantIntValueKind,
+    ConstantFPValueKind,
+    ConstantPointerNullValueKind,
+    ConstantTokenNoneValueKind,
+    MetadataAsValueValueKind,
+    InlineAsmValueKind,
+    InstructionValueKind,
+    PoisonValueValueKind,
+    ConstantTargetNoneValueKind,
 };
 
-LLVMIntPredicate :: enum i32 {
-    LLVMIntEQ = 32,
-    LLVMIntNE,
-    LLVMIntUGT,
-    LLVMIntUGE,
-    LLVMIntULT,
-    LLVMIntULE,
-    LLVMIntSGT,
-    LLVMIntSGE,
-    LLVMIntSLT,
-    LLVMIntSLE,
+IntPredicate :: enum i32 {
+    IntEQ = 32,
+    IntNE,
+    IntUGT,
+    IntUGE,
+    IntULT,
+    IntULE,
+    IntSGT,
+    IntSGE,
+    IntSLT,
+    IntSLE,
 };
 
-LLVMRealPredicate :: enum i32 {
-    LLVMRealPredicateFalse,
-    LLVMRealOEQ,
-    LLVMRealOGT,
-    LLVMRealOGE,
-    LLVMRealOLT,
-    LLVMRealOLE,
-    LLVMRealONE,
-    LLVMRealORD,
-    LLVMRealUNO,
-    LLVMRealUEQ,
-    LLVMRealUGT,
-    LLVMRealUGE,
-    LLVMRealULT,
-    LLVMRealULE,
-    LLVMRealUNE,
-    LLVMRealPredicateTrue,
+RealPredicate :: enum i32 {
+    RealPredicateFalse,
+    RealOEQ,
+    RealOGT,
+    RealOGE,
+    RealOLT,
+    RealOLE,
+    RealONE,
+    RealORD,
+    RealUNO,
+    RealUEQ,
+    RealUGT,
+    RealUGE,
+    RealULT,
+    RealULE,
+    RealUNE,
+    RealPredicateTrue,
 };
 
-LLVMLandingPadClauseTy :: enum i32 {
-    LLVMLandingPadCatch,
-    LLVMLandingPadFilter,
+LandingPadClauseTy :: enum i32 {
+    LandingPadCatch,
+    LandingPadFilter,
 };
 
-LLVMThreadLocalMode :: enum i32 {
-    LLVMNotThreadLocal = 0,
-    LLVMGeneralDynamicTLSModel,
-    LLVMLocalDynamicTLSModel,
-    LLVMInitialExecTLSModel,
-    LLVMLocalExecTLSModel,
+ThreadLocalMode :: enum i32 {
+    NotThreadLocal = 0,
+    GeneralDynamicTLSModel,
+    LocalDynamicTLSModel,
+    InitialExecTLSModel,
+    LocalExecTLSModel,
 };
 
-LLVMAtomicOrdering :: enum i32 {
-    LLVMAtomicOrderingNotAtomic = 0,
-    LLVMAtomicOrderingUnordered = 1,
-    LLVMAtomicOrderingMonotonic = 2,
-    LLVMAtomicOrderingAcquire = 4,
-    LLVMAtomicOrderingRelease = 5,
-    LLVMAtomicOrderingAcquireRelease = 6,
-    LLVMAtomicOrderingSequentiallyConsistent = 7,
+AtomicOrdering :: enum i32 {
+    AtomicOrderingNotAtomic = 0,
+    AtomicOrderingUnordered = 1,
+    AtomicOrderingMonotonic = 2,
+    AtomicOrderingAcquire = 4,
+    AtomicOrderingRelease = 5,
+    AtomicOrderingAcquireRelease = 6,
+    AtomicOrderingSequentiallyConsistent = 7,
 };
 
-LLVMAtomicRMWBinOp :: enum i32 {
-    LLVMAtomicRMWBinOpXchg,
-    LLVMAtomicRMWBinOpAdd,
-    LLVMAtomicRMWBinOpSub,
-    LLVMAtomicRMWBinOpAnd,
-    LLVMAtomicRMWBinOpNand,
-    LLVMAtomicRMWBinOpOr,
-    LLVMAtomicRMWBinOpXor,
-    LLVMAtomicRMWBinOpMax,
-    LLVMAtomicRMWBinOpMin,
-    LLVMAtomicRMWBinOpUMax,
-    LLVMAtomicRMWBinOpUMin,
-    LLVMAtomicRMWBinOpFAdd,
-    LLVMAtomicRMWBinOpFSub,
-    LLVMAtomicRMWBinOpFMax,
-    LLVMAtomicRMWBinOpFMin,
+AtomicRMWBinOp :: enum i32 {
+    AtomicRMWBinOpXchg,
+    AtomicRMWBinOpAdd,
+    AtomicRMWBinOpSub,
+    AtomicRMWBinOpAnd,
+    AtomicRMWBinOpNand,
+    AtomicRMWBinOpOr,
+    AtomicRMWBinOpXor,
+    AtomicRMWBinOpMax,
+    AtomicRMWBinOpMin,
+    AtomicRMWBinOpUMax,
+    AtomicRMWBinOpUMin,
+    AtomicRMWBinOpFAdd,
+    AtomicRMWBinOpFSub,
+    AtomicRMWBinOpFMax,
+    AtomicRMWBinOpFMin,
 };
 
-LLVMDiagnosticSeverity :: enum i32 {
-    LLVMDSError,
-    LLVMDSWarning,
-    LLVMDSRemark,
-    LLVMDSNote,
+DiagnosticSeverity :: enum i32 {
+    DSError,
+    DSWarning,
+    DSRemark,
+    DSNote,
 };
 
-LLVMInlineAsmDialect :: enum i32 {
-    LLVMInlineAsmDialectATT,
-    LLVMInlineAsmDialectIntel,
+InlineAsmDialect :: enum i32 {
+    InlineAsmDialectATT,
+    InlineAsmDialectIntel,
 };
 
-LLVMModuleFlagBehavior :: enum i32 {
-    LLVMModuleFlagBehaviorError,
-    LLVMModuleFlagBehaviorWarning,
-    LLVMModuleFlagBehaviorRequire,
-    LLVMModuleFlagBehaviorOverride,
-    LLVMModuleFlagBehaviorAppend,
-    LLVMModuleFlagBehaviorAppendUnique,
+ModuleFlagBehavior :: enum i32 {
+    ModuleFlagBehaviorError,
+    ModuleFlagBehaviorWarning,
+    ModuleFlagBehaviorRequire,
+    ModuleFlagBehaviorOverride,
+    ModuleFlagBehaviorAppend,
+    ModuleFlagBehaviorAppendUnique,
 };
 
 AnonymousEnum19 :: enum i32 {
-    LLVMAttributeReturnIndex = 0,
-    LLVMAttributeFunctionIndex = -1,
+    AttributeReturnIndex = 0,
+    AttributeFunctionIndex = -1,
 };
 
-LLVMDIFlags :: enum i32 {
-    LLVMDIFlagZero = 0,
-    LLVMDIFlagPrivate = 1,
-    LLVMDIFlagProtected = 2,
-    LLVMDIFlagPublic = 3,
-    LLVMDIFlagFwdDecl = 4,
-    LLVMDIFlagAppleBlock = 8,
-    LLVMDIFlagReservedBit4 = 16,
-    LLVMDIFlagVirtual = 32,
-    LLVMDIFlagArtificial = 64,
-    LLVMDIFlagExplicit = 128,
-    LLVMDIFlagPrototyped = 256,
-    LLVMDIFlagObjcClassComplete = 512,
-    LLVMDIFlagObjectPointer = 1024,
-    LLVMDIFlagVector = 2048,
-    LLVMDIFlagStaticMember = 4096,
-    LLVMDIFlagLValueReference = 8192,
-    LLVMDIFlagRValueReference = 16384,
-    LLVMDIFlagReserved = 32768,
-    LLVMDIFlagSingleInheritance = 65536,
-    LLVMDIFlagMultipleInheritance = 131072,
-    LLVMDIFlagVirtualInheritance = 196608,
-    LLVMDIFlagIntroducedVirtual = 262144,
-    LLVMDIFlagBitField = 524288,
-    LLVMDIFlagNoReturn = 1048576,
-    LLVMDIFlagTypePassByValue = 4194304,
-    LLVMDIFlagTypePassByReference = 8388608,
-    LLVMDIFlagEnumClass = 16777216,
-    LLVMDIFlagFixedEnum = 16777216,
-    LLVMDIFlagThunk = 33554432,
-    LLVMDIFlagNonTrivial = 67108864,
-    LLVMDIFlagBigEndian = 134217728,
-    LLVMDIFlagLittleEndian = 268435456,
-    LLVMDIFlagIndirectVirtualBase = 4,
-    LLVMDIFlagAccessibility = 1,
-    LLVMDIFlagPtrToMemberRep = 65536,
+DIFlags :: enum i32 {
+    DIFlagZero = 0,
+    DIFlagPrivate = 1,
+    DIFlagProtected = 2,
+    DIFlagPublic = 3,
+    DIFlagFwdDecl = 4,
+    DIFlagAppleBlock = 8,
+    DIFlagReservedBit4 = 16,
+    DIFlagVirtual = 32,
+    DIFlagArtificial = 64,
+    DIFlagExplicit = 128,
+    DIFlagPrototyped = 256,
+    DIFlagObjcClassComplete = 512,
+    DIFlagObjectPointer = 1024,
+    DIFlagVector = 2048,
+    DIFlagStaticMember = 4096,
+    DIFlagLValueReference = 8192,
+    DIFlagRValueReference = 16384,
+    DIFlagReserved = 32768,
+    DIFlagSingleInheritance = 65536,
+    DIFlagMultipleInheritance = 131072,
+    DIFlagVirtualInheritance = 196608,
+    DIFlagIntroducedVirtual = 262144,
+    DIFlagBitField = 524288,
+    DIFlagNoReturn = 1048576,
+    DIFlagTypePassByValue = 4194304,
+    DIFlagTypePassByReference = 8388608,
+    DIFlagEnumClass = 16777216,
+    DIFlagFixedEnum = 16777216,
+    DIFlagThunk = 33554432,
+    DIFlagNonTrivial = 67108864,
+    DIFlagBigEndian = 134217728,
+    DIFlagLittleEndian = 268435456,
+    DIFlagIndirectVirtualBase = 4,
+    DIFlagAccessibility = 1,
+    DIFlagPtrToMemberRep = 65536,
 };
 
-LLVMDWARFSourceLanguage :: enum i32 {
-    LLVMDWARFSourceLanguageC89,
-    LLVMDWARFSourceLanguageC,
-    LLVMDWARFSourceLanguageAda83,
-    LLVMDWARFSourceLanguageC_plus_plus,
-    LLVMDWARFSourceLanguageCobol74,
-    LLVMDWARFSourceLanguageCobol85,
-    LLVMDWARFSourceLanguageFortran77,
-    LLVMDWARFSourceLanguageFortran90,
-    LLVMDWARFSourceLanguagePascal83,
-    LLVMDWARFSourceLanguageModula2,
-    LLVMDWARFSourceLanguageJava,
-    LLVMDWARFSourceLanguageC99,
-    LLVMDWARFSourceLanguageAda95,
-    LLVMDWARFSourceLanguageFortran95,
-    LLVMDWARFSourceLanguagePLI,
-    LLVMDWARFSourceLanguageObjC,
-    LLVMDWARFSourceLanguageObjC_plus_plus,
-    LLVMDWARFSourceLanguageUPC,
-    LLVMDWARFSourceLanguageD,
-    LLVMDWARFSourceLanguagePython,
-    LLVMDWARFSourceLanguageOpenCL,
-    LLVMDWARFSourceLanguageGo,
-    LLVMDWARFSourceLanguageModula3,
-    LLVMDWARFSourceLanguageHaskell,
-    LLVMDWARFSourceLanguageC_plus_plus_03,
-    LLVMDWARFSourceLanguageC_plus_plus_11,
-    LLVMDWARFSourceLanguageOCaml,
-    LLVMDWARFSourceLanguageRust,
-    LLVMDWARFSourceLanguageC11,
-    LLVMDWARFSourceLanguageSwift,
-    LLVMDWARFSourceLanguageJulia,
-    LLVMDWARFSourceLanguageDylan,
-    LLVMDWARFSourceLanguageC_plus_plus_14,
-    LLVMDWARFSourceLanguageFortran03,
-    LLVMDWARFSourceLanguageFortran08,
-    LLVMDWARFSourceLanguageRenderScript,
-    LLVMDWARFSourceLanguageBLISS,
-    LLVMDWARFSourceLanguageKotlin,
-    LLVMDWARFSourceLanguageZig,
-    LLVMDWARFSourceLanguageCrystal,
-    LLVMDWARFSourceLanguageC_plus_plus_17,
-    LLVMDWARFSourceLanguageC_plus_plus_20,
-    LLVMDWARFSourceLanguageC17,
-    LLVMDWARFSourceLanguageFortran18,
-    LLVMDWARFSourceLanguageAda2005,
-    LLVMDWARFSourceLanguageAda2012,
-    LLVMDWARFSourceLanguageMojo,
-    LLVMDWARFSourceLanguageMips_Assembler,
-    LLVMDWARFSourceLanguageGOOGLE_RenderScript,
-    LLVMDWARFSourceLanguageBORLAND_Delphi,
+DWARFSourceLanguage :: enum i32 {
+    DWARFSourceLanguageC89,
+    DWARFSourceLanguageC,
+    DWARFSourceLanguageAda83,
+    DWARFSourceLanguageC_plus_plus,
+    DWARFSourceLanguageCobol74,
+    DWARFSourceLanguageCobol85,
+    DWARFSourceLanguageFortran77,
+    DWARFSourceLanguageFortran90,
+    DWARFSourceLanguagePascal83,
+    DWARFSourceLanguageModula2,
+    DWARFSourceLanguageJava,
+    DWARFSourceLanguageC99,
+    DWARFSourceLanguageAda95,
+    DWARFSourceLanguageFortran95,
+    DWARFSourceLanguagePLI,
+    DWARFSourceLanguageObjC,
+    DWARFSourceLanguageObjC_plus_plus,
+    DWARFSourceLanguageUPC,
+    DWARFSourceLanguageD,
+    DWARFSourceLanguagePython,
+    DWARFSourceLanguageOpenCL,
+    DWARFSourceLanguageGo,
+    DWARFSourceLanguageModula3,
+    DWARFSourceLanguageHaskell,
+    DWARFSourceLanguageC_plus_plus_03,
+    DWARFSourceLanguageC_plus_plus_11,
+    DWARFSourceLanguageOCaml,
+    DWARFSourceLanguageRust,
+    DWARFSourceLanguageC11,
+    DWARFSourceLanguageSwift,
+    DWARFSourceLanguageJulia,
+    DWARFSourceLanguageDylan,
+    DWARFSourceLanguageC_plus_plus_14,
+    DWARFSourceLanguageFortran03,
+    DWARFSourceLanguageFortran08,
+    DWARFSourceLanguageRenderScript,
+    DWARFSourceLanguageBLISS,
+    DWARFSourceLanguageKotlin,
+    DWARFSourceLanguageZig,
+    DWARFSourceLanguageCrystal,
+    DWARFSourceLanguageC_plus_plus_17,
+    DWARFSourceLanguageC_plus_plus_20,
+    DWARFSourceLanguageC17,
+    DWARFSourceLanguageFortran18,
+    DWARFSourceLanguageAda2005,
+    DWARFSourceLanguageAda2012,
+    DWARFSourceLanguageMojo,
+    DWARFSourceLanguageMips_Assembler,
+    DWARFSourceLanguageGOOGLE_RenderScript,
+    DWARFSourceLanguageBORLAND_Delphi,
 };
 
-LLVMDWARFEmissionKind :: enum i32 {
-    LLVMDWARFEmissionNone = 0,
-    LLVMDWARFEmissionFull,
-    LLVMDWARFEmissionLineTablesOnly,
+DWARFEmissionKind :: enum i32 {
+    DWARFEmissionNone = 0,
+    DWARFEmissionFull,
+    DWARFEmissionLineTablesOnly,
 };
 
 AnonymousEnum23 :: enum i32 {
-    LLVMMDStringMetadataKind,
-    LLVMConstantAsMetadataMetadataKind,
-    LLVMLocalAsMetadataMetadataKind,
-    LLVMDistinctMDOperandPlaceholderMetadataKind,
-    LLVMMDTupleMetadataKind,
-    LLVMDILocationMetadataKind,
-    LLVMDIExpressionMetadataKind,
-    LLVMDIGlobalVariableExpressionMetadataKind,
-    LLVMGenericDINodeMetadataKind,
-    LLVMDISubrangeMetadataKind,
-    LLVMDIEnumeratorMetadataKind,
-    LLVMDIBasicTypeMetadataKind,
-    LLVMDIDerivedTypeMetadataKind,
-    LLVMDICompositeTypeMetadataKind,
-    LLVMDISubroutineTypeMetadataKind,
-    LLVMDIFileMetadataKind,
-    LLVMDICompileUnitMetadataKind,
-    LLVMDISubprogramMetadataKind,
-    LLVMDILexicalBlockMetadataKind,
-    LLVMDILexicalBlockFileMetadataKind,
-    LLVMDINamespaceMetadataKind,
-    LLVMDIModuleMetadataKind,
-    LLVMDITemplateTypeParameterMetadataKind,
-    LLVMDITemplateValueParameterMetadataKind,
-    LLVMDIGlobalVariableMetadataKind,
-    LLVMDILocalVariableMetadataKind,
-    LLVMDILabelMetadataKind,
-    LLVMDIObjCPropertyMetadataKind,
-    LLVMDIImportedEntityMetadataKind,
-    LLVMDIMacroMetadataKind,
-    LLVMDIMacroFileMetadataKind,
-    LLVMDICommonBlockMetadataKind,
-    LLVMDIStringTypeMetadataKind,
-    LLVMDIGenericSubrangeMetadataKind,
-    LLVMDIArgListMetadataKind,
-    LLVMDIAssignIDMetadataKind,
+    MDStringMetadataKind,
+    ConstantAsMetadataMetadataKind,
+    LocalAsMetadataMetadataKind,
+    DistinctMDOperandPlaceholderMetadataKind,
+    MDTupleMetadataKind,
+    DILocationMetadataKind,
+    DIExpressionMetadataKind,
+    DIGlobalVariableExpressionMetadataKind,
+    GenericDINodeMetadataKind,
+    DISubrangeMetadataKind,
+    DIEnumeratorMetadataKind,
+    DIBasicTypeMetadataKind,
+    DIDerivedTypeMetadataKind,
+    DICompositeTypeMetadataKind,
+    DISubroutineTypeMetadataKind,
+    DIFileMetadataKind,
+    DICompileUnitMetadataKind,
+    DISubprogramMetadataKind,
+    DILexicalBlockMetadataKind,
+    DILexicalBlockFileMetadataKind,
+    DINamespaceMetadataKind,
+    DIModuleMetadataKind,
+    DITemplateTypeParameterMetadataKind,
+    DITemplateValueParameterMetadataKind,
+    DIGlobalVariableMetadataKind,
+    DILocalVariableMetadataKind,
+    DILabelMetadataKind,
+    DIObjCPropertyMetadataKind,
+    DIImportedEntityMetadataKind,
+    DIMacroMetadataKind,
+    DIMacroFileMetadataKind,
+    DICommonBlockMetadataKind,
+    DIStringTypeMetadataKind,
+    DIGenericSubrangeMetadataKind,
+    DIArgListMetadataKind,
+    DIAssignIDMetadataKind,
 };
 
-LLVMDWARFMacinfoRecordType :: enum i32 {
-    LLVMDWARFMacinfoRecordTypeDefine = 1,
-    LLVMDWARFMacinfoRecordTypeMacro = 2,
-    LLVMDWARFMacinfoRecordTypeStartFile = 3,
-    LLVMDWARFMacinfoRecordTypeEndFile = 4,
-    LLVMDWARFMacinfoRecordTypeVendorExt = 255,
+DWARFMacinfoRecordType :: enum i32 {
+    DWARFMacinfoRecordTypeDefine = 1,
+    DWARFMacinfoRecordTypeMacro = 2,
+    DWARFMacinfoRecordTypeStartFile = 3,
+    DWARFMacinfoRecordTypeEndFile = 4,
+    DWARFMacinfoRecordTypeVendorExt = 255,
 };
 
-LLVMLinkerMode :: enum i32 {
-    LLVMLinkerDestroySource = 0,
-    LLVMLinkerPreserveSource_Removed = 1,
+LinkerMode :: enum i32 {
+    LinkerDestroySource = 0,
+    LinkerPreserveSource_Removed = 1,
 };
 
 lto_symbol_attributes :: enum i32 {
@@ -686,96 +686,96 @@ lto_codegen_diagnostic_severity_t :: enum i32 {
     LTO_DS_NOTE = 2,
 };
 
-LLVMBinaryType :: enum i32 {
-    LLVMBinaryTypeArchive,
-    LLVMBinaryTypeMachOUniversalBinary,
-    LLVMBinaryTypeCOFFImportFile,
-    LLVMBinaryTypeIR,
-    LLVMBinaryTypeWinRes,
-    LLVMBinaryTypeCOFF,
-    LLVMBinaryTypeELF32L,
-    LLVMBinaryTypeELF32B,
-    LLVMBinaryTypeELF64L,
-    LLVMBinaryTypeELF64B,
-    LLVMBinaryTypeMachO32L,
-    LLVMBinaryTypeMachO32B,
-    LLVMBinaryTypeMachO64L,
-    LLVMBinaryTypeMachO64B,
-    LLVMBinaryTypeWasm,
-    LLVMBinaryTypeOffload,
+BinaryType :: enum i32 {
+    BinaryTypeArchive,
+    BinaryTypeMachOUniversalBinary,
+    BinaryTypeCOFFImportFile,
+    BinaryTypeIR,
+    BinaryTypeWinRes,
+    BinaryTypeCOFF,
+    BinaryTypeELF32L,
+    BinaryTypeELF32B,
+    BinaryTypeELF64L,
+    BinaryTypeELF64B,
+    BinaryTypeMachO32L,
+    BinaryTypeMachO32B,
+    BinaryTypeMachO64L,
+    BinaryTypeMachO64B,
+    BinaryTypeWasm,
+    BinaryTypeOffload,
 };
 
-LLVMJITSymbolGenericFlags :: enum i32 {
-    LLVMJITSymbolGenericFlagsNone = 0,
-    LLVMJITSymbolGenericFlagsExported = 1,
-    LLVMJITSymbolGenericFlagsWeak = 2,
-    LLVMJITSymbolGenericFlagsCallable = 4,
-    LLVMJITSymbolGenericFlagsMaterializationSideEffectsOnly = 8,
+JITSymbolGenericFlags :: enum i32 {
+    JITSymbolGenericFlagsNone = 0,
+    JITSymbolGenericFlagsExported = 1,
+    JITSymbolGenericFlagsWeak = 2,
+    JITSymbolGenericFlagsCallable = 4,
+    JITSymbolGenericFlagsMaterializationSideEffectsOnly = 8,
 };
 
-LLVMOrcLookupKind :: enum i32 {
-    LLVMOrcLookupKindStatic,
-    LLVMOrcLookupKindDLSym,
+OrcLookupKind :: enum i32 {
+    OrcLookupKindStatic,
+    OrcLookupKindDLSym,
 };
 
-LLVMOrcJITDylibLookupFlags :: enum i32 {
-    LLVMOrcJITDylibLookupFlagsMatchExportedSymbolsOnly,
-    LLVMOrcJITDylibLookupFlagsMatchAllSymbols,
+OrcJITDylibLookupFlags :: enum i32 {
+    OrcJITDylibLookupFlagsMatchExportedSymbolsOnly,
+    OrcJITDylibLookupFlagsMatchAllSymbols,
 };
 
-LLVMOrcSymbolLookupFlags :: enum i32 {
-    LLVMOrcSymbolLookupFlagsRequiredSymbol,
-    LLVMOrcSymbolLookupFlagsWeaklyReferencedSymbol,
+OrcSymbolLookupFlags :: enum i32 {
+    OrcSymbolLookupFlagsRequiredSymbol,
+    OrcSymbolLookupFlagsWeaklyReferencedSymbol,
 };
 
-LLVMRemarkType :: enum i32 {
-    LLVMRemarkTypeUnknown,
-    LLVMRemarkTypePassed,
-    LLVMRemarkTypeMissed,
-    LLVMRemarkTypeAnalysis,
-    LLVMRemarkTypeAnalysisFPCommute,
-    LLVMRemarkTypeAnalysisAliasing,
-    LLVMRemarkTypeFailure,
+RemarkType :: enum i32 {
+    RemarkTypeUnknown,
+    RemarkTypePassed,
+    RemarkTypeMissed,
+    RemarkTypeAnalysis,
+    RemarkTypeAnalysisFPCommute,
+    RemarkTypeAnalysisAliasing,
+    RemarkTypeFailure,
 };
 
-LLVMByteOrdering :: enum i32 {
-    LLVMBigEndian,
-    LLVMLittleEndian,
+ByteOrdering :: enum i32 {
+    BigEndian,
+    LittleEndian,
 };
 
-LLVMCodeGenOptLevel :: enum i32 {
-    LLVMCodeGenLevelNone,
-    LLVMCodeGenLevelLess,
-    LLVMCodeGenLevelDefault,
-    LLVMCodeGenLevelAggressive,
+CodeGenOptLevel :: enum i32 {
+    CodeGenLevelNone,
+    CodeGenLevelLess,
+    CodeGenLevelDefault,
+    CodeGenLevelAggressive,
 };
 
-LLVMRelocMode :: enum i32 {
-    LLVMRelocDefault,
-    LLVMRelocStatic,
-    LLVMRelocPIC,
-    LLVMRelocDynamicNoPic,
-    LLVMRelocROPI,
-    LLVMRelocRWPI,
-    LLVMRelocROPI_RWPI,
+RelocMode :: enum i32 {
+    RelocDefault,
+    RelocStatic,
+    RelocPIC,
+    RelocDynamicNoPic,
+    RelocROPI,
+    RelocRWPI,
+    RelocROPI_RWPI,
 };
 
-LLVMCodeModel :: enum i32 {
-    LLVMCodeModelDefault,
-    LLVMCodeModelJITDefault,
-    LLVMCodeModelTiny,
-    LLVMCodeModelSmall,
-    LLVMCodeModelKernel,
-    LLVMCodeModelMedium,
-    LLVMCodeModelLarge,
+CodeModel :: enum i32 {
+    CodeModelDefault,
+    CodeModelJITDefault,
+    CodeModelTiny,
+    CodeModelSmall,
+    CodeModelKernel,
+    CodeModelMedium,
+    CodeModelLarge,
 };
 
-LLVMCodeGenFileType :: enum i32 {
-    LLVMAssemblyFile,
-    LLVMObjectFile,
+CodeGenFileType :: enum i32 {
+    AssemblyFile,
+    ObjectFile,
 };
 
-llvm_blake3_chunk_state :: struct {
+_blake3_chunk_state :: struct {
     cv : [8]u32,
     chunk_counter : u64,
     buf : [64]u8,
@@ -784,2648 +784,2648 @@ llvm_blake3_chunk_state :: struct {
     flags : u8,
 };
 
-llvm_blake3_hasher :: struct {
+_blake3_hasher :: struct {
     key : [8]u32,
-    chunk : llvm_blake3_chunk_state,
+    chunk : _blake3_chunk_state,
     cv_stack_len : u8,
     cv_stack : [1760]u8,
 };
 
-LLVMOpInfoSymbol1 :: struct {
+OpInfoSymbol1 :: struct {
     Present : u64,
     Name : cstring,
     Value : u64,
 };
 
-LLVMOpInfo1 :: struct {
-    AddSymbol : LLVMOpInfoSymbol1,
-    SubtractSymbol : LLVMOpInfoSymbol1,
+OpInfo1 :: struct {
+    AddSymbol : OpInfoSymbol1,
+    SubtractSymbol : OpInfoSymbol1,
     Value : u64,
     VariantKind : u64,
 };
 
-LLVMOpaqueError :: struct {};
+OpaqueError :: struct {};
 
-LLVMOpaqueGenericValue :: struct {};
+OpaqueGenericValue :: struct {};
 
-LLVMOpaqueExecutionEngine :: struct {};
+OpaqueExecutionEngine :: struct {};
 
-LLVMOpaqueMCJITMemoryManager :: struct {};
+OpaqueMCJITMemoryManager :: struct {};
 
-LLVMMCJITCompilerOptions :: struct {
+MCJITCompilerOptions :: struct {
     OptLevel : _c.uint,
-    CodeModel : LLVMCodeModel,
-    NoFramePointerElim : LLVMBool,
-    EnableFastISel : LLVMBool,
-    MCJMM : LLVMMCJITMemoryManagerRef,
+    CodeModel : CodeModel,
+    NoFramePointerElim : Bool,
+    EnableFastISel : Bool,
+    MCJMM : MCJITMemoryManagerRef,
 };
 
-LLVMOrcOpaqueLLJITBuilder :: struct {};
+OrcOpaqueLLJITBuilder :: struct {};
 
-LLVMOrcOpaqueLLJIT :: struct {};
+OrcOpaqueLLJIT :: struct {};
 
-LLVMOpaqueLTOModule :: struct {};
+OpaqueLTOModule :: struct {};
 
-LLVMOpaqueLTOCodeGenerator :: struct {};
+OpaqueLTOCodeGenerator :: struct {};
 
-LLVMOpaqueThinLTOCodeGenerator :: struct {};
+OpaqueThinLTOCodeGenerator :: struct {};
 
-LLVMOpaqueLTOInput :: struct {};
+OpaqueLTOInput :: struct {};
 
 LTOObjectBuffer :: struct {
     Buffer : cstring,
     Size : _c.size_t,
 };
 
-LLVMOpaqueSectionIterator :: struct {};
+OpaqueSectionIterator :: struct {};
 
-LLVMOpaqueSymbolIterator :: struct {};
+OpaqueSymbolIterator :: struct {};
 
-LLVMOpaqueRelocationIterator :: struct {};
+OpaqueRelocationIterator :: struct {};
 
-LLVMOpaqueObjectFile :: struct {};
+OpaqueObjectFile :: struct {};
 
-LLVMJITSymbolFlags :: struct {
+JITSymbolFlags :: struct {
     GenericFlags : u8,
     TargetFlags : u8,
 };
 
-LLVMJITEvaluatedSymbol :: struct {
+JITEvaluatedSymbol :: struct {
     Address : u64,
-    Flags : LLVMJITSymbolFlags,
+    Flags : JITSymbolFlags,
 };
 
-LLVMOrcOpaqueExecutionSession :: struct {};
+OrcOpaqueExecutionSession :: struct {};
 
-LLVMOrcOpaqueSymbolStringPool :: struct {};
+OrcOpaqueSymbolStringPool :: struct {};
 
-LLVMOrcOpaqueSymbolStringPoolEntry :: struct {};
+OrcOpaqueSymbolStringPoolEntry :: struct {};
 
-LLVMOrcCSymbolFlagsMapPair :: struct {
-    Name : LLVMOrcSymbolStringPoolEntryRef,
-    Flags : LLVMJITSymbolFlags,
+OrcCSymbolFlagsMapPair :: struct {
+    Name : OrcSymbolStringPoolEntryRef,
+    Flags : JITSymbolFlags,
 };
 
-LLVMOrcCSymbolMapPair :: struct {
-    Name : LLVMOrcSymbolStringPoolEntryRef,
-    Sym : LLVMJITEvaluatedSymbol,
+OrcCSymbolMapPair :: struct {
+    Name : OrcSymbolStringPoolEntryRef,
+    Sym : JITEvaluatedSymbol,
 };
 
-LLVMOrcCSymbolAliasMapEntry :: struct {
-    Name : LLVMOrcSymbolStringPoolEntryRef,
-    Flags : LLVMJITSymbolFlags,
+OrcCSymbolAliasMapEntry :: struct {
+    Name : OrcSymbolStringPoolEntryRef,
+    Flags : JITSymbolFlags,
 };
 
-LLVMOrcCSymbolAliasMapPair :: struct {
-    Name : LLVMOrcSymbolStringPoolEntryRef,
-    Entry : LLVMOrcCSymbolAliasMapEntry,
+OrcCSymbolAliasMapPair :: struct {
+    Name : OrcSymbolStringPoolEntryRef,
+    Entry : OrcCSymbolAliasMapEntry,
 };
 
-LLVMOrcOpaqueJITDylib :: struct {};
+OrcOpaqueJITDylib :: struct {};
 
-LLVMOrcCSymbolsList :: struct {
-    Symbols : ^LLVMOrcSymbolStringPoolEntryRef,
+OrcCSymbolsList :: struct {
+    Symbols : ^OrcSymbolStringPoolEntryRef,
     Length : _c.size_t,
 };
 
-LLVMOrcCDependenceMapPair :: struct {
-    JD : LLVMOrcJITDylibRef,
-    Names : LLVMOrcCSymbolsList,
+OrcCDependenceMapPair :: struct {
+    JD : OrcJITDylibRef,
+    Names : OrcCSymbolsList,
 };
 
-LLVMOrcCJITDylibSearchOrderElement :: struct {
-    JD : LLVMOrcJITDylibRef,
-    JDLookupFlags : LLVMOrcJITDylibLookupFlags,
+OrcCJITDylibSearchOrderElement :: struct {
+    JD : OrcJITDylibRef,
+    JDLookupFlags : OrcJITDylibLookupFlags,
 };
 
-LLVMOrcCLookupSetElement :: struct {
-    Name : LLVMOrcSymbolStringPoolEntryRef,
-    LookupFlags : LLVMOrcSymbolLookupFlags,
+OrcCLookupSetElement :: struct {
+    Name : OrcSymbolStringPoolEntryRef,
+    LookupFlags : OrcSymbolLookupFlags,
 };
 
-LLVMOrcOpaqueMaterializationUnit :: struct {};
+OrcOpaqueMaterializationUnit :: struct {};
 
-LLVMOrcOpaqueMaterializationResponsibility :: struct {};
+OrcOpaqueMaterializationResponsibility :: struct {};
 
-LLVMOrcOpaqueResourceTracker :: struct {};
+OrcOpaqueResourceTracker :: struct {};
 
-LLVMOrcOpaqueDefinitionGenerator :: struct {};
+OrcOpaqueDefinitionGenerator :: struct {};
 
-LLVMOrcOpaqueLookupState :: struct {};
+OrcOpaqueLookupState :: struct {};
 
-LLVMOrcOpaqueThreadSafeContext :: struct {};
+OrcOpaqueThreadSafeContext :: struct {};
 
-LLVMOrcOpaqueThreadSafeModule :: struct {};
+OrcOpaqueThreadSafeModule :: struct {};
 
-LLVMOrcOpaqueJITTargetMachineBuilder :: struct {};
+OrcOpaqueJITTargetMachineBuilder :: struct {};
 
-LLVMOrcOpaqueObjectLayer :: struct {};
+OrcOpaqueObjectLayer :: struct {};
 
-LLVMOrcOpaqueObjectLinkingLayer :: struct {};
+OrcOpaqueObjectLinkingLayer :: struct {};
 
-LLVMOrcOpaqueIRTransformLayer :: struct {};
+OrcOpaqueIRTransformLayer :: struct {};
 
-LLVMOrcOpaqueObjectTransformLayer :: struct {};
+OrcOpaqueObjectTransformLayer :: struct {};
 
-LLVMOrcOpaqueIndirectStubsManager :: struct {};
+OrcOpaqueIndirectStubsManager :: struct {};
 
-LLVMOrcOpaqueLazyCallThroughManager :: struct {};
+OrcOpaqueLazyCallThroughManager :: struct {};
 
-LLVMOrcOpaqueDumpObjects :: struct {};
+OrcOpaqueDumpObjects :: struct {};
 
-LLVMRemarkOpaqueString :: struct {};
+RemarkOpaqueString :: struct {};
 
-LLVMRemarkOpaqueDebugLoc :: struct {};
+RemarkOpaqueDebugLoc :: struct {};
 
-LLVMRemarkOpaqueArg :: struct {};
+RemarkOpaqueArg :: struct {};
 
-LLVMRemarkOpaqueEntry :: struct {};
+RemarkOpaqueEntry :: struct {};
 
-LLVMRemarkOpaqueParser :: struct {};
+RemarkOpaqueParser :: struct {};
 
-LLVMOpaqueTargetData :: struct {};
+OpaqueTargetData :: struct {};
 
-LLVMOpaqueTargetLibraryInfotData :: struct {};
+OpaqueTargetLibraryInfotData :: struct {};
 
-LLVMOpaqueTargetMachine :: struct {};
+OpaqueTargetMachine :: struct {};
 
-LLVMTarget :: struct {};
+Target :: struct {};
 
-LLVMOpaqueMemoryBuffer :: struct {};
+OpaqueMemoryBuffer :: struct {};
 
-LLVMOpaqueContext :: struct {};
+OpaqueContext :: struct {};
 
-LLVMOpaqueModule :: struct {};
+OpaqueModule :: struct {};
 
-LLVMOpaqueType :: struct {};
+OpaqueType :: struct {};
 
-LLVMOpaqueValue :: struct {};
+OpaqueValue :: struct {};
 
-LLVMOpaqueBasicBlock :: struct {};
+OpaqueBasicBlock :: struct {};
 
-LLVMOpaqueMetadata :: struct {};
+OpaqueMetadata :: struct {};
 
-LLVMOpaqueNamedMDNode :: struct {};
+OpaqueNamedMDNode :: struct {};
 
-LLVMOpaqueValueMetadataEntry :: struct {};
+OpaqueValueMetadataEntry :: struct {};
 
-LLVMOpaqueBuilder :: struct {};
+OpaqueBuilder :: struct {};
 
-LLVMOpaqueDIBuilder :: struct {};
+OpaqueDIBuilder :: struct {};
 
-LLVMOpaqueModuleProvider :: struct {};
+OpaqueModuleProvider :: struct {};
 
-LLVMOpaquePassManager :: struct {};
+OpaquePassManager :: struct {};
 
-LLVMOpaqueUse :: struct {};
+OpaqueUse :: struct {};
 
-LLVMOpaqueAttributeRef :: struct {};
+OpaqueAttributeRef :: struct {};
 
-LLVMOpaqueDiagnosticInfo :: struct {};
+OpaqueDiagnosticInfo :: struct {};
 
-LLVMComdat :: struct {};
+Comdat :: struct {};
 
-LLVMOpaqueModuleFlagEntry :: struct {};
+OpaqueModuleFlagEntry :: struct {};
 
-LLVMOpaqueJITEventListener :: struct {};
+OpaqueJITEventListener :: struct {};
 
-LLVMOpaqueBinary :: struct {};
+OpaqueBinary :: struct {};
 
 @(default_calling_convention="c")
-foreign LLVM_C {
+foreign _C {
 
     @(link_name="LLVMVerifyModule")
-    LLVMVerifyModule :: proc(M : LLVMModuleRef, Action : LLVMVerifierFailureAction, OutMessage : ^cstring) -> LLVMBool ---;
+    VerifyModule :: proc(M : ModuleRef, Action : VerifierFailureAction, OutMessage : ^cstring) -> Bool ---;
 
     @(link_name="LLVMVerifyFunction")
-    LLVMVerifyFunction :: proc(Fn : LLVMValueRef, Action : LLVMVerifierFailureAction) -> LLVMBool ---;
+    VerifyFunction :: proc(Fn : ValueRef, Action : VerifierFailureAction) -> Bool ---;
 
     @(link_name="LLVMViewFunctionCFG")
-    LLVMViewFunctionCFG :: proc(Fn : LLVMValueRef) ---;
+    ViewFunctionCFG :: proc(Fn : ValueRef) ---;
 
     @(link_name="LLVMViewFunctionCFGOnly")
-    LLVMViewFunctionCFGOnly :: proc(Fn : LLVMValueRef) ---;
+    ViewFunctionCFGOnly :: proc(Fn : ValueRef) ---;
 
     @(link_name="LLVMParseBitcode")
-    LLVMParseBitcode :: proc(MemBuf : LLVMMemoryBufferRef, OutModule : ^LLVMModuleRef, OutMessage : ^cstring) -> LLVMBool ---;
+    ParseBitcode :: proc(MemBuf : MemoryBufferRef, OutModule : ^ModuleRef, OutMessage : ^cstring) -> Bool ---;
 
     @(link_name="LLVMParseBitcode2")
-    LLVMParseBitcode2 :: proc(MemBuf : LLVMMemoryBufferRef, OutModule : ^LLVMModuleRef) -> LLVMBool ---;
+    ParseBitcode2 :: proc(MemBuf : MemoryBufferRef, OutModule : ^ModuleRef) -> Bool ---;
 
     @(link_name="LLVMParseBitcodeInContext")
-    LLVMParseBitcodeInContext :: proc(ContextRef : LLVMContextRef, MemBuf : LLVMMemoryBufferRef, OutModule : ^LLVMModuleRef, OutMessage : ^cstring) -> LLVMBool ---;
+    ParseBitcodeInContext :: proc(ContextRef : ContextRef, MemBuf : MemoryBufferRef, OutModule : ^ModuleRef, OutMessage : ^cstring) -> Bool ---;
 
     @(link_name="LLVMParseBitcodeInContext2")
-    LLVMParseBitcodeInContext2 :: proc(ContextRef : LLVMContextRef, MemBuf : LLVMMemoryBufferRef, OutModule : ^LLVMModuleRef) -> LLVMBool ---;
+    ParseBitcodeInContext2 :: proc(ContextRef : ContextRef, MemBuf : MemoryBufferRef, OutModule : ^ModuleRef) -> Bool ---;
 
     @(link_name="LLVMGetBitcodeModuleInContext")
-    LLVMGetBitcodeModuleInContext :: proc(ContextRef : LLVMContextRef, MemBuf : LLVMMemoryBufferRef, OutM : ^LLVMModuleRef, OutMessage : ^cstring) -> LLVMBool ---;
+    GetBitcodeModuleInContext :: proc(ContextRef : ContextRef, MemBuf : MemoryBufferRef, OutM : ^ModuleRef, OutMessage : ^cstring) -> Bool ---;
 
     @(link_name="LLVMGetBitcodeModuleInContext2")
-    LLVMGetBitcodeModuleInContext2 :: proc(ContextRef : LLVMContextRef, MemBuf : LLVMMemoryBufferRef, OutM : ^LLVMModuleRef) -> LLVMBool ---;
+    GetBitcodeModuleInContext2 :: proc(ContextRef : ContextRef, MemBuf : MemoryBufferRef, OutM : ^ModuleRef) -> Bool ---;
 
     @(link_name="LLVMGetBitcodeModule")
-    LLVMGetBitcodeModule :: proc(MemBuf : LLVMMemoryBufferRef, OutM : ^LLVMModuleRef, OutMessage : ^cstring) -> LLVMBool ---;
+    GetBitcodeModule :: proc(MemBuf : MemoryBufferRef, OutM : ^ModuleRef, OutMessage : ^cstring) -> Bool ---;
 
     @(link_name="LLVMGetBitcodeModule2")
-    LLVMGetBitcodeModule2 :: proc(MemBuf : LLVMMemoryBufferRef, OutM : ^LLVMModuleRef) -> LLVMBool ---;
+    GetBitcodeModule2 :: proc(MemBuf : MemoryBufferRef, OutM : ^ModuleRef) -> Bool ---;
 
     @(link_name="LLVMWriteBitcodeToFile")
-    LLVMWriteBitcodeToFile :: proc(M : LLVMModuleRef, Path : cstring) -> _c.int ---;
+    WriteBitcodeToFile :: proc(M : ModuleRef, Path : cstring) -> _c.int ---;
 
     @(link_name="LLVMWriteBitcodeToFD")
-    LLVMWriteBitcodeToFD :: proc(M : LLVMModuleRef, FD : _c.int, ShouldClose : _c.int, Unbuffered : _c.int) -> _c.int ---;
+    WriteBitcodeToFD :: proc(M : ModuleRef, FD : _c.int, ShouldClose : _c.int, Unbuffered : _c.int) -> _c.int ---;
 
     @(link_name="LLVMWriteBitcodeToFileHandle")
-    LLVMWriteBitcodeToFileHandle :: proc(M : LLVMModuleRef, Handle : _c.int) -> _c.int ---;
+    WriteBitcodeToFileHandle :: proc(M : ModuleRef, Handle : _c.int) -> _c.int ---;
 
     @(link_name="LLVMWriteBitcodeToMemoryBuffer")
-    LLVMWriteBitcodeToMemoryBuffer :: proc(M : LLVMModuleRef) -> LLVMMemoryBufferRef ---;
+    WriteBitcodeToMemoryBuffer :: proc(M : ModuleRef) -> MemoryBufferRef ---;
 
     @(link_name="llvm_blake3_version")
-    llvm_blake3_version :: proc() -> cstring ---;
+    _blake3_version :: proc() -> cstring ---;
 
     @(link_name="llvm_blake3_hasher_init")
-    llvm_blake3_hasher_init :: proc(self : ^llvm_blake3_hasher) ---;
+    _blake3_hasher_init :: proc(self : ^_blake3_hasher) ---;
 
     @(link_name="llvm_blake3_hasher_init_keyed")
-    llvm_blake3_hasher_init_keyed :: proc(self : ^llvm_blake3_hasher, key : [32]u8) ---;
+    _blake3_hasher_init_keyed :: proc(self : ^_blake3_hasher, key : [32]u8) ---;
 
     @(link_name="llvm_blake3_hasher_init_derive_key")
-    llvm_blake3_hasher_init_derive_key :: proc(self : ^llvm_blake3_hasher, _context : cstring) ---;
+    _blake3_hasher_init_derive_key :: proc(self : ^_blake3_hasher, _context : cstring) ---;
 
     @(link_name="llvm_blake3_hasher_init_derive_key_raw")
-    llvm_blake3_hasher_init_derive_key_raw :: proc(self : ^llvm_blake3_hasher, _context : rawptr, context_len : _c.size_t) ---;
+    _blake3_hasher_init_derive_key_raw :: proc(self : ^_blake3_hasher, _context : rawptr, context_len : _c.size_t) ---;
 
     @(link_name="llvm_blake3_hasher_update")
-    llvm_blake3_hasher_update :: proc(self : ^llvm_blake3_hasher, input : rawptr, input_len : _c.size_t) ---;
+    _blake3_hasher_update :: proc(self : ^_blake3_hasher, input : rawptr, input_len : _c.size_t) ---;
 
     @(link_name="llvm_blake3_hasher_finalize")
-    llvm_blake3_hasher_finalize :: proc(self : ^llvm_blake3_hasher, out : ^u8, out_len : _c.size_t) ---;
+    _blake3_hasher_finalize :: proc(self : ^_blake3_hasher, out : ^u8, out_len : _c.size_t) ---;
 
     @(link_name="llvm_blake3_hasher_finalize_seek")
-    llvm_blake3_hasher_finalize_seek :: proc(self : ^llvm_blake3_hasher, seek : u64, out : ^u8, out_len : _c.size_t) ---;
+    _blake3_hasher_finalize_seek :: proc(self : ^_blake3_hasher, seek : u64, out : ^u8, out_len : _c.size_t) ---;
 
     @(link_name="llvm_blake3_hasher_reset")
-    llvm_blake3_hasher_reset :: proc(self : ^llvm_blake3_hasher) ---;
+    _blake3_hasher_reset :: proc(self : ^_blake3_hasher) ---;
 
     @(link_name="LLVMGetOrInsertComdat")
-    LLVMGetOrInsertComdat :: proc(M : LLVMModuleRef, Name : cstring) -> LLVMComdatRef ---;
+    GetOrInsertComdat :: proc(M : ModuleRef, Name : cstring) -> ComdatRef ---;
 
     @(link_name="LLVMGetComdat")
-    LLVMGetComdat :: proc(V : LLVMValueRef) -> LLVMComdatRef ---;
+    GetComdat :: proc(V : ValueRef) -> ComdatRef ---;
 
     @(link_name="LLVMSetComdat")
-    LLVMSetComdat :: proc(V : LLVMValueRef, C : LLVMComdatRef) ---;
+    SetComdat :: proc(V : ValueRef, C : ComdatRef) ---;
 
     @(link_name="LLVMGetComdatSelectionKind")
-    LLVMGetComdatSelectionKind :: proc(C : LLVMComdatRef) -> LLVMComdatSelectionKind ---;
+    GetComdatSelectionKind :: proc(C : ComdatRef) -> ComdatSelectionKind ---;
 
     @(link_name="LLVMSetComdatSelectionKind")
-    LLVMSetComdatSelectionKind :: proc(C : LLVMComdatRef, Kind : LLVMComdatSelectionKind) ---;
+    SetComdatSelectionKind :: proc(C : ComdatRef, Kind : ComdatSelectionKind) ---;
 
     @(link_name="LLVMShutdown")
-    LLVMShutdown :: proc() ---;
+    Shutdown :: proc() ---;
 
     @(link_name="LLVMGetVersion")
-    LLVMGetVersion :: proc(Major : ^_c.uint, Minor : ^_c.uint, Patch : ^_c.uint) ---;
+    GetVersion :: proc(Major : ^_c.uint, Minor : ^_c.uint, Patch : ^_c.uint) ---;
 
     @(link_name="LLVMCreateMessage")
-    LLVMCreateMessage :: proc(Message : cstring) -> cstring ---;
+    CreateMessage :: proc(Message : cstring) -> cstring ---;
 
     @(link_name="LLVMDisposeMessage")
-    LLVMDisposeMessage :: proc(Message : cstring) ---;
+    DisposeMessage :: proc(Message : cstring) ---;
 
     @(link_name="LLVMContextCreate")
-    LLVMContextCreate :: proc() -> LLVMContextRef ---;
+    ContextCreate :: proc() -> ContextRef ---;
 
     @(link_name="LLVMGetGlobalContext")
-    LLVMGetGlobalContext :: proc() -> LLVMContextRef ---;
+    GetGlobalContext :: proc() -> ContextRef ---;
 
     @(link_name="LLVMContextSetDiagnosticHandler")
-    LLVMContextSetDiagnosticHandler :: proc(C : LLVMContextRef, Handler : LLVMDiagnosticHandler, DiagnosticContext : rawptr) ---;
+    ContextSetDiagnosticHandler :: proc(C : ContextRef, Handler : DiagnosticHandler, DiagnosticContext : rawptr) ---;
 
     @(link_name="LLVMContextGetDiagnosticHandler")
-    LLVMContextGetDiagnosticHandler :: proc(C : LLVMContextRef) -> LLVMDiagnosticHandler ---;
+    ContextGetDiagnosticHandler :: proc(C : ContextRef) -> DiagnosticHandler ---;
 
     @(link_name="LLVMContextGetDiagnosticContext")
-    LLVMContextGetDiagnosticContext :: proc(C : LLVMContextRef) -> rawptr ---;
+    ContextGetDiagnosticContext :: proc(C : ContextRef) -> rawptr ---;
 
     @(link_name="LLVMContextSetYieldCallback")
-    LLVMContextSetYieldCallback :: proc(C : LLVMContextRef, Callback : LLVMYieldCallback, OpaqueHandle : rawptr) ---;
+    ContextSetYieldCallback :: proc(C : ContextRef, Callback : YieldCallback, OpaqueHandle : rawptr) ---;
 
     @(link_name="LLVMContextShouldDiscardValueNames")
-    LLVMContextShouldDiscardValueNames :: proc(C : LLVMContextRef) -> LLVMBool ---;
+    ContextShouldDiscardValueNames :: proc(C : ContextRef) -> Bool ---;
 
     @(link_name="LLVMContextSetDiscardValueNames")
-    LLVMContextSetDiscardValueNames :: proc(C : LLVMContextRef, Discard : LLVMBool) ---;
+    ContextSetDiscardValueNames :: proc(C : ContextRef, Discard : Bool) ---;
 
     @(link_name="LLVMContextDispose")
-    LLVMContextDispose :: proc(C : LLVMContextRef) ---;
+    ContextDispose :: proc(C : ContextRef) ---;
 
     @(link_name="LLVMGetDiagInfoDescription")
-    LLVMGetDiagInfoDescription :: proc(DI : LLVMDiagnosticInfoRef) -> cstring ---;
+    GetDiagInfoDescription :: proc(DI : DiagnosticInfoRef) -> cstring ---;
 
     @(link_name="LLVMGetDiagInfoSeverity")
-    LLVMGetDiagInfoSeverity :: proc(DI : LLVMDiagnosticInfoRef) -> LLVMDiagnosticSeverity ---;
+    GetDiagInfoSeverity :: proc(DI : DiagnosticInfoRef) -> DiagnosticSeverity ---;
 
     @(link_name="LLVMGetMDKindIDInContext")
-    LLVMGetMDKindIDInContext :: proc(C : LLVMContextRef, Name : cstring, SLen : _c.uint) -> _c.uint ---;
+    GetMDKindIDInContext :: proc(C : ContextRef, Name : cstring, SLen : _c.uint) -> _c.uint ---;
 
     @(link_name="LLVMGetMDKindID")
-    LLVMGetMDKindID :: proc(Name : cstring, SLen : _c.uint) -> _c.uint ---;
+    GetMDKindID :: proc(Name : cstring, SLen : _c.uint) -> _c.uint ---;
 
     @(link_name="LLVMGetEnumAttributeKindForName")
-    LLVMGetEnumAttributeKindForName :: proc(Name : cstring, SLen : _c.size_t) -> _c.uint ---;
+    GetEnumAttributeKindForName :: proc(Name : cstring, SLen : _c.size_t) -> _c.uint ---;
 
     @(link_name="LLVMGetLastEnumAttributeKind")
-    LLVMGetLastEnumAttributeKind :: proc() -> _c.uint ---;
+    GetLastEnumAttributeKind :: proc() -> _c.uint ---;
 
     @(link_name="LLVMCreateEnumAttribute")
-    LLVMCreateEnumAttribute :: proc(C : LLVMContextRef, KindID : _c.uint, Val : u64) -> LLVMAttributeRef ---;
+    CreateEnumAttribute :: proc(C : ContextRef, KindID : _c.uint, Val : u64) -> AttributeRef ---;
 
     @(link_name="LLVMGetEnumAttributeKind")
-    LLVMGetEnumAttributeKind :: proc(A : LLVMAttributeRef) -> _c.uint ---;
+    GetEnumAttributeKind :: proc(A : AttributeRef) -> _c.uint ---;
 
     @(link_name="LLVMGetEnumAttributeValue")
-    LLVMGetEnumAttributeValue :: proc(A : LLVMAttributeRef) -> u64 ---;
+    GetEnumAttributeValue :: proc(A : AttributeRef) -> u64 ---;
 
     @(link_name="LLVMCreateTypeAttribute")
-    LLVMCreateTypeAttribute :: proc(C : LLVMContextRef, KindID : _c.uint, type_ref : LLVMTypeRef) -> LLVMAttributeRef ---;
+    CreateTypeAttribute :: proc(C : ContextRef, KindID : _c.uint, type_ref : TypeRef) -> AttributeRef ---;
 
     @(link_name="LLVMGetTypeAttributeValue")
-    LLVMGetTypeAttributeValue :: proc(A : LLVMAttributeRef) -> LLVMTypeRef ---;
+    GetTypeAttributeValue :: proc(A : AttributeRef) -> TypeRef ---;
 
     @(link_name="LLVMCreateStringAttribute")
-    LLVMCreateStringAttribute :: proc(C : LLVMContextRef, K : cstring, KLength : _c.uint, V : cstring, VLength : _c.uint) -> LLVMAttributeRef ---;
+    CreateStringAttribute :: proc(C : ContextRef, K : cstring, KLength : _c.uint, V : cstring, VLength : _c.uint) -> AttributeRef ---;
 
     @(link_name="LLVMGetStringAttributeKind")
-    LLVMGetStringAttributeKind :: proc(A : LLVMAttributeRef, Length : ^_c.uint) -> cstring ---;
+    GetStringAttributeKind :: proc(A : AttributeRef, Length : ^_c.uint) -> cstring ---;
 
     @(link_name="LLVMGetStringAttributeValue")
-    LLVMGetStringAttributeValue :: proc(A : LLVMAttributeRef, Length : ^_c.uint) -> cstring ---;
+    GetStringAttributeValue :: proc(A : AttributeRef, Length : ^_c.uint) -> cstring ---;
 
     @(link_name="LLVMIsEnumAttribute")
-    LLVMIsEnumAttribute :: proc(A : LLVMAttributeRef) -> LLVMBool ---;
+    IsEnumAttribute :: proc(A : AttributeRef) -> Bool ---;
 
     @(link_name="LLVMIsStringAttribute")
-    LLVMIsStringAttribute :: proc(A : LLVMAttributeRef) -> LLVMBool ---;
+    IsStringAttribute :: proc(A : AttributeRef) -> Bool ---;
 
     @(link_name="LLVMIsTypeAttribute")
-    LLVMIsTypeAttribute :: proc(A : LLVMAttributeRef) -> LLVMBool ---;
+    IsTypeAttribute :: proc(A : AttributeRef) -> Bool ---;
 
     @(link_name="LLVMGetTypeByName2")
-    LLVMGetTypeByName2 :: proc(C : LLVMContextRef, Name : cstring) -> LLVMTypeRef ---;
+    GetTypeByName2 :: proc(C : ContextRef, Name : cstring) -> TypeRef ---;
 
     @(link_name="LLVMModuleCreateWithName")
-    LLVMModuleCreateWithName :: proc(ModuleID : cstring) -> LLVMModuleRef ---;
+    ModuleCreateWithName :: proc(ModuleID : cstring) -> ModuleRef ---;
 
     @(link_name="LLVMModuleCreateWithNameInContext")
-    LLVMModuleCreateWithNameInContext :: proc(ModuleID : cstring, C : LLVMContextRef) -> LLVMModuleRef ---;
+    ModuleCreateWithNameInContext :: proc(ModuleID : cstring, C : ContextRef) -> ModuleRef ---;
 
     @(link_name="LLVMCloneModule")
-    LLVMCloneModule :: proc(M : LLVMModuleRef) -> LLVMModuleRef ---;
+    CloneModule :: proc(M : ModuleRef) -> ModuleRef ---;
 
     @(link_name="LLVMDisposeModule")
-    LLVMDisposeModule :: proc(M : LLVMModuleRef) ---;
+    DisposeModule :: proc(M : ModuleRef) ---;
 
     @(link_name="LLVMGetModuleIdentifier")
-    LLVMGetModuleIdentifier :: proc(M : LLVMModuleRef, Len : ^_c.size_t) -> cstring ---;
+    GetModuleIdentifier :: proc(M : ModuleRef, Len : ^_c.size_t) -> cstring ---;
 
     @(link_name="LLVMSetModuleIdentifier")
-    LLVMSetModuleIdentifier :: proc(M : LLVMModuleRef, Ident : cstring, Len : _c.size_t) ---;
+    SetModuleIdentifier :: proc(M : ModuleRef, Ident : cstring, Len : _c.size_t) ---;
 
     @(link_name="LLVMGetSourceFileName")
-    LLVMGetSourceFileName :: proc(M : LLVMModuleRef, Len : ^_c.size_t) -> cstring ---;
+    GetSourceFileName :: proc(M : ModuleRef, Len : ^_c.size_t) -> cstring ---;
 
     @(link_name="LLVMSetSourceFileName")
-    LLVMSetSourceFileName :: proc(M : LLVMModuleRef, Name : cstring, Len : _c.size_t) ---;
+    SetSourceFileName :: proc(M : ModuleRef, Name : cstring, Len : _c.size_t) ---;
 
     @(link_name="LLVMGetDataLayoutStr")
-    LLVMGetDataLayoutStr :: proc(M : LLVMModuleRef) -> cstring ---;
+    GetDataLayoutStr :: proc(M : ModuleRef) -> cstring ---;
 
     @(link_name="LLVMGetDataLayout")
-    LLVMGetDataLayout :: proc(M : LLVMModuleRef) -> cstring ---;
+    GetDataLayout :: proc(M : ModuleRef) -> cstring ---;
 
     @(link_name="LLVMSetDataLayout")
-    LLVMSetDataLayout :: proc(M : LLVMModuleRef, DataLayoutStr : cstring) ---;
+    SetDataLayout :: proc(M : ModuleRef, DataLayoutStr : cstring) ---;
 
     @(link_name="LLVMGetTarget")
-    LLVMGetTarget :: proc(M : LLVMModuleRef) -> cstring ---;
+    GetTarget :: proc(M : ModuleRef) -> cstring ---;
 
     @(link_name="LLVMSetTarget")
-    LLVMSetTarget :: proc(M : LLVMModuleRef, Triple : cstring) ---;
+    SetTarget :: proc(M : ModuleRef, Triple : cstring) ---;
 
     @(link_name="LLVMCopyModuleFlagsMetadata")
-    LLVMCopyModuleFlagsMetadata :: proc(M : LLVMModuleRef, Len : ^_c.size_t) -> ^LLVMModuleFlagEntry ---;
+    CopyModuleFlagsMetadata :: proc(M : ModuleRef, Len : ^_c.size_t) -> ^ModuleFlagEntry ---;
 
     @(link_name="LLVMDisposeModuleFlagsMetadata")
-    LLVMDisposeModuleFlagsMetadata :: proc(Entries : ^LLVMModuleFlagEntry) ---;
+    DisposeModuleFlagsMetadata :: proc(Entries : ^ModuleFlagEntry) ---;
 
     @(link_name="LLVMModuleFlagEntriesGetFlagBehavior")
-    LLVMModuleFlagEntriesGetFlagBehavior :: proc(Entries : ^LLVMModuleFlagEntry, Index : _c.uint) -> LLVMModuleFlagBehavior ---;
+    ModuleFlagEntriesGetFlagBehavior :: proc(Entries : ^ModuleFlagEntry, Index : _c.uint) -> ModuleFlagBehavior ---;
 
     @(link_name="LLVMModuleFlagEntriesGetKey")
-    LLVMModuleFlagEntriesGetKey :: proc(Entries : ^LLVMModuleFlagEntry, Index : _c.uint, Len : ^_c.size_t) -> cstring ---;
+    ModuleFlagEntriesGetKey :: proc(Entries : ^ModuleFlagEntry, Index : _c.uint, Len : ^_c.size_t) -> cstring ---;
 
     @(link_name="LLVMModuleFlagEntriesGetMetadata")
-    LLVMModuleFlagEntriesGetMetadata :: proc(Entries : ^LLVMModuleFlagEntry, Index : _c.uint) -> LLVMMetadataRef ---;
+    ModuleFlagEntriesGetMetadata :: proc(Entries : ^ModuleFlagEntry, Index : _c.uint) -> MetadataRef ---;
 
     @(link_name="LLVMGetModuleFlag")
-    LLVMGetModuleFlag :: proc(M : LLVMModuleRef, Key : cstring, KeyLen : _c.size_t) -> LLVMMetadataRef ---;
+    GetModuleFlag :: proc(M : ModuleRef, Key : cstring, KeyLen : _c.size_t) -> MetadataRef ---;
 
     @(link_name="LLVMAddModuleFlag")
-    LLVMAddModuleFlag :: proc(M : LLVMModuleRef, Behavior : LLVMModuleFlagBehavior, Key : cstring, KeyLen : _c.size_t, Val : LLVMMetadataRef) ---;
+    AddModuleFlag :: proc(M : ModuleRef, Behavior : ModuleFlagBehavior, Key : cstring, KeyLen : _c.size_t, Val : MetadataRef) ---;
 
     @(link_name="LLVMDumpModule")
-    LLVMDumpModule :: proc(M : LLVMModuleRef) ---;
+    DumpModule :: proc(M : ModuleRef) ---;
 
     @(link_name="LLVMPrintModuleToFile")
-    LLVMPrintModuleToFile :: proc(M : LLVMModuleRef, Filename : cstring, ErrorMessage : ^cstring) -> LLVMBool ---;
+    PrintModuleToFile :: proc(M : ModuleRef, Filename : cstring, ErrorMessage : ^cstring) -> Bool ---;
 
     @(link_name="LLVMPrintModuleToString")
-    LLVMPrintModuleToString :: proc(M : LLVMModuleRef) -> cstring ---;
+    PrintModuleToString :: proc(M : ModuleRef) -> cstring ---;
 
     @(link_name="LLVMGetModuleInlineAsm")
-    LLVMGetModuleInlineAsm :: proc(M : LLVMModuleRef, Len : ^_c.size_t) -> cstring ---;
+    GetModuleInlineAsm :: proc(M : ModuleRef, Len : ^_c.size_t) -> cstring ---;
 
     @(link_name="LLVMSetModuleInlineAsm2")
-    LLVMSetModuleInlineAsm2 :: proc(M : LLVMModuleRef, Asm : cstring, Len : _c.size_t) ---;
+    SetModuleInlineAsm2 :: proc(M : ModuleRef, Asm : cstring, Len : _c.size_t) ---;
 
     @(link_name="LLVMAppendModuleInlineAsm")
-    LLVMAppendModuleInlineAsm :: proc(M : LLVMModuleRef, Asm : cstring, Len : _c.size_t) ---;
+    AppendModuleInlineAsm :: proc(M : ModuleRef, Asm : cstring, Len : _c.size_t) ---;
 
     @(link_name="LLVMGetInlineAsm")
-    LLVMGetInlineAsm :: proc(Ty : LLVMTypeRef, AsmString : cstring, AsmStringSize : _c.size_t, Constraints : cstring, ConstraintsSize : _c.size_t, HasSideEffects : LLVMBool, IsAlignStack : LLVMBool, Dialect : LLVMInlineAsmDialect, CanThrow : LLVMBool) -> LLVMValueRef ---;
+    GetInlineAsm :: proc(Ty : TypeRef, AsmString : cstring, AsmStringSize : _c.size_t, Constraints : cstring, ConstraintsSize : _c.size_t, HasSideEffects : Bool, IsAlignStack : Bool, Dialect : InlineAsmDialect, CanThrow : Bool) -> ValueRef ---;
 
     @(link_name="LLVMGetModuleContext")
-    LLVMGetModuleContext :: proc(M : LLVMModuleRef) -> LLVMContextRef ---;
+    GetModuleContext :: proc(M : ModuleRef) -> ContextRef ---;
 
     @(link_name="LLVMGetTypeByName")
-    LLVMGetTypeByName :: proc(M : LLVMModuleRef, Name : cstring) -> LLVMTypeRef ---;
+    GetTypeByName :: proc(M : ModuleRef, Name : cstring) -> TypeRef ---;
 
     @(link_name="LLVMGetFirstNamedMetadata")
-    LLVMGetFirstNamedMetadata :: proc(M : LLVMModuleRef) -> LLVMNamedMDNodeRef ---;
+    GetFirstNamedMetadata :: proc(M : ModuleRef) -> NamedMDNodeRef ---;
 
     @(link_name="LLVMGetLastNamedMetadata")
-    LLVMGetLastNamedMetadata :: proc(M : LLVMModuleRef) -> LLVMNamedMDNodeRef ---;
+    GetLastNamedMetadata :: proc(M : ModuleRef) -> NamedMDNodeRef ---;
 
     @(link_name="LLVMGetNextNamedMetadata")
-    LLVMGetNextNamedMetadata :: proc(NamedMDNode : LLVMNamedMDNodeRef) -> LLVMNamedMDNodeRef ---;
+    GetNextNamedMetadata :: proc(NamedMDNode : NamedMDNodeRef) -> NamedMDNodeRef ---;
 
     @(link_name="LLVMGetPreviousNamedMetadata")
-    LLVMGetPreviousNamedMetadata :: proc(NamedMDNode : LLVMNamedMDNodeRef) -> LLVMNamedMDNodeRef ---;
+    GetPreviousNamedMetadata :: proc(NamedMDNode : NamedMDNodeRef) -> NamedMDNodeRef ---;
 
     @(link_name="LLVMGetNamedMetadata")
-    LLVMGetNamedMetadata :: proc(M : LLVMModuleRef, Name : cstring, NameLen : _c.size_t) -> LLVMNamedMDNodeRef ---;
+    GetNamedMetadata :: proc(M : ModuleRef, Name : cstring, NameLen : _c.size_t) -> NamedMDNodeRef ---;
 
     @(link_name="LLVMGetOrInsertNamedMetadata")
-    LLVMGetOrInsertNamedMetadata :: proc(M : LLVMModuleRef, Name : cstring, NameLen : _c.size_t) -> LLVMNamedMDNodeRef ---;
+    GetOrInsertNamedMetadata :: proc(M : ModuleRef, Name : cstring, NameLen : _c.size_t) -> NamedMDNodeRef ---;
 
     @(link_name="LLVMGetNamedMetadataName")
-    LLVMGetNamedMetadataName :: proc(NamedMD : LLVMNamedMDNodeRef, NameLen : ^_c.size_t) -> cstring ---;
+    GetNamedMetadataName :: proc(NamedMD : NamedMDNodeRef, NameLen : ^_c.size_t) -> cstring ---;
 
     @(link_name="LLVMGetNamedMetadataNumOperands")
-    LLVMGetNamedMetadataNumOperands :: proc(M : LLVMModuleRef, Name : cstring) -> _c.uint ---;
+    GetNamedMetadataNumOperands :: proc(M : ModuleRef, Name : cstring) -> _c.uint ---;
 
     @(link_name="LLVMGetNamedMetadataOperands")
-    LLVMGetNamedMetadataOperands :: proc(M : LLVMModuleRef, Name : cstring, Dest : ^LLVMValueRef) ---;
+    GetNamedMetadataOperands :: proc(M : ModuleRef, Name : cstring, Dest : ^ValueRef) ---;
 
     @(link_name="LLVMAddNamedMetadataOperand")
-    LLVMAddNamedMetadataOperand :: proc(M : LLVMModuleRef, Name : cstring, Val : LLVMValueRef) ---;
+    AddNamedMetadataOperand :: proc(M : ModuleRef, Name : cstring, Val : ValueRef) ---;
 
     @(link_name="LLVMGetDebugLocDirectory")
-    LLVMGetDebugLocDirectory :: proc(Val : LLVMValueRef, Length : ^_c.uint) -> cstring ---;
+    GetDebugLocDirectory :: proc(Val : ValueRef, Length : ^_c.uint) -> cstring ---;
 
     @(link_name="LLVMGetDebugLocFilename")
-    LLVMGetDebugLocFilename :: proc(Val : LLVMValueRef, Length : ^_c.uint) -> cstring ---;
+    GetDebugLocFilename :: proc(Val : ValueRef, Length : ^_c.uint) -> cstring ---;
 
     @(link_name="LLVMGetDebugLocLine")
-    LLVMGetDebugLocLine :: proc(Val : LLVMValueRef) -> _c.uint ---;
+    GetDebugLocLine :: proc(Val : ValueRef) -> _c.uint ---;
 
     @(link_name="LLVMGetDebugLocColumn")
-    LLVMGetDebugLocColumn :: proc(Val : LLVMValueRef) -> _c.uint ---;
+    GetDebugLocColumn :: proc(Val : ValueRef) -> _c.uint ---;
 
     @(link_name="LLVMAddFunction")
-    LLVMAddFunction :: proc(M : LLVMModuleRef, Name : cstring, FunctionTy : LLVMTypeRef) -> LLVMValueRef ---;
+    AddFunction :: proc(M : ModuleRef, Name : cstring, FunctionTy : TypeRef) -> ValueRef ---;
 
     @(link_name="LLVMGetNamedFunction")
-    LLVMGetNamedFunction :: proc(M : LLVMModuleRef, Name : cstring) -> LLVMValueRef ---;
+    GetNamedFunction :: proc(M : ModuleRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMGetFirstFunction")
-    LLVMGetFirstFunction :: proc(M : LLVMModuleRef) -> LLVMValueRef ---;
+    GetFirstFunction :: proc(M : ModuleRef) -> ValueRef ---;
 
     @(link_name="LLVMGetLastFunction")
-    LLVMGetLastFunction :: proc(M : LLVMModuleRef) -> LLVMValueRef ---;
+    GetLastFunction :: proc(M : ModuleRef) -> ValueRef ---;
 
     @(link_name="LLVMGetNextFunction")
-    LLVMGetNextFunction :: proc(Fn : LLVMValueRef) -> LLVMValueRef ---;
+    GetNextFunction :: proc(Fn : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMGetPreviousFunction")
-    LLVMGetPreviousFunction :: proc(Fn : LLVMValueRef) -> LLVMValueRef ---;
+    GetPreviousFunction :: proc(Fn : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMSetModuleInlineAsm")
-    LLVMSetModuleInlineAsm :: proc(M : LLVMModuleRef, Asm : cstring) ---;
+    SetModuleInlineAsm :: proc(M : ModuleRef, Asm : cstring) ---;
 
     @(link_name="LLVMGetTypeKind")
-    LLVMGetTypeKind :: proc(Ty : LLVMTypeRef) -> LLVMTypeKind ---;
+    GetTypeKind :: proc(Ty : TypeRef) -> TypeKind ---;
 
     @(link_name="LLVMTypeIsSized")
-    LLVMTypeIsSized :: proc(Ty : LLVMTypeRef) -> LLVMBool ---;
+    TypeIsSized :: proc(Ty : TypeRef) -> Bool ---;
 
     @(link_name="LLVMGetTypeContext")
-    LLVMGetTypeContext :: proc(Ty : LLVMTypeRef) -> LLVMContextRef ---;
+    GetTypeContext :: proc(Ty : TypeRef) -> ContextRef ---;
 
     @(link_name="LLVMDumpType")
-    LLVMDumpType :: proc(Val : LLVMTypeRef) ---;
+    DumpType :: proc(Val : TypeRef) ---;
 
     @(link_name="LLVMPrintTypeToString")
-    LLVMPrintTypeToString :: proc(Val : LLVMTypeRef) -> cstring ---;
+    PrintTypeToString :: proc(Val : TypeRef) -> cstring ---;
 
     @(link_name="LLVMInt1TypeInContext")
-    LLVMInt1TypeInContext :: proc(C : LLVMContextRef) -> LLVMTypeRef ---;
+    Int1TypeInContext :: proc(C : ContextRef) -> TypeRef ---;
 
     @(link_name="LLVMInt8TypeInContext")
-    LLVMInt8TypeInContext :: proc(C : LLVMContextRef) -> LLVMTypeRef ---;
+    Int8TypeInContext :: proc(C : ContextRef) -> TypeRef ---;
 
     @(link_name="LLVMInt16TypeInContext")
-    LLVMInt16TypeInContext :: proc(C : LLVMContextRef) -> LLVMTypeRef ---;
+    Int16TypeInContext :: proc(C : ContextRef) -> TypeRef ---;
 
     @(link_name="LLVMInt32TypeInContext")
-    LLVMInt32TypeInContext :: proc(C : LLVMContextRef) -> LLVMTypeRef ---;
+    Int32TypeInContext :: proc(C : ContextRef) -> TypeRef ---;
 
     @(link_name="LLVMInt64TypeInContext")
-    LLVMInt64TypeInContext :: proc(C : LLVMContextRef) -> LLVMTypeRef ---;
+    Int64TypeInContext :: proc(C : ContextRef) -> TypeRef ---;
 
     @(link_name="LLVMInt128TypeInContext")
-    LLVMInt128TypeInContext :: proc(C : LLVMContextRef) -> LLVMTypeRef ---;
+    Int128TypeInContext :: proc(C : ContextRef) -> TypeRef ---;
 
     @(link_name="LLVMIntTypeInContext")
-    LLVMIntTypeInContext :: proc(C : LLVMContextRef, NumBits : _c.uint) -> LLVMTypeRef ---;
+    IntTypeInContext :: proc(C : ContextRef, NumBits : _c.uint) -> TypeRef ---;
 
     @(link_name="LLVMInt1Type")
-    LLVMInt1Type :: proc() -> LLVMTypeRef ---;
+    Int1Type :: proc() -> TypeRef ---;
 
     @(link_name="LLVMInt8Type")
-    LLVMInt8Type :: proc() -> LLVMTypeRef ---;
+    Int8Type :: proc() -> TypeRef ---;
 
     @(link_name="LLVMInt16Type")
-    LLVMInt16Type :: proc() -> LLVMTypeRef ---;
+    Int16Type :: proc() -> TypeRef ---;
 
     @(link_name="LLVMInt32Type")
-    LLVMInt32Type :: proc() -> LLVMTypeRef ---;
+    Int32Type :: proc() -> TypeRef ---;
 
     @(link_name="LLVMInt64Type")
-    LLVMInt64Type :: proc() -> LLVMTypeRef ---;
+    Int64Type :: proc() -> TypeRef ---;
 
     @(link_name="LLVMInt128Type")
-    LLVMInt128Type :: proc() -> LLVMTypeRef ---;
+    Int128Type :: proc() -> TypeRef ---;
 
     @(link_name="LLVMIntType")
-    LLVMIntType :: proc(NumBits : _c.uint) -> LLVMTypeRef ---;
+    IntType :: proc(NumBits : _c.uint) -> TypeRef ---;
 
     @(link_name="LLVMGetIntTypeWidth")
-    LLVMGetIntTypeWidth :: proc(IntegerTy : LLVMTypeRef) -> _c.uint ---;
+    GetIntTypeWidth :: proc(IntegerTy : TypeRef) -> _c.uint ---;
 
     @(link_name="LLVMHalfTypeInContext")
-    LLVMHalfTypeInContext :: proc(C : LLVMContextRef) -> LLVMTypeRef ---;
+    HalfTypeInContext :: proc(C : ContextRef) -> TypeRef ---;
 
     @(link_name="LLVMBFloatTypeInContext")
-    LLVMBFloatTypeInContext :: proc(C : LLVMContextRef) -> LLVMTypeRef ---;
+    BFloatTypeInContext :: proc(C : ContextRef) -> TypeRef ---;
 
     @(link_name="LLVMFloatTypeInContext")
-    LLVMFloatTypeInContext :: proc(C : LLVMContextRef) -> LLVMTypeRef ---;
+    FloatTypeInContext :: proc(C : ContextRef) -> TypeRef ---;
 
     @(link_name="LLVMDoubleTypeInContext")
-    LLVMDoubleTypeInContext :: proc(C : LLVMContextRef) -> LLVMTypeRef ---;
+    DoubleTypeInContext :: proc(C : ContextRef) -> TypeRef ---;
 
     @(link_name="LLVMX86FP80TypeInContext")
-    LLVMX86FP80TypeInContext :: proc(C : LLVMContextRef) -> LLVMTypeRef ---;
+    X86FP80TypeInContext :: proc(C : ContextRef) -> TypeRef ---;
 
     @(link_name="LLVMFP128TypeInContext")
-    LLVMFP128TypeInContext :: proc(C : LLVMContextRef) -> LLVMTypeRef ---;
+    FP128TypeInContext :: proc(C : ContextRef) -> TypeRef ---;
 
     @(link_name="LLVMPPCFP128TypeInContext")
-    LLVMPPCFP128TypeInContext :: proc(C : LLVMContextRef) -> LLVMTypeRef ---;
+    PPCFP128TypeInContext :: proc(C : ContextRef) -> TypeRef ---;
 
     @(link_name="LLVMHalfType")
-    LLVMHalfType :: proc() -> LLVMTypeRef ---;
+    HalfType :: proc() -> TypeRef ---;
 
     @(link_name="LLVMBFloatType")
-    LLVMBFloatType :: proc() -> LLVMTypeRef ---;
+    BFloatType :: proc() -> TypeRef ---;
 
     @(link_name="LLVMFloatType")
-    LLVMFloatType :: proc() -> LLVMTypeRef ---;
+    FloatType :: proc() -> TypeRef ---;
 
     @(link_name="LLVMDoubleType")
-    LLVMDoubleType :: proc() -> LLVMTypeRef ---;
+    DoubleType :: proc() -> TypeRef ---;
 
     @(link_name="LLVMX86FP80Type")
-    LLVMX86FP80Type :: proc() -> LLVMTypeRef ---;
+    X86FP80Type :: proc() -> TypeRef ---;
 
     @(link_name="LLVMFP128Type")
-    LLVMFP128Type :: proc() -> LLVMTypeRef ---;
+    FP128Type :: proc() -> TypeRef ---;
 
     @(link_name="LLVMPPCFP128Type")
-    LLVMPPCFP128Type :: proc() -> LLVMTypeRef ---;
+    PPCFP128Type :: proc() -> TypeRef ---;
 
     @(link_name="LLVMFunctionType")
-    LLVMFunctionType :: proc(ReturnType : LLVMTypeRef, ParamTypes : ^LLVMTypeRef, ParamCount : _c.uint, IsVarArg : LLVMBool) -> LLVMTypeRef ---;
+    FunctionType :: proc(ReturnType : TypeRef, ParamTypes : ^TypeRef, ParamCount : _c.uint, IsVarArg : Bool) -> TypeRef ---;
 
     @(link_name="LLVMIsFunctionVarArg")
-    LLVMIsFunctionVarArg :: proc(FunctionTy : LLVMTypeRef) -> LLVMBool ---;
+    IsFunctionVarArg :: proc(FunctionTy : TypeRef) -> Bool ---;
 
     @(link_name="LLVMGetReturnType")
-    LLVMGetReturnType :: proc(FunctionTy : LLVMTypeRef) -> LLVMTypeRef ---;
+    GetReturnType :: proc(FunctionTy : TypeRef) -> TypeRef ---;
 
     @(link_name="LLVMCountParamTypes")
-    LLVMCountParamTypes :: proc(FunctionTy : LLVMTypeRef) -> _c.uint ---;
+    CountParamTypes :: proc(FunctionTy : TypeRef) -> _c.uint ---;
 
     @(link_name="LLVMGetParamTypes")
-    LLVMGetParamTypes :: proc(FunctionTy : LLVMTypeRef, Dest : ^LLVMTypeRef) ---;
+    GetParamTypes :: proc(FunctionTy : TypeRef, Dest : ^TypeRef) ---;
 
     @(link_name="LLVMStructTypeInContext")
-    LLVMStructTypeInContext :: proc(C : LLVMContextRef, ElementTypes : ^LLVMTypeRef, ElementCount : _c.uint, Packed : LLVMBool) -> LLVMTypeRef ---;
+    StructTypeInContext :: proc(C : ContextRef, ElementTypes : ^TypeRef, ElementCount : _c.uint, Packed : Bool) -> TypeRef ---;
 
     @(link_name="LLVMStructType")
-    LLVMStructType :: proc(ElementTypes : ^LLVMTypeRef, ElementCount : _c.uint, Packed : LLVMBool) -> LLVMTypeRef ---;
+    StructType :: proc(ElementTypes : ^TypeRef, ElementCount : _c.uint, Packed : Bool) -> TypeRef ---;
 
     @(link_name="LLVMStructCreateNamed")
-    LLVMStructCreateNamed :: proc(C : LLVMContextRef, Name : cstring) -> LLVMTypeRef ---;
+    StructCreateNamed :: proc(C : ContextRef, Name : cstring) -> TypeRef ---;
 
     @(link_name="LLVMGetStructName")
-    LLVMGetStructName :: proc(Ty : LLVMTypeRef) -> cstring ---;
+    GetStructName :: proc(Ty : TypeRef) -> cstring ---;
 
     @(link_name="LLVMStructSetBody")
-    LLVMStructSetBody :: proc(StructTy : LLVMTypeRef, ElementTypes : ^LLVMTypeRef, ElementCount : _c.uint, Packed : LLVMBool) ---;
+    StructSetBody :: proc(StructTy : TypeRef, ElementTypes : ^TypeRef, ElementCount : _c.uint, Packed : Bool) ---;
 
     @(link_name="LLVMCountStructElementTypes")
-    LLVMCountStructElementTypes :: proc(StructTy : LLVMTypeRef) -> _c.uint ---;
+    CountStructElementTypes :: proc(StructTy : TypeRef) -> _c.uint ---;
 
     @(link_name="LLVMGetStructElementTypes")
-    LLVMGetStructElementTypes :: proc(StructTy : LLVMTypeRef, Dest : ^LLVMTypeRef) ---;
+    GetStructElementTypes :: proc(StructTy : TypeRef, Dest : ^TypeRef) ---;
 
     @(link_name="LLVMStructGetTypeAtIndex")
-    LLVMStructGetTypeAtIndex :: proc(StructTy : LLVMTypeRef, i : _c.uint) -> LLVMTypeRef ---;
+    StructGetTypeAtIndex :: proc(StructTy : TypeRef, i : _c.uint) -> TypeRef ---;
 
     @(link_name="LLVMIsPackedStruct")
-    LLVMIsPackedStruct :: proc(StructTy : LLVMTypeRef) -> LLVMBool ---;
+    IsPackedStruct :: proc(StructTy : TypeRef) -> Bool ---;
 
     @(link_name="LLVMIsOpaqueStruct")
-    LLVMIsOpaqueStruct :: proc(StructTy : LLVMTypeRef) -> LLVMBool ---;
+    IsOpaqueStruct :: proc(StructTy : TypeRef) -> Bool ---;
 
     @(link_name="LLVMIsLiteralStruct")
-    LLVMIsLiteralStruct :: proc(StructTy : LLVMTypeRef) -> LLVMBool ---;
+    IsLiteralStruct :: proc(StructTy : TypeRef) -> Bool ---;
 
     @(link_name="LLVMGetElementType")
-    LLVMGetElementType :: proc(Ty : LLVMTypeRef) -> LLVMTypeRef ---;
+    GetElementType :: proc(Ty : TypeRef) -> TypeRef ---;
 
     @(link_name="LLVMGetSubtypes")
-    LLVMGetSubtypes :: proc(Tp : LLVMTypeRef, Arr : ^LLVMTypeRef) ---;
+    GetSubtypes :: proc(Tp : TypeRef, Arr : ^TypeRef) ---;
 
     @(link_name="LLVMGetNumContainedTypes")
-    LLVMGetNumContainedTypes :: proc(Tp : LLVMTypeRef) -> _c.uint ---;
+    GetNumContainedTypes :: proc(Tp : TypeRef) -> _c.uint ---;
 
     @(link_name="LLVMArrayType")
-    LLVMArrayType :: proc(ElementType : LLVMTypeRef, ElementCount : _c.uint) -> LLVMTypeRef ---;
+    ArrayType :: proc(ElementType : TypeRef, ElementCount : _c.uint) -> TypeRef ---;
 
     @(link_name="LLVMArrayType2")
-    LLVMArrayType2 :: proc(ElementType : LLVMTypeRef, ElementCount : u64) -> LLVMTypeRef ---;
+    ArrayType2 :: proc(ElementType : TypeRef, ElementCount : u64) -> TypeRef ---;
 
     @(link_name="LLVMGetArrayLength")
-    LLVMGetArrayLength :: proc(ArrayTy : LLVMTypeRef) -> _c.uint ---;
+    GetArrayLength :: proc(ArrayTy : TypeRef) -> _c.uint ---;
 
     @(link_name="LLVMGetArrayLength2")
-    LLVMGetArrayLength2 :: proc(ArrayTy : LLVMTypeRef) -> u64 ---;
+    GetArrayLength2 :: proc(ArrayTy : TypeRef) -> u64 ---;
 
     @(link_name="LLVMPointerType")
-    LLVMPointerType :: proc(ElementType : LLVMTypeRef, AddressSpace : _c.uint) -> LLVMTypeRef ---;
+    PointerType :: proc(ElementType : TypeRef, AddressSpace : _c.uint) -> TypeRef ---;
 
     @(link_name="LLVMPointerTypeIsOpaque")
-    LLVMPointerTypeIsOpaque :: proc(Ty : LLVMTypeRef) -> LLVMBool ---;
+    PointerTypeIsOpaque :: proc(Ty : TypeRef) -> Bool ---;
 
     @(link_name="LLVMPointerTypeInContext")
-    LLVMPointerTypeInContext :: proc(C : LLVMContextRef, AddressSpace : _c.uint) -> LLVMTypeRef ---;
+    PointerTypeInContext :: proc(C : ContextRef, AddressSpace : _c.uint) -> TypeRef ---;
 
     @(link_name="LLVMGetPointerAddressSpace")
-    LLVMGetPointerAddressSpace :: proc(PointerTy : LLVMTypeRef) -> _c.uint ---;
+    GetPointerAddressSpace :: proc(PointerTy : TypeRef) -> _c.uint ---;
 
     @(link_name="LLVMVectorType")
-    LLVMVectorType :: proc(ElementType : LLVMTypeRef, ElementCount : _c.uint) -> LLVMTypeRef ---;
+    VectorType :: proc(ElementType : TypeRef, ElementCount : _c.uint) -> TypeRef ---;
 
     @(link_name="LLVMScalableVectorType")
-    LLVMScalableVectorType :: proc(ElementType : LLVMTypeRef, ElementCount : _c.uint) -> LLVMTypeRef ---;
+    ScalableVectorType :: proc(ElementType : TypeRef, ElementCount : _c.uint) -> TypeRef ---;
 
     @(link_name="LLVMGetVectorSize")
-    LLVMGetVectorSize :: proc(VectorTy : LLVMTypeRef) -> _c.uint ---;
+    GetVectorSize :: proc(VectorTy : TypeRef) -> _c.uint ---;
 
     @(link_name="LLVMVoidTypeInContext")
-    LLVMVoidTypeInContext :: proc(C : LLVMContextRef) -> LLVMTypeRef ---;
+    VoidTypeInContext :: proc(C : ContextRef) -> TypeRef ---;
 
     @(link_name="LLVMLabelTypeInContext")
-    LLVMLabelTypeInContext :: proc(C : LLVMContextRef) -> LLVMTypeRef ---;
+    LabelTypeInContext :: proc(C : ContextRef) -> TypeRef ---;
 
     @(link_name="LLVMX86MMXTypeInContext")
-    LLVMX86MMXTypeInContext :: proc(C : LLVMContextRef) -> LLVMTypeRef ---;
+    X86MMXTypeInContext :: proc(C : ContextRef) -> TypeRef ---;
 
     @(link_name="LLVMX86AMXTypeInContext")
-    LLVMX86AMXTypeInContext :: proc(C : LLVMContextRef) -> LLVMTypeRef ---;
+    X86AMXTypeInContext :: proc(C : ContextRef) -> TypeRef ---;
 
     @(link_name="LLVMTokenTypeInContext")
-    LLVMTokenTypeInContext :: proc(C : LLVMContextRef) -> LLVMTypeRef ---;
+    TokenTypeInContext :: proc(C : ContextRef) -> TypeRef ---;
 
     @(link_name="LLVMMetadataTypeInContext")
-    LLVMMetadataTypeInContext :: proc(C : LLVMContextRef) -> LLVMTypeRef ---;
+    MetadataTypeInContext :: proc(C : ContextRef) -> TypeRef ---;
 
     @(link_name="LLVMVoidType")
-    LLVMVoidType :: proc() -> LLVMTypeRef ---;
+    VoidType :: proc() -> TypeRef ---;
 
     @(link_name="LLVMLabelType")
-    LLVMLabelType :: proc() -> LLVMTypeRef ---;
+    LabelType :: proc() -> TypeRef ---;
 
     @(link_name="LLVMX86MMXType")
-    LLVMX86MMXType :: proc() -> LLVMTypeRef ---;
+    X86MMXType :: proc() -> TypeRef ---;
 
     @(link_name="LLVMX86AMXType")
-    LLVMX86AMXType :: proc() -> LLVMTypeRef ---;
+    X86AMXType :: proc() -> TypeRef ---;
 
     @(link_name="LLVMTargetExtTypeInContext")
-    LLVMTargetExtTypeInContext :: proc(C : LLVMContextRef, Name : cstring, TypeParams : ^LLVMTypeRef, TypeParamCount : _c.uint, IntParams : ^_c.uint, IntParamCount : _c.uint) -> LLVMTypeRef ---;
+    TargetExtTypeInContext :: proc(C : ContextRef, Name : cstring, TypeParams : ^TypeRef, TypeParamCount : _c.uint, IntParams : ^_c.uint, IntParamCount : _c.uint) -> TypeRef ---;
 
     @(link_name="LLVMTypeOf")
-    LLVMTypeOf :: proc(Val : LLVMValueRef) -> LLVMTypeRef ---;
+    TypeOf :: proc(Val : ValueRef) -> TypeRef ---;
 
     @(link_name="LLVMGetValueKind")
-    LLVMGetValueKind :: proc(Val : LLVMValueRef) -> LLVMValueKind ---;
+    GetValueKind :: proc(Val : ValueRef) -> ValueKind ---;
 
     @(link_name="LLVMGetValueName2")
-    LLVMGetValueName2 :: proc(Val : LLVMValueRef, Length : ^_c.size_t) -> cstring ---;
+    GetValueName2 :: proc(Val : ValueRef, Length : ^_c.size_t) -> cstring ---;
 
     @(link_name="LLVMSetValueName2")
-    LLVMSetValueName2 :: proc(Val : LLVMValueRef, Name : cstring, NameLen : _c.size_t) ---;
+    SetValueName2 :: proc(Val : ValueRef, Name : cstring, NameLen : _c.size_t) ---;
 
     @(link_name="LLVMDumpValue")
-    LLVMDumpValue :: proc(Val : LLVMValueRef) ---;
+    DumpValue :: proc(Val : ValueRef) ---;
 
     @(link_name="LLVMPrintValueToString")
-    LLVMPrintValueToString :: proc(Val : LLVMValueRef) -> cstring ---;
+    PrintValueToString :: proc(Val : ValueRef) -> cstring ---;
 
     @(link_name="LLVMReplaceAllUsesWith")
-    LLVMReplaceAllUsesWith :: proc(OldVal : LLVMValueRef, NewVal : LLVMValueRef) ---;
+    ReplaceAllUsesWith :: proc(OldVal : ValueRef, NewVal : ValueRef) ---;
 
     @(link_name="LLVMIsConstant")
-    LLVMIsConstant :: proc(Val : LLVMValueRef) -> LLVMBool ---;
+    IsConstant :: proc(Val : ValueRef) -> Bool ---;
 
     @(link_name="LLVMIsUndef")
-    LLVMIsUndef :: proc(Val : LLVMValueRef) -> LLVMBool ---;
+    IsUndef :: proc(Val : ValueRef) -> Bool ---;
 
     @(link_name="LLVMIsPoison")
-    LLVMIsPoison :: proc(Val : LLVMValueRef) -> LLVMBool ---;
+    IsPoison :: proc(Val : ValueRef) -> Bool ---;
 
     @(link_name="LLVMIsAMDNode")
-    LLVMIsAMDNode :: proc(Val : LLVMValueRef) -> LLVMValueRef ---;
+    IsAMDNode :: proc(Val : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMIsAValueAsMetadata")
-    LLVMIsAValueAsMetadata :: proc(Val : LLVMValueRef) -> LLVMValueRef ---;
+    IsAValueAsMetadata :: proc(Val : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMIsAMDString")
-    LLVMIsAMDString :: proc(Val : LLVMValueRef) -> LLVMValueRef ---;
+    IsAMDString :: proc(Val : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMGetValueName")
-    LLVMGetValueName :: proc(Val : LLVMValueRef) -> cstring ---;
+    GetValueName :: proc(Val : ValueRef) -> cstring ---;
 
     @(link_name="LLVMSetValueName")
-    LLVMSetValueName :: proc(Val : LLVMValueRef, Name : cstring) ---;
+    SetValueName :: proc(Val : ValueRef, Name : cstring) ---;
 
     @(link_name="LLVMGetFirstUse")
-    LLVMGetFirstUse :: proc(Val : LLVMValueRef) -> LLVMUseRef ---;
+    GetFirstUse :: proc(Val : ValueRef) -> UseRef ---;
 
     @(link_name="LLVMGetNextUse")
-    LLVMGetNextUse :: proc(U : LLVMUseRef) -> LLVMUseRef ---;
+    GetNextUse :: proc(U : UseRef) -> UseRef ---;
 
     @(link_name="LLVMGetUser")
-    LLVMGetUser :: proc(U : LLVMUseRef) -> LLVMValueRef ---;
+    GetUser :: proc(U : UseRef) -> ValueRef ---;
 
     @(link_name="LLVMGetUsedValue")
-    LLVMGetUsedValue :: proc(U : LLVMUseRef) -> LLVMValueRef ---;
+    GetUsedValue :: proc(U : UseRef) -> ValueRef ---;
 
     @(link_name="LLVMGetOperand")
-    LLVMGetOperand :: proc(Val : LLVMValueRef, Index : _c.uint) -> LLVMValueRef ---;
+    GetOperand :: proc(Val : ValueRef, Index : _c.uint) -> ValueRef ---;
 
     @(link_name="LLVMGetOperandUse")
-    LLVMGetOperandUse :: proc(Val : LLVMValueRef, Index : _c.uint) -> LLVMUseRef ---;
+    GetOperandUse :: proc(Val : ValueRef, Index : _c.uint) -> UseRef ---;
 
     @(link_name="LLVMSetOperand")
-    LLVMSetOperand :: proc(User : LLVMValueRef, Index : _c.uint, Val : LLVMValueRef) ---;
+    SetOperand :: proc(User : ValueRef, Index : _c.uint, Val : ValueRef) ---;
 
     @(link_name="LLVMGetNumOperands")
-    LLVMGetNumOperands :: proc(Val : LLVMValueRef) -> _c.int ---;
+    GetNumOperands :: proc(Val : ValueRef) -> _c.int ---;
 
     @(link_name="LLVMConstNull")
-    LLVMConstNull :: proc(Ty : LLVMTypeRef) -> LLVMValueRef ---;
+    ConstNull :: proc(Ty : TypeRef) -> ValueRef ---;
 
     @(link_name="LLVMConstAllOnes")
-    LLVMConstAllOnes :: proc(Ty : LLVMTypeRef) -> LLVMValueRef ---;
+    ConstAllOnes :: proc(Ty : TypeRef) -> ValueRef ---;
 
     @(link_name="LLVMGetUndef")
-    LLVMGetUndef :: proc(Ty : LLVMTypeRef) -> LLVMValueRef ---;
+    GetUndef :: proc(Ty : TypeRef) -> ValueRef ---;
 
     @(link_name="LLVMGetPoison")
-    LLVMGetPoison :: proc(Ty : LLVMTypeRef) -> LLVMValueRef ---;
+    GetPoison :: proc(Ty : TypeRef) -> ValueRef ---;
 
     @(link_name="LLVMIsNull")
-    LLVMIsNull :: proc(Val : LLVMValueRef) -> LLVMBool ---;
+    IsNull :: proc(Val : ValueRef) -> Bool ---;
 
     @(link_name="LLVMConstPointerNull")
-    LLVMConstPointerNull :: proc(Ty : LLVMTypeRef) -> LLVMValueRef ---;
+    ConstPointerNull :: proc(Ty : TypeRef) -> ValueRef ---;
 
     @(link_name="LLVMConstInt")
-    LLVMConstInt :: proc(IntTy : LLVMTypeRef, N : _c.ulonglong, SignExtend : LLVMBool) -> LLVMValueRef ---;
+    ConstInt :: proc(IntTy : TypeRef, N : _c.ulonglong, SignExtend : Bool) -> ValueRef ---;
 
     @(link_name="LLVMConstIntOfArbitraryPrecision")
-    LLVMConstIntOfArbitraryPrecision :: proc(IntTy : LLVMTypeRef, NumWords : _c.uint, Words : ^u64) -> LLVMValueRef ---;
+    ConstIntOfArbitraryPrecision :: proc(IntTy : TypeRef, NumWords : _c.uint, Words : ^u64) -> ValueRef ---;
 
     @(link_name="LLVMConstIntOfString")
-    LLVMConstIntOfString :: proc(IntTy : LLVMTypeRef, Text : cstring, Radix : u8) -> LLVMValueRef ---;
+    ConstIntOfString :: proc(IntTy : TypeRef, Text : cstring, Radix : u8) -> ValueRef ---;
 
     @(link_name="LLVMConstIntOfStringAndSize")
-    LLVMConstIntOfStringAndSize :: proc(IntTy : LLVMTypeRef, Text : cstring, SLen : _c.uint, Radix : u8) -> LLVMValueRef ---;
+    ConstIntOfStringAndSize :: proc(IntTy : TypeRef, Text : cstring, SLen : _c.uint, Radix : u8) -> ValueRef ---;
 
     @(link_name="LLVMConstReal")
-    LLVMConstReal :: proc(RealTy : LLVMTypeRef, N : _c.double) -> LLVMValueRef ---;
+    ConstReal :: proc(RealTy : TypeRef, N : _c.double) -> ValueRef ---;
 
     @(link_name="LLVMConstRealOfString")
-    LLVMConstRealOfString :: proc(RealTy : LLVMTypeRef, Text : cstring) -> LLVMValueRef ---;
+    ConstRealOfString :: proc(RealTy : TypeRef, Text : cstring) -> ValueRef ---;
 
     @(link_name="LLVMConstRealOfStringAndSize")
-    LLVMConstRealOfStringAndSize :: proc(RealTy : LLVMTypeRef, Text : cstring, SLen : _c.uint) -> LLVMValueRef ---;
+    ConstRealOfStringAndSize :: proc(RealTy : TypeRef, Text : cstring, SLen : _c.uint) -> ValueRef ---;
 
     @(link_name="LLVMConstIntGetZExtValue")
-    LLVMConstIntGetZExtValue :: proc(ConstantVal : LLVMValueRef) -> _c.ulonglong ---;
+    ConstIntGetZExtValue :: proc(ConstantVal : ValueRef) -> _c.ulonglong ---;
 
     @(link_name="LLVMConstIntGetSExtValue")
-    LLVMConstIntGetSExtValue :: proc(ConstantVal : LLVMValueRef) -> _c.longlong ---;
+    ConstIntGetSExtValue :: proc(ConstantVal : ValueRef) -> _c.longlong ---;
 
     @(link_name="LLVMConstRealGetDouble")
-    LLVMConstRealGetDouble :: proc(ConstantVal : LLVMValueRef, losesInfo : ^LLVMBool) -> _c.double ---;
+    ConstRealGetDouble :: proc(ConstantVal : ValueRef, losesInfo : ^Bool) -> _c.double ---;
 
     @(link_name="LLVMConstStringInContext")
-    LLVMConstStringInContext :: proc(C : LLVMContextRef, Str : cstring, Length : _c.uint, DontNullTerminate : LLVMBool) -> LLVMValueRef ---;
+    ConstStringInContext :: proc(C : ContextRef, Str : cstring, Length : _c.uint, DontNullTerminate : Bool) -> ValueRef ---;
 
     @(link_name="LLVMConstString")
-    LLVMConstString :: proc(Str : cstring, Length : _c.uint, DontNullTerminate : LLVMBool) -> LLVMValueRef ---;
+    ConstString :: proc(Str : cstring, Length : _c.uint, DontNullTerminate : Bool) -> ValueRef ---;
 
     @(link_name="LLVMIsConstantString")
-    LLVMIsConstantString :: proc(c : LLVMValueRef) -> LLVMBool ---;
+    IsConstantString :: proc(c : ValueRef) -> Bool ---;
 
     @(link_name="LLVMGetAsString")
-    LLVMGetAsString :: proc(c : LLVMValueRef, Length : ^_c.size_t) -> cstring ---;
+    GetAsString :: proc(c : ValueRef, Length : ^_c.size_t) -> cstring ---;
 
     @(link_name="LLVMConstStructInContext")
-    LLVMConstStructInContext :: proc(C : LLVMContextRef, ConstantVals : ^LLVMValueRef, Count : _c.uint, Packed : LLVMBool) -> LLVMValueRef ---;
+    ConstStructInContext :: proc(C : ContextRef, ConstantVals : ^ValueRef, Count : _c.uint, Packed : Bool) -> ValueRef ---;
 
     @(link_name="LLVMConstStruct")
-    LLVMConstStruct :: proc(ConstantVals : ^LLVMValueRef, Count : _c.uint, Packed : LLVMBool) -> LLVMValueRef ---;
+    ConstStruct :: proc(ConstantVals : ^ValueRef, Count : _c.uint, Packed : Bool) -> ValueRef ---;
 
     @(link_name="LLVMConstArray")
-    LLVMConstArray :: proc(ElementTy : LLVMTypeRef, ConstantVals : ^LLVMValueRef, Length : _c.uint) -> LLVMValueRef ---;
+    ConstArray :: proc(ElementTy : TypeRef, ConstantVals : ^ValueRef, Length : _c.uint) -> ValueRef ---;
 
     @(link_name="LLVMConstArray2")
-    LLVMConstArray2 :: proc(ElementTy : LLVMTypeRef, ConstantVals : ^LLVMValueRef, Length : u64) -> LLVMValueRef ---;
+    ConstArray2 :: proc(ElementTy : TypeRef, ConstantVals : ^ValueRef, Length : u64) -> ValueRef ---;
 
     @(link_name="LLVMConstNamedStruct")
-    LLVMConstNamedStruct :: proc(StructTy : LLVMTypeRef, ConstantVals : ^LLVMValueRef, Count : _c.uint) -> LLVMValueRef ---;
+    ConstNamedStruct :: proc(StructTy : TypeRef, ConstantVals : ^ValueRef, Count : _c.uint) -> ValueRef ---;
 
     @(link_name="LLVMGetAggregateElement")
-    LLVMGetAggregateElement :: proc(C : LLVMValueRef, Idx : _c.uint) -> LLVMValueRef ---;
+    GetAggregateElement :: proc(C : ValueRef, Idx : _c.uint) -> ValueRef ---;
 
     @(link_name="LLVMConstVector")
-    LLVMConstVector :: proc(ScalarConstantVals : ^LLVMValueRef, Size : _c.uint) -> LLVMValueRef ---;
+    ConstVector :: proc(ScalarConstantVals : ^ValueRef, Size : _c.uint) -> ValueRef ---;
 
     @(link_name="LLVMGetConstOpcode")
-    LLVMGetConstOpcode :: proc(ConstantVal : LLVMValueRef) -> LLVMOpcode ---;
+    GetConstOpcode :: proc(ConstantVal : ValueRef) -> Opcode ---;
 
     @(link_name="LLVMAlignOf")
-    LLVMAlignOf :: proc(Ty : LLVMTypeRef) -> LLVMValueRef ---;
+    AlignOf :: proc(Ty : TypeRef) -> ValueRef ---;
 
     @(link_name="LLVMSizeOf")
-    LLVMSizeOf :: proc(Ty : LLVMTypeRef) -> LLVMValueRef ---;
+    SizeOf :: proc(Ty : TypeRef) -> ValueRef ---;
 
     @(link_name="LLVMConstNeg")
-    LLVMConstNeg :: proc(ConstantVal : LLVMValueRef) -> LLVMValueRef ---;
+    ConstNeg :: proc(ConstantVal : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMConstNSWNeg")
-    LLVMConstNSWNeg :: proc(ConstantVal : LLVMValueRef) -> LLVMValueRef ---;
+    ConstNSWNeg :: proc(ConstantVal : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMConstNUWNeg")
-    LLVMConstNUWNeg :: proc(ConstantVal : LLVMValueRef) -> LLVMValueRef ---;
+    ConstNUWNeg :: proc(ConstantVal : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMConstNot")
-    LLVMConstNot :: proc(ConstantVal : LLVMValueRef) -> LLVMValueRef ---;
+    ConstNot :: proc(ConstantVal : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMConstAdd")
-    LLVMConstAdd :: proc(LHSConstant : LLVMValueRef, RHSConstant : LLVMValueRef) -> LLVMValueRef ---;
+    ConstAdd :: proc(LHSConstant : ValueRef, RHSConstant : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMConstNSWAdd")
-    LLVMConstNSWAdd :: proc(LHSConstant : LLVMValueRef, RHSConstant : LLVMValueRef) -> LLVMValueRef ---;
+    ConstNSWAdd :: proc(LHSConstant : ValueRef, RHSConstant : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMConstNUWAdd")
-    LLVMConstNUWAdd :: proc(LHSConstant : LLVMValueRef, RHSConstant : LLVMValueRef) -> LLVMValueRef ---;
+    ConstNUWAdd :: proc(LHSConstant : ValueRef, RHSConstant : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMConstSub")
-    LLVMConstSub :: proc(LHSConstant : LLVMValueRef, RHSConstant : LLVMValueRef) -> LLVMValueRef ---;
+    ConstSub :: proc(LHSConstant : ValueRef, RHSConstant : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMConstNSWSub")
-    LLVMConstNSWSub :: proc(LHSConstant : LLVMValueRef, RHSConstant : LLVMValueRef) -> LLVMValueRef ---;
+    ConstNSWSub :: proc(LHSConstant : ValueRef, RHSConstant : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMConstNUWSub")
-    LLVMConstNUWSub :: proc(LHSConstant : LLVMValueRef, RHSConstant : LLVMValueRef) -> LLVMValueRef ---;
+    ConstNUWSub :: proc(LHSConstant : ValueRef, RHSConstant : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMConstMul")
-    LLVMConstMul :: proc(LHSConstant : LLVMValueRef, RHSConstant : LLVMValueRef) -> LLVMValueRef ---;
+    ConstMul :: proc(LHSConstant : ValueRef, RHSConstant : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMConstNSWMul")
-    LLVMConstNSWMul :: proc(LHSConstant : LLVMValueRef, RHSConstant : LLVMValueRef) -> LLVMValueRef ---;
+    ConstNSWMul :: proc(LHSConstant : ValueRef, RHSConstant : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMConstNUWMul")
-    LLVMConstNUWMul :: proc(LHSConstant : LLVMValueRef, RHSConstant : LLVMValueRef) -> LLVMValueRef ---;
+    ConstNUWMul :: proc(LHSConstant : ValueRef, RHSConstant : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMConstAnd")
-    LLVMConstAnd :: proc(LHSConstant : LLVMValueRef, RHSConstant : LLVMValueRef) -> LLVMValueRef ---;
+    ConstAnd :: proc(LHSConstant : ValueRef, RHSConstant : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMConstOr")
-    LLVMConstOr :: proc(LHSConstant : LLVMValueRef, RHSConstant : LLVMValueRef) -> LLVMValueRef ---;
+    ConstOr :: proc(LHSConstant : ValueRef, RHSConstant : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMConstXor")
-    LLVMConstXor :: proc(LHSConstant : LLVMValueRef, RHSConstant : LLVMValueRef) -> LLVMValueRef ---;
+    ConstXor :: proc(LHSConstant : ValueRef, RHSConstant : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMConstICmp")
-    LLVMConstICmp :: proc(Predicate : LLVMIntPredicate, LHSConstant : LLVMValueRef, RHSConstant : LLVMValueRef) -> LLVMValueRef ---;
+    ConstICmp :: proc(Predicate : IntPredicate, LHSConstant : ValueRef, RHSConstant : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMConstFCmp")
-    LLVMConstFCmp :: proc(Predicate : LLVMRealPredicate, LHSConstant : LLVMValueRef, RHSConstant : LLVMValueRef) -> LLVMValueRef ---;
+    ConstFCmp :: proc(Predicate : RealPredicate, LHSConstant : ValueRef, RHSConstant : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMConstShl")
-    LLVMConstShl :: proc(LHSConstant : LLVMValueRef, RHSConstant : LLVMValueRef) -> LLVMValueRef ---;
+    ConstShl :: proc(LHSConstant : ValueRef, RHSConstant : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMConstLShr")
-    LLVMConstLShr :: proc(LHSConstant : LLVMValueRef, RHSConstant : LLVMValueRef) -> LLVMValueRef ---;
+    ConstLShr :: proc(LHSConstant : ValueRef, RHSConstant : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMConstAShr")
-    LLVMConstAShr :: proc(LHSConstant : LLVMValueRef, RHSConstant : LLVMValueRef) -> LLVMValueRef ---;
+    ConstAShr :: proc(LHSConstant : ValueRef, RHSConstant : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMConstGEP2")
-    LLVMConstGEP2 :: proc(Ty : LLVMTypeRef, ConstantVal : LLVMValueRef, ConstantIndices : ^LLVMValueRef, NumIndices : _c.uint) -> LLVMValueRef ---;
+    ConstGEP2 :: proc(Ty : TypeRef, ConstantVal : ValueRef, ConstantIndices : ^ValueRef, NumIndices : _c.uint) -> ValueRef ---;
 
     @(link_name="LLVMConstInBoundsGEP2")
-    LLVMConstInBoundsGEP2 :: proc(Ty : LLVMTypeRef, ConstantVal : LLVMValueRef, ConstantIndices : ^LLVMValueRef, NumIndices : _c.uint) -> LLVMValueRef ---;
+    ConstInBoundsGEP2 :: proc(Ty : TypeRef, ConstantVal : ValueRef, ConstantIndices : ^ValueRef, NumIndices : _c.uint) -> ValueRef ---;
 
     @(link_name="LLVMConstTrunc")
-    LLVMConstTrunc :: proc(ConstantVal : LLVMValueRef, ToType : LLVMTypeRef) -> LLVMValueRef ---;
+    ConstTrunc :: proc(ConstantVal : ValueRef, ToType : TypeRef) -> ValueRef ---;
 
     @(link_name="LLVMConstSExt")
-    LLVMConstSExt :: proc(ConstantVal : LLVMValueRef, ToType : LLVMTypeRef) -> LLVMValueRef ---;
+    ConstSExt :: proc(ConstantVal : ValueRef, ToType : TypeRef) -> ValueRef ---;
 
     @(link_name="LLVMConstZExt")
-    LLVMConstZExt :: proc(ConstantVal : LLVMValueRef, ToType : LLVMTypeRef) -> LLVMValueRef ---;
+    ConstZExt :: proc(ConstantVal : ValueRef, ToType : TypeRef) -> ValueRef ---;
 
     @(link_name="LLVMConstFPTrunc")
-    LLVMConstFPTrunc :: proc(ConstantVal : LLVMValueRef, ToType : LLVMTypeRef) -> LLVMValueRef ---;
+    ConstFPTrunc :: proc(ConstantVal : ValueRef, ToType : TypeRef) -> ValueRef ---;
 
     @(link_name="LLVMConstFPExt")
-    LLVMConstFPExt :: proc(ConstantVal : LLVMValueRef, ToType : LLVMTypeRef) -> LLVMValueRef ---;
+    ConstFPExt :: proc(ConstantVal : ValueRef, ToType : TypeRef) -> ValueRef ---;
 
     @(link_name="LLVMConstUIToFP")
-    LLVMConstUIToFP :: proc(ConstantVal : LLVMValueRef, ToType : LLVMTypeRef) -> LLVMValueRef ---;
+    ConstUIToFP :: proc(ConstantVal : ValueRef, ToType : TypeRef) -> ValueRef ---;
 
     @(link_name="LLVMConstSIToFP")
-    LLVMConstSIToFP :: proc(ConstantVal : LLVMValueRef, ToType : LLVMTypeRef) -> LLVMValueRef ---;
+    ConstSIToFP :: proc(ConstantVal : ValueRef, ToType : TypeRef) -> ValueRef ---;
 
     @(link_name="LLVMConstFPToUI")
-    LLVMConstFPToUI :: proc(ConstantVal : LLVMValueRef, ToType : LLVMTypeRef) -> LLVMValueRef ---;
+    ConstFPToUI :: proc(ConstantVal : ValueRef, ToType : TypeRef) -> ValueRef ---;
 
     @(link_name="LLVMConstFPToSI")
-    LLVMConstFPToSI :: proc(ConstantVal : LLVMValueRef, ToType : LLVMTypeRef) -> LLVMValueRef ---;
+    ConstFPToSI :: proc(ConstantVal : ValueRef, ToType : TypeRef) -> ValueRef ---;
 
     @(link_name="LLVMConstPtrToInt")
-    LLVMConstPtrToInt :: proc(ConstantVal : LLVMValueRef, ToType : LLVMTypeRef) -> LLVMValueRef ---;
+    ConstPtrToInt :: proc(ConstantVal : ValueRef, ToType : TypeRef) -> ValueRef ---;
 
     @(link_name="LLVMConstIntToPtr")
-    LLVMConstIntToPtr :: proc(ConstantVal : LLVMValueRef, ToType : LLVMTypeRef) -> LLVMValueRef ---;
+    ConstIntToPtr :: proc(ConstantVal : ValueRef, ToType : TypeRef) -> ValueRef ---;
 
     @(link_name="LLVMConstBitCast")
-    LLVMConstBitCast :: proc(ConstantVal : LLVMValueRef, ToType : LLVMTypeRef) -> LLVMValueRef ---;
+    ConstBitCast :: proc(ConstantVal : ValueRef, ToType : TypeRef) -> ValueRef ---;
 
     @(link_name="LLVMConstAddrSpaceCast")
-    LLVMConstAddrSpaceCast :: proc(ConstantVal : LLVMValueRef, ToType : LLVMTypeRef) -> LLVMValueRef ---;
+    ConstAddrSpaceCast :: proc(ConstantVal : ValueRef, ToType : TypeRef) -> ValueRef ---;
 
     @(link_name="LLVMConstZExtOrBitCast")
-    LLVMConstZExtOrBitCast :: proc(ConstantVal : LLVMValueRef, ToType : LLVMTypeRef) -> LLVMValueRef ---;
+    ConstZExtOrBitCast :: proc(ConstantVal : ValueRef, ToType : TypeRef) -> ValueRef ---;
 
     @(link_name="LLVMConstSExtOrBitCast")
-    LLVMConstSExtOrBitCast :: proc(ConstantVal : LLVMValueRef, ToType : LLVMTypeRef) -> LLVMValueRef ---;
+    ConstSExtOrBitCast :: proc(ConstantVal : ValueRef, ToType : TypeRef) -> ValueRef ---;
 
     @(link_name="LLVMConstTruncOrBitCast")
-    LLVMConstTruncOrBitCast :: proc(ConstantVal : LLVMValueRef, ToType : LLVMTypeRef) -> LLVMValueRef ---;
+    ConstTruncOrBitCast :: proc(ConstantVal : ValueRef, ToType : TypeRef) -> ValueRef ---;
 
     @(link_name="LLVMConstPointerCast")
-    LLVMConstPointerCast :: proc(ConstantVal : LLVMValueRef, ToType : LLVMTypeRef) -> LLVMValueRef ---;
+    ConstPointerCast :: proc(ConstantVal : ValueRef, ToType : TypeRef) -> ValueRef ---;
 
     @(link_name="LLVMConstIntCast")
-    LLVMConstIntCast :: proc(ConstantVal : LLVMValueRef, ToType : LLVMTypeRef, isSigned : LLVMBool) -> LLVMValueRef ---;
+    ConstIntCast :: proc(ConstantVal : ValueRef, ToType : TypeRef, isSigned : Bool) -> ValueRef ---;
 
     @(link_name="LLVMConstFPCast")
-    LLVMConstFPCast :: proc(ConstantVal : LLVMValueRef, ToType : LLVMTypeRef) -> LLVMValueRef ---;
+    ConstFPCast :: proc(ConstantVal : ValueRef, ToType : TypeRef) -> ValueRef ---;
 
     @(link_name="LLVMConstExtractElement")
-    LLVMConstExtractElement :: proc(VectorConstant : LLVMValueRef, IndexConstant : LLVMValueRef) -> LLVMValueRef ---;
+    ConstExtractElement :: proc(VectorConstant : ValueRef, IndexConstant : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMConstInsertElement")
-    LLVMConstInsertElement :: proc(VectorConstant : LLVMValueRef, ElementValueConstant : LLVMValueRef, IndexConstant : LLVMValueRef) -> LLVMValueRef ---;
+    ConstInsertElement :: proc(VectorConstant : ValueRef, ElementValueConstant : ValueRef, IndexConstant : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMConstShuffleVector")
-    LLVMConstShuffleVector :: proc(VectorAConstant : LLVMValueRef, VectorBConstant : LLVMValueRef, MaskConstant : LLVMValueRef) -> LLVMValueRef ---;
+    ConstShuffleVector :: proc(VectorAConstant : ValueRef, VectorBConstant : ValueRef, MaskConstant : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMBlockAddress")
-    LLVMBlockAddress :: proc(F : LLVMValueRef, BB : LLVMBasicBlockRef) -> LLVMValueRef ---;
+    BlockAddress :: proc(F : ValueRef, BB : BasicBlockRef) -> ValueRef ---;
 
     @(link_name="LLVMConstInlineAsm")
-    LLVMConstInlineAsm :: proc(Ty : LLVMTypeRef, AsmString : cstring, Constraints : cstring, HasSideEffects : LLVMBool, IsAlignStack : LLVMBool) -> LLVMValueRef ---;
+    ConstInlineAsm :: proc(Ty : TypeRef, AsmString : cstring, Constraints : cstring, HasSideEffects : Bool, IsAlignStack : Bool) -> ValueRef ---;
 
     @(link_name="LLVMGetGlobalParent")
-    LLVMGetGlobalParent :: proc(Global : LLVMValueRef) -> LLVMModuleRef ---;
+    GetGlobalParent :: proc(Global : ValueRef) -> ModuleRef ---;
 
     @(link_name="LLVMIsDeclaration")
-    LLVMIsDeclaration :: proc(Global : LLVMValueRef) -> LLVMBool ---;
+    IsDeclaration :: proc(Global : ValueRef) -> Bool ---;
 
     @(link_name="LLVMGetLinkage")
-    LLVMGetLinkage :: proc(Global : LLVMValueRef) -> LLVMLinkage ---;
+    GetLinkage :: proc(Global : ValueRef) -> Linkage ---;
 
     @(link_name="LLVMSetLinkage")
-    LLVMSetLinkage :: proc(Global : LLVMValueRef, Linkage : LLVMLinkage) ---;
+    SetLinkage :: proc(Global : ValueRef, Linkage : Linkage) ---;
 
     @(link_name="LLVMGetSection")
-    LLVMGetSection :: proc(Global : LLVMValueRef) -> cstring ---;
+    GetSection :: proc(Global : ValueRef) -> cstring ---;
 
     @(link_name="LLVMSetSection")
-    LLVMSetSection :: proc(Global : LLVMValueRef, Section : cstring) ---;
+    SetSection :: proc(Global : ValueRef, Section : cstring) ---;
 
     @(link_name="LLVMGetVisibility")
-    LLVMGetVisibility :: proc(Global : LLVMValueRef) -> LLVMVisibility ---;
+    GetVisibility :: proc(Global : ValueRef) -> Visibility ---;
 
     @(link_name="LLVMSetVisibility")
-    LLVMSetVisibility :: proc(Global : LLVMValueRef, Viz : LLVMVisibility) ---;
+    SetVisibility :: proc(Global : ValueRef, Viz : Visibility) ---;
 
     @(link_name="LLVMGetDLLStorageClass")
-    LLVMGetDLLStorageClass :: proc(Global : LLVMValueRef) -> LLVMDLLStorageClass ---;
+    GetDLLStorageClass :: proc(Global : ValueRef) -> DLLStorageClass ---;
 
     @(link_name="LLVMSetDLLStorageClass")
-    LLVMSetDLLStorageClass :: proc(Global : LLVMValueRef, Class : LLVMDLLStorageClass) ---;
+    SetDLLStorageClass :: proc(Global : ValueRef, Class : DLLStorageClass) ---;
 
     @(link_name="LLVMGetUnnamedAddress")
-    LLVMGetUnnamedAddress :: proc(Global : LLVMValueRef) -> LLVMUnnamedAddr ---;
+    GetUnnamedAddress :: proc(Global : ValueRef) -> UnnamedAddr ---;
 
     @(link_name="LLVMSetUnnamedAddress")
-    LLVMSetUnnamedAddress :: proc(Global : LLVMValueRef, UnnamedAddr : LLVMUnnamedAddr) ---;
+    SetUnnamedAddress :: proc(Global : ValueRef, UnnamedAddr : UnnamedAddr) ---;
 
     @(link_name="LLVMGlobalGetValueType")
-    LLVMGlobalGetValueType :: proc(Global : LLVMValueRef) -> LLVMTypeRef ---;
+    GlobalGetValueType :: proc(Global : ValueRef) -> TypeRef ---;
 
     @(link_name="LLVMHasUnnamedAddr")
-    LLVMHasUnnamedAddr :: proc(Global : LLVMValueRef) -> LLVMBool ---;
+    HasUnnamedAddr :: proc(Global : ValueRef) -> Bool ---;
 
     @(link_name="LLVMSetUnnamedAddr")
-    LLVMSetUnnamedAddr :: proc(Global : LLVMValueRef, HasUnnamedAddr : LLVMBool) ---;
+    SetUnnamedAddr :: proc(Global : ValueRef, HasUnnamedAddr : Bool) ---;
 
     @(link_name="LLVMGetAlignment")
-    LLVMGetAlignment :: proc(V : LLVMValueRef) -> _c.uint ---;
+    GetAlignment :: proc(V : ValueRef) -> _c.uint ---;
 
     @(link_name="LLVMSetAlignment")
-    LLVMSetAlignment :: proc(V : LLVMValueRef, Bytes : _c.uint) ---;
+    SetAlignment :: proc(V : ValueRef, Bytes : _c.uint) ---;
 
     @(link_name="LLVMGlobalSetMetadata")
-    LLVMGlobalSetMetadata :: proc(Global : LLVMValueRef, Kind : _c.uint, MD : LLVMMetadataRef) ---;
+    GlobalSetMetadata :: proc(Global : ValueRef, Kind : _c.uint, MD : MetadataRef) ---;
 
     @(link_name="LLVMGlobalEraseMetadata")
-    LLVMGlobalEraseMetadata :: proc(Global : LLVMValueRef, Kind : _c.uint) ---;
+    GlobalEraseMetadata :: proc(Global : ValueRef, Kind : _c.uint) ---;
 
     @(link_name="LLVMGlobalClearMetadata")
-    LLVMGlobalClearMetadata :: proc(Global : LLVMValueRef) ---;
+    GlobalClearMetadata :: proc(Global : ValueRef) ---;
 
     @(link_name="LLVMGlobalCopyAllMetadata")
-    LLVMGlobalCopyAllMetadata :: proc(Value : LLVMValueRef, NumEntries : ^_c.size_t) -> ^LLVMValueMetadataEntry ---;
+    GlobalCopyAllMetadata :: proc(Value : ValueRef, NumEntries : ^_c.size_t) -> ^ValueMetadataEntry ---;
 
     @(link_name="LLVMDisposeValueMetadataEntries")
-    LLVMDisposeValueMetadataEntries :: proc(Entries : ^LLVMValueMetadataEntry) ---;
+    DisposeValueMetadataEntries :: proc(Entries : ^ValueMetadataEntry) ---;
 
     @(link_name="LLVMValueMetadataEntriesGetKind")
-    LLVMValueMetadataEntriesGetKind :: proc(Entries : ^LLVMValueMetadataEntry, Index : _c.uint) -> _c.uint ---;
+    ValueMetadataEntriesGetKind :: proc(Entries : ^ValueMetadataEntry, Index : _c.uint) -> _c.uint ---;
 
     @(link_name="LLVMValueMetadataEntriesGetMetadata")
-    LLVMValueMetadataEntriesGetMetadata :: proc(Entries : ^LLVMValueMetadataEntry, Index : _c.uint) -> LLVMMetadataRef ---;
+    ValueMetadataEntriesGetMetadata :: proc(Entries : ^ValueMetadataEntry, Index : _c.uint) -> MetadataRef ---;
 
     @(link_name="LLVMAddGlobal")
-    LLVMAddGlobal :: proc(M : LLVMModuleRef, Ty : LLVMTypeRef, Name : cstring) -> LLVMValueRef ---;
+    AddGlobal :: proc(M : ModuleRef, Ty : TypeRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMAddGlobalInAddressSpace")
-    LLVMAddGlobalInAddressSpace :: proc(M : LLVMModuleRef, Ty : LLVMTypeRef, Name : cstring, AddressSpace : _c.uint) -> LLVMValueRef ---;
+    AddGlobalInAddressSpace :: proc(M : ModuleRef, Ty : TypeRef, Name : cstring, AddressSpace : _c.uint) -> ValueRef ---;
 
     @(link_name="LLVMGetNamedGlobal")
-    LLVMGetNamedGlobal :: proc(M : LLVMModuleRef, Name : cstring) -> LLVMValueRef ---;
+    GetNamedGlobal :: proc(M : ModuleRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMGetFirstGlobal")
-    LLVMGetFirstGlobal :: proc(M : LLVMModuleRef) -> LLVMValueRef ---;
+    GetFirstGlobal :: proc(M : ModuleRef) -> ValueRef ---;
 
     @(link_name="LLVMGetLastGlobal")
-    LLVMGetLastGlobal :: proc(M : LLVMModuleRef) -> LLVMValueRef ---;
+    GetLastGlobal :: proc(M : ModuleRef) -> ValueRef ---;
 
     @(link_name="LLVMGetNextGlobal")
-    LLVMGetNextGlobal :: proc(GlobalVar : LLVMValueRef) -> LLVMValueRef ---;
+    GetNextGlobal :: proc(GlobalVar : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMGetPreviousGlobal")
-    LLVMGetPreviousGlobal :: proc(GlobalVar : LLVMValueRef) -> LLVMValueRef ---;
+    GetPreviousGlobal :: proc(GlobalVar : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMDeleteGlobal")
-    LLVMDeleteGlobal :: proc(GlobalVar : LLVMValueRef) ---;
+    DeleteGlobal :: proc(GlobalVar : ValueRef) ---;
 
     @(link_name="LLVMGetInitializer")
-    LLVMGetInitializer :: proc(GlobalVar : LLVMValueRef) -> LLVMValueRef ---;
+    GetInitializer :: proc(GlobalVar : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMSetInitializer")
-    LLVMSetInitializer :: proc(GlobalVar : LLVMValueRef, ConstantVal : LLVMValueRef) ---;
+    SetInitializer :: proc(GlobalVar : ValueRef, ConstantVal : ValueRef) ---;
 
     @(link_name="LLVMIsThreadLocal")
-    LLVMIsThreadLocal :: proc(GlobalVar : LLVMValueRef) -> LLVMBool ---;
+    IsThreadLocal :: proc(GlobalVar : ValueRef) -> Bool ---;
 
     @(link_name="LLVMSetThreadLocal")
-    LLVMSetThreadLocal :: proc(GlobalVar : LLVMValueRef, IsThreadLocal : LLVMBool) ---;
+    SetThreadLocal :: proc(GlobalVar : ValueRef, IsThreadLocal : Bool) ---;
 
     @(link_name="LLVMIsGlobalConstant")
-    LLVMIsGlobalConstant :: proc(GlobalVar : LLVMValueRef) -> LLVMBool ---;
+    IsGlobalConstant :: proc(GlobalVar : ValueRef) -> Bool ---;
 
     @(link_name="LLVMSetGlobalConstant")
-    LLVMSetGlobalConstant :: proc(GlobalVar : LLVMValueRef, IsConstant : LLVMBool) ---;
+    SetGlobalConstant :: proc(GlobalVar : ValueRef, IsConstant : Bool) ---;
 
     @(link_name="LLVMGetThreadLocalMode")
-    LLVMGetThreadLocalMode :: proc(GlobalVar : LLVMValueRef) -> LLVMThreadLocalMode ---;
+    GetThreadLocalMode :: proc(GlobalVar : ValueRef) -> ThreadLocalMode ---;
 
     @(link_name="LLVMSetThreadLocalMode")
-    LLVMSetThreadLocalMode :: proc(GlobalVar : LLVMValueRef, Mode : LLVMThreadLocalMode) ---;
+    SetThreadLocalMode :: proc(GlobalVar : ValueRef, Mode : ThreadLocalMode) ---;
 
     @(link_name="LLVMIsExternallyInitialized")
-    LLVMIsExternallyInitialized :: proc(GlobalVar : LLVMValueRef) -> LLVMBool ---;
+    IsExternallyInitialized :: proc(GlobalVar : ValueRef) -> Bool ---;
 
     @(link_name="LLVMSetExternallyInitialized")
-    LLVMSetExternallyInitialized :: proc(GlobalVar : LLVMValueRef, IsExtInit : LLVMBool) ---;
+    SetExternallyInitialized :: proc(GlobalVar : ValueRef, IsExtInit : Bool) ---;
 
     @(link_name="LLVMAddAlias2")
-    LLVMAddAlias2 :: proc(M : LLVMModuleRef, ValueTy : LLVMTypeRef, AddrSpace : _c.uint, Aliasee : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    AddAlias2 :: proc(M : ModuleRef, ValueTy : TypeRef, AddrSpace : _c.uint, Aliasee : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMGetNamedGlobalAlias")
-    LLVMGetNamedGlobalAlias :: proc(M : LLVMModuleRef, Name : cstring, NameLen : _c.size_t) -> LLVMValueRef ---;
+    GetNamedGlobalAlias :: proc(M : ModuleRef, Name : cstring, NameLen : _c.size_t) -> ValueRef ---;
 
     @(link_name="LLVMGetFirstGlobalAlias")
-    LLVMGetFirstGlobalAlias :: proc(M : LLVMModuleRef) -> LLVMValueRef ---;
+    GetFirstGlobalAlias :: proc(M : ModuleRef) -> ValueRef ---;
 
     @(link_name="LLVMGetLastGlobalAlias")
-    LLVMGetLastGlobalAlias :: proc(M : LLVMModuleRef) -> LLVMValueRef ---;
+    GetLastGlobalAlias :: proc(M : ModuleRef) -> ValueRef ---;
 
     @(link_name="LLVMGetNextGlobalAlias")
-    LLVMGetNextGlobalAlias :: proc(GA : LLVMValueRef) -> LLVMValueRef ---;
+    GetNextGlobalAlias :: proc(GA : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMGetPreviousGlobalAlias")
-    LLVMGetPreviousGlobalAlias :: proc(GA : LLVMValueRef) -> LLVMValueRef ---;
+    GetPreviousGlobalAlias :: proc(GA : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMAliasGetAliasee")
-    LLVMAliasGetAliasee :: proc(Alias : LLVMValueRef) -> LLVMValueRef ---;
+    AliasGetAliasee :: proc(Alias : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMAliasSetAliasee")
-    LLVMAliasSetAliasee :: proc(Alias : LLVMValueRef, Aliasee : LLVMValueRef) ---;
+    AliasSetAliasee :: proc(Alias : ValueRef, Aliasee : ValueRef) ---;
 
     @(link_name="LLVMDeleteFunction")
-    LLVMDeleteFunction :: proc(Fn : LLVMValueRef) ---;
+    DeleteFunction :: proc(Fn : ValueRef) ---;
 
     @(link_name="LLVMHasPersonalityFn")
-    LLVMHasPersonalityFn :: proc(Fn : LLVMValueRef) -> LLVMBool ---;
+    HasPersonalityFn :: proc(Fn : ValueRef) -> Bool ---;
 
     @(link_name="LLVMGetPersonalityFn")
-    LLVMGetPersonalityFn :: proc(Fn : LLVMValueRef) -> LLVMValueRef ---;
+    GetPersonalityFn :: proc(Fn : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMSetPersonalityFn")
-    LLVMSetPersonalityFn :: proc(Fn : LLVMValueRef, PersonalityFn : LLVMValueRef) ---;
+    SetPersonalityFn :: proc(Fn : ValueRef, PersonalityFn : ValueRef) ---;
 
     @(link_name="LLVMLookupIntrinsicID")
-    LLVMLookupIntrinsicID :: proc(Name : cstring, NameLen : _c.size_t) -> _c.uint ---;
+    LookupIntrinsicID :: proc(Name : cstring, NameLen : _c.size_t) -> _c.uint ---;
 
     @(link_name="LLVMGetIntrinsicID")
-    LLVMGetIntrinsicID :: proc(Fn : LLVMValueRef) -> _c.uint ---;
+    GetIntrinsicID :: proc(Fn : ValueRef) -> _c.uint ---;
 
     @(link_name="LLVMGetIntrinsicDeclaration")
-    LLVMGetIntrinsicDeclaration :: proc(Mod : LLVMModuleRef, ID : _c.uint, ParamTypes : ^LLVMTypeRef, ParamCount : _c.size_t) -> LLVMValueRef ---;
+    GetIntrinsicDeclaration :: proc(Mod : ModuleRef, ID : _c.uint, ParamTypes : ^TypeRef, ParamCount : _c.size_t) -> ValueRef ---;
 
     @(link_name="LLVMIntrinsicGetType")
-    LLVMIntrinsicGetType :: proc(Ctx : LLVMContextRef, ID : _c.uint, ParamTypes : ^LLVMTypeRef, ParamCount : _c.size_t) -> LLVMTypeRef ---;
+    IntrinsicGetType :: proc(Ctx : ContextRef, ID : _c.uint, ParamTypes : ^TypeRef, ParamCount : _c.size_t) -> TypeRef ---;
 
     @(link_name="LLVMIntrinsicGetName")
-    LLVMIntrinsicGetName :: proc(ID : _c.uint, NameLength : ^_c.size_t) -> cstring ---;
+    IntrinsicGetName :: proc(ID : _c.uint, NameLength : ^_c.size_t) -> cstring ---;
 
     @(link_name="LLVMIntrinsicCopyOverloadedName")
-    LLVMIntrinsicCopyOverloadedName :: proc(ID : _c.uint, ParamTypes : ^LLVMTypeRef, ParamCount : _c.size_t, NameLength : ^_c.size_t) -> cstring ---;
+    IntrinsicCopyOverloadedName :: proc(ID : _c.uint, ParamTypes : ^TypeRef, ParamCount : _c.size_t, NameLength : ^_c.size_t) -> cstring ---;
 
     @(link_name="LLVMIntrinsicCopyOverloadedName2")
-    LLVMIntrinsicCopyOverloadedName2 :: proc(Mod : LLVMModuleRef, ID : _c.uint, ParamTypes : ^LLVMTypeRef, ParamCount : _c.size_t, NameLength : ^_c.size_t) -> cstring ---;
+    IntrinsicCopyOverloadedName2 :: proc(Mod : ModuleRef, ID : _c.uint, ParamTypes : ^TypeRef, ParamCount : _c.size_t, NameLength : ^_c.size_t) -> cstring ---;
 
     @(link_name="LLVMIntrinsicIsOverloaded")
-    LLVMIntrinsicIsOverloaded :: proc(ID : _c.uint) -> LLVMBool ---;
+    IntrinsicIsOverloaded :: proc(ID : _c.uint) -> Bool ---;
 
     @(link_name="LLVMGetFunctionCallConv")
-    LLVMGetFunctionCallConv :: proc(Fn : LLVMValueRef) -> _c.uint ---;
+    GetFunctionCallConv :: proc(Fn : ValueRef) -> _c.uint ---;
 
     @(link_name="LLVMSetFunctionCallConv")
-    LLVMSetFunctionCallConv :: proc(Fn : LLVMValueRef, CC : _c.uint) ---;
+    SetFunctionCallConv :: proc(Fn : ValueRef, CC : _c.uint) ---;
 
     @(link_name="LLVMGetGC")
-    LLVMGetGC :: proc(Fn : LLVMValueRef) -> cstring ---;
+    GetGC :: proc(Fn : ValueRef) -> cstring ---;
 
     @(link_name="LLVMSetGC")
-    LLVMSetGC :: proc(Fn : LLVMValueRef, Name : cstring) ---;
+    SetGC :: proc(Fn : ValueRef, Name : cstring) ---;
 
     @(link_name="LLVMAddAttributeAtIndex")
-    LLVMAddAttributeAtIndex :: proc(F : LLVMValueRef, Idx : _c.uint, A : LLVMAttributeRef) ---;
+    AddAttributeAtIndex :: proc(F : ValueRef, Idx : _c.uint, A : AttributeRef) ---;
 
     @(link_name="LLVMGetAttributeCountAtIndex")
-    LLVMGetAttributeCountAtIndex :: proc(F : LLVMValueRef, Idx : _c.uint) -> _c.uint ---;
+    GetAttributeCountAtIndex :: proc(F : ValueRef, Idx : _c.uint) -> _c.uint ---;
 
     @(link_name="LLVMGetAttributesAtIndex")
-    LLVMGetAttributesAtIndex :: proc(F : LLVMValueRef, Idx : _c.uint, Attrs : ^LLVMAttributeRef) ---;
+    GetAttributesAtIndex :: proc(F : ValueRef, Idx : _c.uint, Attrs : ^AttributeRef) ---;
 
     @(link_name="LLVMGetEnumAttributeAtIndex")
-    LLVMGetEnumAttributeAtIndex :: proc(F : LLVMValueRef, Idx : _c.uint, KindID : _c.uint) -> LLVMAttributeRef ---;
+    GetEnumAttributeAtIndex :: proc(F : ValueRef, Idx : _c.uint, KindID : _c.uint) -> AttributeRef ---;
 
     @(link_name="LLVMGetStringAttributeAtIndex")
-    LLVMGetStringAttributeAtIndex :: proc(F : LLVMValueRef, Idx : _c.uint, K : cstring, KLen : _c.uint) -> LLVMAttributeRef ---;
+    GetStringAttributeAtIndex :: proc(F : ValueRef, Idx : _c.uint, K : cstring, KLen : _c.uint) -> AttributeRef ---;
 
     @(link_name="LLVMRemoveEnumAttributeAtIndex")
-    LLVMRemoveEnumAttributeAtIndex :: proc(F : LLVMValueRef, Idx : _c.uint, KindID : _c.uint) ---;
+    RemoveEnumAttributeAtIndex :: proc(F : ValueRef, Idx : _c.uint, KindID : _c.uint) ---;
 
     @(link_name="LLVMRemoveStringAttributeAtIndex")
-    LLVMRemoveStringAttributeAtIndex :: proc(F : LLVMValueRef, Idx : _c.uint, K : cstring, KLen : _c.uint) ---;
+    RemoveStringAttributeAtIndex :: proc(F : ValueRef, Idx : _c.uint, K : cstring, KLen : _c.uint) ---;
 
     @(link_name="LLVMAddTargetDependentFunctionAttr")
-    LLVMAddTargetDependentFunctionAttr :: proc(Fn : LLVMValueRef, A : cstring, V : cstring) ---;
+    AddTargetDependentFunctionAttr :: proc(Fn : ValueRef, A : cstring, V : cstring) ---;
 
     @(link_name="LLVMCountParams")
-    LLVMCountParams :: proc(Fn : LLVMValueRef) -> _c.uint ---;
+    CountParams :: proc(Fn : ValueRef) -> _c.uint ---;
 
     @(link_name="LLVMGetParams")
-    LLVMGetParams :: proc(Fn : LLVMValueRef, Params : ^LLVMValueRef) ---;
+    GetParams :: proc(Fn : ValueRef, Params : ^ValueRef) ---;
 
     @(link_name="LLVMGetParam")
-    LLVMGetParam :: proc(Fn : LLVMValueRef, Index : _c.uint) -> LLVMValueRef ---;
+    GetParam :: proc(Fn : ValueRef, Index : _c.uint) -> ValueRef ---;
 
     @(link_name="LLVMGetParamParent")
-    LLVMGetParamParent :: proc(Inst : LLVMValueRef) -> LLVMValueRef ---;
+    GetParamParent :: proc(Inst : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMGetFirstParam")
-    LLVMGetFirstParam :: proc(Fn : LLVMValueRef) -> LLVMValueRef ---;
+    GetFirstParam :: proc(Fn : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMGetLastParam")
-    LLVMGetLastParam :: proc(Fn : LLVMValueRef) -> LLVMValueRef ---;
+    GetLastParam :: proc(Fn : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMGetNextParam")
-    LLVMGetNextParam :: proc(Arg : LLVMValueRef) -> LLVMValueRef ---;
+    GetNextParam :: proc(Arg : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMGetPreviousParam")
-    LLVMGetPreviousParam :: proc(Arg : LLVMValueRef) -> LLVMValueRef ---;
+    GetPreviousParam :: proc(Arg : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMSetParamAlignment")
-    LLVMSetParamAlignment :: proc(Arg : LLVMValueRef, Align : _c.uint) ---;
+    SetParamAlignment :: proc(Arg : ValueRef, Align : _c.uint) ---;
 
     @(link_name="LLVMAddGlobalIFunc")
-    LLVMAddGlobalIFunc :: proc(M : LLVMModuleRef, Name : cstring, NameLen : _c.size_t, Ty : LLVMTypeRef, AddrSpace : _c.uint, Resolver : LLVMValueRef) -> LLVMValueRef ---;
+    AddGlobalIFunc :: proc(M : ModuleRef, Name : cstring, NameLen : _c.size_t, Ty : TypeRef, AddrSpace : _c.uint, Resolver : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMGetNamedGlobalIFunc")
-    LLVMGetNamedGlobalIFunc :: proc(M : LLVMModuleRef, Name : cstring, NameLen : _c.size_t) -> LLVMValueRef ---;
+    GetNamedGlobalIFunc :: proc(M : ModuleRef, Name : cstring, NameLen : _c.size_t) -> ValueRef ---;
 
     @(link_name="LLVMGetFirstGlobalIFunc")
-    LLVMGetFirstGlobalIFunc :: proc(M : LLVMModuleRef) -> LLVMValueRef ---;
+    GetFirstGlobalIFunc :: proc(M : ModuleRef) -> ValueRef ---;
 
     @(link_name="LLVMGetLastGlobalIFunc")
-    LLVMGetLastGlobalIFunc :: proc(M : LLVMModuleRef) -> LLVMValueRef ---;
+    GetLastGlobalIFunc :: proc(M : ModuleRef) -> ValueRef ---;
 
     @(link_name="LLVMGetNextGlobalIFunc")
-    LLVMGetNextGlobalIFunc :: proc(IFunc : LLVMValueRef) -> LLVMValueRef ---;
+    GetNextGlobalIFunc :: proc(IFunc : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMGetPreviousGlobalIFunc")
-    LLVMGetPreviousGlobalIFunc :: proc(IFunc : LLVMValueRef) -> LLVMValueRef ---;
+    GetPreviousGlobalIFunc :: proc(IFunc : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMGetGlobalIFuncResolver")
-    LLVMGetGlobalIFuncResolver :: proc(IFunc : LLVMValueRef) -> LLVMValueRef ---;
+    GetGlobalIFuncResolver :: proc(IFunc : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMSetGlobalIFuncResolver")
-    LLVMSetGlobalIFuncResolver :: proc(IFunc : LLVMValueRef, Resolver : LLVMValueRef) ---;
+    SetGlobalIFuncResolver :: proc(IFunc : ValueRef, Resolver : ValueRef) ---;
 
     @(link_name="LLVMEraseGlobalIFunc")
-    LLVMEraseGlobalIFunc :: proc(IFunc : LLVMValueRef) ---;
+    EraseGlobalIFunc :: proc(IFunc : ValueRef) ---;
 
     @(link_name="LLVMRemoveGlobalIFunc")
-    LLVMRemoveGlobalIFunc :: proc(IFunc : LLVMValueRef) ---;
+    RemoveGlobalIFunc :: proc(IFunc : ValueRef) ---;
 
     @(link_name="LLVMMDStringInContext2")
-    LLVMMDStringInContext2 :: proc(C : LLVMContextRef, Str : cstring, SLen : _c.size_t) -> LLVMMetadataRef ---;
+    MDStringInContext2 :: proc(C : ContextRef, Str : cstring, SLen : _c.size_t) -> MetadataRef ---;
 
     @(link_name="LLVMMDNodeInContext2")
-    LLVMMDNodeInContext2 :: proc(C : LLVMContextRef, MDs : ^LLVMMetadataRef, Count : _c.size_t) -> LLVMMetadataRef ---;
+    MDNodeInContext2 :: proc(C : ContextRef, MDs : ^MetadataRef, Count : _c.size_t) -> MetadataRef ---;
 
     @(link_name="LLVMMetadataAsValue")
-    LLVMMetadataAsValue :: proc(C : LLVMContextRef, MD : LLVMMetadataRef) -> LLVMValueRef ---;
+    MetadataAsValue :: proc(C : ContextRef, MD : MetadataRef) -> ValueRef ---;
 
     @(link_name="LLVMValueAsMetadata")
-    LLVMValueAsMetadata :: proc(Val : LLVMValueRef) -> LLVMMetadataRef ---;
+    ValueAsMetadata :: proc(Val : ValueRef) -> MetadataRef ---;
 
     @(link_name="LLVMGetMDString")
-    LLVMGetMDString :: proc(V : LLVMValueRef, Length : ^_c.uint) -> cstring ---;
+    GetMDString :: proc(V : ValueRef, Length : ^_c.uint) -> cstring ---;
 
     @(link_name="LLVMGetMDNodeNumOperands")
-    LLVMGetMDNodeNumOperands :: proc(V : LLVMValueRef) -> _c.uint ---;
+    GetMDNodeNumOperands :: proc(V : ValueRef) -> _c.uint ---;
 
     @(link_name="LLVMGetMDNodeOperands")
-    LLVMGetMDNodeOperands :: proc(V : LLVMValueRef, Dest : ^LLVMValueRef) ---;
+    GetMDNodeOperands :: proc(V : ValueRef, Dest : ^ValueRef) ---;
 
     @(link_name="LLVMReplaceMDNodeOperandWith")
-    LLVMReplaceMDNodeOperandWith :: proc(V : LLVMValueRef, Index : _c.uint, Replacement : LLVMMetadataRef) ---;
+    ReplaceMDNodeOperandWith :: proc(V : ValueRef, Index : _c.uint, Replacement : MetadataRef) ---;
 
     @(link_name="LLVMMDStringInContext")
-    LLVMMDStringInContext :: proc(C : LLVMContextRef, Str : cstring, SLen : _c.uint) -> LLVMValueRef ---;
+    MDStringInContext :: proc(C : ContextRef, Str : cstring, SLen : _c.uint) -> ValueRef ---;
 
     @(link_name="LLVMMDString")
-    LLVMMDString :: proc(Str : cstring, SLen : _c.uint) -> LLVMValueRef ---;
+    MDString :: proc(Str : cstring, SLen : _c.uint) -> ValueRef ---;
 
     @(link_name="LLVMMDNodeInContext")
-    LLVMMDNodeInContext :: proc(C : LLVMContextRef, Vals : ^LLVMValueRef, Count : _c.uint) -> LLVMValueRef ---;
+    MDNodeInContext :: proc(C : ContextRef, Vals : ^ValueRef, Count : _c.uint) -> ValueRef ---;
 
     @(link_name="LLVMMDNode")
-    LLVMMDNode :: proc(Vals : ^LLVMValueRef, Count : _c.uint) -> LLVMValueRef ---;
+    MDNode :: proc(Vals : ^ValueRef, Count : _c.uint) -> ValueRef ---;
 
     @(link_name="LLVMBasicBlockAsValue")
-    LLVMBasicBlockAsValue :: proc(BB : LLVMBasicBlockRef) -> LLVMValueRef ---;
+    BasicBlockAsValue :: proc(BB : BasicBlockRef) -> ValueRef ---;
 
     @(link_name="LLVMValueIsBasicBlock")
-    LLVMValueIsBasicBlock :: proc(Val : LLVMValueRef) -> LLVMBool ---;
+    ValueIsBasicBlock :: proc(Val : ValueRef) -> Bool ---;
 
     @(link_name="LLVMValueAsBasicBlock")
-    LLVMValueAsBasicBlock :: proc(Val : LLVMValueRef) -> LLVMBasicBlockRef ---;
+    ValueAsBasicBlock :: proc(Val : ValueRef) -> BasicBlockRef ---;
 
     @(link_name="LLVMGetBasicBlockName")
-    LLVMGetBasicBlockName :: proc(BB : LLVMBasicBlockRef) -> cstring ---;
+    GetBasicBlockName :: proc(BB : BasicBlockRef) -> cstring ---;
 
     @(link_name="LLVMGetBasicBlockParent")
-    LLVMGetBasicBlockParent :: proc(BB : LLVMBasicBlockRef) -> LLVMValueRef ---;
+    GetBasicBlockParent :: proc(BB : BasicBlockRef) -> ValueRef ---;
 
     @(link_name="LLVMGetBasicBlockTerminator")
-    LLVMGetBasicBlockTerminator :: proc(BB : LLVMBasicBlockRef) -> LLVMValueRef ---;
+    GetBasicBlockTerminator :: proc(BB : BasicBlockRef) -> ValueRef ---;
 
     @(link_name="LLVMCountBasicBlocks")
-    LLVMCountBasicBlocks :: proc(Fn : LLVMValueRef) -> _c.uint ---;
+    CountBasicBlocks :: proc(Fn : ValueRef) -> _c.uint ---;
 
     @(link_name="LLVMGetBasicBlocks")
-    LLVMGetBasicBlocks :: proc(Fn : LLVMValueRef, BasicBlocks : ^LLVMBasicBlockRef) ---;
+    GetBasicBlocks :: proc(Fn : ValueRef, BasicBlocks : ^BasicBlockRef) ---;
 
     @(link_name="LLVMGetFirstBasicBlock")
-    LLVMGetFirstBasicBlock :: proc(Fn : LLVMValueRef) -> LLVMBasicBlockRef ---;
+    GetFirstBasicBlock :: proc(Fn : ValueRef) -> BasicBlockRef ---;
 
     @(link_name="LLVMGetLastBasicBlock")
-    LLVMGetLastBasicBlock :: proc(Fn : LLVMValueRef) -> LLVMBasicBlockRef ---;
+    GetLastBasicBlock :: proc(Fn : ValueRef) -> BasicBlockRef ---;
 
     @(link_name="LLVMGetNextBasicBlock")
-    LLVMGetNextBasicBlock :: proc(BB : LLVMBasicBlockRef) -> LLVMBasicBlockRef ---;
+    GetNextBasicBlock :: proc(BB : BasicBlockRef) -> BasicBlockRef ---;
 
     @(link_name="LLVMGetPreviousBasicBlock")
-    LLVMGetPreviousBasicBlock :: proc(BB : LLVMBasicBlockRef) -> LLVMBasicBlockRef ---;
+    GetPreviousBasicBlock :: proc(BB : BasicBlockRef) -> BasicBlockRef ---;
 
     @(link_name="LLVMGetEntryBasicBlock")
-    LLVMGetEntryBasicBlock :: proc(Fn : LLVMValueRef) -> LLVMBasicBlockRef ---;
+    GetEntryBasicBlock :: proc(Fn : ValueRef) -> BasicBlockRef ---;
 
     @(link_name="LLVMInsertExistingBasicBlockAfterInsertBlock")
-    LLVMInsertExistingBasicBlockAfterInsertBlock :: proc(Builder : LLVMBuilderRef, BB : LLVMBasicBlockRef) ---;
+    InsertExistingBasicBlockAfterInsertBlock :: proc(Builder : BuilderRef, BB : BasicBlockRef) ---;
 
     @(link_name="LLVMAppendExistingBasicBlock")
-    LLVMAppendExistingBasicBlock :: proc(Fn : LLVMValueRef, BB : LLVMBasicBlockRef) ---;
+    AppendExistingBasicBlock :: proc(Fn : ValueRef, BB : BasicBlockRef) ---;
 
     @(link_name="LLVMCreateBasicBlockInContext")
-    LLVMCreateBasicBlockInContext :: proc(C : LLVMContextRef, Name : cstring) -> LLVMBasicBlockRef ---;
+    CreateBasicBlockInContext :: proc(C : ContextRef, Name : cstring) -> BasicBlockRef ---;
 
     @(link_name="LLVMAppendBasicBlockInContext")
-    LLVMAppendBasicBlockInContext :: proc(C : LLVMContextRef, Fn : LLVMValueRef, Name : cstring) -> LLVMBasicBlockRef ---;
+    AppendBasicBlockInContext :: proc(C : ContextRef, Fn : ValueRef, Name : cstring) -> BasicBlockRef ---;
 
     @(link_name="LLVMAppendBasicBlock")
-    LLVMAppendBasicBlock :: proc(Fn : LLVMValueRef, Name : cstring) -> LLVMBasicBlockRef ---;
+    AppendBasicBlock :: proc(Fn : ValueRef, Name : cstring) -> BasicBlockRef ---;
 
     @(link_name="LLVMInsertBasicBlockInContext")
-    LLVMInsertBasicBlockInContext :: proc(C : LLVMContextRef, BB : LLVMBasicBlockRef, Name : cstring) -> LLVMBasicBlockRef ---;
+    InsertBasicBlockInContext :: proc(C : ContextRef, BB : BasicBlockRef, Name : cstring) -> BasicBlockRef ---;
 
     @(link_name="LLVMInsertBasicBlock")
-    LLVMInsertBasicBlock :: proc(InsertBeforeBB : LLVMBasicBlockRef, Name : cstring) -> LLVMBasicBlockRef ---;
+    InsertBasicBlock :: proc(InsertBeforeBB : BasicBlockRef, Name : cstring) -> BasicBlockRef ---;
 
     @(link_name="LLVMDeleteBasicBlock")
-    LLVMDeleteBasicBlock :: proc(BB : LLVMBasicBlockRef) ---;
+    DeleteBasicBlock :: proc(BB : BasicBlockRef) ---;
 
     @(link_name="LLVMRemoveBasicBlockFromParent")
-    LLVMRemoveBasicBlockFromParent :: proc(BB : LLVMBasicBlockRef) ---;
+    RemoveBasicBlockFromParent :: proc(BB : BasicBlockRef) ---;
 
     @(link_name="LLVMMoveBasicBlockBefore")
-    LLVMMoveBasicBlockBefore :: proc(BB : LLVMBasicBlockRef, MovePos : LLVMBasicBlockRef) ---;
+    MoveBasicBlockBefore :: proc(BB : BasicBlockRef, MovePos : BasicBlockRef) ---;
 
     @(link_name="LLVMMoveBasicBlockAfter")
-    LLVMMoveBasicBlockAfter :: proc(BB : LLVMBasicBlockRef, MovePos : LLVMBasicBlockRef) ---;
+    MoveBasicBlockAfter :: proc(BB : BasicBlockRef, MovePos : BasicBlockRef) ---;
 
     @(link_name="LLVMGetFirstInstruction")
-    LLVMGetFirstInstruction :: proc(BB : LLVMBasicBlockRef) -> LLVMValueRef ---;
+    GetFirstInstruction :: proc(BB : BasicBlockRef) -> ValueRef ---;
 
     @(link_name="LLVMGetLastInstruction")
-    LLVMGetLastInstruction :: proc(BB : LLVMBasicBlockRef) -> LLVMValueRef ---;
+    GetLastInstruction :: proc(BB : BasicBlockRef) -> ValueRef ---;
 
     @(link_name="LLVMHasMetadata")
-    LLVMHasMetadata :: proc(Val : LLVMValueRef) -> _c.int ---;
+    HasMetadata :: proc(Val : ValueRef) -> _c.int ---;
 
     @(link_name="LLVMGetMetadata")
-    LLVMGetMetadata :: proc(Val : LLVMValueRef, KindID : _c.uint) -> LLVMValueRef ---;
+    GetMetadata :: proc(Val : ValueRef, KindID : _c.uint) -> ValueRef ---;
 
     @(link_name="LLVMSetMetadata")
-    LLVMSetMetadata :: proc(Val : LLVMValueRef, KindID : _c.uint, Node : LLVMValueRef) ---;
+    SetMetadata :: proc(Val : ValueRef, KindID : _c.uint, Node : ValueRef) ---;
 
     @(link_name="LLVMInstructionGetAllMetadataOtherThanDebugLoc")
-    LLVMInstructionGetAllMetadataOtherThanDebugLoc :: proc(Instr : LLVMValueRef, NumEntries : ^_c.size_t) -> ^LLVMValueMetadataEntry ---;
+    InstructionGetAllMetadataOtherThanDebugLoc :: proc(Instr : ValueRef, NumEntries : ^_c.size_t) -> ^ValueMetadataEntry ---;
 
     @(link_name="LLVMGetInstructionParent")
-    LLVMGetInstructionParent :: proc(Inst : LLVMValueRef) -> LLVMBasicBlockRef ---;
+    GetInstructionParent :: proc(Inst : ValueRef) -> BasicBlockRef ---;
 
     @(link_name="LLVMGetNextInstruction")
-    LLVMGetNextInstruction :: proc(Inst : LLVMValueRef) -> LLVMValueRef ---;
+    GetNextInstruction :: proc(Inst : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMGetPreviousInstruction")
-    LLVMGetPreviousInstruction :: proc(Inst : LLVMValueRef) -> LLVMValueRef ---;
+    GetPreviousInstruction :: proc(Inst : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMInstructionRemoveFromParent")
-    LLVMInstructionRemoveFromParent :: proc(Inst : LLVMValueRef) ---;
+    InstructionRemoveFromParent :: proc(Inst : ValueRef) ---;
 
     @(link_name="LLVMInstructionEraseFromParent")
-    LLVMInstructionEraseFromParent :: proc(Inst : LLVMValueRef) ---;
+    InstructionEraseFromParent :: proc(Inst : ValueRef) ---;
 
     @(link_name="LLVMDeleteInstruction")
-    LLVMDeleteInstruction :: proc(Inst : LLVMValueRef) ---;
+    DeleteInstruction :: proc(Inst : ValueRef) ---;
 
     @(link_name="LLVMGetInstructionOpcode")
-    LLVMGetInstructionOpcode :: proc(Inst : LLVMValueRef) -> LLVMOpcode ---;
+    GetInstructionOpcode :: proc(Inst : ValueRef) -> Opcode ---;
 
     @(link_name="LLVMGetICmpPredicate")
-    LLVMGetICmpPredicate :: proc(Inst : LLVMValueRef) -> LLVMIntPredicate ---;
+    GetICmpPredicate :: proc(Inst : ValueRef) -> IntPredicate ---;
 
     @(link_name="LLVMGetFCmpPredicate")
-    LLVMGetFCmpPredicate :: proc(Inst : LLVMValueRef) -> LLVMRealPredicate ---;
+    GetFCmpPredicate :: proc(Inst : ValueRef) -> RealPredicate ---;
 
     @(link_name="LLVMInstructionClone")
-    LLVMInstructionClone :: proc(Inst : LLVMValueRef) -> LLVMValueRef ---;
+    InstructionClone :: proc(Inst : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMIsATerminatorInst")
-    LLVMIsATerminatorInst :: proc(Inst : LLVMValueRef) -> LLVMValueRef ---;
+    IsATerminatorInst :: proc(Inst : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMGetNumArgOperands")
-    LLVMGetNumArgOperands :: proc(Instr : LLVMValueRef) -> _c.uint ---;
+    GetNumArgOperands :: proc(Instr : ValueRef) -> _c.uint ---;
 
     @(link_name="LLVMSetInstructionCallConv")
-    LLVMSetInstructionCallConv :: proc(Instr : LLVMValueRef, CC : _c.uint) ---;
+    SetInstructionCallConv :: proc(Instr : ValueRef, CC : _c.uint) ---;
 
     @(link_name="LLVMGetInstructionCallConv")
-    LLVMGetInstructionCallConv :: proc(Instr : LLVMValueRef) -> _c.uint ---;
+    GetInstructionCallConv :: proc(Instr : ValueRef) -> _c.uint ---;
 
     @(link_name="LLVMSetInstrParamAlignment")
-    LLVMSetInstrParamAlignment :: proc(Instr : LLVMValueRef, Idx : _c.uint, Align : _c.uint) ---;
+    SetInstrParamAlignment :: proc(Instr : ValueRef, Idx : _c.uint, Align : _c.uint) ---;
 
     @(link_name="LLVMAddCallSiteAttribute")
-    LLVMAddCallSiteAttribute :: proc(C : LLVMValueRef, Idx : _c.uint, A : LLVMAttributeRef) ---;
+    AddCallSiteAttribute :: proc(C : ValueRef, Idx : _c.uint, A : AttributeRef) ---;
 
     @(link_name="LLVMGetCallSiteAttributeCount")
-    LLVMGetCallSiteAttributeCount :: proc(C : LLVMValueRef, Idx : _c.uint) -> _c.uint ---;
+    GetCallSiteAttributeCount :: proc(C : ValueRef, Idx : _c.uint) -> _c.uint ---;
 
     @(link_name="LLVMGetCallSiteAttributes")
-    LLVMGetCallSiteAttributes :: proc(C : LLVMValueRef, Idx : _c.uint, Attrs : ^LLVMAttributeRef) ---;
+    GetCallSiteAttributes :: proc(C : ValueRef, Idx : _c.uint, Attrs : ^AttributeRef) ---;
 
     @(link_name="LLVMGetCallSiteEnumAttribute")
-    LLVMGetCallSiteEnumAttribute :: proc(C : LLVMValueRef, Idx : _c.uint, KindID : _c.uint) -> LLVMAttributeRef ---;
+    GetCallSiteEnumAttribute :: proc(C : ValueRef, Idx : _c.uint, KindID : _c.uint) -> AttributeRef ---;
 
     @(link_name="LLVMGetCallSiteStringAttribute")
-    LLVMGetCallSiteStringAttribute :: proc(C : LLVMValueRef, Idx : _c.uint, K : cstring, KLen : _c.uint) -> LLVMAttributeRef ---;
+    GetCallSiteStringAttribute :: proc(C : ValueRef, Idx : _c.uint, K : cstring, KLen : _c.uint) -> AttributeRef ---;
 
     @(link_name="LLVMRemoveCallSiteEnumAttribute")
-    LLVMRemoveCallSiteEnumAttribute :: proc(C : LLVMValueRef, Idx : _c.uint, KindID : _c.uint) ---;
+    RemoveCallSiteEnumAttribute :: proc(C : ValueRef, Idx : _c.uint, KindID : _c.uint) ---;
 
     @(link_name="LLVMRemoveCallSiteStringAttribute")
-    LLVMRemoveCallSiteStringAttribute :: proc(C : LLVMValueRef, Idx : _c.uint, K : cstring, KLen : _c.uint) ---;
+    RemoveCallSiteStringAttribute :: proc(C : ValueRef, Idx : _c.uint, K : cstring, KLen : _c.uint) ---;
 
     @(link_name="LLVMGetCalledFunctionType")
-    LLVMGetCalledFunctionType :: proc(C : LLVMValueRef) -> LLVMTypeRef ---;
+    GetCalledFunctionType :: proc(C : ValueRef) -> TypeRef ---;
 
     @(link_name="LLVMGetCalledValue")
-    LLVMGetCalledValue :: proc(Instr : LLVMValueRef) -> LLVMValueRef ---;
+    GetCalledValue :: proc(Instr : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMIsTailCall")
-    LLVMIsTailCall :: proc(CallInst : LLVMValueRef) -> LLVMBool ---;
+    IsTailCall :: proc(CallInst : ValueRef) -> Bool ---;
 
     @(link_name="LLVMSetTailCall")
-    LLVMSetTailCall :: proc(CallInst : LLVMValueRef, IsTailCall : LLVMBool) ---;
+    SetTailCall :: proc(CallInst : ValueRef, IsTailCall : Bool) ---;
 
     @(link_name="LLVMGetNormalDest")
-    LLVMGetNormalDest :: proc(InvokeInst : LLVMValueRef) -> LLVMBasicBlockRef ---;
+    GetNormalDest :: proc(InvokeInst : ValueRef) -> BasicBlockRef ---;
 
     @(link_name="LLVMGetUnwindDest")
-    LLVMGetUnwindDest :: proc(InvokeInst : LLVMValueRef) -> LLVMBasicBlockRef ---;
+    GetUnwindDest :: proc(InvokeInst : ValueRef) -> BasicBlockRef ---;
 
     @(link_name="LLVMSetNormalDest")
-    LLVMSetNormalDest :: proc(InvokeInst : LLVMValueRef, B : LLVMBasicBlockRef) ---;
+    SetNormalDest :: proc(InvokeInst : ValueRef, B : BasicBlockRef) ---;
 
     @(link_name="LLVMSetUnwindDest")
-    LLVMSetUnwindDest :: proc(InvokeInst : LLVMValueRef, B : LLVMBasicBlockRef) ---;
+    SetUnwindDest :: proc(InvokeInst : ValueRef, B : BasicBlockRef) ---;
 
     @(link_name="LLVMGetNumSuccessors")
-    LLVMGetNumSuccessors :: proc(Term : LLVMValueRef) -> _c.uint ---;
+    GetNumSuccessors :: proc(Term : ValueRef) -> _c.uint ---;
 
     @(link_name="LLVMGetSuccessor")
-    LLVMGetSuccessor :: proc(Term : LLVMValueRef, i : _c.uint) -> LLVMBasicBlockRef ---;
+    GetSuccessor :: proc(Term : ValueRef, i : _c.uint) -> BasicBlockRef ---;
 
     @(link_name="LLVMSetSuccessor")
-    LLVMSetSuccessor :: proc(Term : LLVMValueRef, i : _c.uint, block : LLVMBasicBlockRef) ---;
+    SetSuccessor :: proc(Term : ValueRef, i : _c.uint, block : BasicBlockRef) ---;
 
     @(link_name="LLVMIsConditional")
-    LLVMIsConditional :: proc(Branch : LLVMValueRef) -> LLVMBool ---;
+    IsConditional :: proc(Branch : ValueRef) -> Bool ---;
 
     @(link_name="LLVMGetCondition")
-    LLVMGetCondition :: proc(Branch : LLVMValueRef) -> LLVMValueRef ---;
+    GetCondition :: proc(Branch : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMSetCondition")
-    LLVMSetCondition :: proc(Branch : LLVMValueRef, Cond : LLVMValueRef) ---;
+    SetCondition :: proc(Branch : ValueRef, Cond : ValueRef) ---;
 
     @(link_name="LLVMGetSwitchDefaultDest")
-    LLVMGetSwitchDefaultDest :: proc(SwitchInstr : LLVMValueRef) -> LLVMBasicBlockRef ---;
+    GetSwitchDefaultDest :: proc(SwitchInstr : ValueRef) -> BasicBlockRef ---;
 
     @(link_name="LLVMGetAllocatedType")
-    LLVMGetAllocatedType :: proc(Alloca : LLVMValueRef) -> LLVMTypeRef ---;
+    GetAllocatedType :: proc(Alloca : ValueRef) -> TypeRef ---;
 
     @(link_name="LLVMIsInBounds")
-    LLVMIsInBounds :: proc(GEP : LLVMValueRef) -> LLVMBool ---;
+    IsInBounds :: proc(GEP : ValueRef) -> Bool ---;
 
     @(link_name="LLVMSetIsInBounds")
-    LLVMSetIsInBounds :: proc(GEP : LLVMValueRef, InBounds : LLVMBool) ---;
+    SetIsInBounds :: proc(GEP : ValueRef, InBounds : Bool) ---;
 
     @(link_name="LLVMGetGEPSourceElementType")
-    LLVMGetGEPSourceElementType :: proc(GEP : LLVMValueRef) -> LLVMTypeRef ---;
+    GetGEPSourceElementType :: proc(GEP : ValueRef) -> TypeRef ---;
 
     @(link_name="LLVMAddIncoming")
-    LLVMAddIncoming :: proc(PhiNode : LLVMValueRef, IncomingValues : ^LLVMValueRef, IncomingBlocks : ^LLVMBasicBlockRef, Count : _c.uint) ---;
+    AddIncoming :: proc(PhiNode : ValueRef, IncomingValues : ^ValueRef, IncomingBlocks : ^BasicBlockRef, Count : _c.uint) ---;
 
     @(link_name="LLVMCountIncoming")
-    LLVMCountIncoming :: proc(PhiNode : LLVMValueRef) -> _c.uint ---;
+    CountIncoming :: proc(PhiNode : ValueRef) -> _c.uint ---;
 
     @(link_name="LLVMGetIncomingValue")
-    LLVMGetIncomingValue :: proc(PhiNode : LLVMValueRef, Index : _c.uint) -> LLVMValueRef ---;
+    GetIncomingValue :: proc(PhiNode : ValueRef, Index : _c.uint) -> ValueRef ---;
 
     @(link_name="LLVMGetIncomingBlock")
-    LLVMGetIncomingBlock :: proc(PhiNode : LLVMValueRef, Index : _c.uint) -> LLVMBasicBlockRef ---;
+    GetIncomingBlock :: proc(PhiNode : ValueRef, Index : _c.uint) -> BasicBlockRef ---;
 
     @(link_name="LLVMGetNumIndices")
-    LLVMGetNumIndices :: proc(Inst : LLVMValueRef) -> _c.uint ---;
+    GetNumIndices :: proc(Inst : ValueRef) -> _c.uint ---;
 
     @(link_name="LLVMGetIndices")
-    LLVMGetIndices :: proc(Inst : LLVMValueRef) -> ^_c.uint ---;
+    GetIndices :: proc(Inst : ValueRef) -> ^_c.uint ---;
 
     @(link_name="LLVMCreateBuilderInContext")
-    LLVMCreateBuilderInContext :: proc(C : LLVMContextRef) -> LLVMBuilderRef ---;
+    CreateBuilderInContext :: proc(C : ContextRef) -> BuilderRef ---;
 
     @(link_name="LLVMCreateBuilder")
-    LLVMCreateBuilder :: proc() -> LLVMBuilderRef ---;
+    CreateBuilder :: proc() -> BuilderRef ---;
 
     @(link_name="LLVMPositionBuilder")
-    LLVMPositionBuilder :: proc(Builder : LLVMBuilderRef, Block : LLVMBasicBlockRef, Instr : LLVMValueRef) ---;
+    PositionBuilder :: proc(Builder : BuilderRef, Block : BasicBlockRef, Instr : ValueRef) ---;
 
     @(link_name="LLVMPositionBuilderBefore")
-    LLVMPositionBuilderBefore :: proc(Builder : LLVMBuilderRef, Instr : LLVMValueRef) ---;
+    PositionBuilderBefore :: proc(Builder : BuilderRef, Instr : ValueRef) ---;
 
     @(link_name="LLVMPositionBuilderAtEnd")
-    LLVMPositionBuilderAtEnd :: proc(Builder : LLVMBuilderRef, Block : LLVMBasicBlockRef) ---;
+    PositionBuilderAtEnd :: proc(Builder : BuilderRef, Block : BasicBlockRef) ---;
 
     @(link_name="LLVMGetInsertBlock")
-    LLVMGetInsertBlock :: proc(Builder : LLVMBuilderRef) -> LLVMBasicBlockRef ---;
+    GetInsertBlock :: proc(Builder : BuilderRef) -> BasicBlockRef ---;
 
     @(link_name="LLVMClearInsertionPosition")
-    LLVMClearInsertionPosition :: proc(Builder : LLVMBuilderRef) ---;
+    ClearInsertionPosition :: proc(Builder : BuilderRef) ---;
 
     @(link_name="LLVMInsertIntoBuilder")
-    LLVMInsertIntoBuilder :: proc(Builder : LLVMBuilderRef, Instr : LLVMValueRef) ---;
+    InsertIntoBuilder :: proc(Builder : BuilderRef, Instr : ValueRef) ---;
 
     @(link_name="LLVMInsertIntoBuilderWithName")
-    LLVMInsertIntoBuilderWithName :: proc(Builder : LLVMBuilderRef, Instr : LLVMValueRef, Name : cstring) ---;
+    InsertIntoBuilderWithName :: proc(Builder : BuilderRef, Instr : ValueRef, Name : cstring) ---;
 
     @(link_name="LLVMDisposeBuilder")
-    LLVMDisposeBuilder :: proc(Builder : LLVMBuilderRef) ---;
+    DisposeBuilder :: proc(Builder : BuilderRef) ---;
 
     @(link_name="LLVMGetCurrentDebugLocation2")
-    LLVMGetCurrentDebugLocation2 :: proc(Builder : LLVMBuilderRef) -> LLVMMetadataRef ---;
+    GetCurrentDebugLocation2 :: proc(Builder : BuilderRef) -> MetadataRef ---;
 
     @(link_name="LLVMSetCurrentDebugLocation2")
-    LLVMSetCurrentDebugLocation2 :: proc(Builder : LLVMBuilderRef, Loc : LLVMMetadataRef) ---;
+    SetCurrentDebugLocation2 :: proc(Builder : BuilderRef, Loc : MetadataRef) ---;
 
     @(link_name="LLVMSetInstDebugLocation")
-    LLVMSetInstDebugLocation :: proc(Builder : LLVMBuilderRef, Inst : LLVMValueRef) ---;
+    SetInstDebugLocation :: proc(Builder : BuilderRef, Inst : ValueRef) ---;
 
     @(link_name="LLVMAddMetadataToInst")
-    LLVMAddMetadataToInst :: proc(Builder : LLVMBuilderRef, Inst : LLVMValueRef) ---;
+    AddMetadataToInst :: proc(Builder : BuilderRef, Inst : ValueRef) ---;
 
     @(link_name="LLVMBuilderGetDefaultFPMathTag")
-    LLVMBuilderGetDefaultFPMathTag :: proc(Builder : LLVMBuilderRef) -> LLVMMetadataRef ---;
+    BuilderGetDefaultFPMathTag :: proc(Builder : BuilderRef) -> MetadataRef ---;
 
     @(link_name="LLVMBuilderSetDefaultFPMathTag")
-    LLVMBuilderSetDefaultFPMathTag :: proc(Builder : LLVMBuilderRef, FPMathTag : LLVMMetadataRef) ---;
+    BuilderSetDefaultFPMathTag :: proc(Builder : BuilderRef, FPMathTag : MetadataRef) ---;
 
     @(link_name="LLVMSetCurrentDebugLocation")
-    LLVMSetCurrentDebugLocation :: proc(Builder : LLVMBuilderRef, L : LLVMValueRef) ---;
+    SetCurrentDebugLocation :: proc(Builder : BuilderRef, L : ValueRef) ---;
 
     @(link_name="LLVMGetCurrentDebugLocation")
-    LLVMGetCurrentDebugLocation :: proc(Builder : LLVMBuilderRef) -> LLVMValueRef ---;
+    GetCurrentDebugLocation :: proc(Builder : BuilderRef) -> ValueRef ---;
 
     @(link_name="LLVMBuildRetVoid")
-    LLVMBuildRetVoid :: proc(unamed0 : LLVMBuilderRef) -> LLVMValueRef ---;
+    BuildRetVoid :: proc(unamed0 : BuilderRef) -> ValueRef ---;
 
     @(link_name="LLVMBuildRet")
-    LLVMBuildRet :: proc(unamed0 : LLVMBuilderRef, V : LLVMValueRef) -> LLVMValueRef ---;
+    BuildRet :: proc(unamed0 : BuilderRef, V : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMBuildAggregateRet")
-    LLVMBuildAggregateRet :: proc(unamed0 : LLVMBuilderRef, RetVals : ^LLVMValueRef, N : _c.uint) -> LLVMValueRef ---;
+    BuildAggregateRet :: proc(unamed0 : BuilderRef, RetVals : ^ValueRef, N : _c.uint) -> ValueRef ---;
 
     @(link_name="LLVMBuildBr")
-    LLVMBuildBr :: proc(unamed0 : LLVMBuilderRef, Dest : LLVMBasicBlockRef) -> LLVMValueRef ---;
+    BuildBr :: proc(unamed0 : BuilderRef, Dest : BasicBlockRef) -> ValueRef ---;
 
     @(link_name="LLVMBuildCondBr")
-    LLVMBuildCondBr :: proc(unamed0 : LLVMBuilderRef, If : LLVMValueRef, Then : LLVMBasicBlockRef, Else : LLVMBasicBlockRef) -> LLVMValueRef ---;
+    BuildCondBr :: proc(unamed0 : BuilderRef, If : ValueRef, Then : BasicBlockRef, Else : BasicBlockRef) -> ValueRef ---;
 
     @(link_name="LLVMBuildSwitch")
-    LLVMBuildSwitch :: proc(unamed0 : LLVMBuilderRef, V : LLVMValueRef, Else : LLVMBasicBlockRef, NumCases : _c.uint) -> LLVMValueRef ---;
+    BuildSwitch :: proc(unamed0 : BuilderRef, V : ValueRef, Else : BasicBlockRef, NumCases : _c.uint) -> ValueRef ---;
 
     @(link_name="LLVMBuildIndirectBr")
-    LLVMBuildIndirectBr :: proc(B : LLVMBuilderRef, Addr : LLVMValueRef, NumDests : _c.uint) -> LLVMValueRef ---;
+    BuildIndirectBr :: proc(B : BuilderRef, Addr : ValueRef, NumDests : _c.uint) -> ValueRef ---;
 
     @(link_name="LLVMBuildInvoke2")
-    LLVMBuildInvoke2 :: proc(unamed0 : LLVMBuilderRef, Ty : LLVMTypeRef, Fn : LLVMValueRef, Args : ^LLVMValueRef, NumArgs : _c.uint, Then : LLVMBasicBlockRef, Catch : LLVMBasicBlockRef, Name : cstring) -> LLVMValueRef ---;
+    BuildInvoke2 :: proc(unamed0 : BuilderRef, Ty : TypeRef, Fn : ValueRef, Args : ^ValueRef, NumArgs : _c.uint, Then : BasicBlockRef, Catch : BasicBlockRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildUnreachable")
-    LLVMBuildUnreachable :: proc(unamed0 : LLVMBuilderRef) -> LLVMValueRef ---;
+    BuildUnreachable :: proc(unamed0 : BuilderRef) -> ValueRef ---;
 
     @(link_name="LLVMBuildResume")
-    LLVMBuildResume :: proc(B : LLVMBuilderRef, Exn : LLVMValueRef) -> LLVMValueRef ---;
+    BuildResume :: proc(B : BuilderRef, Exn : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMBuildLandingPad")
-    LLVMBuildLandingPad :: proc(B : LLVMBuilderRef, Ty : LLVMTypeRef, PersFn : LLVMValueRef, NumClauses : _c.uint, Name : cstring) -> LLVMValueRef ---;
+    BuildLandingPad :: proc(B : BuilderRef, Ty : TypeRef, PersFn : ValueRef, NumClauses : _c.uint, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildCleanupRet")
-    LLVMBuildCleanupRet :: proc(B : LLVMBuilderRef, CatchPad : LLVMValueRef, BB : LLVMBasicBlockRef) -> LLVMValueRef ---;
+    BuildCleanupRet :: proc(B : BuilderRef, CatchPad : ValueRef, BB : BasicBlockRef) -> ValueRef ---;
 
     @(link_name="LLVMBuildCatchRet")
-    LLVMBuildCatchRet :: proc(B : LLVMBuilderRef, CatchPad : LLVMValueRef, BB : LLVMBasicBlockRef) -> LLVMValueRef ---;
+    BuildCatchRet :: proc(B : BuilderRef, CatchPad : ValueRef, BB : BasicBlockRef) -> ValueRef ---;
 
     @(link_name="LLVMBuildCatchPad")
-    LLVMBuildCatchPad :: proc(B : LLVMBuilderRef, ParentPad : LLVMValueRef, Args : ^LLVMValueRef, NumArgs : _c.uint, Name : cstring) -> LLVMValueRef ---;
+    BuildCatchPad :: proc(B : BuilderRef, ParentPad : ValueRef, Args : ^ValueRef, NumArgs : _c.uint, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildCleanupPad")
-    LLVMBuildCleanupPad :: proc(B : LLVMBuilderRef, ParentPad : LLVMValueRef, Args : ^LLVMValueRef, NumArgs : _c.uint, Name : cstring) -> LLVMValueRef ---;
+    BuildCleanupPad :: proc(B : BuilderRef, ParentPad : ValueRef, Args : ^ValueRef, NumArgs : _c.uint, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildCatchSwitch")
-    LLVMBuildCatchSwitch :: proc(B : LLVMBuilderRef, ParentPad : LLVMValueRef, UnwindBB : LLVMBasicBlockRef, NumHandlers : _c.uint, Name : cstring) -> LLVMValueRef ---;
+    BuildCatchSwitch :: proc(B : BuilderRef, ParentPad : ValueRef, UnwindBB : BasicBlockRef, NumHandlers : _c.uint, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMAddCase")
-    LLVMAddCase :: proc(Switch : LLVMValueRef, OnVal : LLVMValueRef, Dest : LLVMBasicBlockRef) ---;
+    AddCase :: proc(Switch : ValueRef, OnVal : ValueRef, Dest : BasicBlockRef) ---;
 
     @(link_name="LLVMAddDestination")
-    LLVMAddDestination :: proc(IndirectBr : LLVMValueRef, Dest : LLVMBasicBlockRef) ---;
+    AddDestination :: proc(IndirectBr : ValueRef, Dest : BasicBlockRef) ---;
 
     @(link_name="LLVMGetNumClauses")
-    LLVMGetNumClauses :: proc(LandingPad : LLVMValueRef) -> _c.uint ---;
+    GetNumClauses :: proc(LandingPad : ValueRef) -> _c.uint ---;
 
     @(link_name="LLVMGetClause")
-    LLVMGetClause :: proc(LandingPad : LLVMValueRef, Idx : _c.uint) -> LLVMValueRef ---;
+    GetClause :: proc(LandingPad : ValueRef, Idx : _c.uint) -> ValueRef ---;
 
     @(link_name="LLVMAddClause")
-    LLVMAddClause :: proc(LandingPad : LLVMValueRef, ClauseVal : LLVMValueRef) ---;
+    AddClause :: proc(LandingPad : ValueRef, ClauseVal : ValueRef) ---;
 
     @(link_name="LLVMIsCleanup")
-    LLVMIsCleanup :: proc(LandingPad : LLVMValueRef) -> LLVMBool ---;
+    IsCleanup :: proc(LandingPad : ValueRef) -> Bool ---;
 
     @(link_name="LLVMSetCleanup")
-    LLVMSetCleanup :: proc(LandingPad : LLVMValueRef, Val : LLVMBool) ---;
+    SetCleanup :: proc(LandingPad : ValueRef, Val : Bool) ---;
 
     @(link_name="LLVMAddHandler")
-    LLVMAddHandler :: proc(CatchSwitch : LLVMValueRef, Dest : LLVMBasicBlockRef) ---;
+    AddHandler :: proc(CatchSwitch : ValueRef, Dest : BasicBlockRef) ---;
 
     @(link_name="LLVMGetNumHandlers")
-    LLVMGetNumHandlers :: proc(CatchSwitch : LLVMValueRef) -> _c.uint ---;
+    GetNumHandlers :: proc(CatchSwitch : ValueRef) -> _c.uint ---;
 
     @(link_name="LLVMGetHandlers")
-    LLVMGetHandlers :: proc(CatchSwitch : LLVMValueRef, Handlers : ^LLVMBasicBlockRef) ---;
+    GetHandlers :: proc(CatchSwitch : ValueRef, Handlers : ^BasicBlockRef) ---;
 
     @(link_name="LLVMGetArgOperand")
-    LLVMGetArgOperand :: proc(Funclet : LLVMValueRef, i : _c.uint) -> LLVMValueRef ---;
+    GetArgOperand :: proc(Funclet : ValueRef, i : _c.uint) -> ValueRef ---;
 
     @(link_name="LLVMSetArgOperand")
-    LLVMSetArgOperand :: proc(Funclet : LLVMValueRef, i : _c.uint, value : LLVMValueRef) ---;
+    SetArgOperand :: proc(Funclet : ValueRef, i : _c.uint, value : ValueRef) ---;
 
     @(link_name="LLVMGetParentCatchSwitch")
-    LLVMGetParentCatchSwitch :: proc(CatchPad : LLVMValueRef) -> LLVMValueRef ---;
+    GetParentCatchSwitch :: proc(CatchPad : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMSetParentCatchSwitch")
-    LLVMSetParentCatchSwitch :: proc(CatchPad : LLVMValueRef, CatchSwitch : LLVMValueRef) ---;
+    SetParentCatchSwitch :: proc(CatchPad : ValueRef, CatchSwitch : ValueRef) ---;
 
     @(link_name="LLVMBuildAdd")
-    LLVMBuildAdd :: proc(unamed0 : LLVMBuilderRef, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildAdd :: proc(unamed0 : BuilderRef, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildNSWAdd")
-    LLVMBuildNSWAdd :: proc(unamed0 : LLVMBuilderRef, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildNSWAdd :: proc(unamed0 : BuilderRef, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildNUWAdd")
-    LLVMBuildNUWAdd :: proc(unamed0 : LLVMBuilderRef, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildNUWAdd :: proc(unamed0 : BuilderRef, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildFAdd")
-    LLVMBuildFAdd :: proc(unamed0 : LLVMBuilderRef, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildFAdd :: proc(unamed0 : BuilderRef, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildSub")
-    LLVMBuildSub :: proc(unamed0 : LLVMBuilderRef, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildSub :: proc(unamed0 : BuilderRef, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildNSWSub")
-    LLVMBuildNSWSub :: proc(unamed0 : LLVMBuilderRef, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildNSWSub :: proc(unamed0 : BuilderRef, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildNUWSub")
-    LLVMBuildNUWSub :: proc(unamed0 : LLVMBuilderRef, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildNUWSub :: proc(unamed0 : BuilderRef, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildFSub")
-    LLVMBuildFSub :: proc(unamed0 : LLVMBuilderRef, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildFSub :: proc(unamed0 : BuilderRef, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildMul")
-    LLVMBuildMul :: proc(unamed0 : LLVMBuilderRef, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildMul :: proc(unamed0 : BuilderRef, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildNSWMul")
-    LLVMBuildNSWMul :: proc(unamed0 : LLVMBuilderRef, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildNSWMul :: proc(unamed0 : BuilderRef, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildNUWMul")
-    LLVMBuildNUWMul :: proc(unamed0 : LLVMBuilderRef, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildNUWMul :: proc(unamed0 : BuilderRef, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildFMul")
-    LLVMBuildFMul :: proc(unamed0 : LLVMBuilderRef, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildFMul :: proc(unamed0 : BuilderRef, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildUDiv")
-    LLVMBuildUDiv :: proc(unamed0 : LLVMBuilderRef, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildUDiv :: proc(unamed0 : BuilderRef, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildExactUDiv")
-    LLVMBuildExactUDiv :: proc(unamed0 : LLVMBuilderRef, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildExactUDiv :: proc(unamed0 : BuilderRef, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildSDiv")
-    LLVMBuildSDiv :: proc(unamed0 : LLVMBuilderRef, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildSDiv :: proc(unamed0 : BuilderRef, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildExactSDiv")
-    LLVMBuildExactSDiv :: proc(unamed0 : LLVMBuilderRef, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildExactSDiv :: proc(unamed0 : BuilderRef, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildFDiv")
-    LLVMBuildFDiv :: proc(unamed0 : LLVMBuilderRef, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildFDiv :: proc(unamed0 : BuilderRef, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildURem")
-    LLVMBuildURem :: proc(unamed0 : LLVMBuilderRef, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildURem :: proc(unamed0 : BuilderRef, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildSRem")
-    LLVMBuildSRem :: proc(unamed0 : LLVMBuilderRef, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildSRem :: proc(unamed0 : BuilderRef, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildFRem")
-    LLVMBuildFRem :: proc(unamed0 : LLVMBuilderRef, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildFRem :: proc(unamed0 : BuilderRef, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildShl")
-    LLVMBuildShl :: proc(unamed0 : LLVMBuilderRef, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildShl :: proc(unamed0 : BuilderRef, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildLShr")
-    LLVMBuildLShr :: proc(unamed0 : LLVMBuilderRef, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildLShr :: proc(unamed0 : BuilderRef, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildAShr")
-    LLVMBuildAShr :: proc(unamed0 : LLVMBuilderRef, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildAShr :: proc(unamed0 : BuilderRef, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildAnd")
-    LLVMBuildAnd :: proc(unamed0 : LLVMBuilderRef, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildAnd :: proc(unamed0 : BuilderRef, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildOr")
-    LLVMBuildOr :: proc(unamed0 : LLVMBuilderRef, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildOr :: proc(unamed0 : BuilderRef, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildXor")
-    LLVMBuildXor :: proc(unamed0 : LLVMBuilderRef, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildXor :: proc(unamed0 : BuilderRef, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildBinOp")
-    LLVMBuildBinOp :: proc(B : LLVMBuilderRef, Op : LLVMOpcode, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildBinOp :: proc(B : BuilderRef, Op : Opcode, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildNeg")
-    LLVMBuildNeg :: proc(unamed0 : LLVMBuilderRef, V : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildNeg :: proc(unamed0 : BuilderRef, V : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildNSWNeg")
-    LLVMBuildNSWNeg :: proc(B : LLVMBuilderRef, V : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildNSWNeg :: proc(B : BuilderRef, V : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildNUWNeg")
-    LLVMBuildNUWNeg :: proc(B : LLVMBuilderRef, V : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildNUWNeg :: proc(B : BuilderRef, V : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildFNeg")
-    LLVMBuildFNeg :: proc(unamed0 : LLVMBuilderRef, V : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildFNeg :: proc(unamed0 : BuilderRef, V : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildNot")
-    LLVMBuildNot :: proc(unamed0 : LLVMBuilderRef, V : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildNot :: proc(unamed0 : BuilderRef, V : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMGetNUW")
-    LLVMGetNUW :: proc(ArithInst : LLVMValueRef) -> LLVMBool ---;
+    GetNUW :: proc(ArithInst : ValueRef) -> Bool ---;
 
     @(link_name="LLVMSetNUW")
-    LLVMSetNUW :: proc(ArithInst : LLVMValueRef, HasNUW : LLVMBool) ---;
+    SetNUW :: proc(ArithInst : ValueRef, HasNUW : Bool) ---;
 
     @(link_name="LLVMGetNSW")
-    LLVMGetNSW :: proc(ArithInst : LLVMValueRef) -> LLVMBool ---;
+    GetNSW :: proc(ArithInst : ValueRef) -> Bool ---;
 
     @(link_name="LLVMSetNSW")
-    LLVMSetNSW :: proc(ArithInst : LLVMValueRef, HasNSW : LLVMBool) ---;
+    SetNSW :: proc(ArithInst : ValueRef, HasNSW : Bool) ---;
 
     @(link_name="LLVMGetExact")
-    LLVMGetExact :: proc(DivOrShrInst : LLVMValueRef) -> LLVMBool ---;
+    GetExact :: proc(DivOrShrInst : ValueRef) -> Bool ---;
 
     @(link_name="LLVMSetExact")
-    LLVMSetExact :: proc(DivOrShrInst : LLVMValueRef, IsExact : LLVMBool) ---;
+    SetExact :: proc(DivOrShrInst : ValueRef, IsExact : Bool) ---;
 
     @(link_name="LLVMBuildMalloc")
-    LLVMBuildMalloc :: proc(unamed0 : LLVMBuilderRef, Ty : LLVMTypeRef, Name : cstring) -> LLVMValueRef ---;
+    BuildMalloc :: proc(unamed0 : BuilderRef, Ty : TypeRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildArrayMalloc")
-    LLVMBuildArrayMalloc :: proc(unamed0 : LLVMBuilderRef, Ty : LLVMTypeRef, Val : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildArrayMalloc :: proc(unamed0 : BuilderRef, Ty : TypeRef, Val : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildMemSet")
-    LLVMBuildMemSet :: proc(B : LLVMBuilderRef, Ptr : LLVMValueRef, Val : LLVMValueRef, Len : LLVMValueRef, Align : _c.uint) -> LLVMValueRef ---;
+    BuildMemSet :: proc(B : BuilderRef, Ptr : ValueRef, Val : ValueRef, Len : ValueRef, Align : _c.uint) -> ValueRef ---;
 
     @(link_name="LLVMBuildMemCpy")
-    LLVMBuildMemCpy :: proc(B : LLVMBuilderRef, Dst : LLVMValueRef, DstAlign : _c.uint, Src : LLVMValueRef, SrcAlign : _c.uint, Size : LLVMValueRef) -> LLVMValueRef ---;
+    BuildMemCpy :: proc(B : BuilderRef, Dst : ValueRef, DstAlign : _c.uint, Src : ValueRef, SrcAlign : _c.uint, Size : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMBuildMemMove")
-    LLVMBuildMemMove :: proc(B : LLVMBuilderRef, Dst : LLVMValueRef, DstAlign : _c.uint, Src : LLVMValueRef, SrcAlign : _c.uint, Size : LLVMValueRef) -> LLVMValueRef ---;
+    BuildMemMove :: proc(B : BuilderRef, Dst : ValueRef, DstAlign : _c.uint, Src : ValueRef, SrcAlign : _c.uint, Size : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMBuildAlloca")
-    LLVMBuildAlloca :: proc(unamed0 : LLVMBuilderRef, Ty : LLVMTypeRef, Name : cstring) -> LLVMValueRef ---;
+    BuildAlloca :: proc(unamed0 : BuilderRef, Ty : TypeRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildArrayAlloca")
-    LLVMBuildArrayAlloca :: proc(unamed0 : LLVMBuilderRef, Ty : LLVMTypeRef, Val : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildArrayAlloca :: proc(unamed0 : BuilderRef, Ty : TypeRef, Val : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildFree")
-    LLVMBuildFree :: proc(unamed0 : LLVMBuilderRef, PointerVal : LLVMValueRef) -> LLVMValueRef ---;
+    BuildFree :: proc(unamed0 : BuilderRef, PointerVal : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMBuildLoad2")
-    LLVMBuildLoad2 :: proc(unamed0 : LLVMBuilderRef, Ty : LLVMTypeRef, PointerVal : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildLoad2 :: proc(unamed0 : BuilderRef, Ty : TypeRef, PointerVal : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildStore")
-    LLVMBuildStore :: proc(unamed0 : LLVMBuilderRef, Val : LLVMValueRef, Ptr : LLVMValueRef) -> LLVMValueRef ---;
+    BuildStore :: proc(unamed0 : BuilderRef, Val : ValueRef, Ptr : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMBuildGEP2")
-    LLVMBuildGEP2 :: proc(B : LLVMBuilderRef, Ty : LLVMTypeRef, Pointer : LLVMValueRef, Indices : ^LLVMValueRef, NumIndices : _c.uint, Name : cstring) -> LLVMValueRef ---;
+    BuildGEP2 :: proc(B : BuilderRef, Ty : TypeRef, Pointer : ValueRef, Indices : ^ValueRef, NumIndices : _c.uint, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildInBoundsGEP2")
-    LLVMBuildInBoundsGEP2 :: proc(B : LLVMBuilderRef, Ty : LLVMTypeRef, Pointer : LLVMValueRef, Indices : ^LLVMValueRef, NumIndices : _c.uint, Name : cstring) -> LLVMValueRef ---;
+    BuildInBoundsGEP2 :: proc(B : BuilderRef, Ty : TypeRef, Pointer : ValueRef, Indices : ^ValueRef, NumIndices : _c.uint, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildStructGEP2")
-    LLVMBuildStructGEP2 :: proc(B : LLVMBuilderRef, Ty : LLVMTypeRef, Pointer : LLVMValueRef, Idx : _c.uint, Name : cstring) -> LLVMValueRef ---;
+    BuildStructGEP2 :: proc(B : BuilderRef, Ty : TypeRef, Pointer : ValueRef, Idx : _c.uint, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildGlobalString")
-    LLVMBuildGlobalString :: proc(B : LLVMBuilderRef, Str : cstring, Name : cstring) -> LLVMValueRef ---;
+    BuildGlobalString :: proc(B : BuilderRef, Str : cstring, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildGlobalStringPtr")
-    LLVMBuildGlobalStringPtr :: proc(B : LLVMBuilderRef, Str : cstring, Name : cstring) -> LLVMValueRef ---;
+    BuildGlobalStringPtr :: proc(B : BuilderRef, Str : cstring, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMGetVolatile")
-    LLVMGetVolatile :: proc(MemoryAccessInst : LLVMValueRef) -> LLVMBool ---;
+    GetVolatile :: proc(MemoryAccessInst : ValueRef) -> Bool ---;
 
     @(link_name="LLVMSetVolatile")
-    LLVMSetVolatile :: proc(MemoryAccessInst : LLVMValueRef, IsVolatile : LLVMBool) ---;
+    SetVolatile :: proc(MemoryAccessInst : ValueRef, IsVolatile : Bool) ---;
 
     @(link_name="LLVMGetWeak")
-    LLVMGetWeak :: proc(CmpXchgInst : LLVMValueRef) -> LLVMBool ---;
+    GetWeak :: proc(CmpXchgInst : ValueRef) -> Bool ---;
 
     @(link_name="LLVMSetWeak")
-    LLVMSetWeak :: proc(CmpXchgInst : LLVMValueRef, IsWeak : LLVMBool) ---;
+    SetWeak :: proc(CmpXchgInst : ValueRef, IsWeak : Bool) ---;
 
     @(link_name="LLVMGetOrdering")
-    LLVMGetOrdering :: proc(MemoryAccessInst : LLVMValueRef) -> LLVMAtomicOrdering ---;
+    GetOrdering :: proc(MemoryAccessInst : ValueRef) -> AtomicOrdering ---;
 
     @(link_name="LLVMSetOrdering")
-    LLVMSetOrdering :: proc(MemoryAccessInst : LLVMValueRef, Ordering : LLVMAtomicOrdering) ---;
+    SetOrdering :: proc(MemoryAccessInst : ValueRef, Ordering : AtomicOrdering) ---;
 
     @(link_name="LLVMGetAtomicRMWBinOp")
-    LLVMGetAtomicRMWBinOp :: proc(AtomicRMWInst : LLVMValueRef) -> LLVMAtomicRMWBinOp ---;
+    GetAtomicRMWBinOp :: proc(AtomicRMWInst : ValueRef) -> AtomicRMWBinOp ---;
 
     @(link_name="LLVMSetAtomicRMWBinOp")
-    LLVMSetAtomicRMWBinOp :: proc(AtomicRMWInst : LLVMValueRef, BinOp : LLVMAtomicRMWBinOp) ---;
+    SetAtomicRMWBinOp :: proc(AtomicRMWInst : ValueRef, BinOp : AtomicRMWBinOp) ---;
 
     @(link_name="LLVMBuildTrunc")
-    LLVMBuildTrunc :: proc(unamed0 : LLVMBuilderRef, Val : LLVMValueRef, DestTy : LLVMTypeRef, Name : cstring) -> LLVMValueRef ---;
+    BuildTrunc :: proc(unamed0 : BuilderRef, Val : ValueRef, DestTy : TypeRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildZExt")
-    LLVMBuildZExt :: proc(unamed0 : LLVMBuilderRef, Val : LLVMValueRef, DestTy : LLVMTypeRef, Name : cstring) -> LLVMValueRef ---;
+    BuildZExt :: proc(unamed0 : BuilderRef, Val : ValueRef, DestTy : TypeRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildSExt")
-    LLVMBuildSExt :: proc(unamed0 : LLVMBuilderRef, Val : LLVMValueRef, DestTy : LLVMTypeRef, Name : cstring) -> LLVMValueRef ---;
+    BuildSExt :: proc(unamed0 : BuilderRef, Val : ValueRef, DestTy : TypeRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildFPToUI")
-    LLVMBuildFPToUI :: proc(unamed0 : LLVMBuilderRef, Val : LLVMValueRef, DestTy : LLVMTypeRef, Name : cstring) -> LLVMValueRef ---;
+    BuildFPToUI :: proc(unamed0 : BuilderRef, Val : ValueRef, DestTy : TypeRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildFPToSI")
-    LLVMBuildFPToSI :: proc(unamed0 : LLVMBuilderRef, Val : LLVMValueRef, DestTy : LLVMTypeRef, Name : cstring) -> LLVMValueRef ---;
+    BuildFPToSI :: proc(unamed0 : BuilderRef, Val : ValueRef, DestTy : TypeRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildUIToFP")
-    LLVMBuildUIToFP :: proc(unamed0 : LLVMBuilderRef, Val : LLVMValueRef, DestTy : LLVMTypeRef, Name : cstring) -> LLVMValueRef ---;
+    BuildUIToFP :: proc(unamed0 : BuilderRef, Val : ValueRef, DestTy : TypeRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildSIToFP")
-    LLVMBuildSIToFP :: proc(unamed0 : LLVMBuilderRef, Val : LLVMValueRef, DestTy : LLVMTypeRef, Name : cstring) -> LLVMValueRef ---;
+    BuildSIToFP :: proc(unamed0 : BuilderRef, Val : ValueRef, DestTy : TypeRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildFPTrunc")
-    LLVMBuildFPTrunc :: proc(unamed0 : LLVMBuilderRef, Val : LLVMValueRef, DestTy : LLVMTypeRef, Name : cstring) -> LLVMValueRef ---;
+    BuildFPTrunc :: proc(unamed0 : BuilderRef, Val : ValueRef, DestTy : TypeRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildFPExt")
-    LLVMBuildFPExt :: proc(unamed0 : LLVMBuilderRef, Val : LLVMValueRef, DestTy : LLVMTypeRef, Name : cstring) -> LLVMValueRef ---;
+    BuildFPExt :: proc(unamed0 : BuilderRef, Val : ValueRef, DestTy : TypeRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildPtrToInt")
-    LLVMBuildPtrToInt :: proc(unamed0 : LLVMBuilderRef, Val : LLVMValueRef, DestTy : LLVMTypeRef, Name : cstring) -> LLVMValueRef ---;
+    BuildPtrToInt :: proc(unamed0 : BuilderRef, Val : ValueRef, DestTy : TypeRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildIntToPtr")
-    LLVMBuildIntToPtr :: proc(unamed0 : LLVMBuilderRef, Val : LLVMValueRef, DestTy : LLVMTypeRef, Name : cstring) -> LLVMValueRef ---;
+    BuildIntToPtr :: proc(unamed0 : BuilderRef, Val : ValueRef, DestTy : TypeRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildBitCast")
-    LLVMBuildBitCast :: proc(unamed0 : LLVMBuilderRef, Val : LLVMValueRef, DestTy : LLVMTypeRef, Name : cstring) -> LLVMValueRef ---;
+    BuildBitCast :: proc(unamed0 : BuilderRef, Val : ValueRef, DestTy : TypeRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildAddrSpaceCast")
-    LLVMBuildAddrSpaceCast :: proc(unamed0 : LLVMBuilderRef, Val : LLVMValueRef, DestTy : LLVMTypeRef, Name : cstring) -> LLVMValueRef ---;
+    BuildAddrSpaceCast :: proc(unamed0 : BuilderRef, Val : ValueRef, DestTy : TypeRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildZExtOrBitCast")
-    LLVMBuildZExtOrBitCast :: proc(unamed0 : LLVMBuilderRef, Val : LLVMValueRef, DestTy : LLVMTypeRef, Name : cstring) -> LLVMValueRef ---;
+    BuildZExtOrBitCast :: proc(unamed0 : BuilderRef, Val : ValueRef, DestTy : TypeRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildSExtOrBitCast")
-    LLVMBuildSExtOrBitCast :: proc(unamed0 : LLVMBuilderRef, Val : LLVMValueRef, DestTy : LLVMTypeRef, Name : cstring) -> LLVMValueRef ---;
+    BuildSExtOrBitCast :: proc(unamed0 : BuilderRef, Val : ValueRef, DestTy : TypeRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildTruncOrBitCast")
-    LLVMBuildTruncOrBitCast :: proc(unamed0 : LLVMBuilderRef, Val : LLVMValueRef, DestTy : LLVMTypeRef, Name : cstring) -> LLVMValueRef ---;
+    BuildTruncOrBitCast :: proc(unamed0 : BuilderRef, Val : ValueRef, DestTy : TypeRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildCast")
-    LLVMBuildCast :: proc(B : LLVMBuilderRef, Op : LLVMOpcode, Val : LLVMValueRef, DestTy : LLVMTypeRef, Name : cstring) -> LLVMValueRef ---;
+    BuildCast :: proc(B : BuilderRef, Op : Opcode, Val : ValueRef, DestTy : TypeRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildPointerCast")
-    LLVMBuildPointerCast :: proc(unamed0 : LLVMBuilderRef, Val : LLVMValueRef, DestTy : LLVMTypeRef, Name : cstring) -> LLVMValueRef ---;
+    BuildPointerCast :: proc(unamed0 : BuilderRef, Val : ValueRef, DestTy : TypeRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildIntCast2")
-    LLVMBuildIntCast2 :: proc(unamed0 : LLVMBuilderRef, Val : LLVMValueRef, DestTy : LLVMTypeRef, IsSigned : LLVMBool, Name : cstring) -> LLVMValueRef ---;
+    BuildIntCast2 :: proc(unamed0 : BuilderRef, Val : ValueRef, DestTy : TypeRef, IsSigned : Bool, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildFPCast")
-    LLVMBuildFPCast :: proc(unamed0 : LLVMBuilderRef, Val : LLVMValueRef, DestTy : LLVMTypeRef, Name : cstring) -> LLVMValueRef ---;
+    BuildFPCast :: proc(unamed0 : BuilderRef, Val : ValueRef, DestTy : TypeRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildIntCast")
-    LLVMBuildIntCast :: proc(unamed0 : LLVMBuilderRef, Val : LLVMValueRef, DestTy : LLVMTypeRef, Name : cstring) -> LLVMValueRef ---;
+    BuildIntCast :: proc(unamed0 : BuilderRef, Val : ValueRef, DestTy : TypeRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMGetCastOpcode")
-    LLVMGetCastOpcode :: proc(Src : LLVMValueRef, SrcIsSigned : LLVMBool, DestTy : LLVMTypeRef, DestIsSigned : LLVMBool) -> LLVMOpcode ---;
+    GetCastOpcode :: proc(Src : ValueRef, SrcIsSigned : Bool, DestTy : TypeRef, DestIsSigned : Bool) -> Opcode ---;
 
     @(link_name="LLVMBuildICmp")
-    LLVMBuildICmp :: proc(unamed0 : LLVMBuilderRef, Op : LLVMIntPredicate, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildICmp :: proc(unamed0 : BuilderRef, Op : IntPredicate, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildFCmp")
-    LLVMBuildFCmp :: proc(unamed0 : LLVMBuilderRef, Op : LLVMRealPredicate, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildFCmp :: proc(unamed0 : BuilderRef, Op : RealPredicate, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildPhi")
-    LLVMBuildPhi :: proc(unamed0 : LLVMBuilderRef, Ty : LLVMTypeRef, Name : cstring) -> LLVMValueRef ---;
+    BuildPhi :: proc(unamed0 : BuilderRef, Ty : TypeRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildCall2")
-    LLVMBuildCall2 :: proc(unamed0 : LLVMBuilderRef, unamed1 : LLVMTypeRef, Fn : LLVMValueRef, Args : ^LLVMValueRef, NumArgs : _c.uint, Name : cstring) -> LLVMValueRef ---;
+    BuildCall2 :: proc(unamed0 : BuilderRef, unamed1 : TypeRef, Fn : ValueRef, Args : ^ValueRef, NumArgs : _c.uint, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildSelect")
-    LLVMBuildSelect :: proc(unamed0 : LLVMBuilderRef, If : LLVMValueRef, Then : LLVMValueRef, Else : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildSelect :: proc(unamed0 : BuilderRef, If : ValueRef, Then : ValueRef, Else : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildVAArg")
-    LLVMBuildVAArg :: proc(unamed0 : LLVMBuilderRef, List : LLVMValueRef, Ty : LLVMTypeRef, Name : cstring) -> LLVMValueRef ---;
+    BuildVAArg :: proc(unamed0 : BuilderRef, List : ValueRef, Ty : TypeRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildExtractElement")
-    LLVMBuildExtractElement :: proc(unamed0 : LLVMBuilderRef, VecVal : LLVMValueRef, Index : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildExtractElement :: proc(unamed0 : BuilderRef, VecVal : ValueRef, Index : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildInsertElement")
-    LLVMBuildInsertElement :: proc(unamed0 : LLVMBuilderRef, VecVal : LLVMValueRef, EltVal : LLVMValueRef, Index : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildInsertElement :: proc(unamed0 : BuilderRef, VecVal : ValueRef, EltVal : ValueRef, Index : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildShuffleVector")
-    LLVMBuildShuffleVector :: proc(unamed0 : LLVMBuilderRef, V1 : LLVMValueRef, V2 : LLVMValueRef, Mask : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildShuffleVector :: proc(unamed0 : BuilderRef, V1 : ValueRef, V2 : ValueRef, Mask : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildExtractValue")
-    LLVMBuildExtractValue :: proc(unamed0 : LLVMBuilderRef, AggVal : LLVMValueRef, Index : _c.uint, Name : cstring) -> LLVMValueRef ---;
+    BuildExtractValue :: proc(unamed0 : BuilderRef, AggVal : ValueRef, Index : _c.uint, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildInsertValue")
-    LLVMBuildInsertValue :: proc(unamed0 : LLVMBuilderRef, AggVal : LLVMValueRef, EltVal : LLVMValueRef, Index : _c.uint, Name : cstring) -> LLVMValueRef ---;
+    BuildInsertValue :: proc(unamed0 : BuilderRef, AggVal : ValueRef, EltVal : ValueRef, Index : _c.uint, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildFreeze")
-    LLVMBuildFreeze :: proc(unamed0 : LLVMBuilderRef, Val : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildFreeze :: proc(unamed0 : BuilderRef, Val : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildIsNull")
-    LLVMBuildIsNull :: proc(unamed0 : LLVMBuilderRef, Val : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildIsNull :: proc(unamed0 : BuilderRef, Val : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildIsNotNull")
-    LLVMBuildIsNotNull :: proc(unamed0 : LLVMBuilderRef, Val : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildIsNotNull :: proc(unamed0 : BuilderRef, Val : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildPtrDiff2")
-    LLVMBuildPtrDiff2 :: proc(unamed0 : LLVMBuilderRef, ElemTy : LLVMTypeRef, LHS : LLVMValueRef, RHS : LLVMValueRef, Name : cstring) -> LLVMValueRef ---;
+    BuildPtrDiff2 :: proc(unamed0 : BuilderRef, ElemTy : TypeRef, LHS : ValueRef, RHS : ValueRef, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildFence")
-    LLVMBuildFence :: proc(B : LLVMBuilderRef, ordering : LLVMAtomicOrdering, singleThread : LLVMBool, Name : cstring) -> LLVMValueRef ---;
+    BuildFence :: proc(B : BuilderRef, ordering : AtomicOrdering, singleThread : Bool, Name : cstring) -> ValueRef ---;
 
     @(link_name="LLVMBuildAtomicRMW")
-    LLVMBuildAtomicRMW :: proc(B : LLVMBuilderRef, op : LLVMAtomicRMWBinOp, PTR : LLVMValueRef, Val : LLVMValueRef, ordering : LLVMAtomicOrdering, singleThread : LLVMBool) -> LLVMValueRef ---;
+    BuildAtomicRMW :: proc(B : BuilderRef, op : AtomicRMWBinOp, PTR : ValueRef, Val : ValueRef, ordering : AtomicOrdering, singleThread : Bool) -> ValueRef ---;
 
     @(link_name="LLVMBuildAtomicCmpXchg")
-    LLVMBuildAtomicCmpXchg :: proc(B : LLVMBuilderRef, Ptr : LLVMValueRef, Cmp : LLVMValueRef, New : LLVMValueRef, SuccessOrdering : LLVMAtomicOrdering, FailureOrdering : LLVMAtomicOrdering, SingleThread : LLVMBool) -> LLVMValueRef ---;
+    BuildAtomicCmpXchg :: proc(B : BuilderRef, Ptr : ValueRef, Cmp : ValueRef, New : ValueRef, SuccessOrdering : AtomicOrdering, FailureOrdering : AtomicOrdering, SingleThread : Bool) -> ValueRef ---;
 
     @(link_name="LLVMGetNumMaskElements")
-    LLVMGetNumMaskElements :: proc(ShuffleVectorInst : LLVMValueRef) -> _c.uint ---;
+    GetNumMaskElements :: proc(ShuffleVectorInst : ValueRef) -> _c.uint ---;
 
     @(link_name="LLVMGetUndefMaskElem")
-    LLVMGetUndefMaskElem :: proc() -> _c.int ---;
+    GetUndefMaskElem :: proc() -> _c.int ---;
 
     @(link_name="LLVMGetMaskValue")
-    LLVMGetMaskValue :: proc(ShuffleVectorInst : LLVMValueRef, Elt : _c.uint) -> _c.int ---;
+    GetMaskValue :: proc(ShuffleVectorInst : ValueRef, Elt : _c.uint) -> _c.int ---;
 
     @(link_name="LLVMIsAtomicSingleThread")
-    LLVMIsAtomicSingleThread :: proc(AtomicInst : LLVMValueRef) -> LLVMBool ---;
+    IsAtomicSingleThread :: proc(AtomicInst : ValueRef) -> Bool ---;
 
     @(link_name="LLVMSetAtomicSingleThread")
-    LLVMSetAtomicSingleThread :: proc(AtomicInst : LLVMValueRef, SingleThread : LLVMBool) ---;
+    SetAtomicSingleThread :: proc(AtomicInst : ValueRef, SingleThread : Bool) ---;
 
     @(link_name="LLVMGetCmpXchgSuccessOrdering")
-    LLVMGetCmpXchgSuccessOrdering :: proc(CmpXchgInst : LLVMValueRef) -> LLVMAtomicOrdering ---;
+    GetCmpXchgSuccessOrdering :: proc(CmpXchgInst : ValueRef) -> AtomicOrdering ---;
 
     @(link_name="LLVMSetCmpXchgSuccessOrdering")
-    LLVMSetCmpXchgSuccessOrdering :: proc(CmpXchgInst : LLVMValueRef, Ordering : LLVMAtomicOrdering) ---;
+    SetCmpXchgSuccessOrdering :: proc(CmpXchgInst : ValueRef, Ordering : AtomicOrdering) ---;
 
     @(link_name="LLVMGetCmpXchgFailureOrdering")
-    LLVMGetCmpXchgFailureOrdering :: proc(CmpXchgInst : LLVMValueRef) -> LLVMAtomicOrdering ---;
+    GetCmpXchgFailureOrdering :: proc(CmpXchgInst : ValueRef) -> AtomicOrdering ---;
 
     @(link_name="LLVMSetCmpXchgFailureOrdering")
-    LLVMSetCmpXchgFailureOrdering :: proc(CmpXchgInst : LLVMValueRef, Ordering : LLVMAtomicOrdering) ---;
+    SetCmpXchgFailureOrdering :: proc(CmpXchgInst : ValueRef, Ordering : AtomicOrdering) ---;
 
     @(link_name="LLVMCreateModuleProviderForExistingModule")
-    LLVMCreateModuleProviderForExistingModule :: proc(M : LLVMModuleRef) -> LLVMModuleProviderRef ---;
+    CreateModuleProviderForExistingModule :: proc(M : ModuleRef) -> ModuleProviderRef ---;
 
     @(link_name="LLVMDisposeModuleProvider")
-    LLVMDisposeModuleProvider :: proc(M : LLVMModuleProviderRef) ---;
+    DisposeModuleProvider :: proc(M : ModuleProviderRef) ---;
 
     @(link_name="LLVMCreateMemoryBufferWithContentsOfFile")
-    LLVMCreateMemoryBufferWithContentsOfFile :: proc(Path : cstring, OutMemBuf : ^LLVMMemoryBufferRef, OutMessage : ^cstring) -> LLVMBool ---;
+    CreateMemoryBufferWithContentsOfFile :: proc(Path : cstring, OutMemBuf : ^MemoryBufferRef, OutMessage : ^cstring) -> Bool ---;
 
     @(link_name="LLVMCreateMemoryBufferWithSTDIN")
-    LLVMCreateMemoryBufferWithSTDIN :: proc(OutMemBuf : ^LLVMMemoryBufferRef, OutMessage : ^cstring) -> LLVMBool ---;
+    CreateMemoryBufferWithSTDIN :: proc(OutMemBuf : ^MemoryBufferRef, OutMessage : ^cstring) -> Bool ---;
 
     @(link_name="LLVMCreateMemoryBufferWithMemoryRange")
-    LLVMCreateMemoryBufferWithMemoryRange :: proc(InputData : cstring, InputDataLength : _c.size_t, BufferName : cstring, RequiresNullTerminator : LLVMBool) -> LLVMMemoryBufferRef ---;
+    CreateMemoryBufferWithMemoryRange :: proc(InputData : cstring, InputDataLength : _c.size_t, BufferName : cstring, RequiresNullTerminator : Bool) -> MemoryBufferRef ---;
 
     @(link_name="LLVMCreateMemoryBufferWithMemoryRangeCopy")
-    LLVMCreateMemoryBufferWithMemoryRangeCopy :: proc(InputData : cstring, InputDataLength : _c.size_t, BufferName : cstring) -> LLVMMemoryBufferRef ---;
+    CreateMemoryBufferWithMemoryRangeCopy :: proc(InputData : cstring, InputDataLength : _c.size_t, BufferName : cstring) -> MemoryBufferRef ---;
 
     @(link_name="LLVMGetBufferStart")
-    LLVMGetBufferStart :: proc(MemBuf : LLVMMemoryBufferRef) -> cstring ---;
+    GetBufferStart :: proc(MemBuf : MemoryBufferRef) -> cstring ---;
 
     @(link_name="LLVMGetBufferSize")
-    LLVMGetBufferSize :: proc(MemBuf : LLVMMemoryBufferRef) -> _c.size_t ---;
+    GetBufferSize :: proc(MemBuf : MemoryBufferRef) -> _c.size_t ---;
 
     @(link_name="LLVMDisposeMemoryBuffer")
-    LLVMDisposeMemoryBuffer :: proc(MemBuf : LLVMMemoryBufferRef) ---;
+    DisposeMemoryBuffer :: proc(MemBuf : MemoryBufferRef) ---;
 
     @(link_name="LLVMCreatePassManager")
-    LLVMCreatePassManager :: proc() -> LLVMPassManagerRef ---;
+    CreatePassManager :: proc() -> PassManagerRef ---;
 
     @(link_name="LLVMCreateFunctionPassManagerForModule")
-    LLVMCreateFunctionPassManagerForModule :: proc(M : LLVMModuleRef) -> LLVMPassManagerRef ---;
+    CreateFunctionPassManagerForModule :: proc(M : ModuleRef) -> PassManagerRef ---;
 
     @(link_name="LLVMCreateFunctionPassManager")
-    LLVMCreateFunctionPassManager :: proc(MP : LLVMModuleProviderRef) -> LLVMPassManagerRef ---;
+    CreateFunctionPassManager :: proc(MP : ModuleProviderRef) -> PassManagerRef ---;
 
     @(link_name="LLVMRunPassManager")
-    LLVMRunPassManager :: proc(PM : LLVMPassManagerRef, M : LLVMModuleRef) -> LLVMBool ---;
+    RunPassManager :: proc(PM : PassManagerRef, M : ModuleRef) -> Bool ---;
 
     @(link_name="LLVMInitializeFunctionPassManager")
-    LLVMInitializeFunctionPassManager :: proc(FPM : LLVMPassManagerRef) -> LLVMBool ---;
+    InitializeFunctionPassManager :: proc(FPM : PassManagerRef) -> Bool ---;
 
     @(link_name="LLVMRunFunctionPassManager")
-    LLVMRunFunctionPassManager :: proc(FPM : LLVMPassManagerRef, F : LLVMValueRef) -> LLVMBool ---;
+    RunFunctionPassManager :: proc(FPM : PassManagerRef, F : ValueRef) -> Bool ---;
 
     @(link_name="LLVMFinalizeFunctionPassManager")
-    LLVMFinalizeFunctionPassManager :: proc(FPM : LLVMPassManagerRef) -> LLVMBool ---;
+    FinalizeFunctionPassManager :: proc(FPM : PassManagerRef) -> Bool ---;
 
     @(link_name="LLVMDisposePassManager")
-    LLVMDisposePassManager :: proc(PM : LLVMPassManagerRef) ---;
+    DisposePassManager :: proc(PM : PassManagerRef) ---;
 
     @(link_name="LLVMStartMultithreaded")
-    LLVMStartMultithreaded :: proc() -> LLVMBool ---;
+    StartMultithreaded :: proc() -> Bool ---;
 
     @(link_name="LLVMStopMultithreaded")
-    LLVMStopMultithreaded :: proc() ---;
+    StopMultithreaded :: proc() ---;
 
     @(link_name="LLVMIsMultithreaded")
-    LLVMIsMultithreaded :: proc() -> LLVMBool ---;
+    IsMultithreaded :: proc() -> Bool ---;
 
     @(link_name="LLVMDebugMetadataVersion")
-    LLVMDebugMetadataVersion :: proc() -> _c.uint ---;
+    DebugMetadataVersion :: proc() -> _c.uint ---;
 
     @(link_name="LLVMGetModuleDebugMetadataVersion")
-    LLVMGetModuleDebugMetadataVersion :: proc(Module : LLVMModuleRef) -> _c.uint ---;
+    GetModuleDebugMetadataVersion :: proc(Module : ModuleRef) -> _c.uint ---;
 
     @(link_name="LLVMStripModuleDebugInfo")
-    LLVMStripModuleDebugInfo :: proc(Module : LLVMModuleRef) -> LLVMBool ---;
+    StripModuleDebugInfo :: proc(Module : ModuleRef) -> Bool ---;
 
     @(link_name="LLVMCreateDIBuilderDisallowUnresolved")
-    LLVMCreateDIBuilderDisallowUnresolved :: proc(M : LLVMModuleRef) -> LLVMDIBuilderRef ---;
+    CreateDIBuilderDisallowUnresolved :: proc(M : ModuleRef) -> DIBuilderRef ---;
 
     @(link_name="LLVMCreateDIBuilder")
-    LLVMCreateDIBuilder :: proc(M : LLVMModuleRef) -> LLVMDIBuilderRef ---;
+    CreateDIBuilder :: proc(M : ModuleRef) -> DIBuilderRef ---;
 
     @(link_name="LLVMDisposeDIBuilder")
-    LLVMDisposeDIBuilder :: proc(Builder : LLVMDIBuilderRef) ---;
+    DisposeDIBuilder :: proc(Builder : DIBuilderRef) ---;
 
     @(link_name="LLVMDIBuilderFinalize")
-    LLVMDIBuilderFinalize :: proc(Builder : LLVMDIBuilderRef) ---;
+    DIBuilderFinalize :: proc(Builder : DIBuilderRef) ---;
 
     @(link_name="LLVMDIBuilderFinalizeSubprogram")
-    LLVMDIBuilderFinalizeSubprogram :: proc(Builder : LLVMDIBuilderRef, Subprogram : LLVMMetadataRef) ---;
+    DIBuilderFinalizeSubprogram :: proc(Builder : DIBuilderRef, Subprogram : MetadataRef) ---;
 
     @(link_name="LLVMDIBuilderCreateCompileUnit")
-    LLVMDIBuilderCreateCompileUnit :: proc(Builder : LLVMDIBuilderRef, Lang : LLVMDWARFSourceLanguage, FileRef : LLVMMetadataRef, Producer : cstring, ProducerLen : _c.size_t, isOptimized : LLVMBool, Flags : cstring, FlagsLen : _c.size_t, RuntimeVer : _c.uint, SplitName : cstring, SplitNameLen : _c.size_t, Kind : LLVMDWARFEmissionKind, DWOId : _c.uint, SplitDebugInlining : LLVMBool, DebugInfoForProfiling : LLVMBool, SysRoot : cstring, SysRootLen : _c.size_t, SDK : cstring, SDKLen : _c.size_t) -> LLVMMetadataRef ---;
+    DIBuilderCreateCompileUnit :: proc(Builder : DIBuilderRef, Lang : DWARFSourceLanguage, FileRef : MetadataRef, Producer : cstring, ProducerLen : _c.size_t, isOptimized : Bool, Flags : cstring, FlagsLen : _c.size_t, RuntimeVer : _c.uint, SplitName : cstring, SplitNameLen : _c.size_t, Kind : DWARFEmissionKind, DWOId : _c.uint, SplitDebugInlining : Bool, DebugInfoForProfiling : Bool, SysRoot : cstring, SysRootLen : _c.size_t, SDK : cstring, SDKLen : _c.size_t) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateFile")
-    LLVMDIBuilderCreateFile :: proc(Builder : LLVMDIBuilderRef, Filename : cstring, FilenameLen : _c.size_t, Directory : cstring, DirectoryLen : _c.size_t) -> LLVMMetadataRef ---;
+    DIBuilderCreateFile :: proc(Builder : DIBuilderRef, Filename : cstring, FilenameLen : _c.size_t, Directory : cstring, DirectoryLen : _c.size_t) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateModule")
-    LLVMDIBuilderCreateModule :: proc(Builder : LLVMDIBuilderRef, ParentScope : LLVMMetadataRef, Name : cstring, NameLen : _c.size_t, ConfigMacros : cstring, ConfigMacrosLen : _c.size_t, IncludePath : cstring, IncludePathLen : _c.size_t, APINotesFile : cstring, APINotesFileLen : _c.size_t) -> LLVMMetadataRef ---;
+    DIBuilderCreateModule :: proc(Builder : DIBuilderRef, ParentScope : MetadataRef, Name : cstring, NameLen : _c.size_t, ConfigMacros : cstring, ConfigMacrosLen : _c.size_t, IncludePath : cstring, IncludePathLen : _c.size_t, APINotesFile : cstring, APINotesFileLen : _c.size_t) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateNameSpace")
-    LLVMDIBuilderCreateNameSpace :: proc(Builder : LLVMDIBuilderRef, ParentScope : LLVMMetadataRef, Name : cstring, NameLen : _c.size_t, ExportSymbols : LLVMBool) -> LLVMMetadataRef ---;
+    DIBuilderCreateNameSpace :: proc(Builder : DIBuilderRef, ParentScope : MetadataRef, Name : cstring, NameLen : _c.size_t, ExportSymbols : Bool) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateFunction")
-    LLVMDIBuilderCreateFunction :: proc(Builder : LLVMDIBuilderRef, Scope : LLVMMetadataRef, Name : cstring, NameLen : _c.size_t, LinkageName : cstring, LinkageNameLen : _c.size_t, File : LLVMMetadataRef, LineNo : _c.uint, Ty : LLVMMetadataRef, IsLocalToUnit : LLVMBool, IsDefinition : LLVMBool, ScopeLine : _c.uint, Flags : LLVMDIFlags, IsOptimized : LLVMBool) -> LLVMMetadataRef ---;
+    DIBuilderCreateFunction :: proc(Builder : DIBuilderRef, Scope : MetadataRef, Name : cstring, NameLen : _c.size_t, LinkageName : cstring, LinkageNameLen : _c.size_t, File : MetadataRef, LineNo : _c.uint, Ty : MetadataRef, IsLocalToUnit : Bool, IsDefinition : Bool, ScopeLine : _c.uint, Flags : DIFlags, IsOptimized : Bool) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateLexicalBlock")
-    LLVMDIBuilderCreateLexicalBlock :: proc(Builder : LLVMDIBuilderRef, Scope : LLVMMetadataRef, File : LLVMMetadataRef, Line : _c.uint, Column : _c.uint) -> LLVMMetadataRef ---;
+    DIBuilderCreateLexicalBlock :: proc(Builder : DIBuilderRef, Scope : MetadataRef, File : MetadataRef, Line : _c.uint, Column : _c.uint) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateLexicalBlockFile")
-    LLVMDIBuilderCreateLexicalBlockFile :: proc(Builder : LLVMDIBuilderRef, Scope : LLVMMetadataRef, File : LLVMMetadataRef, Discriminator : _c.uint) -> LLVMMetadataRef ---;
+    DIBuilderCreateLexicalBlockFile :: proc(Builder : DIBuilderRef, Scope : MetadataRef, File : MetadataRef, Discriminator : _c.uint) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateImportedModuleFromNamespace")
-    LLVMDIBuilderCreateImportedModuleFromNamespace :: proc(Builder : LLVMDIBuilderRef, Scope : LLVMMetadataRef, NS : LLVMMetadataRef, File : LLVMMetadataRef, Line : _c.uint) -> LLVMMetadataRef ---;
+    DIBuilderCreateImportedModuleFromNamespace :: proc(Builder : DIBuilderRef, Scope : MetadataRef, NS : MetadataRef, File : MetadataRef, Line : _c.uint) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateImportedModuleFromAlias")
-    LLVMDIBuilderCreateImportedModuleFromAlias :: proc(Builder : LLVMDIBuilderRef, Scope : LLVMMetadataRef, ImportedEntity : LLVMMetadataRef, File : LLVMMetadataRef, Line : _c.uint, Elements : ^LLVMMetadataRef, NumElements : _c.uint) -> LLVMMetadataRef ---;
+    DIBuilderCreateImportedModuleFromAlias :: proc(Builder : DIBuilderRef, Scope : MetadataRef, ImportedEntity : MetadataRef, File : MetadataRef, Line : _c.uint, Elements : ^MetadataRef, NumElements : _c.uint) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateImportedModuleFromModule")
-    LLVMDIBuilderCreateImportedModuleFromModule :: proc(Builder : LLVMDIBuilderRef, Scope : LLVMMetadataRef, M : LLVMMetadataRef, File : LLVMMetadataRef, Line : _c.uint, Elements : ^LLVMMetadataRef, NumElements : _c.uint) -> LLVMMetadataRef ---;
+    DIBuilderCreateImportedModuleFromModule :: proc(Builder : DIBuilderRef, Scope : MetadataRef, M : MetadataRef, File : MetadataRef, Line : _c.uint, Elements : ^MetadataRef, NumElements : _c.uint) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateImportedDeclaration")
-    LLVMDIBuilderCreateImportedDeclaration :: proc(Builder : LLVMDIBuilderRef, Scope : LLVMMetadataRef, Decl : LLVMMetadataRef, File : LLVMMetadataRef, Line : _c.uint, Name : cstring, NameLen : _c.size_t, Elements : ^LLVMMetadataRef, NumElements : _c.uint) -> LLVMMetadataRef ---;
+    DIBuilderCreateImportedDeclaration :: proc(Builder : DIBuilderRef, Scope : MetadataRef, Decl : MetadataRef, File : MetadataRef, Line : _c.uint, Name : cstring, NameLen : _c.size_t, Elements : ^MetadataRef, NumElements : _c.uint) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateDebugLocation")
-    LLVMDIBuilderCreateDebugLocation :: proc(Ctx : LLVMContextRef, Line : _c.uint, Column : _c.uint, Scope : LLVMMetadataRef, InlinedAt : LLVMMetadataRef) -> LLVMMetadataRef ---;
+    DIBuilderCreateDebugLocation :: proc(Ctx : ContextRef, Line : _c.uint, Column : _c.uint, Scope : MetadataRef, InlinedAt : MetadataRef) -> MetadataRef ---;
 
     @(link_name="LLVMDILocationGetLine")
-    LLVMDILocationGetLine :: proc(Location : LLVMMetadataRef) -> _c.uint ---;
+    DILocationGetLine :: proc(Location : MetadataRef) -> _c.uint ---;
 
     @(link_name="LLVMDILocationGetColumn")
-    LLVMDILocationGetColumn :: proc(Location : LLVMMetadataRef) -> _c.uint ---;
+    DILocationGetColumn :: proc(Location : MetadataRef) -> _c.uint ---;
 
     @(link_name="LLVMDILocationGetScope")
-    LLVMDILocationGetScope :: proc(Location : LLVMMetadataRef) -> LLVMMetadataRef ---;
+    DILocationGetScope :: proc(Location : MetadataRef) -> MetadataRef ---;
 
     @(link_name="LLVMDILocationGetInlinedAt")
-    LLVMDILocationGetInlinedAt :: proc(Location : LLVMMetadataRef) -> LLVMMetadataRef ---;
+    DILocationGetInlinedAt :: proc(Location : MetadataRef) -> MetadataRef ---;
 
     @(link_name="LLVMDIScopeGetFile")
-    LLVMDIScopeGetFile :: proc(Scope : LLVMMetadataRef) -> LLVMMetadataRef ---;
+    DIScopeGetFile :: proc(Scope : MetadataRef) -> MetadataRef ---;
 
     @(link_name="LLVMDIFileGetDirectory")
-    LLVMDIFileGetDirectory :: proc(File : LLVMMetadataRef, Len : ^_c.uint) -> cstring ---;
+    DIFileGetDirectory :: proc(File : MetadataRef, Len : ^_c.uint) -> cstring ---;
 
     @(link_name="LLVMDIFileGetFilename")
-    LLVMDIFileGetFilename :: proc(File : LLVMMetadataRef, Len : ^_c.uint) -> cstring ---;
+    DIFileGetFilename :: proc(File : MetadataRef, Len : ^_c.uint) -> cstring ---;
 
     @(link_name="LLVMDIFileGetSource")
-    LLVMDIFileGetSource :: proc(File : LLVMMetadataRef, Len : ^_c.uint) -> cstring ---;
+    DIFileGetSource :: proc(File : MetadataRef, Len : ^_c.uint) -> cstring ---;
 
     @(link_name="LLVMDIBuilderGetOrCreateTypeArray")
-    LLVMDIBuilderGetOrCreateTypeArray :: proc(Builder : LLVMDIBuilderRef, Data : ^LLVMMetadataRef, NumElements : _c.size_t) -> LLVMMetadataRef ---;
+    DIBuilderGetOrCreateTypeArray :: proc(Builder : DIBuilderRef, Data : ^MetadataRef, NumElements : _c.size_t) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateSubroutineType")
-    LLVMDIBuilderCreateSubroutineType :: proc(Builder : LLVMDIBuilderRef, File : LLVMMetadataRef, ParameterTypes : ^LLVMMetadataRef, NumParameterTypes : _c.uint, Flags : LLVMDIFlags) -> LLVMMetadataRef ---;
+    DIBuilderCreateSubroutineType :: proc(Builder : DIBuilderRef, File : MetadataRef, ParameterTypes : ^MetadataRef, NumParameterTypes : _c.uint, Flags : DIFlags) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateMacro")
-    LLVMDIBuilderCreateMacro :: proc(Builder : LLVMDIBuilderRef, ParentMacroFile : LLVMMetadataRef, Line : _c.uint, RecordType : LLVMDWARFMacinfoRecordType, Name : cstring, NameLen : _c.size_t, Value : cstring, ValueLen : _c.size_t) -> LLVMMetadataRef ---;
+    DIBuilderCreateMacro :: proc(Builder : DIBuilderRef, ParentMacroFile : MetadataRef, Line : _c.uint, RecordType : DWARFMacinfoRecordType, Name : cstring, NameLen : _c.size_t, Value : cstring, ValueLen : _c.size_t) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateTempMacroFile")
-    LLVMDIBuilderCreateTempMacroFile :: proc(Builder : LLVMDIBuilderRef, ParentMacroFile : LLVMMetadataRef, Line : _c.uint, File : LLVMMetadataRef) -> LLVMMetadataRef ---;
+    DIBuilderCreateTempMacroFile :: proc(Builder : DIBuilderRef, ParentMacroFile : MetadataRef, Line : _c.uint, File : MetadataRef) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateEnumerator")
-    LLVMDIBuilderCreateEnumerator :: proc(Builder : LLVMDIBuilderRef, Name : cstring, NameLen : _c.size_t, Value : i64, IsUnsigned : LLVMBool) -> LLVMMetadataRef ---;
+    DIBuilderCreateEnumerator :: proc(Builder : DIBuilderRef, Name : cstring, NameLen : _c.size_t, Value : i64, IsUnsigned : Bool) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateEnumerationType")
-    LLVMDIBuilderCreateEnumerationType :: proc(Builder : LLVMDIBuilderRef, Scope : LLVMMetadataRef, Name : cstring, NameLen : _c.size_t, File : LLVMMetadataRef, LineNumber : _c.uint, SizeInBits : u64, AlignInBits : u32, Elements : ^LLVMMetadataRef, NumElements : _c.uint, ClassTy : LLVMMetadataRef) -> LLVMMetadataRef ---;
+    DIBuilderCreateEnumerationType :: proc(Builder : DIBuilderRef, Scope : MetadataRef, Name : cstring, NameLen : _c.size_t, File : MetadataRef, LineNumber : _c.uint, SizeInBits : u64, AlignInBits : u32, Elements : ^MetadataRef, NumElements : _c.uint, ClassTy : MetadataRef) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateUnionType")
-    LLVMDIBuilderCreateUnionType :: proc(Builder : LLVMDIBuilderRef, Scope : LLVMMetadataRef, Name : cstring, NameLen : _c.size_t, File : LLVMMetadataRef, LineNumber : _c.uint, SizeInBits : u64, AlignInBits : u32, Flags : LLVMDIFlags, Elements : ^LLVMMetadataRef, NumElements : _c.uint, RunTimeLang : _c.uint, UniqueId : cstring, UniqueIdLen : _c.size_t) -> LLVMMetadataRef ---;
+    DIBuilderCreateUnionType :: proc(Builder : DIBuilderRef, Scope : MetadataRef, Name : cstring, NameLen : _c.size_t, File : MetadataRef, LineNumber : _c.uint, SizeInBits : u64, AlignInBits : u32, Flags : DIFlags, Elements : ^MetadataRef, NumElements : _c.uint, RunTimeLang : _c.uint, UniqueId : cstring, UniqueIdLen : _c.size_t) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateArrayType")
-    LLVMDIBuilderCreateArrayType :: proc(Builder : LLVMDIBuilderRef, Size : u64, AlignInBits : u32, Ty : LLVMMetadataRef, Subscripts : ^LLVMMetadataRef, NumSubscripts : _c.uint) -> LLVMMetadataRef ---;
+    DIBuilderCreateArrayType :: proc(Builder : DIBuilderRef, Size : u64, AlignInBits : u32, Ty : MetadataRef, Subscripts : ^MetadataRef, NumSubscripts : _c.uint) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateVectorType")
-    LLVMDIBuilderCreateVectorType :: proc(Builder : LLVMDIBuilderRef, Size : u64, AlignInBits : u32, Ty : LLVMMetadataRef, Subscripts : ^LLVMMetadataRef, NumSubscripts : _c.uint) -> LLVMMetadataRef ---;
+    DIBuilderCreateVectorType :: proc(Builder : DIBuilderRef, Size : u64, AlignInBits : u32, Ty : MetadataRef, Subscripts : ^MetadataRef, NumSubscripts : _c.uint) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateUnspecifiedType")
-    LLVMDIBuilderCreateUnspecifiedType :: proc(Builder : LLVMDIBuilderRef, Name : cstring, NameLen : _c.size_t) -> LLVMMetadataRef ---;
+    DIBuilderCreateUnspecifiedType :: proc(Builder : DIBuilderRef, Name : cstring, NameLen : _c.size_t) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateBasicType")
-    LLVMDIBuilderCreateBasicType :: proc(Builder : LLVMDIBuilderRef, Name : cstring, NameLen : _c.size_t, SizeInBits : u64, Encoding : _c.uint, Flags : LLVMDIFlags) -> LLVMMetadataRef ---;
+    DIBuilderCreateBasicType :: proc(Builder : DIBuilderRef, Name : cstring, NameLen : _c.size_t, SizeInBits : u64, Encoding : _c.uint, Flags : DIFlags) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreatePointerType")
-    LLVMDIBuilderCreatePointerType :: proc(Builder : LLVMDIBuilderRef, PointeeTy : LLVMMetadataRef, SizeInBits : u64, AlignInBits : u32, AddressSpace : _c.uint, Name : cstring, NameLen : _c.size_t) -> LLVMMetadataRef ---;
+    DIBuilderCreatePointerType :: proc(Builder : DIBuilderRef, PointeeTy : MetadataRef, SizeInBits : u64, AlignInBits : u32, AddressSpace : _c.uint, Name : cstring, NameLen : _c.size_t) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateStructType")
-    LLVMDIBuilderCreateStructType :: proc(Builder : LLVMDIBuilderRef, Scope : LLVMMetadataRef, Name : cstring, NameLen : _c.size_t, File : LLVMMetadataRef, LineNumber : _c.uint, SizeInBits : u64, AlignInBits : u32, Flags : LLVMDIFlags, DerivedFrom : LLVMMetadataRef, Elements : ^LLVMMetadataRef, NumElements : _c.uint, RunTimeLang : _c.uint, VTableHolder : LLVMMetadataRef, UniqueId : cstring, UniqueIdLen : _c.size_t) -> LLVMMetadataRef ---;
+    DIBuilderCreateStructType :: proc(Builder : DIBuilderRef, Scope : MetadataRef, Name : cstring, NameLen : _c.size_t, File : MetadataRef, LineNumber : _c.uint, SizeInBits : u64, AlignInBits : u32, Flags : DIFlags, DerivedFrom : MetadataRef, Elements : ^MetadataRef, NumElements : _c.uint, RunTimeLang : _c.uint, VTableHolder : MetadataRef, UniqueId : cstring, UniqueIdLen : _c.size_t) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateMemberType")
-    LLVMDIBuilderCreateMemberType :: proc(Builder : LLVMDIBuilderRef, Scope : LLVMMetadataRef, Name : cstring, NameLen : _c.size_t, File : LLVMMetadataRef, LineNo : _c.uint, SizeInBits : u64, AlignInBits : u32, OffsetInBits : u64, Flags : LLVMDIFlags, Ty : LLVMMetadataRef) -> LLVMMetadataRef ---;
+    DIBuilderCreateMemberType :: proc(Builder : DIBuilderRef, Scope : MetadataRef, Name : cstring, NameLen : _c.size_t, File : MetadataRef, LineNo : _c.uint, SizeInBits : u64, AlignInBits : u32, OffsetInBits : u64, Flags : DIFlags, Ty : MetadataRef) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateStaticMemberType")
-    LLVMDIBuilderCreateStaticMemberType :: proc(Builder : LLVMDIBuilderRef, Scope : LLVMMetadataRef, Name : cstring, NameLen : _c.size_t, File : LLVMMetadataRef, LineNumber : _c.uint, Type : LLVMMetadataRef, Flags : LLVMDIFlags, ConstantVal : LLVMValueRef, AlignInBits : u32) -> LLVMMetadataRef ---;
+    DIBuilderCreateStaticMemberType :: proc(Builder : DIBuilderRef, Scope : MetadataRef, Name : cstring, NameLen : _c.size_t, File : MetadataRef, LineNumber : _c.uint, Type : MetadataRef, Flags : DIFlags, ConstantVal : ValueRef, AlignInBits : u32) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateMemberPointerType")
-    LLVMDIBuilderCreateMemberPointerType :: proc(Builder : LLVMDIBuilderRef, PointeeType : LLVMMetadataRef, ClassType : LLVMMetadataRef, SizeInBits : u64, AlignInBits : u32, Flags : LLVMDIFlags) -> LLVMMetadataRef ---;
+    DIBuilderCreateMemberPointerType :: proc(Builder : DIBuilderRef, PointeeType : MetadataRef, ClassType : MetadataRef, SizeInBits : u64, AlignInBits : u32, Flags : DIFlags) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateObjCIVar")
-    LLVMDIBuilderCreateObjCIVar :: proc(Builder : LLVMDIBuilderRef, Name : cstring, NameLen : _c.size_t, File : LLVMMetadataRef, LineNo : _c.uint, SizeInBits : u64, AlignInBits : u32, OffsetInBits : u64, Flags : LLVMDIFlags, Ty : LLVMMetadataRef, PropertyNode : LLVMMetadataRef) -> LLVMMetadataRef ---;
+    DIBuilderCreateObjCIVar :: proc(Builder : DIBuilderRef, Name : cstring, NameLen : _c.size_t, File : MetadataRef, LineNo : _c.uint, SizeInBits : u64, AlignInBits : u32, OffsetInBits : u64, Flags : DIFlags, Ty : MetadataRef, PropertyNode : MetadataRef) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateObjCProperty")
-    LLVMDIBuilderCreateObjCProperty :: proc(Builder : LLVMDIBuilderRef, Name : cstring, NameLen : _c.size_t, File : LLVMMetadataRef, LineNo : _c.uint, GetterName : cstring, GetterNameLen : _c.size_t, SetterName : cstring, SetterNameLen : _c.size_t, PropertyAttributes : _c.uint, Ty : LLVMMetadataRef) -> LLVMMetadataRef ---;
+    DIBuilderCreateObjCProperty :: proc(Builder : DIBuilderRef, Name : cstring, NameLen : _c.size_t, File : MetadataRef, LineNo : _c.uint, GetterName : cstring, GetterNameLen : _c.size_t, SetterName : cstring, SetterNameLen : _c.size_t, PropertyAttributes : _c.uint, Ty : MetadataRef) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateObjectPointerType")
-    LLVMDIBuilderCreateObjectPointerType :: proc(Builder : LLVMDIBuilderRef, Type : LLVMMetadataRef) -> LLVMMetadataRef ---;
+    DIBuilderCreateObjectPointerType :: proc(Builder : DIBuilderRef, Type : MetadataRef) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateQualifiedType")
-    LLVMDIBuilderCreateQualifiedType :: proc(Builder : LLVMDIBuilderRef, Tag : _c.uint, Type : LLVMMetadataRef) -> LLVMMetadataRef ---;
+    DIBuilderCreateQualifiedType :: proc(Builder : DIBuilderRef, Tag : _c.uint, Type : MetadataRef) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateReferenceType")
-    LLVMDIBuilderCreateReferenceType :: proc(Builder : LLVMDIBuilderRef, Tag : _c.uint, Type : LLVMMetadataRef) -> LLVMMetadataRef ---;
+    DIBuilderCreateReferenceType :: proc(Builder : DIBuilderRef, Tag : _c.uint, Type : MetadataRef) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateNullPtrType")
-    LLVMDIBuilderCreateNullPtrType :: proc(Builder : LLVMDIBuilderRef) -> LLVMMetadataRef ---;
+    DIBuilderCreateNullPtrType :: proc(Builder : DIBuilderRef) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateTypedef")
-    LLVMDIBuilderCreateTypedef :: proc(Builder : LLVMDIBuilderRef, Type : LLVMMetadataRef, Name : cstring, NameLen : _c.size_t, File : LLVMMetadataRef, LineNo : _c.uint, Scope : LLVMMetadataRef, AlignInBits : u32) -> LLVMMetadataRef ---;
+    DIBuilderCreateTypedef :: proc(Builder : DIBuilderRef, Type : MetadataRef, Name : cstring, NameLen : _c.size_t, File : MetadataRef, LineNo : _c.uint, Scope : MetadataRef, AlignInBits : u32) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateInheritance")
-    LLVMDIBuilderCreateInheritance :: proc(Builder : LLVMDIBuilderRef, Ty : LLVMMetadataRef, BaseTy : LLVMMetadataRef, BaseOffset : u64, VBPtrOffset : u32, Flags : LLVMDIFlags) -> LLVMMetadataRef ---;
+    DIBuilderCreateInheritance :: proc(Builder : DIBuilderRef, Ty : MetadataRef, BaseTy : MetadataRef, BaseOffset : u64, VBPtrOffset : u32, Flags : DIFlags) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateForwardDecl")
-    LLVMDIBuilderCreateForwardDecl :: proc(Builder : LLVMDIBuilderRef, Tag : _c.uint, Name : cstring, NameLen : _c.size_t, Scope : LLVMMetadataRef, File : LLVMMetadataRef, Line : _c.uint, RuntimeLang : _c.uint, SizeInBits : u64, AlignInBits : u32, UniqueIdentifier : cstring, UniqueIdentifierLen : _c.size_t) -> LLVMMetadataRef ---;
+    DIBuilderCreateForwardDecl :: proc(Builder : DIBuilderRef, Tag : _c.uint, Name : cstring, NameLen : _c.size_t, Scope : MetadataRef, File : MetadataRef, Line : _c.uint, RuntimeLang : _c.uint, SizeInBits : u64, AlignInBits : u32, UniqueIdentifier : cstring, UniqueIdentifierLen : _c.size_t) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateReplaceableCompositeType")
-    LLVMDIBuilderCreateReplaceableCompositeType :: proc(Builder : LLVMDIBuilderRef, Tag : _c.uint, Name : cstring, NameLen : _c.size_t, Scope : LLVMMetadataRef, File : LLVMMetadataRef, Line : _c.uint, RuntimeLang : _c.uint, SizeInBits : u64, AlignInBits : u32, Flags : LLVMDIFlags, UniqueIdentifier : cstring, UniqueIdentifierLen : _c.size_t) -> LLVMMetadataRef ---;
+    DIBuilderCreateReplaceableCompositeType :: proc(Builder : DIBuilderRef, Tag : _c.uint, Name : cstring, NameLen : _c.size_t, Scope : MetadataRef, File : MetadataRef, Line : _c.uint, RuntimeLang : _c.uint, SizeInBits : u64, AlignInBits : u32, Flags : DIFlags, UniqueIdentifier : cstring, UniqueIdentifierLen : _c.size_t) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateBitFieldMemberType")
-    LLVMDIBuilderCreateBitFieldMemberType :: proc(Builder : LLVMDIBuilderRef, Scope : LLVMMetadataRef, Name : cstring, NameLen : _c.size_t, File : LLVMMetadataRef, LineNumber : _c.uint, SizeInBits : u64, OffsetInBits : u64, StorageOffsetInBits : u64, Flags : LLVMDIFlags, Type : LLVMMetadataRef) -> LLVMMetadataRef ---;
+    DIBuilderCreateBitFieldMemberType :: proc(Builder : DIBuilderRef, Scope : MetadataRef, Name : cstring, NameLen : _c.size_t, File : MetadataRef, LineNumber : _c.uint, SizeInBits : u64, OffsetInBits : u64, StorageOffsetInBits : u64, Flags : DIFlags, Type : MetadataRef) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateClassType")
-    LLVMDIBuilderCreateClassType :: proc(Builder : LLVMDIBuilderRef, Scope : LLVMMetadataRef, Name : cstring, NameLen : _c.size_t, File : LLVMMetadataRef, LineNumber : _c.uint, SizeInBits : u64, AlignInBits : u32, OffsetInBits : u64, Flags : LLVMDIFlags, DerivedFrom : LLVMMetadataRef, Elements : ^LLVMMetadataRef, NumElements : _c.uint, VTableHolder : LLVMMetadataRef, TemplateParamsNode : LLVMMetadataRef, UniqueIdentifier : cstring, UniqueIdentifierLen : _c.size_t) -> LLVMMetadataRef ---;
+    DIBuilderCreateClassType :: proc(Builder : DIBuilderRef, Scope : MetadataRef, Name : cstring, NameLen : _c.size_t, File : MetadataRef, LineNumber : _c.uint, SizeInBits : u64, AlignInBits : u32, OffsetInBits : u64, Flags : DIFlags, DerivedFrom : MetadataRef, Elements : ^MetadataRef, NumElements : _c.uint, VTableHolder : MetadataRef, TemplateParamsNode : MetadataRef, UniqueIdentifier : cstring, UniqueIdentifierLen : _c.size_t) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateArtificialType")
-    LLVMDIBuilderCreateArtificialType :: proc(Builder : LLVMDIBuilderRef, Type : LLVMMetadataRef) -> LLVMMetadataRef ---;
+    DIBuilderCreateArtificialType :: proc(Builder : DIBuilderRef, Type : MetadataRef) -> MetadataRef ---;
 
     @(link_name="LLVMDITypeGetName")
-    LLVMDITypeGetName :: proc(DType : LLVMMetadataRef, Length : ^_c.size_t) -> cstring ---;
+    DITypeGetName :: proc(DType : MetadataRef, Length : ^_c.size_t) -> cstring ---;
 
     @(link_name="LLVMDITypeGetSizeInBits")
-    LLVMDITypeGetSizeInBits :: proc(DType : LLVMMetadataRef) -> u64 ---;
+    DITypeGetSizeInBits :: proc(DType : MetadataRef) -> u64 ---;
 
     @(link_name="LLVMDITypeGetOffsetInBits")
-    LLVMDITypeGetOffsetInBits :: proc(DType : LLVMMetadataRef) -> u64 ---;
+    DITypeGetOffsetInBits :: proc(DType : MetadataRef) -> u64 ---;
 
     @(link_name="LLVMDITypeGetAlignInBits")
-    LLVMDITypeGetAlignInBits :: proc(DType : LLVMMetadataRef) -> u32 ---;
+    DITypeGetAlignInBits :: proc(DType : MetadataRef) -> u32 ---;
 
     @(link_name="LLVMDITypeGetLine")
-    LLVMDITypeGetLine :: proc(DType : LLVMMetadataRef) -> _c.uint ---;
+    DITypeGetLine :: proc(DType : MetadataRef) -> _c.uint ---;
 
     @(link_name="LLVMDITypeGetFlags")
-    LLVMDITypeGetFlags :: proc(DType : LLVMMetadataRef) -> LLVMDIFlags ---;
+    DITypeGetFlags :: proc(DType : MetadataRef) -> DIFlags ---;
 
     @(link_name="LLVMDIBuilderGetOrCreateSubrange")
-    LLVMDIBuilderGetOrCreateSubrange :: proc(Builder : LLVMDIBuilderRef, LowerBound : i64, Count : i64) -> LLVMMetadataRef ---;
+    DIBuilderGetOrCreateSubrange :: proc(Builder : DIBuilderRef, LowerBound : i64, Count : i64) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderGetOrCreateArray")
-    LLVMDIBuilderGetOrCreateArray :: proc(Builder : LLVMDIBuilderRef, Data : ^LLVMMetadataRef, NumElements : _c.size_t) -> LLVMMetadataRef ---;
+    DIBuilderGetOrCreateArray :: proc(Builder : DIBuilderRef, Data : ^MetadataRef, NumElements : _c.size_t) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateExpression")
-    LLVMDIBuilderCreateExpression :: proc(Builder : LLVMDIBuilderRef, Addr : ^u64, Length : _c.size_t) -> LLVMMetadataRef ---;
+    DIBuilderCreateExpression :: proc(Builder : DIBuilderRef, Addr : ^u64, Length : _c.size_t) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateConstantValueExpression")
-    LLVMDIBuilderCreateConstantValueExpression :: proc(Builder : LLVMDIBuilderRef, Value : u64) -> LLVMMetadataRef ---;
+    DIBuilderCreateConstantValueExpression :: proc(Builder : DIBuilderRef, Value : u64) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateGlobalVariableExpression")
-    LLVMDIBuilderCreateGlobalVariableExpression :: proc(Builder : LLVMDIBuilderRef, Scope : LLVMMetadataRef, Name : cstring, NameLen : _c.size_t, Linkage : cstring, LinkLen : _c.size_t, File : LLVMMetadataRef, LineNo : _c.uint, Ty : LLVMMetadataRef, LocalToUnit : LLVMBool, Expr : LLVMMetadataRef, Decl : LLVMMetadataRef, AlignInBits : u32) -> LLVMMetadataRef ---;
+    DIBuilderCreateGlobalVariableExpression :: proc(Builder : DIBuilderRef, Scope : MetadataRef, Name : cstring, NameLen : _c.size_t, Linkage : cstring, LinkLen : _c.size_t, File : MetadataRef, LineNo : _c.uint, Ty : MetadataRef, LocalToUnit : Bool, Expr : MetadataRef, Decl : MetadataRef, AlignInBits : u32) -> MetadataRef ---;
 
     @(link_name="LLVMGetDINodeTag")
-    LLVMGetDINodeTag :: proc(MD : LLVMMetadataRef) -> u16 ---;
+    GetDINodeTag :: proc(MD : MetadataRef) -> u16 ---;
 
     @(link_name="LLVMDIGlobalVariableExpressionGetVariable")
-    LLVMDIGlobalVariableExpressionGetVariable :: proc(GVE : LLVMMetadataRef) -> LLVMMetadataRef ---;
+    DIGlobalVariableExpressionGetVariable :: proc(GVE : MetadataRef) -> MetadataRef ---;
 
     @(link_name="LLVMDIGlobalVariableExpressionGetExpression")
-    LLVMDIGlobalVariableExpressionGetExpression :: proc(GVE : LLVMMetadataRef) -> LLVMMetadataRef ---;
+    DIGlobalVariableExpressionGetExpression :: proc(GVE : MetadataRef) -> MetadataRef ---;
 
     @(link_name="LLVMDIVariableGetFile")
-    LLVMDIVariableGetFile :: proc(Var : LLVMMetadataRef) -> LLVMMetadataRef ---;
+    DIVariableGetFile :: proc(Var : MetadataRef) -> MetadataRef ---;
 
     @(link_name="LLVMDIVariableGetScope")
-    LLVMDIVariableGetScope :: proc(Var : LLVMMetadataRef) -> LLVMMetadataRef ---;
+    DIVariableGetScope :: proc(Var : MetadataRef) -> MetadataRef ---;
 
     @(link_name="LLVMDIVariableGetLine")
-    LLVMDIVariableGetLine :: proc(Var : LLVMMetadataRef) -> _c.uint ---;
+    DIVariableGetLine :: proc(Var : MetadataRef) -> _c.uint ---;
 
     @(link_name="LLVMTemporaryMDNode")
-    LLVMTemporaryMDNode :: proc(Ctx : LLVMContextRef, Data : ^LLVMMetadataRef, NumElements : _c.size_t) -> LLVMMetadataRef ---;
+    TemporaryMDNode :: proc(Ctx : ContextRef, Data : ^MetadataRef, NumElements : _c.size_t) -> MetadataRef ---;
 
     @(link_name="LLVMDisposeTemporaryMDNode")
-    LLVMDisposeTemporaryMDNode :: proc(TempNode : LLVMMetadataRef) ---;
+    DisposeTemporaryMDNode :: proc(TempNode : MetadataRef) ---;
 
     @(link_name="LLVMMetadataReplaceAllUsesWith")
-    LLVMMetadataReplaceAllUsesWith :: proc(TempTargetMetadata : LLVMMetadataRef, Replacement : LLVMMetadataRef) ---;
+    MetadataReplaceAllUsesWith :: proc(TempTargetMetadata : MetadataRef, Replacement : MetadataRef) ---;
 
     @(link_name="LLVMDIBuilderCreateTempGlobalVariableFwdDecl")
-    LLVMDIBuilderCreateTempGlobalVariableFwdDecl :: proc(Builder : LLVMDIBuilderRef, Scope : LLVMMetadataRef, Name : cstring, NameLen : _c.size_t, Linkage : cstring, LnkLen : _c.size_t, File : LLVMMetadataRef, LineNo : _c.uint, Ty : LLVMMetadataRef, LocalToUnit : LLVMBool, Decl : LLVMMetadataRef, AlignInBits : u32) -> LLVMMetadataRef ---;
+    DIBuilderCreateTempGlobalVariableFwdDecl :: proc(Builder : DIBuilderRef, Scope : MetadataRef, Name : cstring, NameLen : _c.size_t, Linkage : cstring, LnkLen : _c.size_t, File : MetadataRef, LineNo : _c.uint, Ty : MetadataRef, LocalToUnit : Bool, Decl : MetadataRef, AlignInBits : u32) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderInsertDeclareBefore")
-    LLVMDIBuilderInsertDeclareBefore :: proc(Builder : LLVMDIBuilderRef, Storage : LLVMValueRef, VarInfo : LLVMMetadataRef, Expr : LLVMMetadataRef, DebugLoc : LLVMMetadataRef, Instr : LLVMValueRef) -> LLVMValueRef ---;
+    DIBuilderInsertDeclareBefore :: proc(Builder : DIBuilderRef, Storage : ValueRef, VarInfo : MetadataRef, Expr : MetadataRef, DebugLoc : MetadataRef, Instr : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMDIBuilderInsertDeclareAtEnd")
-    LLVMDIBuilderInsertDeclareAtEnd :: proc(Builder : LLVMDIBuilderRef, Storage : LLVMValueRef, VarInfo : LLVMMetadataRef, Expr : LLVMMetadataRef, DebugLoc : LLVMMetadataRef, Block : LLVMBasicBlockRef) -> LLVMValueRef ---;
+    DIBuilderInsertDeclareAtEnd :: proc(Builder : DIBuilderRef, Storage : ValueRef, VarInfo : MetadataRef, Expr : MetadataRef, DebugLoc : MetadataRef, Block : BasicBlockRef) -> ValueRef ---;
 
     @(link_name="LLVMDIBuilderInsertDbgValueBefore")
-    LLVMDIBuilderInsertDbgValueBefore :: proc(Builder : LLVMDIBuilderRef, Val : LLVMValueRef, VarInfo : LLVMMetadataRef, Expr : LLVMMetadataRef, DebugLoc : LLVMMetadataRef, Instr : LLVMValueRef) -> LLVMValueRef ---;
+    DIBuilderInsertDbgValueBefore :: proc(Builder : DIBuilderRef, Val : ValueRef, VarInfo : MetadataRef, Expr : MetadataRef, DebugLoc : MetadataRef, Instr : ValueRef) -> ValueRef ---;
 
     @(link_name="LLVMDIBuilderInsertDbgValueAtEnd")
-    LLVMDIBuilderInsertDbgValueAtEnd :: proc(Builder : LLVMDIBuilderRef, Val : LLVMValueRef, VarInfo : LLVMMetadataRef, Expr : LLVMMetadataRef, DebugLoc : LLVMMetadataRef, Block : LLVMBasicBlockRef) -> LLVMValueRef ---;
+    DIBuilderInsertDbgValueAtEnd :: proc(Builder : DIBuilderRef, Val : ValueRef, VarInfo : MetadataRef, Expr : MetadataRef, DebugLoc : MetadataRef, Block : BasicBlockRef) -> ValueRef ---;
 
     @(link_name="LLVMDIBuilderCreateAutoVariable")
-    LLVMDIBuilderCreateAutoVariable :: proc(Builder : LLVMDIBuilderRef, Scope : LLVMMetadataRef, Name : cstring, NameLen : _c.size_t, File : LLVMMetadataRef, LineNo : _c.uint, Ty : LLVMMetadataRef, AlwaysPreserve : LLVMBool, Flags : LLVMDIFlags, AlignInBits : u32) -> LLVMMetadataRef ---;
+    DIBuilderCreateAutoVariable :: proc(Builder : DIBuilderRef, Scope : MetadataRef, Name : cstring, NameLen : _c.size_t, File : MetadataRef, LineNo : _c.uint, Ty : MetadataRef, AlwaysPreserve : Bool, Flags : DIFlags, AlignInBits : u32) -> MetadataRef ---;
 
     @(link_name="LLVMDIBuilderCreateParameterVariable")
-    LLVMDIBuilderCreateParameterVariable :: proc(Builder : LLVMDIBuilderRef, Scope : LLVMMetadataRef, Name : cstring, NameLen : _c.size_t, ArgNo : _c.uint, File : LLVMMetadataRef, LineNo : _c.uint, Ty : LLVMMetadataRef, AlwaysPreserve : LLVMBool, Flags : LLVMDIFlags) -> LLVMMetadataRef ---;
+    DIBuilderCreateParameterVariable :: proc(Builder : DIBuilderRef, Scope : MetadataRef, Name : cstring, NameLen : _c.size_t, ArgNo : _c.uint, File : MetadataRef, LineNo : _c.uint, Ty : MetadataRef, AlwaysPreserve : Bool, Flags : DIFlags) -> MetadataRef ---;
 
     @(link_name="LLVMGetSubprogram")
-    LLVMGetSubprogram :: proc(Func : LLVMValueRef) -> LLVMMetadataRef ---;
+    GetSubprogram :: proc(Func : ValueRef) -> MetadataRef ---;
 
     @(link_name="LLVMSetSubprogram")
-    LLVMSetSubprogram :: proc(Func : LLVMValueRef, SP : LLVMMetadataRef) ---;
+    SetSubprogram :: proc(Func : ValueRef, SP : MetadataRef) ---;
 
     @(link_name="LLVMDISubprogramGetLine")
-    LLVMDISubprogramGetLine :: proc(Subprogram : LLVMMetadataRef) -> _c.uint ---;
+    DISubprogramGetLine :: proc(Subprogram : MetadataRef) -> _c.uint ---;
 
     @(link_name="LLVMInstructionGetDebugLoc")
-    LLVMInstructionGetDebugLoc :: proc(Inst : LLVMValueRef) -> LLVMMetadataRef ---;
+    InstructionGetDebugLoc :: proc(Inst : ValueRef) -> MetadataRef ---;
 
     @(link_name="LLVMInstructionSetDebugLoc")
-    LLVMInstructionSetDebugLoc :: proc(Inst : LLVMValueRef, Loc : LLVMMetadataRef) ---;
+    InstructionSetDebugLoc :: proc(Inst : ValueRef, Loc : MetadataRef) ---;
 
     @(link_name="LLVMGetMetadataKind")
-    LLVMGetMetadataKind :: proc(Metadata : LLVMMetadataRef) -> _c.uint ---;
+    GetMetadataKind :: proc(Metadata : MetadataRef) -> _c.uint ---;
 
     @(link_name="LLVMCreateDisasm")
-    LLVMCreateDisasm :: proc(TripleName : cstring, DisInfo : rawptr, TagType : _c.int, GetOpInfo : LLVMOpInfoCallback, SymbolLookUp : LLVMSymbolLookupCallback) -> LLVMDisasmContextRef ---;
+    CreateDisasm :: proc(TripleName : cstring, DisInfo : rawptr, TagType : _c.int, GetOpInfo : OpInfoCallback, SymbolLookUp : SymbolLookupCallback) -> DisasmContextRef ---;
 
     @(link_name="LLVMCreateDisasmCPU")
-    LLVMCreateDisasmCPU :: proc(Triple : cstring, CPU : cstring, DisInfo : rawptr, TagType : _c.int, GetOpInfo : LLVMOpInfoCallback, SymbolLookUp : LLVMSymbolLookupCallback) -> LLVMDisasmContextRef ---;
+    CreateDisasmCPU :: proc(Triple : cstring, CPU : cstring, DisInfo : rawptr, TagType : _c.int, GetOpInfo : OpInfoCallback, SymbolLookUp : SymbolLookupCallback) -> DisasmContextRef ---;
 
     @(link_name="LLVMCreateDisasmCPUFeatures")
-    LLVMCreateDisasmCPUFeatures :: proc(Triple : cstring, CPU : cstring, Features : cstring, DisInfo : rawptr, TagType : _c.int, GetOpInfo : LLVMOpInfoCallback, SymbolLookUp : LLVMSymbolLookupCallback) -> LLVMDisasmContextRef ---;
+    CreateDisasmCPUFeatures :: proc(Triple : cstring, CPU : cstring, Features : cstring, DisInfo : rawptr, TagType : _c.int, GetOpInfo : OpInfoCallback, SymbolLookUp : SymbolLookupCallback) -> DisasmContextRef ---;
 
     @(link_name="LLVMSetDisasmOptions")
-    LLVMSetDisasmOptions :: proc(DC : LLVMDisasmContextRef, Options : u64) -> _c.int ---;
+    SetDisasmOptions :: proc(DC : DisasmContextRef, Options : u64) -> _c.int ---;
 
     @(link_name="LLVMDisasmDispose")
-    LLVMDisasmDispose :: proc(DC : LLVMDisasmContextRef) ---;
+    DisasmDispose :: proc(DC : DisasmContextRef) ---;
 
     @(link_name="LLVMDisasmInstruction")
-    LLVMDisasmInstruction :: proc(DC : LLVMDisasmContextRef, Bytes : ^u8, BytesSize : u64, PC : u64, OutString : cstring, OutStringSize : _c.size_t) -> _c.size_t ---;
+    DisasmInstruction :: proc(DC : DisasmContextRef, Bytes : ^u8, BytesSize : u64, PC : u64, OutString : cstring, OutStringSize : _c.size_t) -> _c.size_t ---;
 
     @(link_name="LLVMGetErrorTypeId")
-    LLVMGetErrorTypeId :: proc(Err : LLVMErrorRef) -> LLVMErrorTypeId ---;
+    GetErrorTypeId :: proc(Err : ErrorRef) -> ErrorTypeId ---;
 
     @(link_name="LLVMConsumeError")
-    LLVMConsumeError :: proc(Err : LLVMErrorRef) ---;
+    ConsumeError :: proc(Err : ErrorRef) ---;
 
     @(link_name="LLVMGetErrorMessage")
-    LLVMGetErrorMessage :: proc(Err : LLVMErrorRef) -> cstring ---;
+    GetErrorMessage :: proc(Err : ErrorRef) -> cstring ---;
 
     @(link_name="LLVMDisposeErrorMessage")
-    LLVMDisposeErrorMessage :: proc(ErrMsg : cstring) ---;
+    DisposeErrorMessage :: proc(ErrMsg : cstring) ---;
 
     @(link_name="LLVMGetStringErrorTypeId")
-    LLVMGetStringErrorTypeId :: proc() -> LLVMErrorTypeId ---;
+    GetStringErrorTypeId :: proc() -> ErrorTypeId ---;
 
     @(link_name="LLVMCreateStringError")
-    LLVMCreateStringError :: proc(ErrMsg : cstring) -> LLVMErrorRef ---;
+    CreateStringError :: proc(ErrMsg : cstring) -> ErrorRef ---;
 
     @(link_name="LLVMInstallFatalErrorHandler")
-    LLVMInstallFatalErrorHandler :: proc(Handler : LLVMFatalErrorHandler) ---;
+    InstallFatalErrorHandler :: proc(Handler : FatalErrorHandler) ---;
 
     @(link_name="LLVMResetFatalErrorHandler")
-    LLVMResetFatalErrorHandler :: proc() ---;
+    ResetFatalErrorHandler :: proc() ---;
 
     @(link_name="LLVMEnablePrettyStackTrace")
-    LLVMEnablePrettyStackTrace :: proc() ---;
+    EnablePrettyStackTrace :: proc() ---;
 
     @(link_name="LLVMLinkInMCJIT")
-    LLVMLinkInMCJIT :: proc() ---;
+    LinkInMCJIT :: proc() ---;
 
     @(link_name="LLVMLinkInInterpreter")
-    LLVMLinkInInterpreter :: proc() ---;
+    LinkInInterpreter :: proc() ---;
 
     @(link_name="LLVMCreateGenericValueOfInt")
-    LLVMCreateGenericValueOfInt :: proc(Ty : LLVMTypeRef, N : _c.ulonglong, IsSigned : LLVMBool) -> LLVMGenericValueRef ---;
+    CreateGenericValueOfInt :: proc(Ty : TypeRef, N : _c.ulonglong, IsSigned : Bool) -> GenericValueRef ---;
 
     @(link_name="LLVMCreateGenericValueOfPointer")
-    LLVMCreateGenericValueOfPointer :: proc(P : rawptr) -> LLVMGenericValueRef ---;
+    CreateGenericValueOfPointer :: proc(P : rawptr) -> GenericValueRef ---;
 
     @(link_name="LLVMCreateGenericValueOfFloat")
-    LLVMCreateGenericValueOfFloat :: proc(Ty : LLVMTypeRef, N : _c.double) -> LLVMGenericValueRef ---;
+    CreateGenericValueOfFloat :: proc(Ty : TypeRef, N : _c.double) -> GenericValueRef ---;
 
     @(link_name="LLVMGenericValueIntWidth")
-    LLVMGenericValueIntWidth :: proc(GenValRef : LLVMGenericValueRef) -> _c.uint ---;
+    GenericValueIntWidth :: proc(GenValRef : GenericValueRef) -> _c.uint ---;
 
     @(link_name="LLVMGenericValueToInt")
-    LLVMGenericValueToInt :: proc(GenVal : LLVMGenericValueRef, IsSigned : LLVMBool) -> _c.ulonglong ---;
+    GenericValueToInt :: proc(GenVal : GenericValueRef, IsSigned : Bool) -> _c.ulonglong ---;
 
     @(link_name="LLVMGenericValueToPointer")
-    LLVMGenericValueToPointer :: proc(GenVal : LLVMGenericValueRef) -> rawptr ---;
+    GenericValueToPointer :: proc(GenVal : GenericValueRef) -> rawptr ---;
 
     @(link_name="LLVMGenericValueToFloat")
-    LLVMGenericValueToFloat :: proc(TyRef : LLVMTypeRef, GenVal : LLVMGenericValueRef) -> _c.double ---;
+    GenericValueToFloat :: proc(TyRef : TypeRef, GenVal : GenericValueRef) -> _c.double ---;
 
     @(link_name="LLVMDisposeGenericValue")
-    LLVMDisposeGenericValue :: proc(GenVal : LLVMGenericValueRef) ---;
+    DisposeGenericValue :: proc(GenVal : GenericValueRef) ---;
 
     @(link_name="LLVMCreateExecutionEngineForModule")
-    LLVMCreateExecutionEngineForModule :: proc(OutEE : ^LLVMExecutionEngineRef, M : LLVMModuleRef, OutError : ^cstring) -> LLVMBool ---;
+    CreateExecutionEngineForModule :: proc(OutEE : ^ExecutionEngineRef, M : ModuleRef, OutError : ^cstring) -> Bool ---;
 
     @(link_name="LLVMCreateInterpreterForModule")
-    LLVMCreateInterpreterForModule :: proc(OutInterp : ^LLVMExecutionEngineRef, M : LLVMModuleRef, OutError : ^cstring) -> LLVMBool ---;
+    CreateInterpreterForModule :: proc(OutInterp : ^ExecutionEngineRef, M : ModuleRef, OutError : ^cstring) -> Bool ---;
 
     @(link_name="LLVMCreateJITCompilerForModule")
-    LLVMCreateJITCompilerForModule :: proc(OutJIT : ^LLVMExecutionEngineRef, M : LLVMModuleRef, OptLevel : _c.uint, OutError : ^cstring) -> LLVMBool ---;
+    CreateJITCompilerForModule :: proc(OutJIT : ^ExecutionEngineRef, M : ModuleRef, OptLevel : _c.uint, OutError : ^cstring) -> Bool ---;
 
     @(link_name="LLVMInitializeMCJITCompilerOptions")
-    LLVMInitializeMCJITCompilerOptions :: proc(Options : ^LLVMMCJITCompilerOptions, SizeOfOptions : _c.size_t) ---;
+    InitializeMCJITCompilerOptions :: proc(Options : ^MCJITCompilerOptions, SizeOfOptions : _c.size_t) ---;
 
     @(link_name="LLVMCreateMCJITCompilerForModule")
-    LLVMCreateMCJITCompilerForModule :: proc(OutJIT : ^LLVMExecutionEngineRef, M : LLVMModuleRef, Options : ^LLVMMCJITCompilerOptions, SizeOfOptions : _c.size_t, OutError : ^cstring) -> LLVMBool ---;
+    CreateMCJITCompilerForModule :: proc(OutJIT : ^ExecutionEngineRef, M : ModuleRef, Options : ^MCJITCompilerOptions, SizeOfOptions : _c.size_t, OutError : ^cstring) -> Bool ---;
 
     @(link_name="LLVMDisposeExecutionEngine")
-    LLVMDisposeExecutionEngine :: proc(EE : LLVMExecutionEngineRef) ---;
+    DisposeExecutionEngine :: proc(EE : ExecutionEngineRef) ---;
 
     @(link_name="LLVMRunStaticConstructors")
-    LLVMRunStaticConstructors :: proc(EE : LLVMExecutionEngineRef) ---;
+    RunStaticConstructors :: proc(EE : ExecutionEngineRef) ---;
 
     @(link_name="LLVMRunStaticDestructors")
-    LLVMRunStaticDestructors :: proc(EE : LLVMExecutionEngineRef) ---;
+    RunStaticDestructors :: proc(EE : ExecutionEngineRef) ---;
 
     @(link_name="LLVMRunFunctionAsMain")
-    LLVMRunFunctionAsMain :: proc(EE : LLVMExecutionEngineRef, F : LLVMValueRef, ArgC : _c.uint, ArgV : ^cstring, EnvP : ^cstring) -> _c.int ---;
+    RunFunctionAsMain :: proc(EE : ExecutionEngineRef, F : ValueRef, ArgC : _c.uint, ArgV : ^cstring, EnvP : ^cstring) -> _c.int ---;
 
     @(link_name="LLVMRunFunction")
-    LLVMRunFunction :: proc(EE : LLVMExecutionEngineRef, F : LLVMValueRef, NumArgs : _c.uint, Args : ^LLVMGenericValueRef) -> LLVMGenericValueRef ---;
+    RunFunction :: proc(EE : ExecutionEngineRef, F : ValueRef, NumArgs : _c.uint, Args : ^GenericValueRef) -> GenericValueRef ---;
 
     @(link_name="LLVMFreeMachineCodeForFunction")
-    LLVMFreeMachineCodeForFunction :: proc(EE : LLVMExecutionEngineRef, F : LLVMValueRef) ---;
+    FreeMachineCodeForFunction :: proc(EE : ExecutionEngineRef, F : ValueRef) ---;
 
     @(link_name="LLVMAddModule")
-    LLVMAddModule :: proc(EE : LLVMExecutionEngineRef, M : LLVMModuleRef) ---;
+    AddModule :: proc(EE : ExecutionEngineRef, M : ModuleRef) ---;
 
     @(link_name="LLVMRemoveModule")
-    LLVMRemoveModule :: proc(EE : LLVMExecutionEngineRef, M : LLVMModuleRef, OutMod : ^LLVMModuleRef, OutError : ^cstring) -> LLVMBool ---;
+    RemoveModule :: proc(EE : ExecutionEngineRef, M : ModuleRef, OutMod : ^ModuleRef, OutError : ^cstring) -> Bool ---;
 
     @(link_name="LLVMFindFunction")
-    LLVMFindFunction :: proc(EE : LLVMExecutionEngineRef, Name : cstring, OutFn : ^LLVMValueRef) -> LLVMBool ---;
+    FindFunction :: proc(EE : ExecutionEngineRef, Name : cstring, OutFn : ^ValueRef) -> Bool ---;
 
     @(link_name="LLVMRecompileAndRelinkFunction")
-    LLVMRecompileAndRelinkFunction :: proc(EE : LLVMExecutionEngineRef, Fn : LLVMValueRef) -> rawptr ---;
+    RecompileAndRelinkFunction :: proc(EE : ExecutionEngineRef, Fn : ValueRef) -> rawptr ---;
 
     @(link_name="LLVMGetExecutionEngineTargetData")
-    LLVMGetExecutionEngineTargetData :: proc(EE : LLVMExecutionEngineRef) -> LLVMTargetDataRef ---;
+    GetExecutionEngineTargetData :: proc(EE : ExecutionEngineRef) -> TargetDataRef ---;
 
     @(link_name="LLVMGetExecutionEngineTargetMachine")
-    LLVMGetExecutionEngineTargetMachine :: proc(EE : LLVMExecutionEngineRef) -> LLVMTargetMachineRef ---;
+    GetExecutionEngineTargetMachine :: proc(EE : ExecutionEngineRef) -> TargetMachineRef ---;
 
     @(link_name="LLVMAddGlobalMapping")
-    LLVMAddGlobalMapping :: proc(EE : LLVMExecutionEngineRef, Global : LLVMValueRef, Addr : rawptr) ---;
+    AddGlobalMapping :: proc(EE : ExecutionEngineRef, Global : ValueRef, Addr : rawptr) ---;
 
     @(link_name="LLVMGetPointerToGlobal")
-    LLVMGetPointerToGlobal :: proc(EE : LLVMExecutionEngineRef, Global : LLVMValueRef) -> rawptr ---;
+    GetPointerToGlobal :: proc(EE : ExecutionEngineRef, Global : ValueRef) -> rawptr ---;
 
     @(link_name="LLVMGetGlobalValueAddress")
-    LLVMGetGlobalValueAddress :: proc(EE : LLVMExecutionEngineRef, Name : cstring) -> u64 ---;
+    GetGlobalValueAddress :: proc(EE : ExecutionEngineRef, Name : cstring) -> u64 ---;
 
     @(link_name="LLVMGetFunctionAddress")
-    LLVMGetFunctionAddress :: proc(EE : LLVMExecutionEngineRef, Name : cstring) -> u64 ---;
+    GetFunctionAddress :: proc(EE : ExecutionEngineRef, Name : cstring) -> u64 ---;
 
     @(link_name="LLVMExecutionEngineGetErrMsg")
-    LLVMExecutionEngineGetErrMsg :: proc(EE : LLVMExecutionEngineRef, OutError : ^cstring) -> LLVMBool ---;
+    ExecutionEngineGetErrMsg :: proc(EE : ExecutionEngineRef, OutError : ^cstring) -> Bool ---;
 
     @(link_name="LLVMCreateSimpleMCJITMemoryManager")
-    LLVMCreateSimpleMCJITMemoryManager :: proc(Opaque : rawptr, AllocateCodeSection : LLVMMemoryManagerAllocateCodeSectionCallback, AllocateDataSection : LLVMMemoryManagerAllocateDataSectionCallback, FinalizeMemory : LLVMMemoryManagerFinalizeMemoryCallback, Destroy : LLVMMemoryManagerDestroyCallback) -> LLVMMCJITMemoryManagerRef ---;
+    CreateSimpleMCJITMemoryManager :: proc(Opaque : rawptr, AllocateCodeSection : MemoryManagerAllocateCodeSectionCallback, AllocateDataSection : MemoryManagerAllocateDataSectionCallback, FinalizeMemory : MemoryManagerFinalizeMemoryCallback, Destroy : MemoryManagerDestroyCallback) -> MCJITMemoryManagerRef ---;
 
     @(link_name="LLVMDisposeMCJITMemoryManager")
-    LLVMDisposeMCJITMemoryManager :: proc(MM : LLVMMCJITMemoryManagerRef) ---;
+    DisposeMCJITMemoryManager :: proc(MM : MCJITMemoryManagerRef) ---;
 
     @(link_name="LLVMCreateGDBRegistrationListener")
-    LLVMCreateGDBRegistrationListener :: proc() -> LLVMJITEventListenerRef ---;
+    CreateGDBRegistrationListener :: proc() -> JITEventListenerRef ---;
 
     @(link_name="LLVMCreateIntelJITEventListener")
-    LLVMCreateIntelJITEventListener :: proc() -> LLVMJITEventListenerRef ---;
+    CreateIntelJITEventListener :: proc() -> JITEventListenerRef ---;
 
     @(link_name="LLVMCreateOProfileJITEventListener")
-    LLVMCreateOProfileJITEventListener :: proc() -> LLVMJITEventListenerRef ---;
+    CreateOProfileJITEventListener :: proc() -> JITEventListenerRef ---;
 
     @(link_name="LLVMCreatePerfJITEventListener")
-    LLVMCreatePerfJITEventListener :: proc() -> LLVMJITEventListenerRef ---;
+    CreatePerfJITEventListener :: proc() -> JITEventListenerRef ---;
 
     @(link_name="LLVMParseIRInContext")
-    LLVMParseIRInContext :: proc(ContextRef : LLVMContextRef, MemBuf : LLVMMemoryBufferRef, OutM : ^LLVMModuleRef, OutMessage : ^cstring) -> LLVMBool ---;
+    ParseIRInContext :: proc(ContextRef : ContextRef, MemBuf : MemoryBufferRef, OutM : ^ModuleRef, OutMessage : ^cstring) -> Bool ---;
 
     @(link_name="LLVMLinkModules2")
-    LLVMLinkModules2 :: proc(Dest : LLVMModuleRef, Src : LLVMModuleRef) -> LLVMBool ---;
+    LinkModules2 :: proc(Dest : ModuleRef, Src : ModuleRef) -> Bool ---;
 
     @(link_name="LLVMOrcCreateLLJITBuilder")
-    LLVMOrcCreateLLJITBuilder :: proc() -> LLVMOrcLLJITBuilderRef ---;
+    OrcCreateLLJITBuilder :: proc() -> OrcLLJITBuilderRef ---;
 
     @(link_name="LLVMOrcDisposeLLJITBuilder")
-    LLVMOrcDisposeLLJITBuilder :: proc(Builder : LLVMOrcLLJITBuilderRef) ---;
+    OrcDisposeLLJITBuilder :: proc(Builder : OrcLLJITBuilderRef) ---;
 
     @(link_name="LLVMOrcLLJITBuilderSetJITTargetMachineBuilder")
-    LLVMOrcLLJITBuilderSetJITTargetMachineBuilder :: proc(Builder : LLVMOrcLLJITBuilderRef, JTMB : LLVMOrcJITTargetMachineBuilderRef) ---;
+    OrcLLJITBuilderSetJITTargetMachineBuilder :: proc(Builder : OrcLLJITBuilderRef, JTMB : OrcJITTargetMachineBuilderRef) ---;
 
     @(link_name="LLVMOrcLLJITBuilderSetObjectLinkingLayerCreator")
-    LLVMOrcLLJITBuilderSetObjectLinkingLayerCreator :: proc(Builder : LLVMOrcLLJITBuilderRef, F : LLVMOrcLLJITBuilderObjectLinkingLayerCreatorFunction, Ctx : rawptr) ---;
+    OrcLLJITBuilderSetObjectLinkingLayerCreator :: proc(Builder : OrcLLJITBuilderRef, F : OrcLLJITBuilderObjectLinkingLayerCreatorFunction, Ctx : rawptr) ---;
 
     @(link_name="LLVMOrcCreateLLJIT")
-    LLVMOrcCreateLLJIT :: proc(Result : ^LLVMOrcLLJITRef, Builder : LLVMOrcLLJITBuilderRef) -> LLVMErrorRef ---;
+    OrcCreateLLJIT :: proc(Result : ^OrcLLJITRef, Builder : OrcLLJITBuilderRef) -> ErrorRef ---;
 
     @(link_name="LLVMOrcDisposeLLJIT")
-    LLVMOrcDisposeLLJIT :: proc(J : LLVMOrcLLJITRef) -> LLVMErrorRef ---;
+    OrcDisposeLLJIT :: proc(J : OrcLLJITRef) -> ErrorRef ---;
 
     @(link_name="LLVMOrcLLJITGetExecutionSession")
-    LLVMOrcLLJITGetExecutionSession :: proc(J : LLVMOrcLLJITRef) -> LLVMOrcExecutionSessionRef ---;
+    OrcLLJITGetExecutionSession :: proc(J : OrcLLJITRef) -> OrcExecutionSessionRef ---;
 
     @(link_name="LLVMOrcLLJITGetMainJITDylib")
-    LLVMOrcLLJITGetMainJITDylib :: proc(J : LLVMOrcLLJITRef) -> LLVMOrcJITDylibRef ---;
+    OrcLLJITGetMainJITDylib :: proc(J : OrcLLJITRef) -> OrcJITDylibRef ---;
 
     @(link_name="LLVMOrcLLJITGetTripleString")
-    LLVMOrcLLJITGetTripleString :: proc(J : LLVMOrcLLJITRef) -> cstring ---;
+    OrcLLJITGetTripleString :: proc(J : OrcLLJITRef) -> cstring ---;
 
     @(link_name="LLVMOrcLLJITGetGlobalPrefix")
-    LLVMOrcLLJITGetGlobalPrefix :: proc(J : LLVMOrcLLJITRef) -> _c.char ---;
+    OrcLLJITGetGlobalPrefix :: proc(J : OrcLLJITRef) -> _c.char ---;
 
     @(link_name="LLVMOrcLLJITMangleAndIntern")
-    LLVMOrcLLJITMangleAndIntern :: proc(J : LLVMOrcLLJITRef, UnmangledName : cstring) -> LLVMOrcSymbolStringPoolEntryRef ---;
+    OrcLLJITMangleAndIntern :: proc(J : OrcLLJITRef, UnmangledName : cstring) -> OrcSymbolStringPoolEntryRef ---;
 
     @(link_name="LLVMOrcLLJITAddObjectFile")
-    LLVMOrcLLJITAddObjectFile :: proc(J : LLVMOrcLLJITRef, JD : LLVMOrcJITDylibRef, ObjBuffer : LLVMMemoryBufferRef) -> LLVMErrorRef ---;
+    OrcLLJITAddObjectFile :: proc(J : OrcLLJITRef, JD : OrcJITDylibRef, ObjBuffer : MemoryBufferRef) -> ErrorRef ---;
 
     @(link_name="LLVMOrcLLJITAddObjectFileWithRT")
-    LLVMOrcLLJITAddObjectFileWithRT :: proc(J : LLVMOrcLLJITRef, RT : LLVMOrcResourceTrackerRef, ObjBuffer : LLVMMemoryBufferRef) -> LLVMErrorRef ---;
+    OrcLLJITAddObjectFileWithRT :: proc(J : OrcLLJITRef, RT : OrcResourceTrackerRef, ObjBuffer : MemoryBufferRef) -> ErrorRef ---;
 
     @(link_name="LLVMOrcLLJITAddLLVMIRModule")
-    LLVMOrcLLJITAddLLVMIRModule :: proc(J : LLVMOrcLLJITRef, JD : LLVMOrcJITDylibRef, TSM : LLVMOrcThreadSafeModuleRef) -> LLVMErrorRef ---;
+    OrcLLJITAddLLVMIRModule :: proc(J : OrcLLJITRef, JD : OrcJITDylibRef, TSM : OrcThreadSafeModuleRef) -> ErrorRef ---;
 
     @(link_name="LLVMOrcLLJITAddLLVMIRModuleWithRT")
-    LLVMOrcLLJITAddLLVMIRModuleWithRT :: proc(J : LLVMOrcLLJITRef, JD : LLVMOrcResourceTrackerRef, TSM : LLVMOrcThreadSafeModuleRef) -> LLVMErrorRef ---;
+    OrcLLJITAddLLVMIRModuleWithRT :: proc(J : OrcLLJITRef, JD : OrcResourceTrackerRef, TSM : OrcThreadSafeModuleRef) -> ErrorRef ---;
 
     @(link_name="LLVMOrcLLJITLookup")
-    LLVMOrcLLJITLookup :: proc(J : LLVMOrcLLJITRef, Result : ^LLVMOrcExecutorAddress, Name : cstring) -> LLVMErrorRef ---;
+    OrcLLJITLookup :: proc(J : OrcLLJITRef, Result : ^OrcExecutorAddress, Name : cstring) -> ErrorRef ---;
 
     @(link_name="LLVMOrcLLJITGetObjLinkingLayer")
-    LLVMOrcLLJITGetObjLinkingLayer :: proc(J : LLVMOrcLLJITRef) -> LLVMOrcObjectLayerRef ---;
+    OrcLLJITGetObjLinkingLayer :: proc(J : OrcLLJITRef) -> OrcObjectLayerRef ---;
 
     @(link_name="LLVMOrcLLJITGetObjTransformLayer")
-    LLVMOrcLLJITGetObjTransformLayer :: proc(J : LLVMOrcLLJITRef) -> LLVMOrcObjectTransformLayerRef ---;
+    OrcLLJITGetObjTransformLayer :: proc(J : OrcLLJITRef) -> OrcObjectTransformLayerRef ---;
 
     @(link_name="LLVMOrcLLJITGetIRTransformLayer")
-    LLVMOrcLLJITGetIRTransformLayer :: proc(J : LLVMOrcLLJITRef) -> LLVMOrcIRTransformLayerRef ---;
+    OrcLLJITGetIRTransformLayer :: proc(J : OrcLLJITRef) -> OrcIRTransformLayerRef ---;
 
     @(link_name="LLVMOrcLLJITGetDataLayoutStr")
-    LLVMOrcLLJITGetDataLayoutStr :: proc(J : LLVMOrcLLJITRef) -> cstring ---;
+    OrcLLJITGetDataLayoutStr :: proc(J : OrcLLJITRef) -> cstring ---;
 
     @(link_name="lto_get_version")
     lto_get_version :: proc() -> cstring ---;
@@ -3659,573 +3659,573 @@ foreign LLVM_C {
     thinlto_codegen_set_cache_size_files :: proc(cg : thinlto_code_gen_t, max_size_files : _c.uint) ---;
 
     @(link_name="LLVMCreateBinary")
-    LLVMCreateBinary :: proc(MemBuf : LLVMMemoryBufferRef, Context : LLVMContextRef, ErrorMessage : ^cstring) -> LLVMBinaryRef ---;
+    CreateBinary :: proc(MemBuf : MemoryBufferRef, Context : ContextRef, ErrorMessage : ^cstring) -> BinaryRef ---;
 
     @(link_name="LLVMDisposeBinary")
-    LLVMDisposeBinary :: proc(BR : LLVMBinaryRef) ---;
+    DisposeBinary :: proc(BR : BinaryRef) ---;
 
     @(link_name="LLVMBinaryCopyMemoryBuffer")
-    LLVMBinaryCopyMemoryBuffer :: proc(BR : LLVMBinaryRef) -> LLVMMemoryBufferRef ---;
+    BinaryCopyMemoryBuffer :: proc(BR : BinaryRef) -> MemoryBufferRef ---;
 
     @(link_name="LLVMBinaryGetType")
-    LLVMBinaryGetType :: proc(BR : LLVMBinaryRef) -> LLVMBinaryType ---;
+    BinaryGetType :: proc(BR : BinaryRef) -> BinaryType ---;
 
     @(link_name="LLVMMachOUniversalBinaryCopyObjectForArch")
-    LLVMMachOUniversalBinaryCopyObjectForArch :: proc(BR : LLVMBinaryRef, Arch : cstring, ArchLen : _c.size_t, ErrorMessage : ^cstring) -> LLVMBinaryRef ---;
+    MachOUniversalBinaryCopyObjectForArch :: proc(BR : BinaryRef, Arch : cstring, ArchLen : _c.size_t, ErrorMessage : ^cstring) -> BinaryRef ---;
 
     @(link_name="LLVMObjectFileCopySectionIterator")
-    LLVMObjectFileCopySectionIterator :: proc(BR : LLVMBinaryRef) -> LLVMSectionIteratorRef ---;
+    ObjectFileCopySectionIterator :: proc(BR : BinaryRef) -> SectionIteratorRef ---;
 
     @(link_name="LLVMObjectFileIsSectionIteratorAtEnd")
-    LLVMObjectFileIsSectionIteratorAtEnd :: proc(BR : LLVMBinaryRef, SI : LLVMSectionIteratorRef) -> LLVMBool ---;
+    ObjectFileIsSectionIteratorAtEnd :: proc(BR : BinaryRef, SI : SectionIteratorRef) -> Bool ---;
 
     @(link_name="LLVMObjectFileCopySymbolIterator")
-    LLVMObjectFileCopySymbolIterator :: proc(BR : LLVMBinaryRef) -> LLVMSymbolIteratorRef ---;
+    ObjectFileCopySymbolIterator :: proc(BR : BinaryRef) -> SymbolIteratorRef ---;
 
     @(link_name="LLVMObjectFileIsSymbolIteratorAtEnd")
-    LLVMObjectFileIsSymbolIteratorAtEnd :: proc(BR : LLVMBinaryRef, SI : LLVMSymbolIteratorRef) -> LLVMBool ---;
+    ObjectFileIsSymbolIteratorAtEnd :: proc(BR : BinaryRef, SI : SymbolIteratorRef) -> Bool ---;
 
     @(link_name="LLVMDisposeSectionIterator")
-    LLVMDisposeSectionIterator :: proc(SI : LLVMSectionIteratorRef) ---;
+    DisposeSectionIterator :: proc(SI : SectionIteratorRef) ---;
 
     @(link_name="LLVMMoveToNextSection")
-    LLVMMoveToNextSection :: proc(SI : LLVMSectionIteratorRef) ---;
+    MoveToNextSection :: proc(SI : SectionIteratorRef) ---;
 
     @(link_name="LLVMMoveToContainingSection")
-    LLVMMoveToContainingSection :: proc(Sect : LLVMSectionIteratorRef, Sym : LLVMSymbolIteratorRef) ---;
+    MoveToContainingSection :: proc(Sect : SectionIteratorRef, Sym : SymbolIteratorRef) ---;
 
     @(link_name="LLVMDisposeSymbolIterator")
-    LLVMDisposeSymbolIterator :: proc(SI : LLVMSymbolIteratorRef) ---;
+    DisposeSymbolIterator :: proc(SI : SymbolIteratorRef) ---;
 
     @(link_name="LLVMMoveToNextSymbol")
-    LLVMMoveToNextSymbol :: proc(SI : LLVMSymbolIteratorRef) ---;
+    MoveToNextSymbol :: proc(SI : SymbolIteratorRef) ---;
 
     @(link_name="LLVMGetSectionName")
-    LLVMGetSectionName :: proc(SI : LLVMSectionIteratorRef) -> cstring ---;
+    GetSectionName :: proc(SI : SectionIteratorRef) -> cstring ---;
 
     @(link_name="LLVMGetSectionSize")
-    LLVMGetSectionSize :: proc(SI : LLVMSectionIteratorRef) -> u64 ---;
+    GetSectionSize :: proc(SI : SectionIteratorRef) -> u64 ---;
 
     @(link_name="LLVMGetSectionContents")
-    LLVMGetSectionContents :: proc(SI : LLVMSectionIteratorRef) -> cstring ---;
+    GetSectionContents :: proc(SI : SectionIteratorRef) -> cstring ---;
 
     @(link_name="LLVMGetSectionAddress")
-    LLVMGetSectionAddress :: proc(SI : LLVMSectionIteratorRef) -> u64 ---;
+    GetSectionAddress :: proc(SI : SectionIteratorRef) -> u64 ---;
 
     @(link_name="LLVMGetSectionContainsSymbol")
-    LLVMGetSectionContainsSymbol :: proc(SI : LLVMSectionIteratorRef, Sym : LLVMSymbolIteratorRef) -> LLVMBool ---;
+    GetSectionContainsSymbol :: proc(SI : SectionIteratorRef, Sym : SymbolIteratorRef) -> Bool ---;
 
     @(link_name="LLVMGetRelocations")
-    LLVMGetRelocations :: proc(Section : LLVMSectionIteratorRef) -> LLVMRelocationIteratorRef ---;
+    GetRelocations :: proc(Section : SectionIteratorRef) -> RelocationIteratorRef ---;
 
     @(link_name="LLVMDisposeRelocationIterator")
-    LLVMDisposeRelocationIterator :: proc(RI : LLVMRelocationIteratorRef) ---;
+    DisposeRelocationIterator :: proc(RI : RelocationIteratorRef) ---;
 
     @(link_name="LLVMIsRelocationIteratorAtEnd")
-    LLVMIsRelocationIteratorAtEnd :: proc(Section : LLVMSectionIteratorRef, RI : LLVMRelocationIteratorRef) -> LLVMBool ---;
+    IsRelocationIteratorAtEnd :: proc(Section : SectionIteratorRef, RI : RelocationIteratorRef) -> Bool ---;
 
     @(link_name="LLVMMoveToNextRelocation")
-    LLVMMoveToNextRelocation :: proc(RI : LLVMRelocationIteratorRef) ---;
+    MoveToNextRelocation :: proc(RI : RelocationIteratorRef) ---;
 
     @(link_name="LLVMGetSymbolName")
-    LLVMGetSymbolName :: proc(SI : LLVMSymbolIteratorRef) -> cstring ---;
+    GetSymbolName :: proc(SI : SymbolIteratorRef) -> cstring ---;
 
     @(link_name="LLVMGetSymbolAddress")
-    LLVMGetSymbolAddress :: proc(SI : LLVMSymbolIteratorRef) -> u64 ---;
+    GetSymbolAddress :: proc(SI : SymbolIteratorRef) -> u64 ---;
 
     @(link_name="LLVMGetSymbolSize")
-    LLVMGetSymbolSize :: proc(SI : LLVMSymbolIteratorRef) -> u64 ---;
+    GetSymbolSize :: proc(SI : SymbolIteratorRef) -> u64 ---;
 
     @(link_name="LLVMGetRelocationOffset")
-    LLVMGetRelocationOffset :: proc(RI : LLVMRelocationIteratorRef) -> u64 ---;
+    GetRelocationOffset :: proc(RI : RelocationIteratorRef) -> u64 ---;
 
     @(link_name="LLVMGetRelocationSymbol")
-    LLVMGetRelocationSymbol :: proc(RI : LLVMRelocationIteratorRef) -> LLVMSymbolIteratorRef ---;
+    GetRelocationSymbol :: proc(RI : RelocationIteratorRef) -> SymbolIteratorRef ---;
 
     @(link_name="LLVMGetRelocationType")
-    LLVMGetRelocationType :: proc(RI : LLVMRelocationIteratorRef) -> u64 ---;
+    GetRelocationType :: proc(RI : RelocationIteratorRef) -> u64 ---;
 
     @(link_name="LLVMGetRelocationTypeName")
-    LLVMGetRelocationTypeName :: proc(RI : LLVMRelocationIteratorRef) -> cstring ---;
+    GetRelocationTypeName :: proc(RI : RelocationIteratorRef) -> cstring ---;
 
     @(link_name="LLVMGetRelocationValueString")
-    LLVMGetRelocationValueString :: proc(RI : LLVMRelocationIteratorRef) -> cstring ---;
+    GetRelocationValueString :: proc(RI : RelocationIteratorRef) -> cstring ---;
 
     @(link_name="LLVMCreateObjectFile")
-    LLVMCreateObjectFile :: proc(MemBuf : LLVMMemoryBufferRef) -> LLVMObjectFileRef ---;
+    CreateObjectFile :: proc(MemBuf : MemoryBufferRef) -> ObjectFileRef ---;
 
     @(link_name="LLVMDisposeObjectFile")
-    LLVMDisposeObjectFile :: proc(ObjectFile : LLVMObjectFileRef) ---;
+    DisposeObjectFile :: proc(ObjectFile : ObjectFileRef) ---;
 
     @(link_name="LLVMGetSections")
-    LLVMGetSections :: proc(ObjectFile : LLVMObjectFileRef) -> LLVMSectionIteratorRef ---;
+    GetSections :: proc(ObjectFile : ObjectFileRef) -> SectionIteratorRef ---;
 
     @(link_name="LLVMIsSectionIteratorAtEnd")
-    LLVMIsSectionIteratorAtEnd :: proc(ObjectFile : LLVMObjectFileRef, SI : LLVMSectionIteratorRef) -> LLVMBool ---;
+    IsSectionIteratorAtEnd :: proc(ObjectFile : ObjectFileRef, SI : SectionIteratorRef) -> Bool ---;
 
     @(link_name="LLVMGetSymbols")
-    LLVMGetSymbols :: proc(ObjectFile : LLVMObjectFileRef) -> LLVMSymbolIteratorRef ---;
+    GetSymbols :: proc(ObjectFile : ObjectFileRef) -> SymbolIteratorRef ---;
 
     @(link_name="LLVMIsSymbolIteratorAtEnd")
-    LLVMIsSymbolIteratorAtEnd :: proc(ObjectFile : LLVMObjectFileRef, SI : LLVMSymbolIteratorRef) -> LLVMBool ---;
+    IsSymbolIteratorAtEnd :: proc(ObjectFile : ObjectFileRef, SI : SymbolIteratorRef) -> Bool ---;
 
     @(link_name="LLVMOrcExecutionSessionSetErrorReporter")
-    LLVMOrcExecutionSessionSetErrorReporter :: proc(ES : LLVMOrcExecutionSessionRef, ReportError : LLVMOrcErrorReporterFunction, Ctx : rawptr) ---;
+    OrcExecutionSessionSetErrorReporter :: proc(ES : OrcExecutionSessionRef, ReportError : OrcErrorReporterFunction, Ctx : rawptr) ---;
 
     @(link_name="LLVMOrcExecutionSessionGetSymbolStringPool")
-    LLVMOrcExecutionSessionGetSymbolStringPool :: proc(ES : LLVMOrcExecutionSessionRef) -> LLVMOrcSymbolStringPoolRef ---;
+    OrcExecutionSessionGetSymbolStringPool :: proc(ES : OrcExecutionSessionRef) -> OrcSymbolStringPoolRef ---;
 
     @(link_name="LLVMOrcSymbolStringPoolClearDeadEntries")
-    LLVMOrcSymbolStringPoolClearDeadEntries :: proc(SSP : LLVMOrcSymbolStringPoolRef) ---;
+    OrcSymbolStringPoolClearDeadEntries :: proc(SSP : OrcSymbolStringPoolRef) ---;
 
     @(link_name="LLVMOrcExecutionSessionIntern")
-    LLVMOrcExecutionSessionIntern :: proc(ES : LLVMOrcExecutionSessionRef, Name : cstring) -> LLVMOrcSymbolStringPoolEntryRef ---;
+    OrcExecutionSessionIntern :: proc(ES : OrcExecutionSessionRef, Name : cstring) -> OrcSymbolStringPoolEntryRef ---;
 
     @(link_name="LLVMOrcExecutionSessionLookup")
-    LLVMOrcExecutionSessionLookup :: proc(ES : LLVMOrcExecutionSessionRef, K : LLVMOrcLookupKind, SearchOrder : LLVMOrcCJITDylibSearchOrder, SearchOrderSize : _c.size_t, Symbols : LLVMOrcCLookupSet, SymbolsSize : _c.size_t, HandleResult : LLVMOrcExecutionSessionLookupHandleResultFunction, Ctx : rawptr) ---;
+    OrcExecutionSessionLookup :: proc(ES : OrcExecutionSessionRef, K : OrcLookupKind, SearchOrder : OrcCJITDylibSearchOrder, SearchOrderSize : _c.size_t, Symbols : OrcCLookupSet, SymbolsSize : _c.size_t, HandleResult : OrcExecutionSessionLookupHandleResultFunction, Ctx : rawptr) ---;
 
     @(link_name="LLVMOrcRetainSymbolStringPoolEntry")
-    LLVMOrcRetainSymbolStringPoolEntry :: proc(S : LLVMOrcSymbolStringPoolEntryRef) ---;
+    OrcRetainSymbolStringPoolEntry :: proc(S : OrcSymbolStringPoolEntryRef) ---;
 
     @(link_name="LLVMOrcReleaseSymbolStringPoolEntry")
-    LLVMOrcReleaseSymbolStringPoolEntry :: proc(S : LLVMOrcSymbolStringPoolEntryRef) ---;
+    OrcReleaseSymbolStringPoolEntry :: proc(S : OrcSymbolStringPoolEntryRef) ---;
 
     @(link_name="LLVMOrcSymbolStringPoolEntryStr")
-    LLVMOrcSymbolStringPoolEntryStr :: proc(S : LLVMOrcSymbolStringPoolEntryRef) -> cstring ---;
+    OrcSymbolStringPoolEntryStr :: proc(S : OrcSymbolStringPoolEntryRef) -> cstring ---;
 
     @(link_name="LLVMOrcReleaseResourceTracker")
-    LLVMOrcReleaseResourceTracker :: proc(RT : LLVMOrcResourceTrackerRef) ---;
+    OrcReleaseResourceTracker :: proc(RT : OrcResourceTrackerRef) ---;
 
     @(link_name="LLVMOrcResourceTrackerTransferTo")
-    LLVMOrcResourceTrackerTransferTo :: proc(SrcRT : LLVMOrcResourceTrackerRef, DstRT : LLVMOrcResourceTrackerRef) ---;
+    OrcResourceTrackerTransferTo :: proc(SrcRT : OrcResourceTrackerRef, DstRT : OrcResourceTrackerRef) ---;
 
     @(link_name="LLVMOrcResourceTrackerRemove")
-    LLVMOrcResourceTrackerRemove :: proc(RT : LLVMOrcResourceTrackerRef) -> LLVMErrorRef ---;
+    OrcResourceTrackerRemove :: proc(RT : OrcResourceTrackerRef) -> ErrorRef ---;
 
     @(link_name="LLVMOrcDisposeDefinitionGenerator")
-    LLVMOrcDisposeDefinitionGenerator :: proc(DG : LLVMOrcDefinitionGeneratorRef) ---;
+    OrcDisposeDefinitionGenerator :: proc(DG : OrcDefinitionGeneratorRef) ---;
 
     @(link_name="LLVMOrcDisposeMaterializationUnit")
-    LLVMOrcDisposeMaterializationUnit :: proc(MU : LLVMOrcMaterializationUnitRef) ---;
+    OrcDisposeMaterializationUnit :: proc(MU : OrcMaterializationUnitRef) ---;
 
     @(link_name="LLVMOrcCreateCustomMaterializationUnit")
-    LLVMOrcCreateCustomMaterializationUnit :: proc(Name : cstring, Ctx : rawptr, Syms : LLVMOrcCSymbolFlagsMapPairs, NumSyms : _c.size_t, InitSym : LLVMOrcSymbolStringPoolEntryRef, Materialize : LLVMOrcMaterializationUnitMaterializeFunction, Discard : LLVMOrcMaterializationUnitDiscardFunction, Destroy : LLVMOrcMaterializationUnitDestroyFunction) -> LLVMOrcMaterializationUnitRef ---;
+    OrcCreateCustomMaterializationUnit :: proc(Name : cstring, Ctx : rawptr, Syms : OrcCSymbolFlagsMapPairs, NumSyms : _c.size_t, InitSym : OrcSymbolStringPoolEntryRef, Materialize : OrcMaterializationUnitMaterializeFunction, Discard : OrcMaterializationUnitDiscardFunction, Destroy : OrcMaterializationUnitDestroyFunction) -> OrcMaterializationUnitRef ---;
 
     @(link_name="LLVMOrcAbsoluteSymbols")
-    LLVMOrcAbsoluteSymbols :: proc(Syms : LLVMOrcCSymbolMapPairs, NumPairs : _c.size_t) -> LLVMOrcMaterializationUnitRef ---;
+    OrcAbsoluteSymbols :: proc(Syms : OrcCSymbolMapPairs, NumPairs : _c.size_t) -> OrcMaterializationUnitRef ---;
 
     @(link_name="LLVMOrcLazyReexports")
-    LLVMOrcLazyReexports :: proc(LCTM : LLVMOrcLazyCallThroughManagerRef, ISM : LLVMOrcIndirectStubsManagerRef, SourceRef : LLVMOrcJITDylibRef, CallableAliases : LLVMOrcCSymbolAliasMapPairs, NumPairs : _c.size_t) -> LLVMOrcMaterializationUnitRef ---;
+    OrcLazyReexports :: proc(LCTM : OrcLazyCallThroughManagerRef, ISM : OrcIndirectStubsManagerRef, SourceRef : OrcJITDylibRef, CallableAliases : OrcCSymbolAliasMapPairs, NumPairs : _c.size_t) -> OrcMaterializationUnitRef ---;
 
     @(link_name="LLVMOrcDisposeMaterializationResponsibility")
-    LLVMOrcDisposeMaterializationResponsibility :: proc(MR : LLVMOrcMaterializationResponsibilityRef) ---;
+    OrcDisposeMaterializationResponsibility :: proc(MR : OrcMaterializationResponsibilityRef) ---;
 
     @(link_name="LLVMOrcMaterializationResponsibilityGetTargetDylib")
-    LLVMOrcMaterializationResponsibilityGetTargetDylib :: proc(MR : LLVMOrcMaterializationResponsibilityRef) -> LLVMOrcJITDylibRef ---;
+    OrcMaterializationResponsibilityGetTargetDylib :: proc(MR : OrcMaterializationResponsibilityRef) -> OrcJITDylibRef ---;
 
     @(link_name="LLVMOrcMaterializationResponsibilityGetExecutionSession")
-    LLVMOrcMaterializationResponsibilityGetExecutionSession :: proc(MR : LLVMOrcMaterializationResponsibilityRef) -> LLVMOrcExecutionSessionRef ---;
+    OrcMaterializationResponsibilityGetExecutionSession :: proc(MR : OrcMaterializationResponsibilityRef) -> OrcExecutionSessionRef ---;
 
     @(link_name="LLVMOrcMaterializationResponsibilityGetSymbols")
-    LLVMOrcMaterializationResponsibilityGetSymbols :: proc(MR : LLVMOrcMaterializationResponsibilityRef, NumPairs : ^_c.size_t) -> LLVMOrcCSymbolFlagsMapPairs ---;
+    OrcMaterializationResponsibilityGetSymbols :: proc(MR : OrcMaterializationResponsibilityRef, NumPairs : ^_c.size_t) -> OrcCSymbolFlagsMapPairs ---;
 
     @(link_name="LLVMOrcDisposeCSymbolFlagsMap")
-    LLVMOrcDisposeCSymbolFlagsMap :: proc(Pairs : LLVMOrcCSymbolFlagsMapPairs) ---;
+    OrcDisposeCSymbolFlagsMap :: proc(Pairs : OrcCSymbolFlagsMapPairs) ---;
 
     @(link_name="LLVMOrcMaterializationResponsibilityGetInitializerSymbol")
-    LLVMOrcMaterializationResponsibilityGetInitializerSymbol :: proc(MR : LLVMOrcMaterializationResponsibilityRef) -> LLVMOrcSymbolStringPoolEntryRef ---;
+    OrcMaterializationResponsibilityGetInitializerSymbol :: proc(MR : OrcMaterializationResponsibilityRef) -> OrcSymbolStringPoolEntryRef ---;
 
     @(link_name="LLVMOrcMaterializationResponsibilityGetRequestedSymbols")
-    LLVMOrcMaterializationResponsibilityGetRequestedSymbols :: proc(MR : LLVMOrcMaterializationResponsibilityRef, NumSymbols : ^_c.size_t) -> ^LLVMOrcSymbolStringPoolEntryRef ---;
+    OrcMaterializationResponsibilityGetRequestedSymbols :: proc(MR : OrcMaterializationResponsibilityRef, NumSymbols : ^_c.size_t) -> ^OrcSymbolStringPoolEntryRef ---;
 
     @(link_name="LLVMOrcDisposeSymbols")
-    LLVMOrcDisposeSymbols :: proc(Symbols : ^LLVMOrcSymbolStringPoolEntryRef) ---;
+    OrcDisposeSymbols :: proc(Symbols : ^OrcSymbolStringPoolEntryRef) ---;
 
     @(link_name="LLVMOrcMaterializationResponsibilityNotifyResolved")
-    LLVMOrcMaterializationResponsibilityNotifyResolved :: proc(MR : LLVMOrcMaterializationResponsibilityRef, Symbols : LLVMOrcCSymbolMapPairs, NumPairs : _c.size_t) -> LLVMErrorRef ---;
+    OrcMaterializationResponsibilityNotifyResolved :: proc(MR : OrcMaterializationResponsibilityRef, Symbols : OrcCSymbolMapPairs, NumPairs : _c.size_t) -> ErrorRef ---;
 
     @(link_name="LLVMOrcMaterializationResponsibilityNotifyEmitted")
-    LLVMOrcMaterializationResponsibilityNotifyEmitted :: proc(MR : LLVMOrcMaterializationResponsibilityRef) -> LLVMErrorRef ---;
+    OrcMaterializationResponsibilityNotifyEmitted :: proc(MR : OrcMaterializationResponsibilityRef) -> ErrorRef ---;
 
     @(link_name="LLVMOrcMaterializationResponsibilityDefineMaterializing")
-    LLVMOrcMaterializationResponsibilityDefineMaterializing :: proc(MR : LLVMOrcMaterializationResponsibilityRef, Pairs : LLVMOrcCSymbolFlagsMapPairs, NumPairs : _c.size_t) -> LLVMErrorRef ---;
+    OrcMaterializationResponsibilityDefineMaterializing :: proc(MR : OrcMaterializationResponsibilityRef, Pairs : OrcCSymbolFlagsMapPairs, NumPairs : _c.size_t) -> ErrorRef ---;
 
     @(link_name="LLVMOrcMaterializationResponsibilityFailMaterialization")
-    LLVMOrcMaterializationResponsibilityFailMaterialization :: proc(MR : LLVMOrcMaterializationResponsibilityRef) ---;
+    OrcMaterializationResponsibilityFailMaterialization :: proc(MR : OrcMaterializationResponsibilityRef) ---;
 
     @(link_name="LLVMOrcMaterializationResponsibilityReplace")
-    LLVMOrcMaterializationResponsibilityReplace :: proc(MR : LLVMOrcMaterializationResponsibilityRef, MU : LLVMOrcMaterializationUnitRef) -> LLVMErrorRef ---;
+    OrcMaterializationResponsibilityReplace :: proc(MR : OrcMaterializationResponsibilityRef, MU : OrcMaterializationUnitRef) -> ErrorRef ---;
 
     @(link_name="LLVMOrcMaterializationResponsibilityDelegate")
-    LLVMOrcMaterializationResponsibilityDelegate :: proc(MR : LLVMOrcMaterializationResponsibilityRef, Symbols : ^LLVMOrcSymbolStringPoolEntryRef, NumSymbols : _c.size_t, Result : ^LLVMOrcMaterializationResponsibilityRef) -> LLVMErrorRef ---;
+    OrcMaterializationResponsibilityDelegate :: proc(MR : OrcMaterializationResponsibilityRef, Symbols : ^OrcSymbolStringPoolEntryRef, NumSymbols : _c.size_t, Result : ^OrcMaterializationResponsibilityRef) -> ErrorRef ---;
 
     @(link_name="LLVMOrcMaterializationResponsibilityAddDependencies")
-    LLVMOrcMaterializationResponsibilityAddDependencies :: proc(MR : LLVMOrcMaterializationResponsibilityRef, Name : LLVMOrcSymbolStringPoolEntryRef, Dependencies : LLVMOrcCDependenceMapPairs, NumPairs : _c.size_t) ---;
+    OrcMaterializationResponsibilityAddDependencies :: proc(MR : OrcMaterializationResponsibilityRef, Name : OrcSymbolStringPoolEntryRef, Dependencies : OrcCDependenceMapPairs, NumPairs : _c.size_t) ---;
 
     @(link_name="LLVMOrcMaterializationResponsibilityAddDependenciesForAll")
-    LLVMOrcMaterializationResponsibilityAddDependenciesForAll :: proc(MR : LLVMOrcMaterializationResponsibilityRef, Dependencies : LLVMOrcCDependenceMapPairs, NumPairs : _c.size_t) ---;
+    OrcMaterializationResponsibilityAddDependenciesForAll :: proc(MR : OrcMaterializationResponsibilityRef, Dependencies : OrcCDependenceMapPairs, NumPairs : _c.size_t) ---;
 
     @(link_name="LLVMOrcExecutionSessionCreateBareJITDylib")
-    LLVMOrcExecutionSessionCreateBareJITDylib :: proc(ES : LLVMOrcExecutionSessionRef, Name : cstring) -> LLVMOrcJITDylibRef ---;
+    OrcExecutionSessionCreateBareJITDylib :: proc(ES : OrcExecutionSessionRef, Name : cstring) -> OrcJITDylibRef ---;
 
     @(link_name="LLVMOrcExecutionSessionCreateJITDylib")
-    LLVMOrcExecutionSessionCreateJITDylib :: proc(ES : LLVMOrcExecutionSessionRef, Result : ^LLVMOrcJITDylibRef, Name : cstring) -> LLVMErrorRef ---;
+    OrcExecutionSessionCreateJITDylib :: proc(ES : OrcExecutionSessionRef, Result : ^OrcJITDylibRef, Name : cstring) -> ErrorRef ---;
 
     @(link_name="LLVMOrcExecutionSessionGetJITDylibByName")
-    LLVMOrcExecutionSessionGetJITDylibByName :: proc(ES : LLVMOrcExecutionSessionRef, Name : cstring) -> LLVMOrcJITDylibRef ---;
+    OrcExecutionSessionGetJITDylibByName :: proc(ES : OrcExecutionSessionRef, Name : cstring) -> OrcJITDylibRef ---;
 
     @(link_name="LLVMOrcJITDylibCreateResourceTracker")
-    LLVMOrcJITDylibCreateResourceTracker :: proc(JD : LLVMOrcJITDylibRef) -> LLVMOrcResourceTrackerRef ---;
+    OrcJITDylibCreateResourceTracker :: proc(JD : OrcJITDylibRef) -> OrcResourceTrackerRef ---;
 
     @(link_name="LLVMOrcJITDylibGetDefaultResourceTracker")
-    LLVMOrcJITDylibGetDefaultResourceTracker :: proc(JD : LLVMOrcJITDylibRef) -> LLVMOrcResourceTrackerRef ---;
+    OrcJITDylibGetDefaultResourceTracker :: proc(JD : OrcJITDylibRef) -> OrcResourceTrackerRef ---;
 
     @(link_name="LLVMOrcJITDylibDefine")
-    LLVMOrcJITDylibDefine :: proc(JD : LLVMOrcJITDylibRef, MU : LLVMOrcMaterializationUnitRef) -> LLVMErrorRef ---;
+    OrcJITDylibDefine :: proc(JD : OrcJITDylibRef, MU : OrcMaterializationUnitRef) -> ErrorRef ---;
 
     @(link_name="LLVMOrcJITDylibClear")
-    LLVMOrcJITDylibClear :: proc(JD : LLVMOrcJITDylibRef) -> LLVMErrorRef ---;
+    OrcJITDylibClear :: proc(JD : OrcJITDylibRef) -> ErrorRef ---;
 
     @(link_name="LLVMOrcJITDylibAddGenerator")
-    LLVMOrcJITDylibAddGenerator :: proc(JD : LLVMOrcJITDylibRef, DG : LLVMOrcDefinitionGeneratorRef) ---;
+    OrcJITDylibAddGenerator :: proc(JD : OrcJITDylibRef, DG : OrcDefinitionGeneratorRef) ---;
 
     @(link_name="LLVMOrcCreateCustomCAPIDefinitionGenerator")
-    LLVMOrcCreateCustomCAPIDefinitionGenerator :: proc(F : LLVMOrcCAPIDefinitionGeneratorTryToGenerateFunction, Ctx : rawptr, Dispose : LLVMOrcDisposeCAPIDefinitionGeneratorFunction) -> LLVMOrcDefinitionGeneratorRef ---;
+    OrcCreateCustomCAPIDefinitionGenerator :: proc(F : OrcCAPIDefinitionGeneratorTryToGenerateFunction, Ctx : rawptr, Dispose : OrcDisposeCAPIDefinitionGeneratorFunction) -> OrcDefinitionGeneratorRef ---;
 
     @(link_name="LLVMOrcLookupStateContinueLookup")
-    LLVMOrcLookupStateContinueLookup :: proc(S : LLVMOrcLookupStateRef, Err : LLVMErrorRef) ---;
+    OrcLookupStateContinueLookup :: proc(S : OrcLookupStateRef, Err : ErrorRef) ---;
 
     @(link_name="LLVMOrcCreateDynamicLibrarySearchGeneratorForProcess")
-    LLVMOrcCreateDynamicLibrarySearchGeneratorForProcess :: proc(Result : ^LLVMOrcDefinitionGeneratorRef, GlobalPrefx : _c.char, Filter : LLVMOrcSymbolPredicate, FilterCtx : rawptr) -> LLVMErrorRef ---;
+    OrcCreateDynamicLibrarySearchGeneratorForProcess :: proc(Result : ^OrcDefinitionGeneratorRef, GlobalPrefx : _c.char, Filter : OrcSymbolPredicate, FilterCtx : rawptr) -> ErrorRef ---;
 
     @(link_name="LLVMOrcCreateDynamicLibrarySearchGeneratorForPath")
-    LLVMOrcCreateDynamicLibrarySearchGeneratorForPath :: proc(Result : ^LLVMOrcDefinitionGeneratorRef, FileName : cstring, GlobalPrefix : _c.char, Filter : LLVMOrcSymbolPredicate, FilterCtx : rawptr) -> LLVMErrorRef ---;
+    OrcCreateDynamicLibrarySearchGeneratorForPath :: proc(Result : ^OrcDefinitionGeneratorRef, FileName : cstring, GlobalPrefix : _c.char, Filter : OrcSymbolPredicate, FilterCtx : rawptr) -> ErrorRef ---;
 
     @(link_name="LLVMOrcCreateStaticLibrarySearchGeneratorForPath")
-    LLVMOrcCreateStaticLibrarySearchGeneratorForPath :: proc(Result : ^LLVMOrcDefinitionGeneratorRef, ObjLayer : LLVMOrcObjectLayerRef, FileName : cstring, TargetTriple : cstring) -> LLVMErrorRef ---;
+    OrcCreateStaticLibrarySearchGeneratorForPath :: proc(Result : ^OrcDefinitionGeneratorRef, ObjLayer : OrcObjectLayerRef, FileName : cstring, TargetTriple : cstring) -> ErrorRef ---;
 
     @(link_name="LLVMOrcCreateNewThreadSafeContext")
-    LLVMOrcCreateNewThreadSafeContext :: proc() -> LLVMOrcThreadSafeContextRef ---;
+    OrcCreateNewThreadSafeContext :: proc() -> OrcThreadSafeContextRef ---;
 
     @(link_name="LLVMOrcThreadSafeContextGetContext")
-    LLVMOrcThreadSafeContextGetContext :: proc(TSCtx : LLVMOrcThreadSafeContextRef) -> LLVMContextRef ---;
+    OrcThreadSafeContextGetContext :: proc(TSCtx : OrcThreadSafeContextRef) -> ContextRef ---;
 
     @(link_name="LLVMOrcDisposeThreadSafeContext")
-    LLVMOrcDisposeThreadSafeContext :: proc(TSCtx : LLVMOrcThreadSafeContextRef) ---;
+    OrcDisposeThreadSafeContext :: proc(TSCtx : OrcThreadSafeContextRef) ---;
 
     @(link_name="LLVMOrcCreateNewThreadSafeModule")
-    LLVMOrcCreateNewThreadSafeModule :: proc(M : LLVMModuleRef, TSCtx : LLVMOrcThreadSafeContextRef) -> LLVMOrcThreadSafeModuleRef ---;
+    OrcCreateNewThreadSafeModule :: proc(M : ModuleRef, TSCtx : OrcThreadSafeContextRef) -> OrcThreadSafeModuleRef ---;
 
     @(link_name="LLVMOrcDisposeThreadSafeModule")
-    LLVMOrcDisposeThreadSafeModule :: proc(TSM : LLVMOrcThreadSafeModuleRef) ---;
+    OrcDisposeThreadSafeModule :: proc(TSM : OrcThreadSafeModuleRef) ---;
 
     @(link_name="LLVMOrcThreadSafeModuleWithModuleDo")
-    LLVMOrcThreadSafeModuleWithModuleDo :: proc(TSM : LLVMOrcThreadSafeModuleRef, F : LLVMOrcGenericIRModuleOperationFunction, Ctx : rawptr) -> LLVMErrorRef ---;
+    OrcThreadSafeModuleWithModuleDo :: proc(TSM : OrcThreadSafeModuleRef, F : OrcGenericIRModuleOperationFunction, Ctx : rawptr) -> ErrorRef ---;
 
     @(link_name="LLVMOrcJITTargetMachineBuilderDetectHost")
-    LLVMOrcJITTargetMachineBuilderDetectHost :: proc(Result : ^LLVMOrcJITTargetMachineBuilderRef) -> LLVMErrorRef ---;
+    OrcJITTargetMachineBuilderDetectHost :: proc(Result : ^OrcJITTargetMachineBuilderRef) -> ErrorRef ---;
 
     @(link_name="LLVMOrcJITTargetMachineBuilderCreateFromTargetMachine")
-    LLVMOrcJITTargetMachineBuilderCreateFromTargetMachine :: proc(TM : LLVMTargetMachineRef) -> LLVMOrcJITTargetMachineBuilderRef ---;
+    OrcJITTargetMachineBuilderCreateFromTargetMachine :: proc(TM : TargetMachineRef) -> OrcJITTargetMachineBuilderRef ---;
 
     @(link_name="LLVMOrcDisposeJITTargetMachineBuilder")
-    LLVMOrcDisposeJITTargetMachineBuilder :: proc(JTMB : LLVMOrcJITTargetMachineBuilderRef) ---;
+    OrcDisposeJITTargetMachineBuilder :: proc(JTMB : OrcJITTargetMachineBuilderRef) ---;
 
     @(link_name="LLVMOrcJITTargetMachineBuilderGetTargetTriple")
-    LLVMOrcJITTargetMachineBuilderGetTargetTriple :: proc(JTMB : LLVMOrcJITTargetMachineBuilderRef) -> cstring ---;
+    OrcJITTargetMachineBuilderGetTargetTriple :: proc(JTMB : OrcJITTargetMachineBuilderRef) -> cstring ---;
 
     @(link_name="LLVMOrcJITTargetMachineBuilderSetTargetTriple")
-    LLVMOrcJITTargetMachineBuilderSetTargetTriple :: proc(JTMB : LLVMOrcJITTargetMachineBuilderRef, TargetTriple : cstring) ---;
+    OrcJITTargetMachineBuilderSetTargetTriple :: proc(JTMB : OrcJITTargetMachineBuilderRef, TargetTriple : cstring) ---;
 
     @(link_name="LLVMOrcObjectLayerAddObjectFile")
-    LLVMOrcObjectLayerAddObjectFile :: proc(ObjLayer : LLVMOrcObjectLayerRef, JD : LLVMOrcJITDylibRef, ObjBuffer : LLVMMemoryBufferRef) -> LLVMErrorRef ---;
+    OrcObjectLayerAddObjectFile :: proc(ObjLayer : OrcObjectLayerRef, JD : OrcJITDylibRef, ObjBuffer : MemoryBufferRef) -> ErrorRef ---;
 
     @(link_name="LLVMOrcObjectLayerAddObjectFileWithRT")
-    LLVMOrcObjectLayerAddObjectFileWithRT :: proc(ObjLayer : LLVMOrcObjectLayerRef, RT : LLVMOrcResourceTrackerRef, ObjBuffer : LLVMMemoryBufferRef) -> LLVMErrorRef ---;
+    OrcObjectLayerAddObjectFileWithRT :: proc(ObjLayer : OrcObjectLayerRef, RT : OrcResourceTrackerRef, ObjBuffer : MemoryBufferRef) -> ErrorRef ---;
 
     @(link_name="LLVMOrcObjectLayerEmit")
-    LLVMOrcObjectLayerEmit :: proc(ObjLayer : LLVMOrcObjectLayerRef, R : LLVMOrcMaterializationResponsibilityRef, ObjBuffer : LLVMMemoryBufferRef) ---;
+    OrcObjectLayerEmit :: proc(ObjLayer : OrcObjectLayerRef, R : OrcMaterializationResponsibilityRef, ObjBuffer : MemoryBufferRef) ---;
 
     @(link_name="LLVMOrcDisposeObjectLayer")
-    LLVMOrcDisposeObjectLayer :: proc(ObjLayer : LLVMOrcObjectLayerRef) ---;
+    OrcDisposeObjectLayer :: proc(ObjLayer : OrcObjectLayerRef) ---;
 
     @(link_name="LLVMOrcIRTransformLayerEmit")
-    LLVMOrcIRTransformLayerEmit :: proc(IRTransformLayer : LLVMOrcIRTransformLayerRef, MR : LLVMOrcMaterializationResponsibilityRef, TSM : LLVMOrcThreadSafeModuleRef) ---;
+    OrcIRTransformLayerEmit :: proc(IRTransformLayer : OrcIRTransformLayerRef, MR : OrcMaterializationResponsibilityRef, TSM : OrcThreadSafeModuleRef) ---;
 
     @(link_name="LLVMOrcIRTransformLayerSetTransform")
-    LLVMOrcIRTransformLayerSetTransform :: proc(IRTransformLayer : LLVMOrcIRTransformLayerRef, TransformFunction : LLVMOrcIRTransformLayerTransformFunction, Ctx : rawptr) ---;
+    OrcIRTransformLayerSetTransform :: proc(IRTransformLayer : OrcIRTransformLayerRef, TransformFunction : OrcIRTransformLayerTransformFunction, Ctx : rawptr) ---;
 
     @(link_name="LLVMOrcObjectTransformLayerSetTransform")
-    LLVMOrcObjectTransformLayerSetTransform :: proc(ObjTransformLayer : LLVMOrcObjectTransformLayerRef, TransformFunction : LLVMOrcObjectTransformLayerTransformFunction, Ctx : rawptr) ---;
+    OrcObjectTransformLayerSetTransform :: proc(ObjTransformLayer : OrcObjectTransformLayerRef, TransformFunction : OrcObjectTransformLayerTransformFunction, Ctx : rawptr) ---;
 
     @(link_name="LLVMOrcCreateLocalIndirectStubsManager")
-    LLVMOrcCreateLocalIndirectStubsManager :: proc(TargetTriple : cstring) -> LLVMOrcIndirectStubsManagerRef ---;
+    OrcCreateLocalIndirectStubsManager :: proc(TargetTriple : cstring) -> OrcIndirectStubsManagerRef ---;
 
     @(link_name="LLVMOrcDisposeIndirectStubsManager")
-    LLVMOrcDisposeIndirectStubsManager :: proc(ISM : LLVMOrcIndirectStubsManagerRef) ---;
+    OrcDisposeIndirectStubsManager :: proc(ISM : OrcIndirectStubsManagerRef) ---;
 
     @(link_name="LLVMOrcCreateLocalLazyCallThroughManager")
-    LLVMOrcCreateLocalLazyCallThroughManager :: proc(TargetTriple : cstring, ES : LLVMOrcExecutionSessionRef, ErrorHandlerAddr : u64, LCTM : ^LLVMOrcLazyCallThroughManagerRef) -> LLVMErrorRef ---;
+    OrcCreateLocalLazyCallThroughManager :: proc(TargetTriple : cstring, ES : OrcExecutionSessionRef, ErrorHandlerAddr : u64, LCTM : ^OrcLazyCallThroughManagerRef) -> ErrorRef ---;
 
     @(link_name="LLVMOrcDisposeLazyCallThroughManager")
-    LLVMOrcDisposeLazyCallThroughManager :: proc(LCTM : LLVMOrcLazyCallThroughManagerRef) ---;
+    OrcDisposeLazyCallThroughManager :: proc(LCTM : OrcLazyCallThroughManagerRef) ---;
 
     @(link_name="LLVMOrcCreateDumpObjects")
-    LLVMOrcCreateDumpObjects :: proc(DumpDir : cstring, IdentifierOverride : cstring) -> LLVMOrcDumpObjectsRef ---;
+    OrcCreateDumpObjects :: proc(DumpDir : cstring, IdentifierOverride : cstring) -> OrcDumpObjectsRef ---;
 
     @(link_name="LLVMOrcDisposeDumpObjects")
-    LLVMOrcDisposeDumpObjects :: proc(DumpObjects : LLVMOrcDumpObjectsRef) ---;
+    OrcDisposeDumpObjects :: proc(DumpObjects : OrcDumpObjectsRef) ---;
 
     @(link_name="LLVMOrcDumpObjects_CallOperator")
-    LLVMOrcDumpObjects_CallOperator :: proc(DumpObjects : LLVMOrcDumpObjectsRef, ObjBuffer : ^LLVMMemoryBufferRef) -> LLVMErrorRef ---;
+    OrcDumpObjects_CallOperator :: proc(DumpObjects : OrcDumpObjectsRef, ObjBuffer : ^MemoryBufferRef) -> ErrorRef ---;
 
     @(link_name="LLVMOrcCreateRTDyldObjectLinkingLayerWithSectionMemoryManager")
-    LLVMOrcCreateRTDyldObjectLinkingLayerWithSectionMemoryManager :: proc(ES : LLVMOrcExecutionSessionRef) -> LLVMOrcObjectLayerRef ---;
+    OrcCreateRTDyldObjectLinkingLayerWithSectionMemoryManager :: proc(ES : OrcExecutionSessionRef) -> OrcObjectLayerRef ---;
 
     @(link_name="LLVMOrcCreateRTDyldObjectLinkingLayerWithMCJITMemoryManagerLikeCallbacks")
-    LLVMOrcCreateRTDyldObjectLinkingLayerWithMCJITMemoryManagerLikeCallbacks :: proc(ES : LLVMOrcExecutionSessionRef, CreateContextCtx : rawptr, CreateContext : LLVMMemoryManagerCreateContextCallback, NotifyTerminating : LLVMMemoryManagerNotifyTerminatingCallback, AllocateCodeSection : LLVMMemoryManagerAllocateCodeSectionCallback, AllocateDataSection : LLVMMemoryManagerAllocateDataSectionCallback, FinalizeMemory : LLVMMemoryManagerFinalizeMemoryCallback, Destroy : LLVMMemoryManagerDestroyCallback) -> LLVMOrcObjectLayerRef ---;
+    OrcCreateRTDyldObjectLinkingLayerWithMCJITMemoryManagerLikeCallbacks :: proc(ES : OrcExecutionSessionRef, CreateContextCtx : rawptr, CreateContext : MemoryManagerCreateContextCallback, NotifyTerminating : MemoryManagerNotifyTerminatingCallback, AllocateCodeSection : MemoryManagerAllocateCodeSectionCallback, AllocateDataSection : MemoryManagerAllocateDataSectionCallback, FinalizeMemory : MemoryManagerFinalizeMemoryCallback, Destroy : MemoryManagerDestroyCallback) -> OrcObjectLayerRef ---;
 
     @(link_name="LLVMOrcRTDyldObjectLinkingLayerRegisterJITEventListener")
-    LLVMOrcRTDyldObjectLinkingLayerRegisterJITEventListener :: proc(RTDyldObjLinkingLayer : LLVMOrcObjectLayerRef, Listener : LLVMJITEventListenerRef) ---;
+    OrcRTDyldObjectLinkingLayerRegisterJITEventListener :: proc(RTDyldObjLinkingLayer : OrcObjectLayerRef, Listener : JITEventListenerRef) ---;
 
     @(link_name="LLVMRemarkStringGetData")
-    LLVMRemarkStringGetData :: proc(String : LLVMRemarkStringRef) -> cstring ---;
+    RemarkStringGetData :: proc(String : RemarkStringRef) -> cstring ---;
 
     @(link_name="LLVMRemarkStringGetLen")
-    LLVMRemarkStringGetLen :: proc(String : LLVMRemarkStringRef) -> u32 ---;
+    RemarkStringGetLen :: proc(String : RemarkStringRef) -> u32 ---;
 
     @(link_name="LLVMRemarkDebugLocGetSourceFilePath")
-    LLVMRemarkDebugLocGetSourceFilePath :: proc(DL : LLVMRemarkDebugLocRef) -> LLVMRemarkStringRef ---;
+    RemarkDebugLocGetSourceFilePath :: proc(DL : RemarkDebugLocRef) -> RemarkStringRef ---;
 
     @(link_name="LLVMRemarkDebugLocGetSourceLine")
-    LLVMRemarkDebugLocGetSourceLine :: proc(DL : LLVMRemarkDebugLocRef) -> u32 ---;
+    RemarkDebugLocGetSourceLine :: proc(DL : RemarkDebugLocRef) -> u32 ---;
 
     @(link_name="LLVMRemarkDebugLocGetSourceColumn")
-    LLVMRemarkDebugLocGetSourceColumn :: proc(DL : LLVMRemarkDebugLocRef) -> u32 ---;
+    RemarkDebugLocGetSourceColumn :: proc(DL : RemarkDebugLocRef) -> u32 ---;
 
     @(link_name="LLVMRemarkArgGetKey")
-    LLVMRemarkArgGetKey :: proc(Arg : LLVMRemarkArgRef) -> LLVMRemarkStringRef ---;
+    RemarkArgGetKey :: proc(Arg : RemarkArgRef) -> RemarkStringRef ---;
 
     @(link_name="LLVMRemarkArgGetValue")
-    LLVMRemarkArgGetValue :: proc(Arg : LLVMRemarkArgRef) -> LLVMRemarkStringRef ---;
+    RemarkArgGetValue :: proc(Arg : RemarkArgRef) -> RemarkStringRef ---;
 
     @(link_name="LLVMRemarkArgGetDebugLoc")
-    LLVMRemarkArgGetDebugLoc :: proc(Arg : LLVMRemarkArgRef) -> LLVMRemarkDebugLocRef ---;
+    RemarkArgGetDebugLoc :: proc(Arg : RemarkArgRef) -> RemarkDebugLocRef ---;
 
     @(link_name="LLVMRemarkEntryDispose")
-    LLVMRemarkEntryDispose :: proc(Remark : LLVMRemarkEntryRef) ---;
+    RemarkEntryDispose :: proc(Remark : RemarkEntryRef) ---;
 
     @(link_name="LLVMRemarkEntryGetType")
-    LLVMRemarkEntryGetType :: proc(Remark : LLVMRemarkEntryRef) -> LLVMRemarkType ---;
+    RemarkEntryGetType :: proc(Remark : RemarkEntryRef) -> RemarkType ---;
 
     @(link_name="LLVMRemarkEntryGetPassName")
-    LLVMRemarkEntryGetPassName :: proc(Remark : LLVMRemarkEntryRef) -> LLVMRemarkStringRef ---;
+    RemarkEntryGetPassName :: proc(Remark : RemarkEntryRef) -> RemarkStringRef ---;
 
     @(link_name="LLVMRemarkEntryGetRemarkName")
-    LLVMRemarkEntryGetRemarkName :: proc(Remark : LLVMRemarkEntryRef) -> LLVMRemarkStringRef ---;
+    RemarkEntryGetRemarkName :: proc(Remark : RemarkEntryRef) -> RemarkStringRef ---;
 
     @(link_name="LLVMRemarkEntryGetFunctionName")
-    LLVMRemarkEntryGetFunctionName :: proc(Remark : LLVMRemarkEntryRef) -> LLVMRemarkStringRef ---;
+    RemarkEntryGetFunctionName :: proc(Remark : RemarkEntryRef) -> RemarkStringRef ---;
 
     @(link_name="LLVMRemarkEntryGetDebugLoc")
-    LLVMRemarkEntryGetDebugLoc :: proc(Remark : LLVMRemarkEntryRef) -> LLVMRemarkDebugLocRef ---;
+    RemarkEntryGetDebugLoc :: proc(Remark : RemarkEntryRef) -> RemarkDebugLocRef ---;
 
     @(link_name="LLVMRemarkEntryGetHotness")
-    LLVMRemarkEntryGetHotness :: proc(Remark : LLVMRemarkEntryRef) -> u64 ---;
+    RemarkEntryGetHotness :: proc(Remark : RemarkEntryRef) -> u64 ---;
 
     @(link_name="LLVMRemarkEntryGetNumArgs")
-    LLVMRemarkEntryGetNumArgs :: proc(Remark : LLVMRemarkEntryRef) -> u32 ---;
+    RemarkEntryGetNumArgs :: proc(Remark : RemarkEntryRef) -> u32 ---;
 
     @(link_name="LLVMRemarkEntryGetFirstArg")
-    LLVMRemarkEntryGetFirstArg :: proc(Remark : LLVMRemarkEntryRef) -> LLVMRemarkArgRef ---;
+    RemarkEntryGetFirstArg :: proc(Remark : RemarkEntryRef) -> RemarkArgRef ---;
 
     @(link_name="LLVMRemarkEntryGetNextArg")
-    LLVMRemarkEntryGetNextArg :: proc(It : LLVMRemarkArgRef, Remark : LLVMRemarkEntryRef) -> LLVMRemarkArgRef ---;
+    RemarkEntryGetNextArg :: proc(It : RemarkArgRef, Remark : RemarkEntryRef) -> RemarkArgRef ---;
 
     @(link_name="LLVMRemarkParserCreateYAML")
-    LLVMRemarkParserCreateYAML :: proc(Buf : rawptr, Size : u64) -> LLVMRemarkParserRef ---;
+    RemarkParserCreateYAML :: proc(Buf : rawptr, Size : u64) -> RemarkParserRef ---;
 
     @(link_name="LLVMRemarkParserCreateBitstream")
-    LLVMRemarkParserCreateBitstream :: proc(Buf : rawptr, Size : u64) -> LLVMRemarkParserRef ---;
+    RemarkParserCreateBitstream :: proc(Buf : rawptr, Size : u64) -> RemarkParserRef ---;
 
     @(link_name="LLVMRemarkParserGetNext")
-    LLVMRemarkParserGetNext :: proc(Parser : LLVMRemarkParserRef) -> LLVMRemarkEntryRef ---;
+    RemarkParserGetNext :: proc(Parser : RemarkParserRef) -> RemarkEntryRef ---;
 
     @(link_name="LLVMRemarkParserHasError")
-    LLVMRemarkParserHasError :: proc(Parser : LLVMRemarkParserRef) -> LLVMBool ---;
+    RemarkParserHasError :: proc(Parser : RemarkParserRef) -> Bool ---;
 
     @(link_name="LLVMRemarkParserGetErrorMessage")
-    LLVMRemarkParserGetErrorMessage :: proc(Parser : LLVMRemarkParserRef) -> cstring ---;
+    RemarkParserGetErrorMessage :: proc(Parser : RemarkParserRef) -> cstring ---;
 
     @(link_name="LLVMRemarkParserDispose")
-    LLVMRemarkParserDispose :: proc(Parser : LLVMRemarkParserRef) ---;
+    RemarkParserDispose :: proc(Parser : RemarkParserRef) ---;
 
     @(link_name="LLVMRemarkVersion")
-    LLVMRemarkVersion :: proc() -> u32 ---;
+    RemarkVersion :: proc() -> u32 ---;
 
     @(link_name="LLVMLoadLibraryPermanently")
-    LLVMLoadLibraryPermanently :: proc(Filename : cstring) -> LLVMBool ---;
+    LoadLibraryPermanently :: proc(Filename : cstring) -> Bool ---;
 
     @(link_name="LLVMParseCommandLineOptions")
-    LLVMParseCommandLineOptions :: proc(argc : _c.int, argv : ^cstring, Overview : cstring) ---;
+    ParseCommandLineOptions :: proc(argc : _c.int, argv : ^cstring, Overview : cstring) ---;
 
     @(link_name="LLVMSearchForAddressOfSymbol")
-    LLVMSearchForAddressOfSymbol :: proc(symbolName : cstring) -> rawptr ---;
+    SearchForAddressOfSymbol :: proc(symbolName : cstring) -> rawptr ---;
 
     @(link_name="LLVMAddSymbol")
-    LLVMAddSymbol :: proc(symbolName : cstring, symbolValue : rawptr) ---;
+    AddSymbol :: proc(symbolName : cstring, symbolValue : rawptr) ---;
 
     @(link_name="LLVMInitializeAllDisassemblers")
-    LLVMInitializeAllDisassemblers :: proc() ---;
+    InitializeAllDisassemblers :: proc() ---;
 
     @(link_name="LLVMInitializeNativeTarget")
-    LLVMInitializeNativeTarget :: proc() -> LLVMBool ---;
+    InitializeNativeTarget :: proc() -> Bool ---;
 
     @(link_name="LLVMInitializeNativeAsmParser")
-    LLVMInitializeNativeAsmParser :: proc() -> LLVMBool ---;
+    InitializeNativeAsmParser :: proc() -> Bool ---;
 
     @(link_name="LLVMInitializeNativeAsmPrinter")
-    LLVMInitializeNativeAsmPrinter :: proc() -> LLVMBool ---;
+    InitializeNativeAsmPrinter :: proc() -> Bool ---;
 
     @(link_name="LLVMInitializeNativeDisassembler")
-    LLVMInitializeNativeDisassembler :: proc() -> LLVMBool ---;
+    InitializeNativeDisassembler :: proc() -> Bool ---;
 
     @(link_name="LLVMGetModuleDataLayout")
-    LLVMGetModuleDataLayout :: proc(M : LLVMModuleRef) -> LLVMTargetDataRef ---;
+    GetModuleDataLayout :: proc(M : ModuleRef) -> TargetDataRef ---;
 
     @(link_name="LLVMSetModuleDataLayout")
-    LLVMSetModuleDataLayout :: proc(M : LLVMModuleRef, DL : LLVMTargetDataRef) ---;
+    SetModuleDataLayout :: proc(M : ModuleRef, DL : TargetDataRef) ---;
 
     @(link_name="LLVMCreateTargetData")
-    LLVMCreateTargetData :: proc(StringRep : cstring) -> LLVMTargetDataRef ---;
+    CreateTargetData :: proc(StringRep : cstring) -> TargetDataRef ---;
 
     @(link_name="LLVMDisposeTargetData")
-    LLVMDisposeTargetData :: proc(TD : LLVMTargetDataRef) ---;
+    DisposeTargetData :: proc(TD : TargetDataRef) ---;
 
     @(link_name="LLVMAddTargetLibraryInfo")
-    LLVMAddTargetLibraryInfo :: proc(TLI : LLVMTargetLibraryInfoRef, PM : LLVMPassManagerRef) ---;
+    AddTargetLibraryInfo :: proc(TLI : TargetLibraryInfoRef, PM : PassManagerRef) ---;
 
     @(link_name="LLVMCopyStringRepOfTargetData")
-    LLVMCopyStringRepOfTargetData :: proc(TD : LLVMTargetDataRef) -> cstring ---;
+    CopyStringRepOfTargetData :: proc(TD : TargetDataRef) -> cstring ---;
 
     @(link_name="LLVMByteOrder")
-    LLVMByteOrder :: proc(TD : LLVMTargetDataRef) -> LLVMByteOrdering ---;
+    ByteOrder :: proc(TD : TargetDataRef) -> ByteOrdering ---;
 
     @(link_name="LLVMPointerSize")
-    LLVMPointerSize :: proc(TD : LLVMTargetDataRef) -> _c.uint ---;
+    PointerSize :: proc(TD : TargetDataRef) -> _c.uint ---;
 
     @(link_name="LLVMPointerSizeForAS")
-    LLVMPointerSizeForAS :: proc(TD : LLVMTargetDataRef, AS : _c.uint) -> _c.uint ---;
+    PointerSizeForAS :: proc(TD : TargetDataRef, AS : _c.uint) -> _c.uint ---;
 
     @(link_name="LLVMIntPtrType")
-    LLVMIntPtrType :: proc(TD : LLVMTargetDataRef) -> LLVMTypeRef ---;
+    IntPtrType :: proc(TD : TargetDataRef) -> TypeRef ---;
 
     @(link_name="LLVMIntPtrTypeForAS")
-    LLVMIntPtrTypeForAS :: proc(TD : LLVMTargetDataRef, AS : _c.uint) -> LLVMTypeRef ---;
+    IntPtrTypeForAS :: proc(TD : TargetDataRef, AS : _c.uint) -> TypeRef ---;
 
     @(link_name="LLVMIntPtrTypeInContext")
-    LLVMIntPtrTypeInContext :: proc(C : LLVMContextRef, TD : LLVMTargetDataRef) -> LLVMTypeRef ---;
+    IntPtrTypeInContext :: proc(C : ContextRef, TD : TargetDataRef) -> TypeRef ---;
 
     @(link_name="LLVMIntPtrTypeForASInContext")
-    LLVMIntPtrTypeForASInContext :: proc(C : LLVMContextRef, TD : LLVMTargetDataRef, AS : _c.uint) -> LLVMTypeRef ---;
+    IntPtrTypeForASInContext :: proc(C : ContextRef, TD : TargetDataRef, AS : _c.uint) -> TypeRef ---;
 
     @(link_name="LLVMSizeOfTypeInBits")
-    LLVMSizeOfTypeInBits :: proc(TD : LLVMTargetDataRef, Ty : LLVMTypeRef) -> _c.ulonglong ---;
+    SizeOfTypeInBits :: proc(TD : TargetDataRef, Ty : TypeRef) -> _c.ulonglong ---;
 
     @(link_name="LLVMStoreSizeOfType")
-    LLVMStoreSizeOfType :: proc(TD : LLVMTargetDataRef, Ty : LLVMTypeRef) -> _c.ulonglong ---;
+    StoreSizeOfType :: proc(TD : TargetDataRef, Ty : TypeRef) -> _c.ulonglong ---;
 
     @(link_name="LLVMABISizeOfType")
-    LLVMABISizeOfType :: proc(TD : LLVMTargetDataRef, Ty : LLVMTypeRef) -> _c.ulonglong ---;
+    ABISizeOfType :: proc(TD : TargetDataRef, Ty : TypeRef) -> _c.ulonglong ---;
 
     @(link_name="LLVMABIAlignmentOfType")
-    LLVMABIAlignmentOfType :: proc(TD : LLVMTargetDataRef, Ty : LLVMTypeRef) -> _c.uint ---;
+    ABIAlignmentOfType :: proc(TD : TargetDataRef, Ty : TypeRef) -> _c.uint ---;
 
     @(link_name="LLVMCallFrameAlignmentOfType")
-    LLVMCallFrameAlignmentOfType :: proc(TD : LLVMTargetDataRef, Ty : LLVMTypeRef) -> _c.uint ---;
+    CallFrameAlignmentOfType :: proc(TD : TargetDataRef, Ty : TypeRef) -> _c.uint ---;
 
     @(link_name="LLVMPreferredAlignmentOfType")
-    LLVMPreferredAlignmentOfType :: proc(TD : LLVMTargetDataRef, Ty : LLVMTypeRef) -> _c.uint ---;
+    PreferredAlignmentOfType :: proc(TD : TargetDataRef, Ty : TypeRef) -> _c.uint ---;
 
     @(link_name="LLVMPreferredAlignmentOfGlobal")
-    LLVMPreferredAlignmentOfGlobal :: proc(TD : LLVMTargetDataRef, GlobalVar : LLVMValueRef) -> _c.uint ---;
+    PreferredAlignmentOfGlobal :: proc(TD : TargetDataRef, GlobalVar : ValueRef) -> _c.uint ---;
 
     @(link_name="LLVMElementAtOffset")
-    LLVMElementAtOffset :: proc(TD : LLVMTargetDataRef, StructTy : LLVMTypeRef, Offset : _c.ulonglong) -> _c.uint ---;
+    ElementAtOffset :: proc(TD : TargetDataRef, StructTy : TypeRef, Offset : _c.ulonglong) -> _c.uint ---;
 
     @(link_name="LLVMOffsetOfElement")
-    LLVMOffsetOfElement :: proc(TD : LLVMTargetDataRef, StructTy : LLVMTypeRef, Element : _c.uint) -> _c.ulonglong ---;
+    OffsetOfElement :: proc(TD : TargetDataRef, StructTy : TypeRef, Element : _c.uint) -> _c.ulonglong ---;
 
     @(link_name="LLVMGetFirstTarget")
-    LLVMGetFirstTarget :: proc() -> LLVMTargetRef ---;
+    GetFirstTarget :: proc() -> TargetRef ---;
 
     @(link_name="LLVMGetNextTarget")
-    LLVMGetNextTarget :: proc(T : LLVMTargetRef) -> LLVMTargetRef ---;
+    GetNextTarget :: proc(T : TargetRef) -> TargetRef ---;
 
     @(link_name="LLVMGetTargetFromName")
-    LLVMGetTargetFromName :: proc(Name : cstring) -> LLVMTargetRef ---;
+    GetTargetFromName :: proc(Name : cstring) -> TargetRef ---;
 
     @(link_name="LLVMGetTargetFromTriple")
-    LLVMGetTargetFromTriple :: proc(Triple : cstring, T : ^LLVMTargetRef, ErrorMessage : ^cstring) -> LLVMBool ---;
+    GetTargetFromTriple :: proc(Triple : cstring, T : ^TargetRef, ErrorMessage : ^cstring) -> Bool ---;
 
     @(link_name="LLVMGetTargetName")
-    LLVMGetTargetName :: proc(T : LLVMTargetRef) -> cstring ---;
+    GetTargetName :: proc(T : TargetRef) -> cstring ---;
 
     @(link_name="LLVMGetTargetDescription")
-    LLVMGetTargetDescription :: proc(T : LLVMTargetRef) -> cstring ---;
+    GetTargetDescription :: proc(T : TargetRef) -> cstring ---;
 
     @(link_name="LLVMTargetHasJIT")
-    LLVMTargetHasJIT :: proc(T : LLVMTargetRef) -> LLVMBool ---;
+    TargetHasJIT :: proc(T : TargetRef) -> Bool ---;
 
     @(link_name="LLVMTargetHasTargetMachine")
-    LLVMTargetHasTargetMachine :: proc(T : LLVMTargetRef) -> LLVMBool ---;
+    TargetHasTargetMachine :: proc(T : TargetRef) -> Bool ---;
 
     @(link_name="LLVMTargetHasAsmBackend")
-    LLVMTargetHasAsmBackend :: proc(T : LLVMTargetRef) -> LLVMBool ---;
+    TargetHasAsmBackend :: proc(T : TargetRef) -> Bool ---;
 
     @(link_name="LLVMCreateTargetMachine")
-    LLVMCreateTargetMachine :: proc(T : LLVMTargetRef, Triple : cstring, CPU : cstring, Features : cstring, Level : LLVMCodeGenOptLevel, Reloc : LLVMRelocMode, CodeModel : LLVMCodeModel) -> LLVMTargetMachineRef ---;
+    CreateTargetMachine :: proc(T : TargetRef, Triple : cstring, CPU : cstring, Features : cstring, Level : CodeGenOptLevel, Reloc : RelocMode, CodeModel : CodeModel) -> TargetMachineRef ---;
 
     @(link_name="LLVMDisposeTargetMachine")
-    LLVMDisposeTargetMachine :: proc(T : LLVMTargetMachineRef) ---;
+    DisposeTargetMachine :: proc(T : TargetMachineRef) ---;
 
     @(link_name="LLVMGetTargetMachineTarget")
-    LLVMGetTargetMachineTarget :: proc(T : LLVMTargetMachineRef) -> LLVMTargetRef ---;
+    GetTargetMachineTarget :: proc(T : TargetMachineRef) -> TargetRef ---;
 
     @(link_name="LLVMGetTargetMachineTriple")
-    LLVMGetTargetMachineTriple :: proc(T : LLVMTargetMachineRef) -> cstring ---;
+    GetTargetMachineTriple :: proc(T : TargetMachineRef) -> cstring ---;
 
     @(link_name="LLVMGetTargetMachineCPU")
-    LLVMGetTargetMachineCPU :: proc(T : LLVMTargetMachineRef) -> cstring ---;
+    GetTargetMachineCPU :: proc(T : TargetMachineRef) -> cstring ---;
 
     @(link_name="LLVMGetTargetMachineFeatureString")
-    LLVMGetTargetMachineFeatureString :: proc(T : LLVMTargetMachineRef) -> cstring ---;
+    GetTargetMachineFeatureString :: proc(T : TargetMachineRef) -> cstring ---;
 
     @(link_name="LLVMCreateTargetDataLayout")
-    LLVMCreateTargetDataLayout :: proc(T : LLVMTargetMachineRef) -> LLVMTargetDataRef ---;
+    CreateTargetDataLayout :: proc(T : TargetMachineRef) -> TargetDataRef ---;
 
     @(link_name="LLVMSetTargetMachineAsmVerbosity")
-    LLVMSetTargetMachineAsmVerbosity :: proc(T : LLVMTargetMachineRef, VerboseAsm : LLVMBool) ---;
+    SetTargetMachineAsmVerbosity :: proc(T : TargetMachineRef, VerboseAsm : Bool) ---;
 
     @(link_name="LLVMTargetMachineEmitToFile")
-    LLVMTargetMachineEmitToFile :: proc(T : LLVMTargetMachineRef, M : LLVMModuleRef, Filename : cstring, codegen : LLVMCodeGenFileType, ErrorMessage : ^cstring) -> LLVMBool ---;
+    TargetMachineEmitToFile :: proc(T : TargetMachineRef, M : ModuleRef, Filename : cstring, codegen : CodeGenFileType, ErrorMessage : ^cstring) -> Bool ---;
 
     @(link_name="LLVMTargetMachineEmitToMemoryBuffer")
-    LLVMTargetMachineEmitToMemoryBuffer :: proc(T : LLVMTargetMachineRef, M : LLVMModuleRef, codegen : LLVMCodeGenFileType, ErrorMessage : ^cstring, OutMemBuf : ^LLVMMemoryBufferRef) -> LLVMBool ---;
+    TargetMachineEmitToMemoryBuffer :: proc(T : TargetMachineRef, M : ModuleRef, codegen : CodeGenFileType, ErrorMessage : ^cstring, OutMemBuf : ^MemoryBufferRef) -> Bool ---;
 
     @(link_name="LLVMGetDefaultTargetTriple")
-    LLVMGetDefaultTargetTriple :: proc() -> cstring ---;
+    GetDefaultTargetTriple :: proc() -> cstring ---;
 
     @(link_name="LLVMNormalizeTargetTriple")
-    LLVMNormalizeTargetTriple :: proc(triple : cstring) -> cstring ---;
+    NormalizeTargetTriple :: proc(triple : cstring) -> cstring ---;
 
     @(link_name="LLVMGetHostCPUName")
-    LLVMGetHostCPUName :: proc() -> cstring ---;
+    GetHostCPUName :: proc() -> cstring ---;
 
     @(link_name="LLVMGetHostCPUFeatures")
-    LLVMGetHostCPUFeatures :: proc() -> cstring ---;
+    GetHostCPUFeatures :: proc() -> cstring ---;
 
     @(link_name="LLVMAddAnalysisPasses")
-    LLVMAddAnalysisPasses :: proc(T : LLVMTargetMachineRef, PM : LLVMPassManagerRef) ---;
+    AddAnalysisPasses :: proc(T : TargetMachineRef, PM : PassManagerRef) ---;
 
 }
