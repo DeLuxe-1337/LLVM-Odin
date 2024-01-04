@@ -5,7 +5,7 @@ import "core:fmt"
 
 main :: proc() {
     using LLVM
-    
+
 	module := LLVMModuleCreateWithName("MyModule")
     builder := LLVMCreateBuilder()
 
@@ -35,4 +35,5 @@ main :: proc() {
 
     LLVMWriteBitcodeToFile(module, "out.bc")
     LLVMPrintModuleToFile(module, "out.ll", &outCString)
+    fmt.println(LLVMPrintModuleToString(module))
 }
