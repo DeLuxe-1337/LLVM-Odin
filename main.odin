@@ -33,12 +33,12 @@ main :: proc() {
 
 	fmt.println("Verifying module")
 
-	outCString: cstring = ""
-	LLVMVerifyModule(module, LLVMVerifierFailureAction.LLVMAbortProcessAction, &outCString)
-	fmt.println(outCString)
-	LLVMDisposeMessage(outCString)
+	error: cstring = ""
+	LLVMVerifyModule(module, LLVMVerifierFailureAction.LLVMAbortProcessAction, &error)
+	fmt.println(error)
+	LLVMDisposeMessage(error)
 
 	LLVMWriteBitcodeToFile(module, "out.bc")
-	LLVMPrintModuleToFile(module, "out.ll", &outCString)
+	LLVMPrintModuleToFile(module, "out.ll", &error)
 	fmt.println(LLVMPrintModuleToString(module))
 }
