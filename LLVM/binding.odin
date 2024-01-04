@@ -1,6 +1,6 @@
 package LLVM
 
-foreign import _C "LLVM-C.lib"
+foreign import LLVM_C "LLVM-C.lib"
 
 import _c "core:c"
 
@@ -992,7 +992,7 @@ OpaqueJITEventListener :: struct {};
 OpaqueBinary :: struct {};
 
 @(default_calling_convention="c")
-foreign _C {
+foreign LLVM_C {
 
     @(link_name="LLVMVerifyModule")
     VerifyModule :: proc(M : ModuleRef, Action : VerifierFailureAction, OutMessage : ^cstring) -> Bool ---;
